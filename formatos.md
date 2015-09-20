@@ -240,7 +240,8 @@ Formatos de fichero (encapsulamiento):
 Podemos realizar la conversión en línea de comando de la siguiente forma:
 
 ```bash
-vlc -I dummy /<ruta_origen>/video.mpg :sout='#transcode{vcodec=mp2v, vb=4096,acodec=mp2a,ab=192,scale=1,channels=2,deinterlace,audio-
+vlc -I dummy /<ruta_origen>/video.mpg :sout='#transcode{vcodec=mp2v, 
+vb=4096,acodec=mp2a,ab=192,scale=1,channels=2,deinterlace,audio-
 sync}:std{access=file,mux=ps,dst=/<ruta_destino>/video.mpg' vlc://quit
 ```
 
