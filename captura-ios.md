@@ -198,7 +198,8 @@ con `startRunning`:
 ```objectivec
    // Entrada del dispositivo de captura de video
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error: nil];
+    AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice 
+                                                                               error: nil];
     
     // Salida como fotogramas "crudos" (sin comprimir)
     AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
@@ -207,7 +208,8 @@ con `startRunning`:
     dispatch_queue_t queue = dispatch_queue_create("cameraQueue", NULL);
     [captureOutput setSampleBufferDelegate: self queue: queue];
     
-    NSDictionary *videoSettings = @{ (NSString*)kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA) };    
+    NSDictionary *videoSettings = @{ (NSString*)kCVPixelBufferPixelFormatTypeKey : 
+                                                        @(kCVPixelFormatType_32BGRA) };    
     [captureOutput setVideoSettings: videoSettings];
     
     // Creación de la sesión de captura
