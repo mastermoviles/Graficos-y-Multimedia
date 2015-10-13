@@ -102,7 +102,9 @@ A partir de iPhone 5 se añade:
 
 * H.264 hasta 1080p, 30 fps, High Profile nivel 4.1. Audio AAC-LC de hasta 160 Kbps, 48kHz, stereo.
 
+Se dispone de más información en la documentación sobre iOS Media Layer:
 
+https://developer.apple.com/library/ios/documentation/Miscellaneous/Conceptual/iPhoneOSTechOverview/MediaLayer/MediaLayer.html
 
 ### Formatos de audio y vídeo en Android
 
