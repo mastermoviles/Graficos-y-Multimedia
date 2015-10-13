@@ -27,7 +27,7 @@ Tendremos también una aplicación Android que nos permitirá hacer emisiones en
 * Comenzar la emisión. Lanzará una pantalla en la que se enviará vídeo capturado desde la cámara al servidor de _streaming_, mostrando una previsualización del vídeo emitido.
 
 
-## Video bajo demanda en Wowza
+## Video bajo demanda en Wowza (sesión de 20-10-2015)
 
 Vamos a publicar vídeo bajo demanda en el servidor Wowza, para así poderlo reproducir en dispositivos móviles vía _streaming_.
 
@@ -35,14 +35,14 @@ Vamos a publicar vídeo bajo demanda en el servidor Wowza, para así poderlo rep
 * Comprueba en el _Test Player_ de Wowza que los vídeos se ven correctamente.
 * Copia las direcciones para reproducir los vídeos en iOS y en Android. Podemos probarlo introduciendo esta dirección en el cuadro de dirección del navegador del móvil. Según si vamos a reproducir en emuladores o dispositivos reales el procedimiento cambiará.
 
-**Prueba en emuladores**
+### Prueba en emuladores
 
 La prueba en emuladores/simuladores dependerá de si utilizamos el simulador iOS o el emulador Android, ya que el primero es una aplicación más que se ejecuta en nuestra máquina local, mientras que el segundo se ejecuta dentro de una máquina virtual:
 
 * En el **simulador de iOS** podemos utilizar la dirección que nos proporciona Wowza directamente.
 * En el **emulador de Android** deberemos utilizar la IP del _host_ en el que se ejecuta la máquina virtual que emula el dispositivo. Esta IP es `10.0.2.2` (equivale a la dirección de _loopback_ en la máquina _host_). Sustituiremos la IP de la dirección que nos ha proporcionado Wowza por dicha IP.
 
-**Prueba en dispositivos reales**
+### Prueba en dispositivos reales
 
 Para probar en dispositivos reales debemos hacer que nuestros dispositivos estén en la misma red que el servidor Wowza. Para ello deberemos activar en el Mac la opción de compartir Internet, siguiendo los siguientes pasos:
 
@@ -57,9 +57,11 @@ Para probar en dispositivos reales debemos hacer que nuestros dispositivos esté
 
 Ahora podremos probar el enlace en el móvil directamente, ya que al estar en la misma red debe poder ver la dirección donde está escuchando Wowza.
 
-## Creación de la aplicación iOS
+## Creación de la aplicación iOS (sesión de 22-10-2015)
 
 Vamos a crear la aplicación iOS para nuestra plataforma de televisión _online_.
+
+### Estructura de la aplicación
 
 Recordemos que la aplicación debe tener las siguientes secciones:
 
@@ -100,6 +102,18 @@ http://www.flaticon.com/packs/line-icon-set
 
 > Las listas de audio y vídeo serán fijas, podemos crearlas directamente desde código. En otras asignaturas veremos cómo obtenerlas de una base de datos o de servicios en la red.
 
+### Acerca de
+
+Crearemos una pantalla _"Acerca de..."_ para la aplicación iOS en la que veremos el nombre de la aplicación, el nombre del autor, y una vista propia creada con Core Graphics que mostrará un gráfico de tipo _tarta_ que indicará la proporción de cada tipo de medio (directo, VOD y audio) disponible en la plataforma.
+
+> **Ayuda**: Se recomienda crear una clase que haga de _fuente de datos_, y nos proporcione acceso a la lista de medios de cada tipo de forma centralizada. Podemos utilizar el patrón _singleton_ para dicha clase.
+
+Como posibles mejores se propone:
+
+* Añadir alguna animación utilizando Core Animation.
+* Añadir alguna gráfica alternativa. 
+
+## Reproducción de medios en iOS (sesión de 27-10-2015)
 
 ### Reproducción de audio
 
@@ -113,7 +127,7 @@ http://freemusicarchive.org
 * El audio debe continuar reproduciéndose aunque se bloquee la pantalla, se silencie el teléfono, o se pase a otra aplicación. Introduce la configuración necesaria para conseguir este comportamiento.
 
 
-Como mejoras se propone:
+Como posibles mejoras se propone:
 
 * Introduce información del audio que se está reproduciendo en `MPNowPlayingInfoCenter` para que así se muestre información en la pantalla de bloqueo.
 * Haz que la aplicación responda ante el control remoto del audio, permitiendo pausar o reanudar la reproducción actual desde la pantalla de bloqueo o desde el botón de los auriculares.
@@ -129,7 +143,7 @@ Al seleccionar un vídeo de la lista mostraremos el controlador del reproductor 
 Como mejora se proponer crear un controlador de reproducción de vídeo propio, que en caso de estar en orientación vertical muestre un fondo decorativo para la parte de la pantalla que queda en negro.
 
 
-## Emisión de vídeo en directo desde Android
+## Emisión de vídeo en directo desde Android (sesión de 3-11-2015)
 
 Vamos a desarrollar una aplicación Android que utilice la librería _libstreaming_ para enviar vídeo por RTSP desde un móvil Android a Wowza. Consideramos que podremos tener una lista predeterminada de canales en el servidor, todos ellos bajo la aplicación `live`, por ejemplo:
 
@@ -166,3 +180,11 @@ Mostrará el nombre de la aplicación y del autor de la misma. Debe permitir vol
 
 Deberemos actualizar la aplicación iOS para que en la sección de _directos_ muestre la lista de posibles canales que hayamos predefinido. Al pulsar sobre alguno de ellos mostrará un reproductor de vídeo que conectará a la URL adecuada para mostrar el directo mediante _HTTP Live Streaming_.
 
+## Entrega del proyecto
+
+El proyecto deberá entregarse antes del **lunes 16 de noviembre a las 23:55**, a través de la **plataforma Moodle**. Deberá compartirse también el repositorio de _bitbucket_ en el que se encuentre con el usuario `entregas-mastermoviles`.
+
+El proyecto se puntuará de 0 a 10, con el siguiente reparto:
+
+* **7 puntos**: Funcionamiento correcto de los requisitos básicos del proyecto y seguimiento del trabajo.
+* **3 puntos**: Implementación de mejoras adicionales propuestas, mejoras adicionales propias, y acabado estético.
