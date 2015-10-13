@@ -520,7 +520,8 @@ Llamar al método anterior causa que `vistaOrigen` sea eliminada de su supervist
 
 # Ejercicios
 
-Antes de empezar a crear los proyectos, debes descargarte las plantillas desde <a href="plantillas_graficos_animaciones.zip">aquí</a>.
+
+Antes de empezar a crear los proyectos, debes descargarte las plantillas desde el repositorio `mastermoviles-multimedia-ios` de _bitbucket_. En este repositorio se encuentran todas las plantillas que utilizaremos en los ejercicios iOS de este módulo.
 
 <!---
 Para ello:
