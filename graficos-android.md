@@ -320,6 +320,7 @@ public class MiActividad extends Activity {
 
 ## Ejercicios
 
+Antes de empezar a crear los proyectos, debes descargarte las plantillas desde el repositorio `mastermoviles-multimedia-android` de _bitbucket_. En este repositorio se encuentran todas las plantillas que utilizaremos en los ejercicios Android de este módulo.
 
 
 ### Gráficos 3D
