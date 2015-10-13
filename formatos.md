@@ -327,7 +327,7 @@ En los recursos de la sesión encontramos una serie de vídeos que podremos util
 
 Utiliza un perfil estándar que nos permita suministrar estos vídeos a la gran mayoría de dispositivos utilizados en la actualidad. Prueba a reproducir estos vídeos desde el dispositivo Android introduciéndolos en la tarjeta SD.
 
-> Ayuda: Puedes copiar los vídeos a la tarjeta SD desde la perspectiva DDMS de Eclipse. Para entrar en esta perspectiva selecciona _Window > Open Perspective > DDMS_. Dentro de esta perspectiva, selecciona la pestaña _File Explore_ en la ventana central y ahí podrás subir o descargar ficheros del dispositivo.
+> Ayuda: Puedes copiar los vídeos a la tarjeta SD desde _Android Device Monitor_. Dentro de esta ventana, selecciona la pestaña _File Explore_ en la ventana central y ahí podrás subir o descargar ficheros del dispositivo.
 
 Por ejemplo, puedes copiar el video en la carpeta `/mnt/sdcard` (o similar). En tal caso, para abrirlo puedes ir al navegador del dispositivo y poner como URL:
 
