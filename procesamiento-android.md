@@ -20,7 +20,21 @@ De esta pantalla necesitaremos la siguiente información para poder publicar ví
 A continuación veremos cómo podemos publicar en esta aplicación utilizando una aplicación Android.
 
 
-## Emisión desde Android
+## Tecnologías para la emisión de vídeo
+
+Aunque el soporte para la emisión de medios de momento no forma parte de los SDKs de las principales plataformas móviles, podemos encontrar diferentes librerías y tecnologías que lo proporcionan. Vamos a revisar algunas de ellas:
+
+* **_libstreaming_**: Librería _open source_ para Android que nos permite emitir vídeo vía RTSP.
+> https://github.com/fyhertz/libstreaming
+* **Media Library for iOS**: Librería _open source_ para iOS que nos permite emitir vídeo vía RTMP.
+> https://github.com/slavavdovichenko/MediaLibDemos3x
+* **Adobe AIR**: Esta tecnología nos proporciona un SDK con el que podemos crear aplicaciones multiplataforma. Dentro de dicho SDK contamos con clases para la reproducción y captura de vídeo, y además para su emisión de forma sencilla mediante RTMP.
+> http://www.adobe.com/devnet/air.html
+* **Kickflip**: Plataforma para la emisión de vídeo desde dispositivos iOS y Android. Nos proporciona un SDK _open source_ sencillo de utilizar que emite el vídeo a través de sus propios servidores y mediante sus propios protocolos.
+> https://kickflip.io
+
+
+## Emisión desde Android con _libstreaming_
 
 Podemos utilizar la librería _libstreaming_ para emitir vídeo RTSP desde un dispositivo Android:
 
@@ -202,6 +216,7 @@ No es necesario introducir ningún contenido en este método, pero puede ser de 
 ```java
 mReceiver.setSoTimeout(3000);
 ```
+
 
 ## Proyecto
 
