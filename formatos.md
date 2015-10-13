@@ -21,8 +21,11 @@ En esta sección veremos la manera de añadir archivos a la tarjeta de memoria d
 
 
 * En primer lugar el emulador debe encontrarse en funcionamiento, y por supuesto, el dispositivo emulado debe hacer uso de una tarjeta SD.
-* En Eclipse debemos cambiar a la perspectiva _DDMS_. Para ello hacemos uso de la opción _Window->Open Perspective..._
-* A continuación seleccionamos la pestaña _File Explorer_. El contenido de la tarjeta de memoria se halla (normalmente) en la carpeta _/mnt/sdcard_.
+* En Android Studio debemos abrir la ventana _Android Device Monitor . Para ello hacemos uso de la opción _Tools > Android > Android Device Monitor_
+
+![Android Device Monitor](imagenes/adm.png)
+
+* A continuación, en dicha ventana, seleccionamos la pestaña _File Explorer_. El contenido de la tarjeta de memoria se halla (normalmente) en la carpeta `/mnt/sdcard` o `storage/sdcard`.
 * Dentro de dicha carpeta deberemos introducir nuestros archivos de vídeo, dentro del directorio _DCIM_. Al hacer esto ya podrán reproducirse desde la aplicación nativa de
 reproducción de vídeo y también desde nuestras propias aplicaciones.  Podemos introducir un archivo de video con el ratón, arrastrando un fichero desde otra carpeta al interior de
 la carpeta _DCIM_, aunque también podemos hacer uso de los controles que aparecen en la parte superior derecha de la perspectiva _DDMS_, cuando la pestaña
