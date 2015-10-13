@@ -13,5 +13,5 @@
 * [Reproducción en dispositivos externos](mirroring.md)
 * [Aplicaciones Adobe Air](adobe-air.md)
 * [Síntesis y reconocimiento del habla](habla-android.md)
-* [Dispositivos vestibles](dispositivos-vestibles.md)
+* [Proyecto multimedia](proyecto.md)
 
