@@ -518,7 +518,7 @@ También podemos implementar transiciones entre vistas mediante una animación, 
 Llamar al método anterior causa que `vistaOrigen` sea eliminada de su supervista, y que en su lugar
 `vistaDestino` sea añadida a ella, todo ello mediante la animación especificada en el parámetro `options`.
 
-# Gráficos y animaciones en iOS: Ejercicios
+# Ejercicios
 
 Antes de empezar a crear los proyectos, debes descargarte las plantillas desde <a href="plantillas_graficos_animaciones.zip">aquí</a>.
 
@@ -576,7 +576,7 @@ _e)_ Una vez dibujada la leyenda, vamos a terminar de decorar la gráfica dibuja
 
 
 
-##Animaciones (1 punto)
+##Animaciones 
 
 En este ejercicio vamos a ver cómo hacer animaciones con CoreAnimation y directamente con vistas.
 
