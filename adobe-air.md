@@ -6,10 +6,18 @@ Adobe Air es una tecnología multiplataforma que nos permite llevar las aplicaci
 
 Vamos a ver los pasos que deberemos seguir para instalar los SDK de Flex y Adobe AIR:
 
-* En primer lugar deberemos descargar Flex SDK:
+* En primer lugar deberemos descargar Apache Flex SDK:
 
-http://www.adobe.com/devnet/flex/flex-sdk-download.html
+http://flex.apache.org
 
+* Ejecutaremos el instalador, y éste se encargará de descargar todos los elementos necesarios, incluyendo Adobe AIR y Flex SDK. 
+
+* Introduciremos el directorio `$FLEX_SDK_HOME/bin` en el `PATH` para así tener el compilador accesible. Esto podemos hacerlo editando el fichero `.bash_profile` de nuestra carpeta personal (`$HOME`) e introduciendo al comienzo la siguiente línea:
+```bash
+export PATH=$PATH:/ruta/a/flex_sdk/bin/
+```
+
+<!--
 * Tras esto descargaremos Adobe Air SDK:
 
 http://www.adobe.com/devnet/air/air-sdk-download.html
@@ -25,6 +33,7 @@ Tras esto tendremos todo lo necesario en `flex_sdk`, y podremos borrar el otro d
 ```bash
 export PATH=$PATH:/ruta/a/flex_sdk/bin/
 ```
+-->
 
 Con esto ya podremos utilizar las herramientas de desarrollo de Flex y Adobe AIR desde línea de comando.
 
