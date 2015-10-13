@@ -1,6 +1,6 @@
-## Proyecto
+# Proyecto
 
-### Plataforma de televisión _online_
+## Plataforma de televisión _online_
 
 Como proyecto de la asignatura vamos a implementar una plataforma de televisión _online_ que constará de las siguientes aplicaciones:
 
@@ -27,7 +27,7 @@ Tendremos también una aplicación Android que nos permitirá hacer emisiones en
 * Comenzar la emisión. Lanzará una pantalla en la que se enviará vídeo capturado desde la cámara al servidor de _streaming_, mostrando una previsualización del vídeo emitido.
 
 
-### Video bajo demanda en Wowza
+## Video bajo demanda en Wowza
 
 Vamos a publicar vídeo bajo demanda en el servidor Wowza, para así poderlo reproducir en dispositivos móviles vía _streaming_.
 
@@ -56,3 +56,76 @@ Para probar en dispositivos reales debemos hacer que nuestros dispositivos esté
 
 
 Ahora podremos probar el enlace en el móvil directamente, ya que al estar en la misma red debe poder ver la dirección donde está escuchando Wowza.
+
+## Creación de la aplicación iOS
+
+Vamos a crear la aplicación iOS para nuestra plataforma de televisión _online_.
+
+Recordemos que la aplicación debe tener las siguientes secciones:
+
+* **Radio**
+* **Videoclub**
+* **Directo**
+* **Acerca de**
+
+Para ello seguiremos los siguientes pasos:
+
+1. Creamos una aplicación basada en _Tab Bar_
+
+2. Eliminamos _Second View Controller_ del _storyboard_
+
+3. Arrastramos tres _Table View Controller_ sobre el _storyboard_
+
+4. Podemos darles a estos controladores un nombre identificativo (_Radio, Videoclub, Directo_)
+
+5. Conectamos cada controlador con el _Tab Bar Controller_ con un _segue_ de tipo _Relationship_, para que aparezcan como pestañas del mismo (seleccionamos el _Table View Controller_, y desde la pestaña _Connections_ del inspector conectamos el _segue relationship_ con el controlador _Tab Bar_.
+
+6. Introducimos cada _Table View Controller_ dentro de un Navigation Controller, seleccionándolo en el _storyboard_ y pulsando _Editor > Embed In > Navigation Controller_.
+
+7. En cada controlador establecemos el nombre e icono para su pestaña.
+> Podemos encontrar _packs_ de iconos de estilo _line_ gratuitos para la aplicación iOS:
+http://www.iconbeast.com
+http://www.flaticon.com/packs/line-icon-set
+
+8. Creamos una clase que herede de `UITableViewController` para cada controlador, y las conectamos desde el inspector de identidades estos controladores.
+
+9. Creamos una clase `UAMedio` que nos sirva para encapsular los datos de cada medio, de los que debemos tener
+ * título (`NSString`)
+ * artista (`NSString`)
+ * album (`NSString`)
+ * portada (`UIImage`)
+ * url (`NSURL`)
+
+10. En cada controlador creamos una propiedad que almacene una lista de medios. Inicializaremos dicha lista en el método `viewDidLoad`, con una serie de objetos `UAMedio`. Poblaremos las tablas con los datos obtenidos de estas listas de medios en cada una de las pantallas ("Radio", "Videoclub" y "Directo").
+
+> Las listas de audio y vídeo serán fijas, podemos crearlas directamente desde código. En otras asignaturas veremos cómo obtenerlas de una base de datos o de servicios en la red.
+
+
+### Reproducción de audio
+
+Al pulsar sobre un elemento de la lista de audios deberemos comenzar su reproducción. Para ello:
+
+* En la clase del controlador de la pantalla de "Radio", crearemos una propiedad  de tipo `AVAudioPlayer` que utilizaremos como reproductor de audio.
+* En el evento de pulsación de un elemento de la tabla `tableView:didSelectRowAtIndexPath` comenzaremos la reproducción del audio seleccionado.
+> Los audios los almacenaremos en el dispositivo. Podéis descargar música MP3 gratuita desde diferentes repositorios:
+http://freemusicarchive.org
+
+* El audio debe continuar reproduciéndose aunque se bloquee la pantalla, se silencie el teléfono, o se pase a otra aplicación. Introduce la configuración necesaria para conseguir este comportamiento.
+
+
+Como mejoras se propone:
+
+* Introduce información del audio que se está reproduciendo en `MPNowPlayingInfoCenter` para que así se muestre información en la pantalla de bloqueo.
+* Haz que la aplicación responda ante el control remoto del audio, permitiendo pausar o reanudar la reproducción actual desde la pantalla de bloqueo o desde el botón de los auriculares.
+* Haz que el desconectar los auriculares se detenga automáticamente la reproducción del audio.
+
+
+### Reproducción de VOD
+
+Accederemos a los vídeos mediante Wowza (debemos tener publicados vídeos en VOD). Más adelante publicaremos fuentes de emisión en directo.
+
+Al seleccionar un vídeo de la lista mostraremos el controlador del reproductor asignándole la URL correspondiente.
+
+Como mejora se proponer crear un controlador de reproducción de vídeo propio, que en caso de estar en orientación vertical muestre un fondo decorativo para la parte de la pantalla que queda en negro.
+
+
