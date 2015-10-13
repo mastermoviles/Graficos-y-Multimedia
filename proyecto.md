@@ -129,3 +129,40 @@ Al seleccionar un vídeo de la lista mostraremos el controlador del reproductor 
 Como mejora se proponer crear un controlador de reproducción de vídeo propio, que en caso de estar en orientación vertical muestre un fondo decorativo para la parte de la pantalla que queda en negro.
 
 
+## Emisión de vídeo en directo desde Android
+
+Vamos a desarrollar una aplicación Android que utilice la librería _libstreaming_ para enviar vídeo por RTSP desde un móvil Android a Wowza. Consideramos que podremos tener una lista predeterminada de canales en el servidor, todos ellos bajo la aplicación `live`, por ejemplo:
+
+```
+/live/canalA.stream
+/live/canalB.stream
+/live/canalC.stream
+/live/canalD.stream
+```
+
+En la pantalla principal de la aplicación Android tendremos un menú con las siguientes opciones:
+
+* _Configurar la emisión_
+* _Comenzar la emisión_
+* _Acerca de_
+
+### Configurar la emisión
+
+Nos permitirá:
+
+* Establecer el canal en el que emitir entre la lista de canales predeterminados que vayamos a considerar para nuestra aplicación.
+* Establecer la calidad del vídeo a emitir, entre una serie de posibles _presets_ que deberemos definir.
+
+### Comenzar la emisión
+
+Lanzará una pantalla que establecerá la conexión con la URL del servidor Wowza (la URL dependerá del canal que hayamos seleccionado), y una vez haya conectado mostraremos una previsualización del vídeo que se esté emitiendo. Deberá mostrar también un botón para detener la emisión, con el que además volveremos al menú principal.
+
+### Acerca de
+
+Mostrará el nombre de la aplicación y del autor de la misma. Debe permitir volver al menú principal.
+
+
+## Recepción en iOS
+
+Deberemos actualizar la aplicación iOS para que en la sección de _directos_ muestre la lista de posibles canales que hayamos predefinido. Al pulsar sobre alguno de ellos mostrará un reproductor de vídeo que conectará a la URL adecuada para mostrar el directo mediante _HTTP Live Streaming_.
+
