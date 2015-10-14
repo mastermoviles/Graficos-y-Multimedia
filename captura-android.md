@@ -311,7 +311,7 @@ try {
 
 ### API de Camara 2
 
-A partir de Android 5.0 (_Lollipop_) aparece una nueva versión de API de cámara, que nos permite tener un mayor control sobre este dispositivo, pasando la antigua API a estar desaprobada. Sin embargo, la nueva API no es compatible con versiones anteriores de Android, por lo que si queremos mantener la compatibilidad con versiones de Android anteriores a la 5.0 (API 21) deberemos utilizar la antigua cámara, o bien código separado para cada versión:
+A partir de Android 5.0 (_Lollipop_) aparece una nueva versión de API de cámara (`android.hardware.camera2`), que nos permite tener un mayor control sobre este dispositivo, pasando la antigua API a estar desaprobada. Sin embargo, la nueva API no es compatible con versiones anteriores de Android, por lo que si queremos mantener la compatibilidad con versiones de Android anteriores a la 5.0 (API 21) deberemos utilizar la antigua cámara, o bien código separado para cada versión:
 
 ```java
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -321,7 +321,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 }
 ```
 
-
+La nueva API de cámara deja desaprobada la clase `Camera`, y en su lugar utilizar `CameraDevice`. Para acceder a las cámaras disponibles se proporciona la clase `CameraManager`.
 
 
 ### Captura de vídeo con `MediaRecorder`
@@ -417,7 +417,7 @@ asignarlo al objeto `MediaRecorder` invocando al método `setPreviewDisplay`, ta
 public class CapturaActivity extends Activity implements SurfaceHolder.Callback
 {
 
-	private MediaRecorder mediaRecorder;
+	private MediaRecorder mMediaRecorder;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -432,21 +432,21 @@ public class CapturaActivity extends Activity implements SurfaceHolder.Callback
 	}
 
 	public void surfaceCreated(SurfaceHolder holder) {
-		if (mediaRecorder != null) {
+		if (mMediaRecorder != null) {
 			try {
-				mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-				mediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
+				mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+				mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
 
-				mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
+				mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
 
-				mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
-				mediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.DEFAULT);
+				mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
+				mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.DEFAULT);
 
-				mediaRecorder.setOutputFile("/sdcard/myoutputfile.mp4");
+				mMediaRecorder.setOutputFile("/sdcard/myoutputfile.mp4");
 
 				// Asociando la previsualización a la superficie
-				mediaRecorder.setPreviewDisplay(holder.getSurface());
-				mediaRecorder.prepare();
+				mMediaRecorder.setPreviewDisplay(holder.getSurface());
+				mMediaRecorder.prepare();
 			} catch (IllegalArgumentException e) {
 				Log.d("MEDIA_PLAYER", e.getMessage());
 			} catch (IllegalStateException e) {
@@ -458,7 +458,7 @@ public class CapturaActivity extends Activity implements SurfaceHolder.Callback
 	}
 
 	public void surfaceDestroyed(SurfaceHolder holder) {
-		mediaRecorder.release();
+		mMediaRecorder.release();
 	}
 
 	public void surfaceChanged(SurfaceHolder holder,
