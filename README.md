@@ -3,13 +3,13 @@
 
 La capacidad de reproducir contenido multimedia es una característica presente en la práctica totalidad de los terminales telefónicos existentes en el mercado hoy en día, y es de especial importancia en el caso de los _smartphones_ y _tablets_. En la asignatura **Gráficos y Multimedia** del [Máster Universitario en Desarrollo de Software para Dispositivos Móviles de la Universidad de Alicante](http://eps.ua.es/master-moviles) veremos cómo trabajar con contenido multimedia, y como mostrar gráficos 3D de alto rendimiento en dispositivos Android e iOS.
 
- 
+
 
 # Copyright
 
 _Copyright_ 2015-2016 Universidad de Alicante. Todos los derechos reservados.
 
-Este documento está protegido por _copyright_ y se distribuye bajo licencias que restringen su uso, copia y distribución. Se restringe al uso estrictamente personal y como material didáctico del Máster Universitario en Desarrollo de Software para Dispositivos Móviles, curso 2014-2015, de la Universidad de Alicante.
+Este documento está protegido por _copyright_ y se distribuye bajo licencias que restringen su uso, copia y distribución. Se restringe al uso estrictamente personal y como material didáctico del Máster Universitario en Desarrollo de Software para Dispositivos Móviles, curso 2015-2016, de la Universidad de Alicante.
 
 La distribución y copia de este documento no están permitidas, salvo autorización previa de la Universidad de Alicante.
 
