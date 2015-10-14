@@ -193,6 +193,10 @@ Además de esto, para poder continuar la reproducción con la aplicación cerrad
 
 ![Reproducción de audio en segundo plano](imagenes/ios-audio-background.png)
 
+Esto lo podemos hacer también desde la pestaña _Capabilities_ del nuestro _target_, activando los _Background Modes_, y dentro de estos el de _Audio, AirPlay and Picture in Picture_:
+
+![Activar background mode de audio](imagenes/backgroud-audio.png)
+
 
 Esta reproducción en segundo plano también nos servirá para emitir la reproducción vía _AirPlay_.
 
@@ -459,7 +463,7 @@ añadamos a dicha vista, se mostrará como fondo del vídeo. Por ejemplo podemos
 ![Reproductor de video con imagen de fondo](imagenes/video_player_background_image.jpg)
 
 
-### Reproducción con ´AVPlayer´
+### Reproducción con `AVPlayer`
 
 A partir de iOS 4.0 tenemos la posibilidad de reproducir video con `AVPlayer` y
 `AVPlayerLayer`. El primer objeto es el reproductor de vídeo, mientras que el segundo
@@ -473,6 +477,34 @@ AVPlayer *player = [AVPlayer playerWithUrl: videoUrl];
 AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
 [self.view.layer addSublayer:playerLayer];
 ```
+
+A partir de iOS 8 aparece además la clase `AVPlayerViewController`, que nos proporciona un controllador que permite reproducir vídeo de forma sencilla mediante un objeto `AVPlayer` a pantalla completa o en PiP (_Picture in Picture_):
+
+```objectivec
+AVPlayerViewController *controller = [[AVPlayerViewController alloc] init];
+AVPlayer *player = [AVPlayer playerWithURL:videoUrl];
+controller.player = player;
+    
+[self presentViewController:controller animated:YES completion:nil];
+```
+
+A partir de iOS 9 esta es la forma recomendada de reproducir vídeo, quedando desaprobado el uso de `MPMoviePlayerViewController`. Utilizaremos éste último únicamente si necesitamos tener compatibilidad con versiones de iOS previas a la 8.
+
+La nueva clase `AVPlayerViewController` nos permitirá también poner una vista superpuesta sobre el vídeo, o controlar la zona de la pantalla en la que se mostrará el vídeo, al igual que en el caso del componente ahora desaprobado. 
+
+Para tener control sobre el estado del vídeo en reproducción podemos utilizar KVO sobre propiedades del objeto `AVPlayer`, o podemos suscribirlos a la notificación `AVPlayerItemDidPlayToEndTimeNotification` del _item_ que se esté reproduciendo actualmente para estar al tanto de su finalización:
+
+```objectivec
+[[NSNotificationCenter defaultCenter]
+        addObserver:self
+        selector:@selector(reproduccionFinalizada:)
+        name:AVPlayerItemDidPlayToEndTimeNotification
+        object:[player currentItem]];
+```
+
+Para utilizar PiP (disponible únicamente en iPad a partir de iOS 9) deberemos activar el modo _Audio, AirPlay and Picture in Picture_ como _Background Modes_, en la pestaña _Capabilities_ de nuestro _target_, y además configurar la sesión de audio de forma apropiada, como hemos visto anteriormente.
+
+
 
 ### AirPlay y reproducción de vídeo
 
