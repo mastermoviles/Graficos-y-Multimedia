@@ -161,7 +161,7 @@ Para poder capturar audio y video desde nuestra propia actividad, sin lanzar la 
 ```
 
 
-### La cámara
+### La cámara 
 
 Tanto si queremos tomar fotografías como grabar vídeo necesitaremos tener acceso a la cámara del dispositivo. Para ello deberemos solicitar el permiso `CAMERA`:
 
@@ -307,6 +307,21 @@ try {
     fos.close();
 } catch (Exception e) { }
 ```
+
+
+### API de Camara 2
+
+A partir de Android 5.0 (_Lollipop_) aparece una nueva versión de API de cámara, que nos permite tener un mayor control sobre este dispositivo, pasando la antigua API a estar desaprobada. Sin embargo, la nueva API no es compatible con versiones anteriores de Android, por lo que si queremos mantener la compatibilidad con versiones de Android anteriores a la 5.0 (API 21) deberemos utilizar la antigua cámara, o bien código separado para cada versión:
+
+```java
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    // Camara 2
+} else {
+    // Camara 1
+}
+```
+
+
 
 
 ### Captura de vídeo con `MediaRecorder`
