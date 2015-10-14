@@ -3,7 +3,7 @@
 
 La capacidad de reproducir contenido multimedia es una característica presente en la práctica totalidad de los terminales telefónicos existentes en el mercado hoy en día, y es de especial importancia en el caso de los _smartphones_ y _tablets_. En la asignatura **Gráficos y Multimedia** del [Máster Universitario en Desarrollo de Software para Dispositivos Móviles de la Universidad de Alicante](http://eps.ua.es/master-moviles) veremos cómo trabajar con contenido multimedia, y como mostrar gráficos 3D de alto rendimiento en dispositivos Android e iOS.
 
-
+ 
 
 # Copyright
 
