@@ -409,13 +409,13 @@ Vamos a probar el efecto de utilizar o no _faststart_ en un vídeo MP4. Se pide:
 
 * Descarga de los recursos de la sesión el fichero _Video sin faststart_ y publícalo en el servidor web que utilizaste en el ejercicio anterior.
 
-* Abre un emulador de Android 1.6 y accede a la URL del vídeo desde su navegador. ¿Qué ocurre?
+* Abre el fichero con un editor de texto o hexadecimal. ¿Dónde está el bloque `moov`? Si cuentas con un dispositivo móvil Android o emulador con una versión previa a la 2.2, accede a la URL del vídeo desde su navegador. ¿Qué ocurre?
 
 * Modificar el vídeo con `ffmpeg` para añadir _faststart_.
 ```bash
 ffmpeg -i video.mp4 -c:a copy -c:v copy -movflags faststart video_fs.mp4
 ```
 
-* Publica el vídeo modificado y vuelve a probarlo desde el navegador del emulador. ¿Qué ocurre ahora?
+* Abre el fichero con un editor y busca el bloque `moov` de nuevo. ¿Dónde está ahora? Publica el vídeo modificado y vuelve a probarlo desde el navegador del móvil. ¿Qué ocurre ahora?
 
 
