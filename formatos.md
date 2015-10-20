@@ -21,7 +21,7 @@ En esta sección veremos la manera de añadir archivos a la tarjeta de memoria d
 
 
 * En primer lugar el emulador debe encontrarse en funcionamiento, y por supuesto, el dispositivo emulado debe hacer uso de una tarjeta SD.
-* En Android Studio debemos abrir la ventana _Android Device Monitor . Para ello hacemos uso de la opción _Tools > Android > Android Device Monitor_
+* En Android Studio debemos abrir la ventana _Android Device Monitor_ . Para ello hacemos uso de la opción _Tools > Android > Android Device Monitor_
 
 ![Android Device Monitor](imagenes/adm.png)
 
