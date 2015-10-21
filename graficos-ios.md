@@ -231,6 +231,18 @@ CGRect area = CGRectMake(10, 10, 100, 20);
                     alignment:UITextAlignmentRight];
 ```
 
+El método anterior, aunque cómodo de utilizar, ha sido desaprobado en las últimas versiones de iOS y en su lugar se recomienda utilizar una variante más genérica:
+
+```objectivec
+NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys: 
+        font, NSFontAttributeName,
+        [UIColor whiteColor], NSForegroundColorAttributeName,
+        nil];
+
+[texto drawInRect: area
+    withAttributes:dictionary];
+```
+
 La propia clase `NSString` también nos proporciona información sobre las métricas del texto, de una forma mucho más sencilla que el método visto anteriormente con Core Graphics, mediante el método `sizeWithFont:` y sus variantes.
 
 Si necesitamos tener un mayor control sobre la forma de dibujar texto, y evitar los problemas de codificación de Core Graphics, podemos utilizar Core Text.
@@ -570,7 +582,7 @@ _c)_. El texto tendrá color de relleno blanco, y se dibujará en la posición i
 
 _d)_ Para terminar de dibujar la leyenda, vamos a crear un marco que la englobe. Tras el bucle `for` sabremos cuál es la posición _y_ final de la leyenda, y el texto que ha sido más largo (dentro del bucle se están comprobando las métricas del texto para tener esta información). Sabiendo esto, sabremos el tamaño que debe tener el rectángulo para que se adapte al número de líneas que tenemos, y a la leyenda de todas ellas. En el código encontramos un rectángulo llamado `recuadro` que nos da esa información. Vamos a dibujar un rectángulo blanco sin relleno con esas dimensiones.
 
-_e)_ Una vez dibujada la leyenda, vamos a terminar de decorar la gráfica dibujando un gradiente de fondo, en lugar de un color sólido. Esto deberemos hacerlo al principio de la función `drawRect:`, ya que el fondo debe dibujarse antes que el resto de elementos para que quede por debajo. Buscaremos el lugar donde tenemos un comentario de tipo `TODO` referente al apartado _(e)_, y dibujaremos ahí un gradiente desde gris oscuro hasta gris intermedio que varíe en la vertical, desde _y=0_ hasta _y=320_.
+_e)_ Una vez dibujada la leyenda, vamos a terminar de decorar la gráfica dibujando un gradiente de fondo, en lugar de un color sólido. Esto deberemos hacerlo al principio de la función `drawRect:`, ya que el fondo debe dibujarse antes que el resto de elementos para que quede por debajo. Buscaremos el lugar donde tenemos un comentario de tipo `TODO` referente al apartado _(e)_, y dibujaremos ahí un gradiente desde gris oscuro hasta gris intermedio que varíe en la vertical, desde _y=0_ hasta _y=ancho_.
 
 
 ![Aspecto de la gráfica resultante](imagenes/ej_grafica.jpg "Aspecto de la gráfica resultante")
@@ -591,7 +603,7 @@ Vamos a hacer que al pulsar cualquiera de estos botones, la capa se mueva median
 _c)_ La aplicación tiene también un botón _Carátula_ que nos lleva a una vista modal que muestra en grande la caráctula de la película. Esta pantalla se implementa en el controlador
 `UACaratulaViewController`. En este controlador se definen dos vistas de tipo imagen: `vistaFrontal` y `vistaReverso`, con la imagen del anverso y el reverso de la carátula de la película. Sin embargo, en un primer momento sólo se muestra la imagen frontal. Vamos a hacer que al pulsar el botón _Girar_ la carátula gire mediante una animación para cambiar entre anverso y reverso. Deberemos implementar esta transición con las facilidades de la clase `UIView` en el método `botonGirarPulsado:`.
 
-> Detalle de implementación. Podemos observar que en ese método distinguimos la vista que se está mostrando actualmente según si su propiedad `superview` es `nil`
+> Detalle de implementación: Podemos observar que en ese método distinguimos la vista que se está mostrando actualmente según si su propiedad `superview` es `nil`
 o no. Cuando una vista se muestra en pantalla siempre tiene una supervista. Si no tiene supervista quiere decir que no se está mostrando actualmente. Así podemos hacer esta distinción de forma sencilla.
 
 _d)_ Para terminar, vamos a implementar las funcionalidades de los botones _Zoom In_ y _Zoom Out_. Con el primero de ellos veremos la portada ocupando toda la pantalla, mientras que con el segundo la reduciremos a la mitad de su tamaño. Esto deberemos hacerlo con las facilidades que nos proporciona la clase `UIView` para hacer animaciones, en los métodos `botonZoomInPulsado` y `botonZoomOutPulsado`. En el primero de ellos haremos con el tamaño de las vistas `vistaFrontal` y `vistaReverso` (propiedad `bounds`) sea _(0,0,320,416)_. En el segundo de ellos modificaremos estas propiedades a la mitad de tamaño: _(0,0,160, 208)_. Ten en cuenta que podemos modificar el tamaño de ambas vistas simultáneamente.
