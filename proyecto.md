@@ -61,7 +61,7 @@ Ahora podremos probar el enlace en el móvil directamente, ya que al estar en la
 
 Vamos a crear la aplicación iOS para nuestra plataforma de televisión _online_.
 
-### Estructura de la aplicación
+### Creación de la aplicación
 
 Recordemos que la aplicación debe tener las siguientes secciones:
 
@@ -70,43 +70,21 @@ Recordemos que la aplicación debe tener las siguientes secciones:
 * **Directo**
 * **Acerca de**
 
-Para ello seguiremos los siguientes pasos:
+Para ello **creamos una aplicación basada en _Tab Bar_**. Esto nos creará una aplicación con dos controladores: _First View Controller_ y _Second View Controller_.
 
-1. Creamos una aplicación basada en _Tab Bar_
+Más adelante definiremos una pestaña para cada sección de la aplicación en el _Tab Bar_. De momento aprovecharemos las que nos ha creado la plantilla.
 
-2. Eliminamos _Second View Controller_ del _storyboard_
 
-3. Arrastramos tres _Table View Controller_ sobre el _storyboard_
+### Tipos de datos
 
-4. Podemos darles a estos controladores un nombre identificativo (_Radio, Videoclub, Directo_)
-
-5. Conectamos cada controlador con el _Tab Bar Controller_ con un _segue_ de tipo _Relationship_, para que aparezcan como pestañas del mismo (seleccionamos el _Table View Controller_, y desde la pestaña _Connections_ del inspector conectamos el _segue relationship_ con el controlador _Tab Bar_.
-
-6. Introducimos cada _Table View Controller_ dentro de un Navigation Controller, seleccionándolo en el _storyboard_ y pulsando _Editor > Embed In > Navigation Controller_.
-
-7. En cada controlador establecemos el nombre e icono para su pestaña.
-> Podemos encontrar _packs_ de iconos de estilo _line_ gratuitos para la aplicación iOS:
-http://www.iconbeast.com
-http://www.flaticon.com/packs/line-icon-set
-
-8. Creamos una clase que herede de `UITableViewController` para cada controlador, y las conectamos desde el inspector de identidades estos controladores.
-
-9. Creamos una clase `UAMedio` que nos sirva para encapsular los datos de cada medio, de los que debemos tener
+Creamos una clase `UAMedio` que nos sirva para encapsular los datos de cada medio, de los que debemos tener
  * título (`NSString`)
  * artista (`NSString`)
  * album (`NSString`)
  * portada (`UIImage`)
  * url (`NSURL`)
 
-10. En cada controlador creamos una propiedad que almacene una lista de medios. Inicializaremos dicha lista en el método `viewDidLoad`, con una serie de objetos `UAMedio`. Poblaremos las tablas con los datos obtenidos de estas listas de medios en cada una de las pantallas ("Radio", "Videoclub" y "Directo").
-
-> Las listas de audio y vídeo serán fijas, podemos crearlas directamente desde código. En otras asignaturas veremos cómo obtenerlas de una base de datos o de servicios en la red.
-
-### Acerca de
-
-Crearemos una pantalla _"Acerca de..."_ para la aplicación iOS en la que veremos el nombre de la aplicación, el nombre del autor, y una vista propia creada con Core Graphics que mostrará un gráfico de tipo _tarta_ que indicará la proporción de cada tipo de medio (directo, VOD y audio) disponible en la plataforma.
-
-> **Ayuda**: Se recomienda crear una clase que haga de _fuente de datos_, y nos proporcione acceso a la lista de medios de cada tipo de forma centralizada. Podemos utilizar el patrón _singleton_ para dicha clase.
+Crearemos una clase `UAFuenteDatos` que haga de _fuente de datos_, y nos proporcione acceso a la lista de medios de cada tipo de forma centralizada. Podemos utilizar el patrón _singleton_ para dicha clase.
 
 Para implementar el patrón _singleton_ en Objective-C podemos utilizar un método de clase como el siguiente:
 
@@ -119,10 +97,52 @@ Para implementar el patrón _singleton_ en Objective-C podemos utilizar un méto
     return datos;
 ```
 
+La clase `UAFuenteDatos` debe proporcionarnos 3 listados:
+* Lista de audios
+* Lista de videos bajo demanda
+* Lista de emisiones en directo
+
+Todos ellos serán _arrays_ de objetos de tipo `UAMedio`. 
+
+> Las listas de audio y vídeo serán fijas, podemos crearlas directamente desde código. En otras asignaturas veremos cómo obtenerlas de una base de datos o de servicios en la red.
+
+
+### Acerca de
+
+Crearemos una pantalla _"Acerca de..."_ para la aplicación iOS en la que veremos el nombre de la aplicación, el nombre del autor, y una vista propia creada con Core Graphics que mostrará un gráfico de tipo _tarta_ que indicará la proporción de cada tipo de medio (directo, VOD y audio) disponible en la plataforma (a partir de los datos que proporciona `UAFuenteDatos`).
+
+Para crear esta pantalla aprovecharemos el controlador _First View Controller_. Podemos cambiar su nombre para que pase a ser _"Acerca de"_. 
+
 Como posibles mejores se propone:
 
 * Añadir alguna animación utilizando Core Animation.
 * Añadir alguna gráfica alternativa. 
+
+
+### Estructura de la aplicación
+
+Vamos a crear el resto de la estructura de la aplicación, con una pestaña para cada sección. Para ello:
+
+1. Eliminamos _Second View Controller_ del _storyboard_
+
+2. Arrastramos tres _Table View Controller_ sobre el _storyboard_
+
+3. Podemos darles a estos controladores un nombre identificativo (_Radio, Videoclub, Directo_)
+
+4. Conectamos cada controlador con el _Tab Bar Controller_ con un _segue_ de tipo _Relationship_, para que aparezcan como pestañas del mismo (seleccionamos el _Table View Controller_, y desde la pestaña _Connections_ del inspector conectamos el _segue relationship_ con el controlador _Tab Bar_.
+
+5. Introducimos cada _Table View Controller_ dentro de un Navigation Controller, seleccionándolo en el _storyboard_ y pulsando _Editor > Embed In > Navigation Controller_.
+
+6. En cada controlador establecemos el nombre e icono para su pestaña.
+> Podemos encontrar _packs_ de iconos de estilo _line_ gratuitos para la aplicación iOS:
+http://www.iconbeast.com
+http://www.flaticon.com/packs/line-icon-set
+
+7. Creamos una clase que herede de `UITableViewController` para cada controlador, y las conectamos desde el inspector de identidades estos controladores.
+
+8. En cada controlador creamos una propiedad que almacene una lista de medios. Inicializaremos dicha lista en el método `viewDidLoad`, a partir de las listas de objetos `UAMedio` que nos proporciona `UAFuenteDatos`. Poblaremos las tablas con los datos obtenidos de estas listas de medios en cada una de las pantallas ("Radio", "Videoclub" y "Directo").
+
+
 
 ## Reproducción de medios en iOS (sesión de 27-10-2015)
 
