@@ -108,6 +108,17 @@ Crearemos una pantalla _"Acerca de..."_ para la aplicación iOS en la que veremo
 
 > **Ayuda**: Se recomienda crear una clase que haga de _fuente de datos_, y nos proporcione acceso a la lista de medios de cada tipo de forma centralizada. Podemos utilizar el patrón _singleton_ para dicha clase.
 
+Para implementar el patrón _singleton_ en Objective-C podemos utilizar un método de clase como el siguiente:
+
+```objectivec
++ (UAFuenteDatos) sharedFuenteDatos {
+    static FuenteDatos *datos = nil;
+    if(nil == datos) {
+        datos = [[FuenteDatos alloc] init];
+    }
+    return datos;
+```
+
 Como posibles mejores se propone:
 
 * Añadir alguna animación utilizando Core Animation.
