@@ -111,10 +111,10 @@ Crearemos una pantalla _"Acerca de..."_ para la aplicación iOS en la que veremo
 Para implementar el patrón _singleton_ en Objective-C podemos utilizar un método de clase como el siguiente:
 
 ```objectivec
-+ (UAFuenteDatos) sharedFuenteDatos {
-    static FuenteDatos *datos = nil;
++ (UAFuenteDatos*) sharedFuenteDatos {
+    static UAFuenteDatos *datos = nil;
     if(nil == datos) {
-        datos = [[FuenteDatos alloc] init];
+        datos = [[UAFuenteDatos alloc] init];
     }
     return datos;
 ```
