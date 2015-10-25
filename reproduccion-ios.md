@@ -201,37 +201,6 @@ Esto lo podemos hacer también desde la pestaña _Capabilities_ del nuestro _tar
 Esta reproducción en segundo plano también nos servirá para emitir la reproducción vía _AirPlay_.
 
 
-### AirPlay
-
-Podemos enviar mediante AirPlay audio o vídeo almacenado localmente en el dispositivo, o al que accedemos de forma remota mediante _HTTP Live Streaming_ o descarga progresiva, siendo _HTTP Live Streaming_ el sistema preferido. En cualquier caso, siempre se debe acceder al contenido mediante HTTP. El audio y vídeo debe estar codificado en formatos compatibles con AirPlay: vídeo H.264 y audio AAC o MP3.
-
-AirPlay está por defecto activado cuando reproducimos medios con MoviePlayer o con AVFoundation. Para poder seleccionar el dispositivo de salida del audio o el vídeo podemos introducir un botón predefinido que nos mostrará la lista de posibles dispositivos. Esto lo haremos creando un objeto de tipo `MPVolumeView` y añadiéndolo a la vista donde queremos mostrarlo:
-
-```objectivec
-MPVolumeView *volumeView = [ [MPVolumeView alloc] init];
-[view addSubview: volumeView];
-```
-
-Este componente mostrará un control de volumen y además el botón para seleccionar la salida. Si sólo queremos mostrar el botón podemos ocultar la barra de volumen de la siguiente forma:
-
-```objectivec
-MPVolumeView *volumeView = [ [MPVolumeView alloc] init];
-[volumeView setShowsVolumeSlider:NO];
-[volumeView sizeToFit];
-[view addSubview: volumeView];
-```
-
-También es posible añadir el botón anterior como botón de la barra de navegación o de herramientas, de la siguiente forma:
-
-```objectivec
-MPVolumeView *volumeView = [ [MPVolumeView alloc] init];
-[volumeView setShowsVolumeSlider:NO];
-[volumeView sizeToFit];
-
-UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:volumeView];
-self.navigationItem.rightBarButtonItem = barButton;
-```
-
 ### Metadatos del audio
 
 Podemos establecer metadatos del medio que actualmente se esté reproduciendo con:
@@ -503,22 +472,6 @@ Para tener control sobre el estado del vídeo en reproducción podemos utilizar 
 ```
 
 Para utilizar PiP (disponible únicamente en iPad a partir de iOS 9) deberemos activar el modo _Audio, AirPlay and Picture in Picture_ como _Background Modes_, en la pestaña _Capabilities_ de nuestro _target_, y además configurar la sesión de audio de forma apropiada, como hemos visto anteriormente.
-
-
-
-### AirPlay y reproducción de vídeo
-
-La emisión de vídeo por AirPlay estará activa por defecto tanto cuando utilicemos `AVPlayer` como `MPMoviePlayerController`. Podemos desactivarlo o volverlo a activar con las siguientes propiedades:
-
-```objectivec
-AVPlayer *player;
-MPMoviePlayerController moviePlayerController;
-
-...
-
-moviePlayerController.allowsAirPlay = NO;
-player.allowsAirPlayVideo = NO;
-```
 
 
 ## Ejercicios
