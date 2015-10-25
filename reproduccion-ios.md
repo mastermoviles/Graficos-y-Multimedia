@@ -531,21 +531,20 @@ proyecto `VideoPlayer`. Vemos que tiene un botón _Reproducir vídeo_, y un fich
 
 _a)_ Reproducir el vídeo con la pantalla de reproducción predefinida (`MPMoviePlayerViewController`).
 
-_b)_ Modifica el código anterior para utilizar `AVPlayerViewController` y `AVPlayer`.
-
-_c)_ Comentar el código implementado en el punto anterior. Ahora vamos a crear un reproductor propio
+_b)_ Comentar el código implementado en el punto anterior. Ahora vamos a crear un reproductor propio
 mediante `MPMoviePlayerController`. Crearemos un reproductor de este tipo, haremos que su tamaño sea
 el mismo tamaño de la vista principal, añadiremos el reproductor a dicha vista como subvista, y comenzaremos la reproducción.
-_d)_ Con el reproductor anterior tenemos el problema de que al finalizar el vídeo el reproductor
+_c)_ Con el reproductor anterior tenemos el problema de que al finalizar el vídeo el reproductor
 se queda en pantalla y no hay forma de salir de él. Vamos a escuchar la notificación de reproducción finalizada para que cuando esto ocurra el reproductor sea eliminado de pantalla. Cuando recibamos esta notificación llamaremos al método `videoPlaybackDidFinish:`, que ya se encuentra implementado.
 
-_e)_ Si giramos el dispositivo veremos que el vídeo no se adapta de forma correcta a la pantalla.
+_d)_ Si giramos el dispositivo veremos que el vídeo no se adapta de forma correcta a la pantalla.
 Ajustar su propiedad `autoresizingMask` para que sea flexible tanto de ancho como de alto.
 Comprobar ahora que al girar la pantalla el vídeo se adapta correctamente.
 
-_f)_ Al reproducir el vídeo en vertical gran parte de la pantalla queda en negro. Vamos a decorar
+_e)_ Al reproducir el vídeo en vertical gran parte de la pantalla queda en negro. Vamos a decorar
 el fondo para darle un mejor aspecto. Crearemos una vista que muestre la imagen `fondo.png`, y
 la mostraremos como subvista de la vista de fondo del vídeo.
 
-_g)_ Por último, para que el reproductor quede totalmente integrado en nuestra aplicación, eliminaremos los controles de reproducción que incorpora por defecto. De esta forma el usuario no podrá saltar el vídeo, ni volver atrás en él.
+_f)_ Por último, para que el reproductor quede totalmente integrado en nuestra aplicación, eliminaremos los controles de reproducción que incorpora por defecto. De esta forma el usuario no podrá saltar el vídeo, ni volver atrás en él.
 
+_g)_ Modifica el código anterior para utilizar `AVPlayerViewController` y `AVPlayer`. Ten en cuenta que deberás incluir los _frameworks_ `AVFoundation` y `AVKit`, y sus _imports_ correspondientes.
