@@ -171,9 +171,9 @@ Mediante la propiedad anterior podemos tomar la decisión de reproducir música 
 
 ```objectivec
 if ([self.audioSession isOtherAudioPlaying]) {
+    // El sonido de esta aplicación se mezcla con el de fondo
     [self.audioSession setCategory:AVAudioSessionCategoryAmbient error:&error];
 } else {
-    // El sonido de esta aplicación se mezcla con el de fondo
     [self.audioSession setCategory:AVAudioSessionCategorySoloAmbient error:&error];
     [self reproduceMusica];
 }
