@@ -667,11 +667,9 @@ mostrar la imagen obtenida en segundo plano en la interfaz.
 
 ### Detección de caras
 
-A parte de los filtros vistos anteriormente, Core Image también incluye detectores de características en imágenes. Por el
-momento sólo encontramos implementada la detección de caras, pero la API está diseñada para poder ser ampliada en el futuro.
+A parte de los filtros vistos anteriormente, Core Image también incluye detectores de características en imágenes,  como por ejemplo detectores de caras, de texto, o de códigos QR. La API está diseñada para poder ser ampliada en el futuro.
 
-Los detectores los crearemos mediante la clase `CIDetector`. Deberemos proporcionar el tipo de detector a utilizar,
-por el momento el único disponible es `CIDetectorTypeFace`. Podemos además especificar una serie de parámetros, como
+Los detectores los crearemos mediante la clase `CIDetector`. Deberemos proporcionar el tipo de detector a utilizar, por ejemplo `CIDetectorTypeFace` para el detector de caras. Podemos además especificar una serie de parámetros, como
 el nivel de precisión que queremos obtener:
 
 ```objectivec
