@@ -543,6 +543,8 @@ basado en GPU se descarga totalmente a la CPU del procesamiento de la imagen, po
 eficiente. Sin embargo, para utilizar la GPU nuestra aplicación siempre debe estar en primer plano. Si queremos
 procesar imágenes en segundo plano deberemos utilizar el contexto basado en CPU.
 
+#### Procesamiento en contexto de CPU
+
 Para crear un contexto basado en CPU utilizaremos el método `contextWithOption:`
 
 ```objectivec
@@ -559,6 +561,8 @@ CGImageRef cgImage = [context createCGImage:filteredImage
                                    fromRect:filteredImage.extent];
 ```
 
+#### Procesamiento en contexto de GPU
+
 En el caso del contexto basado en GPU, en primer lugar deberemos crear el contexto OpenGL en nuestra aplicación.
 Esto se hará de forma automática en el caso en el que utilicemos la plantilla de Xcode de aplicación basada en
 OpenGL, aunque podemos también crearlo de forma sencilla en cualquier aplicación con el siguiente código:
@@ -573,6 +577,13 @@ método `contextWithEAGLContext:`
 
 ```objectivec
 CIContext *context = [CIContext contextWithEAGLContext: glContext];
+```
+
+Para realizar el procesamiento en tiempo real, si no necesitamos una alta fidelidad de color, se recomienda desactivar el uso del _color space_:
+
+```objectivec
+NSDictionary *options = @{ kCIContextWorkingColorSpace : [NSNull null] };
+CIContext *context = [CIContext contextWithEAGLContext:glContext options:options];
 ```
 
 En este caso, para renderizar la imagen deberemos utilizar el método `drawImage:atPoint:fromRect:`
