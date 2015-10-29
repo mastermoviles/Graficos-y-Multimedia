@@ -173,6 +173,16 @@ Al seleccionar un vídeo de la lista mostraremos el controlador del reproductor 
 
 Como mejora se proponer crear un controlador de reproducción de vídeo propio, que en caso de estar en orientación vertical muestre un fondo decorativo para la parte de la pantalla que queda en negro.
 
+> **IMPORTANTE**: A partir de iOS 9 sólo se permite acceder a los vídeos mediante HTTPS, mientras que Wowza por defecto funciona sobre HTTP. Como solución temporal, se puede añadir la siguiente configuración a `Info.plist` para permitir vídeos por HTTP, aunque lo recomendable es disponer de los contenidos mediante HTTPS:
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+
 
 ## Emisión de vídeo en directo desde Android (sesión de 3-11-2015)
 
