@@ -420,6 +420,21 @@ Además de poder emitir medios desde los dispositivos móviles a dispositivos ex
 
 Vamos a ver a continuación una introducción a estos sistemas tvOS y Android TV.
 
+### Apple TV y tvOS
+
+El sistema operativo tvOS deriva de iOS, pero se trata de un operativo diferente. Veremos que el desarrollo será muy similar al que ya conocemos de iOS, podemos desarrollar una aplicación tvOS con Xcode, e incluso una misma aplicación puede destinarse a iOS y tvOS creando dos _targets_ distintos, y así reutilizar todas las clases que sean comunes. Una aplicación iOS se podrá normalmente ofrecer en tvOS sin tener que hacer cambios, simplemente añadiendo el _target_ correspondiente. La principal diferencia entre estos dos sistemas es que tvOS añade algunos nuevos _frameworks_ destinados a crear aplicaciones para TV.
+
+Los principales _frameworks_ adicionales que encontramos en tvOS son:
+
+* **TVMLKit**: Permite utilizar un lenguaje de marcado propio (TVML) y Javascript para crear la interfaz de las aplicaciones para TV. Este _framework_ nos proporciona el puente entre el código nativo de la aplicación y el código Javascript de la interfaz.
+* **TVMLJS**: Describe las APIs Javascript utilizadas en la interfaz TVML.
+* **TVServices**: Permite añadir una extensión a la _app_ para que cuando la seleccionemos en el menú de aplicaciones, nos aparezca en pantalla una previsualización de información destacada de la aplicación (por ejemplo contenidos recomendados). 
+
+Algunas de las principales cuestiones a tener en cuenta cuando diseñemos una aplicación tvOS son:
+
+* La interfaz ya no es táctil. Normalmente manejaremos el dispositivo con el mando a distancia (_Siri Remote_) o con un mando de videojuegos. 
+* No es un dispositivo de uso personal. Los dispositivos móviles normalmente son personales, pero la TV es familiar. Deberemos tener esto en cuenta, por ejemplo creando diferentes perfiles como hacen por ejemplo aplicaciones como Netflix.
+* El almacenamiento es limitado. Las aplicaciones pueden ocupar un máximo de 200Mb, y pueden almacenar un máximo de 500Kb de datos persistentes. Para poder tener aplicaciones más grandes, podemos utilizar _recursos bajo demanda_ en la _App Store_, es decir, paquetes de la aplicación que se descargarán cuando se necesiten (por ejemplo, niveles adicionales de un juego). Para el almacenamiento de información, se puede almacenar en el directorio de caché (se puede borrar de una ejecución a la siguiente), o en iCloud.
 
 ### Android TV
 
