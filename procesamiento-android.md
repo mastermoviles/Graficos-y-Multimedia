@@ -89,7 +89,7 @@ En primer lugar, necesitaremos solicitar los siguientes permisos para poder util
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
-``
+```
 
 En la interfaz necesitaremos contar con una vista de tipo `SurfaceView` para poder realizar el _preview_ de la cámara. Suponemos que en el _layout_ de la actividad hemos incluido esta vista con un identificador `R.id.surfaceView`.
 
