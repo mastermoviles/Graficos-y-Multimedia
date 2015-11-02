@@ -46,19 +46,35 @@ Seguiremos los siguientes pasos para importar la librería en Eclipse:
 
 * Descargar la librería _libstreaming_.
 
-* Seleccionar _Import … > Android > Existing Android Code into Workspace_.
+* Seleccionar _File > New > Import module…_.
 
 * Seleccionar el directorio donde se encuentra _libstreaming_.
 
-* Marcar la casilla _“Copy projects into workspace”_.
+* Deja todas las opciones por defecto del asitente.
 
 * Pulsar _Finish_.
 
-Una vez tengamos la librería en el _workspace_, tendremos que añadirla al proyecto en el que queramos emitir vía _streaming_. Para ello seguiremos los siguientes pasos:
+> Tras ejecutar el asistente es posible que haya que modificar el fichero `build.gradle` de `libstreaming` para que utilice una versión de las _build tools_ (`buildToolsVersion`) que tengamos instalada. Tras hacer la corrección, se deberá volver a sincronizar con gradle.
 
-* Pulsamos con el botón derecho sobre el proyecto y seleccionamos _Properties_.
-* Entramos en la sección _Android_.
-* En la sección _Library_, pulsamos el botón _Add..._ y seleccionamos `libstreaming`.
+Una vez tengamos la librería como módulo del proyecto, tendremos que añadirla como dependencia del módulo de nuestra aplicación para poder emitir desde ella vía _streaming_. Para ello seguiremos los siguientes pasos:
+
+* Seleccionamos _File > Project Structure..._.
+* Seleccionamos el módulo de nuestra aplicación (por ejemplo `app`) y vamos a la pestaña _Dependencies_.
+* Añadimos una dependencia de módulo (_Module Dependency_) y seleccionamos `:libstreaming`.
+
+![](imagenes/dependencia-libstreaming.png)
+
+En el `build.gradle` del módulo de nuestra aplicación veremos la dependencia de la siguiente forma:
+
+```groovy
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:design:23.1.0'
+    compile project(':libstreaming')
+}
+```
 
 Con esto ya podremos utilizar la librería _libstreaming_ desde nuestro proyecto. Al empaquetar la aplicación, la librería será incluida con ella.
 
@@ -66,7 +82,16 @@ Vamos a ver a continuación cómo utilizar esta librería en el código de nuest
 
 ### Uso de la librería _libstreaming_
 
-En primer lugar, necesitaremos contar con una vista de tipo `SurfaceView` para poder realizar el _preview_ de la cámara. Suponemos que en el _layout_ de la actividad hemos incluido esta vista con un identificador `R.id.surfaceView`.
+En primer lugar, necesitaremos solicitar los siguientes permisos para poder utilizar la librería:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.CAMERA" />
+``
+
+En la interfaz necesitaremos contar con una vista de tipo `SurfaceView` para poder realizar el _preview_ de la cámara. Suponemos que en el _layout_ de la actividad hemos incluido esta vista con un identificador `R.id.surfaceView`.
 
 En el `onCreate` de nuestra actividad obtenemos el `SurfaceView` y el _holder_ de dicha superficie:
 
