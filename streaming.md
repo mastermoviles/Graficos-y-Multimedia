@@ -375,6 +375,64 @@ Para añadir este tipo de contenido simplemente tenemos que copiar los videos qu
 
 Si abrimos estos enlaces desde el navegador de dispositivos que estén en una red desde la que tengan visibilidad de la IP del servidor podremos ver los vídeos publicados.
 
+### Acceso a Wowza mediante SSL
+
+A partir de iOS 9 sólo se permite establecer conexiones mediante SSL (`https`) por motivos de seguridad. Aunque podemos añadir excepciones en nuestra aplicaciones para poder seguir accediendo mediante `http`, no es recomendable hacerlo. Vamos a ver a continuación la forma de configurar Wowza para poder acceder a los contenidos multimedia mediante SSL tal como se recomienda a partir de iOS 9.
+
+Para poder configurar `https` en Wowza deberemos crearnos un certificado cuyo nombre (`CN`) coincida con el dominio a proteger. Por ejemplo, si nuestro contenido va a estar en `eps.ua.es`, deberemos crear un certificado con `CN=eps.ua.es`. Esto nos serviará para aseguramos de que no se está suplantando al servidor. Además, nuestro certificado deberá estar firmado por una autoridad de certificación (CA), como por ejemplo Verisign o Thawte. 
+Como alternativa, veremos también la posibilidad de convertirnos nosotros mismos en "autoridad de certificación", aunque en ese caso deberemos proporcionar al usuario nuestro certificado raíz para que lo instale en su dispositivo como certificado de confianza.
+
+Una vez creado el certificado, se incluirá en Wowza y se habilitará un puerto de acceso mediante SSL utilizando dicho certificado. 
+
+Vamos a ver a continuación cómo realizar esta configuración paso a paso:
+
+#### Creación del certificado
+
+En primer lugar debemos crear el certificado para nuestro sitio web. Imaginemos que queremos proteger el sitio `mastermoviles.eps.ua.es`, donde tendremos instalado un servidor Wowza, y acceder a él mediante SSL garantizando que no ha sido suplantado por otro. Crearemos un par de claves pública-privada para Wowza de la siguiente forma:
+
+```bash
+keytool -genkey -keysize 2048 -alias wowza -keyalg RSA -keystore mastermoviles.eps.ua.es.jks
+```
+
+En el asistente para la creación de las claves, cuando nos pregunte por el _Common Name_ (CN) es importante indicar `mastermoviles.eps.ua.es`, ya que debe coincidir con el dominio del sitio web a proteger. 
+
+Una vez hecho esto, crearemos una solicitud de certificado (CSR) para nuestra clave:
+
+```bash
+keytool -certreq -file mastermoviles.eps.ua.es.csr -alias wowza -keyalg RSA -keystore mastermoviles.eps.ua.es.jks
+```
+
+Esta solicitud podrá ser enviada a una autoridad de certificación para que nos proporcionen un certificado firmado por ellos correspondiente a nuestro par de claves. Como alternativa, vamos a ver cómo convertirnos en "autoridad de certificación" creando un certificado raíz autofirmado.
+
+#### Autofirmar nuestro certificado
+
+Si optamos por solicitar nuestro certificado firmado a una autoridad de certificación (CA) existente no será necesario realizar este paso. 
+
+En caso de trabajar en un ámbito de pruebas, o en un proyecto de ámbito cerrado, puede ser conveniente firmar nosotros mismos nuestro certificado, en lugar de solicitarlo a una CA, aunque en este caso a quienes conecten a nuestro sitio web les aparecerá como "No seguro", a no ser que se instalen y confíen en nuestro certificado raíz autofirmado.
+
+Para crear este certificado autofirmado en primer lugar creamos el par de claves:
+
+```bash
+openssl genrsa -out eps.ua.es.key 2048
+```
+
+Tras esto, generamos el certificado autofirmado:
+
+```bash
+openssl req -x509 -sha256 -new -key eps.ua.es.key -out eps.ua.es.cer -days 730 -subj /CN=“eps.ua.es”
+```
+
+Este certificado deberá difundirse entre todos los que vayan a utilizar nuestra aplicación, para que lo instalen en sus dispositivos como certificado raíz de confianza. De no ser así, los certificados que firmemos con él tampoco serán validos.
+
+Una vez tenemos el certificado raíz autofirmado, podemos firmar con él el certificado para nuestro sitio web:
+
+```bash
+openssl x509 -req -in mastermoviles.eps.ua.es.csr -out mastermoviles.eps.ua.es.cer -CAkey eps.ua.es.key -CA eps.ua.es.cer -days 365 -CAcreateserial -CAserial serial
+```
+
+Con esto obtenemos un certificado firmado por nosotros mismos. Si hubiésemos recurrido a una CA, nos habría proporcionado también este mismo fichero `cer`, pero en ese caso firmado por un certificado raíz en el que ya confían los diferentes dispositivos. 
+
+
 ## Ejercicios
 
 ### Creación e un _podcast_
