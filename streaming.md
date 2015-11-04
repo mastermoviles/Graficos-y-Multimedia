@@ -468,14 +468,48 @@ Para configurar un nuevo puerto que utilice SSL pulsamos sobre _Add Host Port...
 ${com.wowza.wms.context.VHostConfigHome}/conf/mastermoviles.eps.ua.es.jks
 ```
 * **Keystore Password**: Indicamos aquí el _password_ que hemos utilizado en nuestro almacén de claves (debe ser el mismo _password_ para el almacén y para el _alias_ `wowza` que almacena la clave a utilizar por este servidor.
- 
+
+![](imagenes/wowza-ssl-1.png) 
 
 Una vez introducidos los datos pulsamos _Add_ y veremos el nuevo puerto en la lista:
+
+![](imagenes/wowza-ssl-2.png) 
 
 Ya podemos guardar pulsando en _Save_ y reiniciar el servidor (nos aparecerá un botón _Restart Now_ invitándonos a hacerlo para que se apliquen los cambios). 
 
 Tras esto ya podremos acceder a los contenidos desde un navegador o desde nuestras aplicaciones.
 
+#### Acceder a aplicaciones con certificado autofirmado
+
+Si nuestro certificado no está firmado por una CA válida, sino que está autofirmado por nosotros, los navegadores y aplicaciones en principio no lo considerarán de confianza y por lo tanto no podremos acceder a los contenidos hasta que no confíe en él.
+
+En caso de que intentemos acceder a uno de los vídeos por SSL en Wowza, el navegador nos indicará lo siguiente:
+
+![](imagenes/cert-web-1.PNG) 
+
+Aquí es **muy importante no pulsar sobre _Continuar_**, sino pulsar sobre _Detalles_ para que nos abra la siguiente vista:
+
+![](imagenes/cert-web-2.PNG) 
+
+Aquí vemos los detalles del certificado y podemos indicarle que confíe en él. Una vez sea de confianza ya tendremos acceso a los contenidos. 
+
+En caso de querer que nuestras aplicaciones puedan acceder, tendremos que instalar el certificado raíz en el dispositivo como certificado de confianza. Para ello enviaremos el certificado creado (fichero `.cer`) al dispositivo, por ejemplo como adjunto en un email. Abriremos el fichero y veremos lo siguiente:
+
+![](imagenes/cert-perfil-1.PNG) 
+
+Aquí vemos que el certificado aparece como no válido, indicando que está _Sin verificar_. Si pulsamos sobre _Instalar_ podremos hacer que pase a ser de confianza, tal como nos indica en la siguiente pantalla:
+
+![](imagenes/cert-perfil-2.PNG) 
+
+Volvemos a pulsar sobre _Instalar_ para confirmar la instalación y que lo guarde como certificado de confianza. A continuación veremos que el certificado ya está _Verificado_:
+
+![](imagenes/cert-perfil-3.PNG) 
+
+Una vez instalado el certificado raíz, si abrimos el certificado de nuestro sitio web veremos que ya nos aparece directamente como _Verificado_, ya que está firmado por un certificado raíz que actualmente es de confianza:
+
+![](imagenes/cert-perfil-4.PNG) 
+
+Con esto ya tendremos el dispositivo configurado para que pueda acceder a los vídeos en nuestro dominio mediante protocolo seguro. Con este sistema hay que remarcar que deberemos distribuir el certificado raíz entre todos aquellos que vayan a utilizar la aplicación, para que así lo puedan instalar como certificado de confianza. Para no tener que hacer esto deberíamos enviar nuestra aplicación para que la firme una CA válida, cuyo certificado raíz ya venga como certificado de confianza en el dispositivo.
 
 
 ## Ejercicios
