@@ -449,7 +449,7 @@ A continuación se muestra el ejemplo completo:
 ```actionscript
 
 public class MiStream extends Sprite {
-	private var connectionURL:String="rtmp://www.eps.ua.es/live/liveVideo";
+	private var connectionURL:String="rtmp://www.eps.ua.es/live";
 	private var videoURL:String="miCanal.stream";
 	private var nc:NetConnection;
 	private var ns_publish:NetStream;
@@ -523,6 +523,40 @@ public class MiStream extends Sprite {
 	}
 }
 ```
+
+### Autenticación de la fuente de vídeo
+
+Si requerimos usuario y _password_ para poder publicar vídeo RTMP en Wowza desde nuestra aplicación Adobe AIR, estas credenciales se pueden proporcionar como parámetros del método `NetConnection.connect`:
+
+```actionscript
+nc.connect(connectionURL, "publisher", "mastermoviles");
+```
+
+Sin embargo, en Wowza no podremos utilizar la configuración de autenticación estándar en RTMP, sino que necesitaremos añadir un módulo adicional. De hecho, deberemos dejar abierto el acceso a la aplicación vía RTMP desde la interfaz de Wowza para poder utilizar dicho módulo. Para ello:
+
+* Entramos en el administrador de Wowza, en la página de nuestra aplicación, por ejemplo `live`.
+* Entramos en la sección _Source Security_ y editamos la configuración.
+* En _RTMP Sources_ indicamos _Open (no authentication required)_.
+
+Incorporaremos ahora la autenticación RTMP mediante el módulo adicional `moduleOnConnectAuthenticate`. Dicho módulo se encuentra dentro de una colección de módulos adicionales que se proporcionan para Wowza en la siguiente página:
+
+http://www.wowza.com/forums/content.php?113-Module-Collection
+
+Para instalar y configurar el módulo de autenticación deberemos:
+
+* Descargar e instalar la colección de módulos anterior. Deberemos copiar el fichero `wms-plugin-collection.jar` en el directorio `${WOWZA_HOME}/lib`, siendo `${WOWZA_HOME}` el directorio de instalación de Wowza.
+* Añadimos la configuración del módulo al fichero `Application.xml` de la aplicación a configurar. Por ejemplo, si queremos configurar la aplicación `live`, buscaremos dicho fichero en `${WOWZA_HOME}/conf/live`. En el fichero `Application.xml`, introduciremos la siguiente configuración dentro de la etiqueta `<Modules> ... </Modules>`:
+```xml
+<Module>
+	<Name>moduleOnConnectAuthenticate</Name>
+	<Description>Authenticates Flash connections.</Description>
+	<Class>com.wowza.wms.plugin.collection.module.ModuleOnConnectAuthenticate</Class>
+</Module>
+```
+* Por defecto buscará la lista de usuarios en el fichero `${WOWZA_HOME}/conf/connect.password`. Podemos copiar el fichero `publish.password` que se encuentra en el mismo directorio para utilizar los mismos usuarios para publicación que hemos configurado en Wowza.
+
+Después de hacer esto reiniciaremos el servidor y tendremos habilitada la autentificación de fuentes RTMP con compatibilidad para el método `NetConnection.connect`.
+
 
 ### Configuración de la aplicación Android
 
