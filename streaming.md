@@ -396,6 +396,8 @@ keytool -genkey -keysize 2048 -alias wowza -keyalg RSA -keystore mastermoviles.e
 
 En el asistente para la creación de las claves, cuando nos pregunte por el _Common Name_ (CN) es importante indicar `mastermoviles.eps.ua.es`, ya que debe coincidir con el dominio del sitio web a proteger. 
 
+> Al crear el almacén de claves y el _alias_ `wowza`, que será la clave que utilice Wowza para establecer el canal SSL, deberemos especificar el mismo _password_ para el almacén y para el _alias_.
+
 Una vez hecho esto, crearemos una solicitud de certificado (CSR) para nuestra clave:
 
 ```bash
@@ -432,7 +434,7 @@ openssl x509 -req -in mastermoviles.eps.ua.es.csr -out mastermoviles.eps.ua.es.c
 
 Con esto obtenemos un certificado firmado por nosotros mismos. Si hubiésemos recurrido a una CA, nos habría proporcionado también este mismo fichero `cer`, pero en ese caso firmado por un certificado raíz en el que ya confían los diferentes dispositivos. 
 
-####
+#### Incluir el certificado firmado en el almacen de claves
 
 Una vez tenemos nuestro certificado firmado por una CA (o por un certificado raíz nuestro autofirmado), deberemos importar el certificado de la CA y nuestro certificado firmado por ella en nuestro almacén de claves. 
 
@@ -442,6 +444,37 @@ En caso de haber creado un certificado raíz autofirmado, lo importamos en nuest
 keytool -import -alias root -trustcacerts -file eps.ua.es.cer -keystore mastermoviles.eps.ua.es.jks
 ```
 
+Además también debemos importar en el almacén el certificado propio de nuestro sitio web:
+
+```bash
+keytool -import -alias wowza -trustcacerts -file mastermoviles.eps.ua.es.cer -keystore mastermoviles.eps.ua.es.jks
+```
+
+Con esto ya tendremos listo el almacen de claves para ser utilizado en Wowza. 
+
+#### Configuración del puerto seguro en Wowza
+
+Una vez contamos con nuestro almacen de claves configurado para nuestro sitio web, podemos configurar un puerto seguro en Wowza para acceder a través de él al contenido mediante SSL. Para ello, en la consola de Wowza entramos en la pestaña _Server_ y dentro de ella en _Virtual Host Setup_. Veremos la lista de puertos (_Host Ports_) activos actualmente. Si pulsamos el botón _Edit_ podremos editar este lista o añadir nuevos puertos. 
+
+Para configurar un nuevo puerto que utilice SSL pulsamos sobre _Add Host Port..._ e introducimos la siguiente información:
+
+* **Name**: Indicamos un nombre para identificar el puerto en el entorno, por ejemplo _"Default SSL Streaming_.
+* **Type**: Como tipo indicamos que será un puerto para la aplicación de _Streaming_.
+* **IP Adresses**: Indicamos que se puede acceder desde cualquier IP, con _"*"_.
+* **Port(s)**: El puerto al que conectaremos mediante SSL. Si el puerto no seguro por defecto es 1935, podríamos utilizar para SSL por ejemplo el puerto 1936.
+* **Enable SSL/StreamLock**: Será importante marcar esta casilla para que este puerto utilice conexión segura con SSL.
+* **Keystore Path**: Indicamos aquí la ruta del almacén de claves que hemos creado anteriormente. Dado que lo hemos copiado en el directorio de configuración de Wowza, podemos indicar una ruta como la siguiente:
+```
+${com.wowza.wms.context.VHostConfigHome}/conf/mastermoviles.eps.ua.es.jks
+```
+* **Keystore Password**: Indicamos aquí el _password_ que hemos utilizado en nuestro almacén de claves (debe ser el mismo _password_ para el almacén y para el _alias_ `wowza` que almacena la clave a utilizar por este servidor.
+ 
+
+Una vez introducidos los datos pulsamos _Add_ y veremos el nuevo puerto en la lista:
+
+Ya podemos guardar pulsando en _Save_ y reiniciar el servidor (nos aparecerá un botón _Restart Now_ invitándonos a hacerlo para que se apliquen los cambios). 
+
+Tras esto ya podremos acceder a los contenidos desde un navegador o desde nuestras aplicaciones.
 
 
 
