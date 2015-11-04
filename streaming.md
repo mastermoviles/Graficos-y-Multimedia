@@ -432,6 +432,18 @@ openssl x509 -req -in mastermoviles.eps.ua.es.csr -out mastermoviles.eps.ua.es.c
 
 Con esto obtenemos un certificado firmado por nosotros mismos. Si hubiésemos recurrido a una CA, nos habría proporcionado también este mismo fichero `cer`, pero en ese caso firmado por un certificado raíz en el que ya confían los diferentes dispositivos. 
 
+####
+
+Una vez tenemos nuestro certificado firmado por una CA (o por un certificado raíz nuestro autofirmado), deberemos importar el certificado de la CA y nuestro certificado firmado por ella en nuestro almacén de claves. 
+
+En caso de haber creado un certificado raíz autofirmado, lo importamos en nuestro almacén de claves. En caso de haber obtenido el certificado de una CA, en su lugar importaremos el certificado puente de dicha CA:
+
+```bash
+keytool -import -alias root -trustcacerts -file eps.ua.es.cer -keystore mastermoviles.eps.ua.es.jks
+```
+
+
+
 
 ## Ejercicios
 
