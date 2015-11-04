@@ -214,7 +214,23 @@ AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
 A través de este objeto podremos pausar o reanudar la locución, o conocer si actualmente está reproduciéndose.
 
 
+## Reconocimiento del habla en iOS
 
+Los dispositivos iOS cuentan con el asistente Siri que utiliza reconocimiento de voz para realizar diferentes operaciones. Estas operaciones se realizan a nivel del Sistema Operativo, y nos permiten utilizar diferentes servicios que proporciona la plataforma, como por ejemplo hacer una llamada, leer los mensajes, o consultar el tiempo que hace.
+
+Lamentablemente, no existe en el momento de la escritura de este texto ninguna API que nos permita integrar la capacidad de reconocimiento del habla de Siri en nuestra aplicaciones. Sin embargo, si que podemos encontrar APIs de terceros que nos proporcionan dicha funcionalidad, como por ejemplo las siguientes:
+
+* *SpeechKit*
+
+http://developer.nuance.com/
+
+* *MindMeld*
+
+https://expectlabs.com/docs/sdks/ios/gettingStarted
+
+* *OpenEars*
+
+http://www.politepix.com/openears/
 
 
 ## Ejercicios
