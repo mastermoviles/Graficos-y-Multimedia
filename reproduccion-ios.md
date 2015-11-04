@@ -459,6 +459,8 @@ controller.player = player;
 
 A partir de iOS 9 esta es la forma recomendada de reproducir vídeo, quedando desaprobado el uso de `MPMoviePlayerViewController`. Utilizaremos éste último únicamente si necesitamos tener compatibilidad con versiones de iOS previas a la 8.
 
+> A diferencia de las clases anteriores `AVPlayer`, `AVPlayerLayer` y `AVAudioPlayer`, todas ellas pertenecientes a _AVFoundation_, la nueva clase `AVPlayerViewController` pertenece al _framework `AVKit`, por lo que deberemos incluir dicho framework en nuestras aplicaciones para poder utilizar dicho controlador. 
+
 La nueva clase `AVPlayerViewController` nos permitirá también poner una vista superpuesta sobre el vídeo, o controlar la zona de la pantalla en la que se mostrará el vídeo, al igual que en el caso del componente ahora desaprobado. 
 
 Para tener control sobre el estado del vídeo en reproducción podemos utilizar KVO sobre propiedades del objeto `AVPlayer`, o podemos suscribirlos a la notificación `AVPlayerItemDidPlayToEndTimeNotification` del _item_ que se esté reproduciendo actualmente para estar al tanto de su finalización:
