@@ -119,24 +119,65 @@ Una propiedad importante del componente `Canvas` es _Render Mode_, que podrá to
 
 ### Elementos de la UI
 
+Una vez contamos con un `Canvas`, podemos añadir dentro de él diferentes componentes de la interfaz. Encontramos diferentes tipos de componentes como etiquetas de texto, imágenes o botones que podremos incluir de forma sencilla.
+
+#### Etiquetas de texto
+
+Las etiquetas de texto serán objetos con un componente de tipo `Text`. Este componente nos permite indicar principalmente el texto a mostrar en la etiqueta, y también podemos especificar otras propiedades como la fuente, color, alineación o espaciado. 
+
+Es de especial interés la propiedad _Best Fit_. Con ella podemos especificar un tamaño máximo y mínimo de la fuente, de forma que se ajuste de forma automática entre estos valores al tamaño máximo que podamos tener sin que el texto se salga de su espacio. Es interesante cuando el texto puede ser variable (por ejemplo diferentes idiomas) y hay riesgo de que en algún caso quede demasiado largo y pudiera mostrarse truncado.
+
 ![Componente Text](imagenes/unity/unity-ui-text.png)
 
+#### Imágenes
+
+Las imágenes son objetos con un componente `Image`. En este componente deberemos introducir principalmente la textura o sprite a mostrar como imagen, que deberemos haber introducido previamente entre los _assets_ del proyecto. 
+
+Utilizaremos preferiblemente imágenes de tipo PNG, y las podremos incluir como _assets_ simplemente arrastrándolas sobre la sección _Project_ del editor (podemos organizarlas en carpetas).
+
 ![Componente Image](imagenes/unity/unity-ui-image.png)
+
+#### Botones
+
+Un botón es un objeto con un componente `Button`, que además contendrá como hijo un objeto de tipo _Text_ para mostrar la etiqueta del botón (se trata por separado el botón de su etiqueta). El botón tendrá una imagen que podremos mostrar como marco, y distintos colores con los que _tintar_ el botón según el estado en el que se encuentre:
+
+* _Normal_: Botón activo pero sin pulsar ni seleccionar.
+* _Highlighted_: Botón activo y seleccionado para que se pueda pulsar. Este estado será útil cuando utilicemos un control mediante _joystick_ o teclado: al pulsar los controles direccionales cambiaremos el botón seleccionado, y al pulsar la tecla de acción presionaremos el botón seleccionado actualmente.
+* _Pressed_: Botón actualmente presionado. 
+* _Disabled_: Indica que el botón está deshabilitado y que no puede ser presionado.
+
+Además en la parte inferior podremos conectar el evento _On Click_ del botón con algún método de nuestro código, para que al pulsar sobre el botón se ejecute dicho método.
 
 ![Componente Button](imagenes/unity/unity-ui-button.png)
 
 
 ### Posicionamiento en el espacio de la UI
 
+Todos los elementos de la UI de Unity se posicionan mediante un componente de tipo `RectTransform` (a diferencia del resto de objetos que tienen un componente `Tranform`). 
+
+La principal diferencia de `RectTransform` sobre `Tranform` es que nos permite indicar el área rectangular que ocupará el componente dentro del `Canvas`, además de las propiedades de posición, rotación y escala que tenemos en todos los objetos. 
+
 ![Componente RectTransform](imagenes/unity/unity-ui-rect.png)
+
+A la hora de definir el rectángulo que un componente de la UI ocupará en pantalla, lo primero que deberemos hacer es definir a qué posición de pantalla lo vamos a _anclar_ (es decir, qué posición de la pantalla tomaremos como referencia para posicionarlo). Si es un menú que queramos que aparezca centrado, lo deberemos anclar al centro de la pantalla, mientras que si es un marcador que queramos que aparezca en una esquina de la pantalla, lo conveniente será anclarlo a dicha esquina. Unity nos proporciona algunos valores predefinidos típicos para el anclaje (_Anchor Presets_):
 
 ![Tipos de anclaje](imagenes/unity/unity-ui-anchors.png)
 
+La posición del objeto será relativa siempre al punto de anclaje. Además, con la propiedad _Pivot_ indicaremos el punto del objeto (rectángulo) que haremos coincidir con la posición especificada. El _Pivot_ se indicará siempre en coordenadas normalizadas, entre _(0,0)_ y _(1,1)_. Con _(0,0)_ indicamos la esquina inferior izquierda, con _(1,1)_ la esquina superior derecha, y con _(0.5,0.5)_ el centro del rectángulo. 
+
+Por ejemplo, si queremos situar un botón centrado en pantalla, utilizaremos como punto de anclaje el centro de la pantalla, como posición _(0,0,0)_ para situarlo exactamente en el punto de anclaje, y como _pivot_ _(0.5,0.5)_ para que el botón aparezca centrado en dicho punto. A continuación vemos un ejemplo:
+
 ![Anclaje en el centro de la pantalla](imagenes/unity/unity-ui-anchor-center.png)
+
+En caso de querer ubicar un marcador en la esquina superior derecha de la pantalla, en primer lugar deberemos establecer el anclaje en dicha esquina. Para que quede lo mejor ajustado posible es recomendable que el _pivot_ en este caso sea _(1,1)_, para que así lo que posicionemos sea la esquina superior derecha. De esta forma, si como posición indicamos _(0,0,0)_ el objeto quedará perfectamente ajustado a la esquina. Podríamos modificar la posición si queremos darle un margen respecto a la esquina, pero de esta forma siempre quedará bien ajustado a la esquina y no se nos saldrá de pantalla. A continuación vemos un ejemplo:
 
 ![Anclaje en la esquina de la pantalla](imagenes/unity/unity-ui-anchor-corner.png)
 
+Un caso algo más complejo es aquel en el que queremos que un elemento pueda _estirarse_. En este caso, en lugar de tener un ancla única, podemos establecer un ancla para cada esquina del objeto. Podemos ver sobre la imagen una serie de _flechas blancas_ alrededor del título que definen los puntos de anclaje. Podemos arrastrar dichas flechas pulsando sobre ellas con el ratón para así modificar el anclaje:
+
 ![Anclaje personalizado](imagenes/unity/unity-ui-anchor-custom.png)
+
+Vemos que al tener este anclaje _abierto_ en lugar de dar una posición _(x,y,z)_ al objeto lo que debemos introducir son valores _Left_, _Right_, _Top_ y _Bottom_. Aquí introduciremos la distancia que debe haber entre los límites del objeto y la zona de anclaje. La zona de anclaje será siempre relativa al tamaño del `Canvas` (se estirará y se contraerá según la pantalla o ventana donde se ejecute el juego). De esta forma conseguimos que el rectángulo de nuestro componente se estire o se contraiga también según el espacio disponible, pudiendo hacer así por ejemplo que el título ocupe todo el espacio disponible.
 
 ### Escalado del Canvas
 
