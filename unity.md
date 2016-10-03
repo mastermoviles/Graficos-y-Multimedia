@@ -61,7 +61,16 @@ Entre los tipos de objetos predefinidos que nos permite crear, encontramos difer
 
 ![Menú de creación de un nuevo GameObject](imagenes/unity/unity-create-gameobject.png)
 
-Si añadimos por ejemplo un _GameObject_ de tipo _Cube_
+Si añadimos por ejemplo un _GameObject_ de tipo _Cube_ al seleccionarlo veremos sus propiedades en el inspector:
+
+![Creación de un cubo](imagenes/unity/unity-cube.png)
+
+Como podemos ver, este tipo de objetos geométricos tienen los siguientes componentes:
+
+* `Transform`: Posición, rotación y escalado del objeto en la escena 3D.
+* `Renderer`: Hace que el objeto se renderice en pantalla como una maya 3D. Con este componente conseguimos que el objeto tenga una representación gráfica dentro de la escena. En este caso se representa con la forma de un cubo, tal como podemos ver indicado en el componente _Mesh Filter_, pero podría ser otra forma geométrica, o cualquier maya que hayamos creado con alguna herramienta de modelado como Autodesk Maya, 3DS Max o Blender. También vemos que el _Renderer_ lleva asociado un material, que se le aplicará a la maya al renderizarse. Podremos crear materiales e incluirlos como _assets_ del proyecto, para así poderlos aplicar a las mayas.
+* `Collider`: Hace que el objeto tenga una geometría de colisión, que nos permita detectar cuando colisiona con otros objetos de la escena. En este caso la geometría de colisión es de tipo caja (_Box Collider_), para así ajustarse a la forma de la geometría de su representación gráfica. 
+
 
 ### Posicionamiento de los objetos en la escena
 
