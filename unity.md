@@ -326,8 +326,10 @@ La forma más sencilla de añadir soporte para Cardboard es añadir a nuestra c�
 
 ## Realidad Aumentada
 
-Realidad aumentada 
 
+
+Realidad aumentada 
+![Ejemplo de "Realidad aumentada"](imagenes/realidad_aumentada/ra_vuforia_ejercicio.png)
 
 
 ### Librerías de realidad aumentada
