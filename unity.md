@@ -324,6 +324,11 @@ La forma más sencilla de añadir soporte para Cardboard es añadir a nuestra c�
 ![Aplicación con Google Cardboard](imagenes/unity/unity-vr-cb.png)
 
 
+## Realidad aumentada
+
+prueba ...
+
+
 <!--
 
 
