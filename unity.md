@@ -1,4 +1,4 @@
-IOS.# El motor Unity
+![](imagenes/realidad_aumentada/ra_registro_vuforia_00.png)IOS.# El motor Unity
 
 **Unity** es un motor genérico para la creación de videojuegos 2D y 3D enfocado hacia el desarrollo casual. La curva de aprendizaje del motor es bastante suave, especialmente si lo comparamos con motores más complejos como Unreal Engine 4, y nos permitirá realizar un desarrollo rápido de videojuegos. Esta característica hace este motor muy apropiado también para crear rápidamente prototipos de nuestros juegos.
 
@@ -358,6 +358,11 @@ En este curso vamos a centrarnos en la librería Vuforia, ya que además de ofre
 
 Lo primero que tenemos que hacer para empezar el desarrollo de una aplicación de realidad aumenta con Vuforia es registrarnos en su [página web](https://developer.vuforia.com/) ([https://developer.vuforia.com/](https://developer.vuforia.com/)). 
 
+![](imagenes/realidad_aumentada/ra_registro_vuforia_00.png)
+
+Una vez registrados recibiremos un correo electrónico para confirmar la cuenta que acabamos de crear. Al identificarnos en el portal de la plataforma veremos varias secciones. Primero debemos ir a la sección "Downloads" para descargar el SDK. En esta sección podemos ver una descripción de las distintas características que el SDK de Vuforia nos ofrece, así como las distintas version para múltiples plataformas. En nuestro caso vamos a descargar la versión para Unity. Al descargar el SDK para Unity nos encontramos un paquete que podemos importar en nuestro proyecto mediante la opción de Unity "import package" o bien simplemente hacer doble click sobre el fichero y se importara en el proyecto que tengamos abierto en ese momento. A continuación mostramos las características que ofrece el SDK de Vuforia.
+
+
 
 <!--
 
@@ -376,7 +381,7 @@ Lo primero que tenemos que hacer para empezar el desarrollo de una aplicación d
 
 ### Búsqueda de objetos
 
-### Creación y destrucción de objetos
+![](/assets/ra_registro_vuforia_00.png)### Creación y destrucción de objetos
 
 ### Corrutinas
 
