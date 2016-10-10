@@ -362,17 +362,26 @@ Lo primero que tenemos que hacer para empezar el desarrollo de una aplicación d
 
 Una vez registrados recibiremos un correo electrónico para confirmar la cuenta que acabamos de crear. Al identificarnos en el portal de la plataforma veremos varias secciones. Primero debemos ir a la sección "Downloads" para descargar el SDK. En esta sección podemos ver una descripción de las distintas características que el SDK de Vuforia nos ofrece, así como las distintas version para múltiples plataformas. En nuestro caso vamos a descargar la versión para Unity. Al descargar el SDK para Unity nos encontramos un paquete que podemos importar en nuestro proyecto mediante la opción de Unity "import package" o bien simplemente hacer doble click sobre el fichero y se importara en el proyecto que tengamos abierto en ese momento. A continuación mostramos las características que ofrece el SDK de Vuforia.
 
-Image Targets (Creación de marcadores propios)
-VuMark
-Object Recognition
-Cylinder Targets
-Multi Targets
-User Defined Targets
-Smart Terrain (Unity only)
-Cloud Recognition
-Text Recognition
-Frame Markers
-Virtual Buttons
+
+* **Image Targets**: Detección y seguimiento de marcadores 2D.
+* **VuMark**: VuMark es un marcador propio de Vuforia al estilo de códigos QR o similares. La ventaja es que el tracking es más robusto y estable en comparación a utilizar Image Targets.
+* **Object Recognition**: Utilización de marcadores 3D: cubos, esferas, cilindros, como objeto a detectar para superponer contenido.
+* **Multi Targets**: Detección de múltiples marcadores de forma simultáena permitiendo detectar y seguir varios modelos de forma independiente.
+* **User Defined Targets**: Permite crear marcadores 2D personalizados basados en imágenes que el usuario puede subir a la plataforma.
+* **Smart Terrain (Unity only)**: Permite crear fácilmente escenarios con múltiples marcadores para ofrecer experiencias de realidad aumentada muy vistosas. Esta enfocado a la creación de videojuegos y permite crear fácilmente distintos niveles dentro de nuestro juego o aplicación.
+* **Cloud Recognition**: Permite almacenar los marcadores en la nube de forma que no tienen que almacenarse en el dispositivo móvil.
+* **Text Recognition**: Utilización de texto como marcador.
+* **Frame Markers**: Utilización de marcadores 2D convencionales también conocidos como marcadores fiduciales. Cada marcador codifica un patrón binario que corresponde a un identificador único.
+
+Una vez descargado el SDK e importado en Unity, podemos añadir una cámara de Realidad Aumentada a la escena, de forma que cuando usemos este objeto nos va a permitir detectar y hacer el seguimiento de los marcadores.
+
+Creamos un nuevo proyecto, hacemos doble click sobre el SDK que hemos descargado previamente y a continuación aceptamos que se importe el SDK en el proyecto que acabamos de crear.
+
+![](imagenes/realidad_aumentada/ra_nuevo_proyecto_unity.png)
+
+![](imagenes/realidad_aumentada/ra_importar_sdk_vuforia_unity.png)
+
+
 
 <!--
 
