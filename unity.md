@@ -400,7 +400,7 @@ Creamos un nuevo proyecto, hacemos doble click sobre el SDK que hemos descargado
 
 ### Búsqueda de objetos
 
-![](/assets/ra_registro_vuforia_00.png)### Creación y destrucción de objetos
+### Creación y destrucción de objetos
 
 ### Corrutinas
 
