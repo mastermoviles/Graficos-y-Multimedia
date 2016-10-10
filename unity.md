@@ -362,7 +362,17 @@ Lo primero que tenemos que hacer para empezar el desarrollo de una aplicación d
 
 Una vez registrados recibiremos un correo electrónico para confirmar la cuenta que acabamos de crear. Al identificarnos en el portal de la plataforma veremos varias secciones. Primero debemos ir a la sección "Downloads" para descargar el SDK. En esta sección podemos ver una descripción de las distintas características que el SDK de Vuforia nos ofrece, así como las distintas version para múltiples plataformas. En nuestro caso vamos a descargar la versión para Unity. Al descargar el SDK para Unity nos encontramos un paquete que podemos importar en nuestro proyecto mediante la opción de Unity "import package" o bien simplemente hacer doble click sobre el fichero y se importara en el proyecto que tengamos abierto en ese momento. A continuación mostramos las características que ofrece el SDK de Vuforia.
 
-
+Image Targets (Creación de marcadores propios)
+VuMark
+Object Recognition
+Cylinder Targets
+Multi Targets
+User Defined Targets
+Smart Terrain (Unity only)
+Cloud Recognition
+Text Recognition
+Frame Markers
+Virtual Buttons
 
 <!--
 
