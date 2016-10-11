@@ -377,9 +377,8 @@ Una vez descargado el SDK e importado en Unity, podemos añadir una cámara de R
 
 Creamos un nuevo proyecto, hacemos doble click sobre el SDK que hemos descargado previamente y a continuación aceptamos que se importe el SDK en el proyecto que acabamos de crear.
 
-![](imagenes/realidad_aumentada/ra_nuevo_proyecto_unity.png)
 
-![](imagenes/realidad_aumentada/ra_importar_sdk_vuforia_unity.png)
+![](imagenes/realidad_aumentada/ra_imp_sdk_vuforia_unity.png)
 
 
 
