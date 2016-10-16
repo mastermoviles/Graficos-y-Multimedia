@@ -1,4 +1,4 @@
-![](imagenes/realidad_aumentada/ra_registro_vuforia_00.png)IOS.# El motor Unity
+# El motor Unity
 
 **Unity** es un motor genérico para la creación de videojuegos 2D y 3D enfocado hacia el desarrollo casual. La curva de aprendizaje del motor es bastante suave, especialmente si lo comparamos con motores más complejos como Unreal Engine 4, y nos permitirá realizar un desarrollo rápido de videojuegos. Esta característica hace este motor muy apropiado también para crear rápidamente prototipos de nuestros juegos.
 
