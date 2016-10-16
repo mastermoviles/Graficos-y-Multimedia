@@ -385,7 +385,28 @@ Una vez importamos el SDK dispondremos de una carpeta con el nombre "Vuforia" de
 
 ![](imagenes/realidad_aumentada/ra_componentes_ar_camera.jpg)
 
-Vamos a ver los distintos componentes que tiene asociados el objeto "ARCamera" y sobretodo vamos a ver las distintas opciones que nos ofrece el componente "Vuforia Behaviour". Podemos ver que por defecto, la mayoría de componentes se encuentran activados, permitiendo la inicialización del objeto, así como cargar una base de datos con marcadores. 
+Vamos a ver los distintos componentes que tiene asociados el objeto "ARCamera" y sobretodo vamos a ver las distintas opciones que nos ofrece el componente "Vuforia Behaviour". Podemos ver que por defecto, la mayoría de componentes se encuentran activados, permitiendo la inicialización del objeto, cargar una base de datos con marcadores, mostrar vídeo de fondo obtenido a través de la cámara del dispositivo o habilitar la característica "Smart terrain" de la librería Vuforia.
+
+Por ahora vamos a centrarnos en el componente "Vuforia Behaviour", podemos ver que en el primer campo o propiedad tiene un campo para introducir una licencia de aplicación. De hecho, si intentamos ejecutar la aplicación sin introducir esta licencia, obtendremos un mensaje de aviso alertándonos de la necesidad de introducir una licencia válida para poder utilizar la cámara de realidad aumentada en nuestra escena. Por ello, antes de continuar tendremos que ir a la plataforma online de Vuforia y obtener una clave para nuestra aplicación. 
+
+* ** imagen error aplicación licencia vuforia **
+
+En la pestaña developer de la plataforma online veremos que tenemos disponible una subsección llamada "License Manager", desde esta podemos crear una nueva licencia para nuestra aplicación, tan solo deberemos seguir los siguientes pasos:
+
+* **Elige un tipo de proyecto:** Dependiendo del tipo de aplicación: Development, Consumer o Enterprise tendremos que pagar por nuestra licencia o no. En nuestro caso seleccionaremos el tipo "Development"
+
+* **Definimos un nombre para nuestra app:** como la plataforma nos permite crear múltiples apps es importante poner un nombre identificativo de forma que más tarde podamos relacionar las licencias con las apps que estamos desarrollando.
+
+* **Seleccionamos el tipo de dispositivo:** en este caso tan solo tendremos que diferenciar entre disposito móvil o "eyewear". Dentro de "eyewear" engloban dispositivos como las Microsoft Hololens, EPSON moverio, etcétera.
+
+* **Obtenemos nuestra licencia**: En el caso de que se trate de una licencia comercial tendremos que proveer con un medio de pago para costear la misma, en caso contrario veremos que nuestra licencia se acaba de crear. La licencia de desarrollar tiene algunas restricciones, por ejemplo el número máximo de veces por mes que un marcador puede ser detectado usando nuestra aplicación móvil. Para saltarnos esta restricción tendremos que obtener una licencia comercial.
+
+Una vez creada, nos aparecerá en el gestor de licencias de la plataforma online y podemos hacer click sobre la misma para ver la cadena de texto que representa la licencia de nuestra aplicación. Esta cadena se debe de introducir en el campos que vimos anteriormente del componente "Vuforia Behaviour" en objeto "ARCamera". Trás introducir la licencia veremos que podemos ejecutar nuestra aplicación en Unity y si nuestro ordenador dispone de una cámara compatible podremos ver el vídeo de nuestra cámara en la escena.
+
+* ** imagen funcionando **
+
+
+
 
 <!--
 
