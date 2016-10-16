@@ -377,10 +377,11 @@ Una vez descargado el SDK e importado en Unity, podemos añadir una cámara de R
 
 Creamos un nuevo proyecto, hacemos doble click sobre el SDK que hemos descargado previamente y a continuación aceptamos que se importe el SDK en el proyecto que acabamos de crear.
 
+![](imagenes/realidad_aumentada/ra_nuevo_proyecto_unity.jpg)
 
-![](imagenes/realidad_aumentada/ra_imp_sdk_vuforia_unity.png)
+![](imagenes/realidad_aumentada/ra_importar_sdk_vuforia_unity.jpg)
 
-
+Una vez importamos el SDK dispondremos de una carpeta con el nombre "Vuforia" dentro de los Assets de nuestro proyecto. Esta carpeta contiene una serie de objetos que podemos añadir a nuestra escena. Entre estos objetos encontramos la cámara de realidad virtual que mencionamos anteriormente. Lo primero que tenemos que hacer para habilitar la funcionalidad de realidad aumentada en nuestra aplicación es eliminar la cámara principal que se crea en la escena por defecto al crear un proyecto. Una vez eliminada hacemos click sobre la carpeta Vuforia y nos digirimos a la subcarpeta Prefabs. Esta carpeta contiene el objeto ARCamera que podemos arrastar en nuestra escena.
 
 <!--
 
