@@ -381,7 +381,11 @@ Creamos un nuevo proyecto, hacemos doble click sobre el SDK que hemos descargado
 
 ![](imagenes/realidad_aumentada/ra_importar_sdk_vuforia_unity.jpg)
 
-Una vez importamos el SDK dispondremos de una carpeta con el nombre "Vuforia" dentro de los Assets de nuestro proyecto. Esta carpeta contiene una serie de objetos que podemos añadir a nuestra escena. Entre estos objetos encontramos la cámara de realidad virtual que mencionamos anteriormente. Lo primero que tenemos que hacer para habilitar la funcionalidad de realidad aumentada en nuestra aplicación es eliminar la cámara principal que se crea en la escena por defecto al crear un proyecto. Una vez eliminada hacemos click sobre la carpeta Vuforia y nos digirimos a la subcarpeta Prefabs. Esta carpeta contiene el objeto ARCamera que podemos arrastar en nuestra escena.
+Una vez importamos el SDK dispondremos de una carpeta con el nombre "Vuforia" dentro de los Assets de nuestro proyecto. Esta carpeta contiene una serie de objetos que podemos añadir a nuestra escena. Entre estos objetos encontramos la cámara de realidad virtual que mencionamos anteriormente. Lo primero que tenemos que hacer para habilitar la funcionalidad de realidad aumentada en nuestra aplicación es eliminar la cámara principal que se crea en la escena por defecto al crear un proyecto. Una vez eliminada, hacemos click sobre la carpeta "Vuforia" y nos digirimos a la subcarpeta "Prefabs". Esta carpeta contiene el objeto "ARCamera" que podemos arrastar en nuestra escena. Una vez disponemos de este objeto en nuestra escena  vamos a ver que componentes tiene, para ello hacemos click sobre el objeto en la vista que nos muestra de forma jerárquica los objetos en la escena. 
+
+![](imagenes/realidad_aumentada/ra_componentes_ar_camera.jpg)
+
+Vamos a ver los distintos componentes que tiene asociados el objeto "ARCamera" y sobretodo vamos a ver las distintas opciones que nos ofrece el componente "Vuforia Behaviour". Podemos ver que por defecto, la mayoría de componentes se encuentran activados, permitiendo la inicialización del objeto, así como cargar una base de datos con marcadores. 
 
 <!--
 
