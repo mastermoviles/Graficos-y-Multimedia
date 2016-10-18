@@ -417,6 +417,12 @@ Al añadir un marcador tendremos que seleccionar una serie de opciones, primero 
 
 Al crearlo, la platafora online procesará la imagen que hemos subido y nos dará una valoración sobre la calidad de la imagen para ser utilizada como marcador. Como podemos imaginar, si la imagen utilizada no tiene suficientes características visuales (textura) el sistema le dará una calificación baja y como consecuencia la detección y el seguimiento del marcador no serán muy estables. La tecnología Vuforia se basa en la utilización del algoritmo SURF, ampliamente conocido en la comunidad de visión por computador, para detectar una determinada textura en la escena. En nuestro caso, hemos subido una textura sugerida por la librería Vuforia, la podemos encontrar en su página web y ofrece buenas características visuales para un correcto funcionamiento. Más adelante, probaremos a subir nuestras propias imágenes y ver qué tal funcionan. Si vamos al listado de marcadores que hemos subido y hacemos click sobre el que acabamos de crear, podemos ver además de la valoración que nos ofrece la plataforma, las características visuales que ha detectado.
 
+![](imagenes/realidad_aumentada/ra_caracteristicas_visuales_marcador.jpg)
+
+En el siguiente enlace encontramos algunas ejemplos de imágenes que Vuforia recomienda: [https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf](https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf)
+
+
+
 
 
 <!--
