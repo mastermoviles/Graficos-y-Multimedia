@@ -389,7 +389,7 @@ Vamos a ver los distintos componentes que tiene asociados el objeto "ARCamera" y
 
 Por ahora vamos a centrarnos en el componente "Vuforia Behaviour", podemos ver que en el primer campo o propiedad tiene un campo para introducir una licencia de aplicación. De hecho, si intentamos ejecutar la aplicación sin introducir esta licencia, obtendremos un mensaje de aviso alertándonos de la necesidad de introducir una licencia válida para poder utilizar la cámara de realidad aumentada en nuestra escena. Por ello, antes de continuar tendremos que ir a la plataforma online de Vuforia y obtener una clave para nuestra aplicación. 
 
-* ** imagen error aplicación licencia vuforia **
+![](imagenes/realidad_aumentada/ra_license_manager.jpg)
 
 En la pestaña developer de la plataforma online veremos que tenemos disponible una subsección llamada "License Manager", desde esta podemos crear una nueva licencia para nuestra aplicación, tan solo deberemos seguir los siguientes pasos:
 
@@ -401,10 +401,19 @@ En la pestaña developer de la plataforma online veremos que tenemos disponible 
 
 * **Obtenemos nuestra licencia**: En el caso de que se trate de una licencia comercial tendremos que proveer con un medio de pago para costear la misma, en caso contrario veremos que nuestra licencia se acaba de crear. La licencia de desarrollar tiene algunas restricciones, por ejemplo el número máximo de veces por mes que un marcador puede ser detectado usando nuestra aplicación móvil. Para saltarnos esta restricción tendremos que obtener una licencia comercial.
 
-Una vez creada, nos aparecerá en el gestor de licencias de la plataforma online y podemos hacer click sobre la misma para ver la cadena de texto que representa la licencia de nuestra aplicación. Esta cadena se debe de introducir en el campos que vimos anteriormente del componente "Vuforia Behaviour" en objeto "ARCamera". Trás introducir la licencia veremos que podemos ejecutar nuestra aplicación en Unity y si nuestro ordenador dispone de una cámara compatible podremos ver el vídeo de nuestra cámara en la escena.
+Una vez creada, nos aparecerá en el gestor de licencias de la plataforma online y podemos hacer click sobre la misma para ver la cadena de texto que representa la licencia de nuestra aplicación. Esta cadena se debe de introducir en el campos que vimos anteriormente del componente "Vuforia Behaviour" en objeto "ARCamera". 
 
-* ** imagen funcionando **
+![](imagenes/realidad_aumentada/ra_license_vuforia.jpg)
 
+Trás introducir la licencia veremos que podemos ejecutar nuestra aplicación en Unity y si nuestro ordenador dispone de una cámara compatible podremos ver video en directo en la escena Unity.
+
+Lo siguiente que tenemos que hacer es habilitar el uso de marcadores y definir el marcador que vamos a reconocer en nuestra aplicación para suponer contenido. 
+
+Si es la primera vez que creamos una aplicación, tendremos que irnos a la plataforma online y crear un nuevo "Target" que va a ser reconocido en nuestra aplicación. Si por el contrario ya dispusieramos de algún marcador creado previamente para otro proyecto usando la librería Vuforia, podríamos copiarlo y reutilizarlo en este nuevo proyecto. En nuestro caso vamos a la pestaña "Develop" de la plataforma online y hacemos click sobre la sección "Target Manager". Una vez dentro el sistema nos ofrecela posibilidad de crear una nueva base de datos con marcadores para nuestra aplicación. Al pinchar en añadir nos preguntará donde va a residir el marcador: Device, Cloud o VuMark. Seleccionaremos Device ya que queremos almacenar los marcadores en el propio dispositivo. Una vez creada la base de datos podemos crear distintos marcadores que posteriormente usaremos en nuestra aplicación. 
+
+Al añadir un marcador tendremos que seleccionar una serie de opciones, primero de todo el tipo de marcador, una imagen, cubo 3D,  cilindro incluso nos permite utilizar un objeto. En todos los casos  es importante además que el tipo de marcador tenga una textura o patrón que permita que los algoritmos de visión por computador para seguimiento de características visuales puedan detectar y hacer el seguimiento de forma correcta.
+
+![](imagenes/realidad_aumentada/ra_nuevo_marcador_vuforia.jpg)
 
 
 
