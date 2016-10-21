@@ -462,10 +462,11 @@ Al pulsar el botón "Build" nos generará el fichero .apk compatible para Androi
 
 #### Desplegando aplicación Unity en iOS
 
-Para desplegar la aplicación en iOS, seleccionaremos esa opción en el diálogo "Build Settings". En este caso, en lugar de ejecutar directamente, nos creará un proyecto en para Xcode que utilizaremos para desplegar la aplicación en nuestro dispositivo iOS. Si tratamos de compilar el proyecto que nos acaba de generar Unity, obtendremos un error indicá
-ndonos que la aplicación no ha sido firmada y requiere de un "Team".
+Para desplegar la aplicación en iOS, seleccionaremos esa opción en el diálogo "Build Settings". En este caso, en lugar de ejecutar directamente, nos creará un proyecto en para Xcode que utilizaremos para desplegar la aplicación en nuestro dispositivo iOS. Si tratamos de compilar el proyecto que nos acaba de generar Unity, obtendremos un error indicándonos que la aplicación no ha sido firmada y requiere especificar un "Equipo".
 
 ![](imagenes/realidad_aumentada/ra_firmar_proyecto_unity_para_ios_xcode.jpg)
+
+Por último, antes de compilar la aplicación y desplegarla en nuestro dispositivo iOS, tendremos que añadir una entrada en la configuración del proyecto con la descripción del uso de la cámara. Por políticas de seguridad con el acceso a la cámara,  los desarrolladores tienen que detallas el uso de la cámara en la aplicación. Cuando la aplicación intente acceder a la cámara el usuario, iOS nos lo informará con un diálogo y nos permira permiso para que la aplicación acceda a la cámara. 
 
 
 <!--
