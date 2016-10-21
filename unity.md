@@ -466,8 +466,11 @@ Para desplegar la aplicación en iOS, seleccionaremos esa opción en el diálogo
 
 ![](imagenes/realidad_aumentada/ra_firmar_proyecto_unity_para_ios_xcode.jpg)
 
-Por último, antes de compilar la aplicación y desplegarla en nuestro dispositivo iOS, tendremos que añadir una entrada en la configuración del proyecto con la descripción del uso de la cámara. Por políticas de seguridad con el acceso a la cámara,  los desarrolladores tienen que detallas el uso de la cámara en la aplicación. Cuando la aplicación intente acceder a la cámara el usuario, iOS nos lo informará con un diálogo y nos permira permiso para que la aplicación acceda a la cámara. 
+Por último, antes de compilar la aplicación y desplegarla en nuestro dispositivo iOS, tendremos que añadir una entrada en la configuración del proyecto con la descripción del uso de la cámara. Por políticas de seguridad con el acceso a la cámara,  los desarrolladores tienen que detallas el uso de la cámara en la aplicación. Cuando la aplicación intente acceder a la cámara el usuario, iOS nos lo informará con un diálogo y nos permira permiso para que la aplicación acceda a la cámara. Por ello en la sección "Info" de la configuración del proyecto, creamos la clave "Privacy - Camera Usage Description" y ponemos una descripción del uso de la cámara en nuestra app: "detección marcadores realidad aumentada".
 
+![](imagenes/realidad_aumentada/ra_project_info_keys_camera_usage_description.jpg)
+
+Ahora podemos compilar y desplegar la aplicación en nuestro dispositivo iOS pulsando el botón "Play" de la parte superior.
 
 <!--
 
