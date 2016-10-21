@@ -450,6 +450,12 @@ A continuación vamos a ver como generar la aplicación para Android o iOS.
 
 Accedemos al diálogo: "File -> Build Settings". Desde aquí  podemos especificar y configurar la plataforma para la cual queremos generar nuestra aplicación. En el caso de Android, además, primero tendremos que especificar el directorio donde se encuentra el SDK Android y el Java Development Kit (JDK). En "Unity -> Preferences -> External tools" deberemos configurar estos directorios.
 
+
+
+A la hora de desplegar la aplicación en Android, tenemos varias opciones, bien generamos directamente la aplicación en formato .apk o también podemos generar un proyecto para Android Studio y modificarlo posteriormente allí. De esta forma podremos ver código fuentes para la integración de Vuforia en la app Android y hacer modificaciones en la lógica de la aplicación. Para generar el proyecto para Android Studio tendríamos que marcar la casilla "Google Android Project" en "Build Settings".
+
+
+
 <!--
 
 
