@@ -415,15 +415,28 @@ Al añadir un marcador tendremos que seleccionar una serie de opciones, primero 
 
 ![](imagenes/realidad_aumentada/ra_nuevo_marcador_vuforia.jpg)
 
-Al crearlo, la platafora online procesará la imagen que hemos subido y nos dará una valoración sobre la calidad de la imagen para ser utilizada como marcador. Como podemos imaginar, si la imagen utilizada no tiene suficientes características visuales (textura) el sistema le dará una calificación baja y como consecuencia la detección y el seguimiento del marcador no serán muy estables. La tecnología Vuforia se basa en la utilización del algoritmo SURF, ampliamente conocido en la comunidad de visión por computador, para detectar una determinada textura en la escena. En nuestro caso, hemos subido una textura sugerida por la librería Vuforia, la podemos encontrar en su página web y ofrece buenas características visuales para un correcto funcionamiento. Más adelante, probaremos a subir nuestras propias imágenes y ver qué tal funcionan. Si vamos al listado de marcadores que hemos subido y hacemos click sobre el que acabamos de crear, podemos ver además de la valoración que nos ofrece la plataforma, las características visuales que ha detectado.
+Al crearlo, la plataforma online procesará la imagen que hemos subido y nos dará una valoración sobre la calidad de la imagen para ser utilizada como marcador. Como podemos imaginar, si la imagen utilizada no tiene suficientes características visuales (textura) el sistema le dará una calificación baja y como consecuencia la detección y el seguimiento del marcador no serán muy estables. La tecnología Vuforia se basa en la utilización del algoritmo SURF, ampliamente conocido en la comunidad de visión por computador, para detectar una determinada textura en la escena. En nuestro caso, hemos subido una textura sugerida por la librería Vuforia, la podemos encontrar en su página web y ofrece buenas características visuales para un correcto funcionamiento. Más adelante, probaremos a subir nuestras propias imágenes y ver qué tal funcionan. Si vamos al listado de marcadores que hemos subido y hacemos click sobre el que acabamos de crear, podemos ver además de la valoración que nos ofrece la plataforma, las características visuales que ha detectado.
 
 ![](imagenes/realidad_aumentada/ra_caracteristicas_visuales_marcador.jpg)
 
-En el siguiente enlace encontramos algunas ejemplos de imágenes que Vuforia recomienda: [https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf](https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf)
+En el siguiente enlace encontramos algunos ejemplos de imágenes que Vuforia recomienda: [https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf](https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf)
 
+El siguiente paso para utilizar este marcador en el proyecto Unity que creamos previamente es descargarlo desde la plataforma online e importarlo de igual forma que hicimos con el SDK de Vuforia. Deberemos seleccionar la opción de descarga para la plataforma Unity.
 
+![](imagenes/realidad_aumentada/ra_descargar_bd_marcador.jpg)
 
+Una vez importados ambos paquetes en Unity vamos a repasar la estructura de Assets que tenemos en nuestro proyecto relacionados con el SDK de Vuforia:
 
+* **Editor:** Contiene los scripts que necesitemos para interactuar de forma dinámica con los marcadores que tengamos en nuestra aplicación.
+* **Plugins:** Contiene los binarios Java y otros binarios nativos que integran el SDK de Vuforia con las aplicaciones de Unity para Android o iOS.
+* **Vuforia:** Contiene los scripts y prefabs requeridos para implementar funcionalidades de realidad aumentada en tu aplicación Unity.
+* **Streaming Assets/QCAR** * Contiene la base de datos y su configuración, de marcadores para nuestro dispositivo en formato XML y DAT (fichero importado de la plataforma online para gestionar marcadores).
+
+Volviendo al proyecto Unity que hemos creado, como ya disponemos de una cámara de realidad aumentada en nuestra escena, tan solo nos quedaría incluir un objeto "ImageTarget" en nuestra escena y configurar algunos valores en los scripts de estos objetos. Por lo tanto, arrastramos un objeto "ImageTarget" a la escena. Este objeto lo encontramos dentro de la carpeta Vuforia/prefabs dentro del explorador del proyecto en Unity. 
+
+Una vez añadido deberemos configurar algunos de los componentes de este objeto. El componente "Mesh Renderer" nos permite cambiar algunos efectos gráficos sobre los modelos que vamos a visualizar sobre el marcador. Por ejemplo, si los modelos que cuelguen de este objeto proyectan sombras o si podemos proyectar sombras sobre el modelo en sí. Para que el marcador funcione en nuestra aplicación y sea detectado debemos seleccionarlo en el componente "Image Target Behaviour". Este script nos permite seleccionar el marcador que previamente creamos e importamos en nuestro proyecto, así como configurar algunas opciones del mismo. Por ahora, simplemente seleccionaremos nuestro marcador de la lista despegable "Database". Con esto ya tenemos nuestra aplicación lista para detectar el marcador definido. Para probarla, añadimos en la escena un modelo 3D, por ejemplo una esfera, y la posicionamos en la escena cerca del marcador que hemos puesto anteriormente.
+
+![](imagenes/realidad_aumentada/ra_componentes_image_target.jpg)
 
 <!--
 
