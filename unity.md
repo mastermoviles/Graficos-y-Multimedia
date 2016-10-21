@@ -446,7 +446,7 @@ Unity nos permite crear aplicaciones multiplataforma, por lo que podremos genera
 
 A continuación vamos a ver como generar la aplicación para Android o iOS.
 
-#### Desplegando aplicación en Android
+#### Desplegando aplicación Unity en Android
 
 Accedemos al diálogo: "File -> Build Settings". Desde aquí  podemos especificar y configurar la plataforma para la cual queremos generar nuestra aplicación. En el caso de Android, además, primero tendremos que especificar el directorio donde se encuentra el SDK Android y el Java Development Kit (JDK). En "Unity -> Preferences -> External tools" deberemos configurar estos directorios.
 
@@ -456,12 +456,19 @@ A la hora de desplegar la aplicación en Android, tenemos varias opciones, bien 
 
 Además, si pulsamos sobre "Player Settings" podremos definir toda una serie de opciones para la generación de la aplicación en Android. Entre estas opciones encontramos, nombre de la aplicación, icono, opciones de rendering, optimización de codigo GPU, mínima versión de API requerida, lugar de instalación para la app, acceso a Internet, permisos de escritura, etcétera.
 
+![](imagenes/realidad_aumentada/ra_player_settings_android.jpg)
 
+Al pulsar el botón "Build" nos generará el fichero .apk compatible para Android con las opciones marcadas y si pulsamos "Build and Run" buscará un dispositivo Android conectado e instalará y ejecutará la aplicación en el dispositivo. 
 
+#### Desplegando aplicación Unity en iOS
+
+Para desplegar la aplicación en iOS, seleccionaremos esa opción en el diálogo "Build Settings". En este caso, en lugar de ejecutar directamente, nos creará un proyecto en para Xcode que utilizaremos para desplegar la aplicación en nuestro dispositivo iOS. Si tratamos de compilar el proyecto que nos acaba de generar Unity, obtendremos un error indicá
+ndonos que la aplicación no ha sido firmada y requiere de un "Team".
+
+![](imagenes/realidad_aumentada/ra_firmar_proyecto_unity_para_ios_xcode.jpg)
 
 
 <!--
-
 
 ## Scripting
 
