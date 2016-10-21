@@ -434,9 +434,21 @@ Una vez importados ambos paquetes en Unity vamos a repasar la estructura de Asse
 
 Volviendo al proyecto Unity que hemos creado, como ya disponemos de una cámara de realidad aumentada en nuestra escena, tan solo nos quedaría incluir un objeto "ImageTarget" en nuestra escena y configurar algunos valores en los scripts de estos objetos. Por lo tanto, arrastramos un objeto "ImageTarget" a la escena. Este objeto lo encontramos dentro de la carpeta Vuforia/prefabs dentro del explorador del proyecto en Unity. 
 
-Una vez añadido deberemos configurar algunos de los componentes de este objeto. El componente "Mesh Renderer" nos permite cambiar algunos efectos gráficos sobre los modelos que vamos a visualizar sobre el marcador. Por ejemplo, si los modelos que cuelguen de este objeto proyectan sombras o si podemos proyectar sombras sobre el modelo en sí. Para que el marcador funcione en nuestra aplicación y sea detectado debemos seleccionarlo en el componente "Image Target Behaviour". Este script nos permite seleccionar el marcador que previamente creamos e importamos en nuestro proyecto, así como configurar algunas opciones del mismo. Por ahora, simplemente seleccionaremos nuestro marcador de la lista despegable "Database". Con esto ya tenemos nuestra aplicación lista para detectar el marcador definido. Para probarla, añadimos en la escena un modelo 3D, por ejemplo una esfera, y la posicionamos en la escena cerca del marcador que hemos puesto anteriormente.
+Una vez añadido deberemos configurar algunos de los componentes de este objeto. El componente "Mesh Renderer" nos permite cambiar algunos efectos gráficos sobre los modelos que vamos a visualizar sobre el marcador. Por ejemplo, si los modelos que cuelguen de este objeto proyectan sombras o si podemos proyectar sombras sobre el modelo en sí. 
 
 ![](imagenes/realidad_aumentada/ra_componentes_image_target.jpg)
+
+Para que el marcador funcione en nuestra aplicación y sea detectado debemos seleccionarlo en el componente "Image Target Behaviour". Este script nos permite seleccionar el marcador que previamente creamos e importamos en nuestro proyecto, así como configurar algunas opciones del mismo. Por ahora, simplemente seleccionaremos nuestro marcador de la lista despegable "Database". Con esto ya tenemos nuestra aplicación lista para detectar el marcador definido. Para probarla, añadimos en la escena un modelo 3D, por ejemplo una esfera, y la posicionamos en la escena cerca del marcador que hemos puesto anteriormente.
+
+![](imagenes/realidad_aumentada/ra_escena_unity_marcador_esfera.jpg)
+
+Unity nos permite crear aplicaciones multiplataforma, por lo que podremos generar aplicaciónes para los siguientes sistemas: Windows, OSX, Android, iOS, tvOS, Tizen, webGL, Xbox One, PS3, PS4, etcetera. Si tenemos una cámara compatible en el ordenador donde estamos desarrollando la aplicación, podremos probar nuestra aplicación de realidad aumentada simplemente pulsando el botón de "Play" en la parte superior. 
+
+A continuación vamos a ver como generar la aplicación para Android o iOS.
+
+#### Desplegando aplicación en Android
+
+Accedemos al diálogo: "File -> Build Settings". Desde aquí  podemos especificar y configurar la plataforma para la cual queremos generar nuestra aplicación. En el caso de Android, además, primero tendremos que especificar el directorio donde se encuentra el SDK Android y el Java Development Kit (JDK). En "Unity -> Preferences -> External tools" deberemos configurar estos directorios.
 
 <!--
 
