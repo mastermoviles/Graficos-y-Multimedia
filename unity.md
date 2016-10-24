@@ -484,7 +484,7 @@ Por último, habilitaremos la interacción con los modelos 3D cargados en la esc
 
 Realidad mixta es un término que se utiliza para la combinación de técnicas de realidad virtual y aumentada en tiempo real. Consiste en visualizar el mundo real usando técnicas de realidad virtual. Para ello, normalmente se visualiza el mundo real a través de la utilización de una cámara, cuyo flujo de vídeo se renderiza en entornos de realidad virtual añadiendo contenido virtual y renderizándolo todo usando un par de imágenes estereoscópicas. Utilizando marcadores como los vistos anteriormente, podemos facilmente usando la cámara añadir contenido virtual sobre el flujo de vídeo proporcionada de la cámara y visualizarlo todo usando un par de imágenes estereoscópicas.
 
-
+También se ha acuñado el término de realidad mixta, a tecnologías como las desarrolladas por Microsoft, Meta, Google o Epson. Estas compañias han desarrollado unos cascos que incorporan pantallas transparentes muy cercanas a los ojos. De esta forma podemos seguir viendo el mundo real, pero a su vez nos permiten visualizar objetos virtuales proyectados sobre el mundo real. Ejemplos de productos actuales que implementan esta tecnología son Microsoft Hololens, Meta2 o las Epson Moverio BT-200.
 
 <!--
 
