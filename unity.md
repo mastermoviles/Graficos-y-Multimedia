@@ -119,7 +119,14 @@ Los Assets en Unity hacen referencia a cualquiero item que podemos utilizar en n
 
 Los prefabs son una colección de GameObjects y componentes predefinidos que se pueden reutilizar en nuestra aplicación. De esta forma, podemos crear un GameObject, añadir componentes y configurarlo con una serie de valores y posteriormente reutilizarlo en nuestra escena varias veces. Un prefab almcenará toda esta información y además a diferencia de copiar y pegar un GameObject existente en nuestra aplicación, si modificamos un prefab, el resto de prefabs en la escena también se modificarán propagando estos cambios. Al copiar y pegar un GameObject, los cambios que hagamos en el original no se propagan a la copia, por lo que cada instancia tiene sus propia configuración.
 
+En el inspector de un prefab tenemos 3 botones que no estan presentes en un objeto normal: Select, Revert y Apply.
+El botón "Select" selecciona el prefab original del cual esta instancia fue creada y por lo tanto nos permite modificar todas las instancias que existan en la escena. Sin embargo, también podemos sobreescribir estos cambios en una determinada instancia de un prefab utilizando el botón "Apply". Finalmente, podemos usar el botón "Revert" para revertir la configuración del prefab a los valores default (valores del prefab original, antes de sobreescribir los cambios).
+
+Los prefabs son la forma en que normalmente las librerías y SDKs tienen de ofrecer funcionalidades para Unity, por ejemplo ya veremos en la sección de realidad virtual o aumentada que utilizando Prefabs ya existentes podemos añadir estas funcionalidades a nuestra aplicación.
+
 ### Paquetes de assets
+
+
 
 ### Asset Store
 
