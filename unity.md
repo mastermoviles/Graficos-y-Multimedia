@@ -113,8 +113,11 @@ Con los comandos anteriores podremos desplazarnos libremente sobre la escena, pe
 * **Alineación con un objeto**: Alinea la vista de la escena con el objeto seleccionado. Es especialmente útil cuando se utiliza con la cámara, ya que veremos la escena tal como se estaría bien desde la camara. Para hacer esto, seleccionaremos el _game object_ con el que nos queramos alinear y seleccionaremos la opción del menú _GameObject > Align View To Selected_.
 
 ## Assets
+Los Assets en Unity hacen referencia a cualquiero item que podemos utilizar en nuestro juego/aplicación. Un asset puede ser un fichero creado fuera de la plataforma Unity, por ejemplo un modelo 3D, un fichero de audio, o cualquier otro tipo de fichero que este soportado. También existen algunos tipos de assets que pueden ser creados desde Unity, por ejemplo el controlador de una animación, controlador de un jugador, mezclador de audio o el render de una textura.
 
 ### Prefabs
+
+Los prefabs son una colección de GameObjects y componentes predefinidos que se pueden reutilizar en nuestra aplicación. De esta forma, podemos crear un GameObject, añadir componentes y configurarlo con una serie de valores y posteriormente reutilizarlo en nuestra escena varias veces. Un prefab almcenará toda esta información y además a diferencia de copiar y pegar un GameObject existente en nuestra aplicación, si modificamos un prefab, el resto de prefabs en la escena también se modificarán propagando estos cambios. Al copiar y pegar un GameObject, los cambios que hagamos en el original no se propagan a la copia, por lo que cada instancia tiene sus propia configuración.
 
 ### Paquetes de assets
 
