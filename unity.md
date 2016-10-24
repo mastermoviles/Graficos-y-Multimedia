@@ -334,7 +334,7 @@ Actualmente la mayoría de tecnologías que permiten "aumentar la realidad" util
 
 Por último mencionar que existen otras tecnologías de realidad virtual basadas en posicionamiento GPS, de forma que utilizando las coordenadas proporcionadas por un sistema GPS habilitan en ciertos lugares la visualización de cierta información adicional utilizando la cámara del dispositivo móvil.
 
-![Ejemplo de realidad aumentada](imagenes/realidad_aumentada/ra_ejemplo_01.jpg)
+![Ejemplo de realidad aumentada](imagenes/realidad_aumentada/ra_ejemplo_00.jpg)
 
 ### Librerías de realidad aumentada
 
@@ -471,6 +471,20 @@ Por último, antes de compilar la aplicación y desplegarla en nuestro dispositi
 ![](imagenes/realidad_aumentada/ra_project_info_keys_camera_usage_description.jpg)
 
 Ahora podemos compilar y desplegar la aplicación en nuestro dispositivo iOS pulsando el botón "Play" de la parte superior.
+
+### Ejercicio realidad aumentada
+
+Para poner en práctica lo que hemos visto os proponemos el siguiente ejercicio: Vamos a crear una applicación de realidad aumentada para promocionar el máster en desarrollo de software para dispositivos móviles. Utiliza el tríptico del máster para visualizar una serie de modelos 3D sobre este. Además, para poner en práctica lo que hemos aprendido de Unity sobre interfaces 2D en las secciones anteriores, añadiremos una simple interfaz de usuario para poder salir de la aplicación. Añadiremos varios modelos 3D utilizando distintos formatos (.3ds, .obj, .off, ...) Los modelos 3D se pueden descargar desde la plataforma Moodle. Utilizando la portada y la parte interior del tríptico crearemos dos marcadores. La detección de cada marcador visualizará un contenido distinto en nuestra aplicación. Por ejemplo, al detectar la portada del tríptico podemos invitar al usuario a abrirlo y entonces detectar la parte interior del trípico y mostrar un contenido distinto.
+
+Por último, habilitaremos la interacción con los modelos 3D cargados en la escena. Al pulsar sobre cada uno de los modelos, Android, iMac, logotipo curso, visualizaremos más información sobre los contenidos que vemos en el máster de cada una de las plataformas. Podemos utilizar un diálogo o simplemente un plano con una textura que se flotará en el aire.
+
+![](imagenes/realidad_aumentada/ra_ejemplo_01.jpg)
+
+### Realidad mixta
+
+Realidad mixta es un término que se utiliza para la combinación de técnicas de realidad virtual y aumentada en tiempo real. Consiste en visualizar el mundo real usando técnicas de realidad virtual. Para ello, normalmente se visualiza el mundo real a través de la utilización de una cámara, cuyo flujo de vídeo se renderiza en entornos de realidad virtual añadiendo contenido virtual y renderizándolo todo usando un par de imágenes estereoscópicas. Utilizando marcadores como los vistos anteriormente, podemos facilmente usando la cámara añadir contenido virtual sobre el flujo de vídeo proporcionada de la cámara y visualizarlo todo usando un par de imágenes estereoscópicas.
+
+
 
 <!--
 
