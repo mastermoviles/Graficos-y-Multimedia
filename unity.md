@@ -126,9 +126,10 @@ Los prefabs son la forma en que normalmente las librerías y SDKs tienen de ofre
 
 ### Paquetes de assets
 
-
+Los paquetes de Assets nos permiten en unity fácilmente reutilizar projectos y colecciones de assets. De hecho como ya veremos, los `Standard assets` y los items que encontramos en la `Asset store` se descargan en forma de pquetes. Podemos importar estos paquetes bien haciendo doble click en el fichero que se genera o bien desde el menu Assets > Import package. Encontramos dos tipos de paquetes, los standard, que son colecciones ya disponibles por defecto al instalar Unity, y los paquetes personalizados que pueden ser creados por usuarios y descargarse online. De igual forma podemos exportar un paquete desde nuestro proyecto. Elige Assets > Export package... y nos aparecerá un diálogo para seleccionar los assets que queremos incluir en nuestro paquete. Deja marcado la casilla `include dependencies` para añadir automáticamente los assets utilizados por losque has seleccionado. Al hacer click en `Export` podremos seleccionar donde almacenar el paquete que contiene los assets previamente seleccionados.
 
 ### Asset Store
+Unity ha creado una tienda desde la que podemos descargar assets ya existentes. Estos assets 
 
 ## Interfaz de usuario
 
@@ -225,16 +226,6 @@ Podemos optar por tres modos:
 El modo _Constant Pixel Size_ será poco adecuado cuando estemos destinando el juego a pantallas que puedan tener diferente densidad, pero en caso de que no sea así nos permitirá ajustar mejor los contenidos de la interfaz (por ejemplo en caso de PC o videoconsolas).
 
 En caso de destinar nuestro juego a dispositivos móviles, lo recomendable será utilizar _Constant Physical Size_ o _Scale With Screen Size_. La primera nos puede venir bien por ejemplo para menús, donde nos interese que siempre los botones tengan siempre el mismo tamaño (suficiente para poder pulsar con el dedo sobre él, pero que no ocupe toda la pantalla en un dispositivos grande). Por otro lado, para elementos del HUD con los que no tenemos que interactuar nos puede venir bien la segunda opción, para así hacer que se escale según la pantalla y no ocupen demasiado espacio en dispositivos pequeños.
-
-
-## Assets
-
-### Prefabs
-
-### Paquetes de assets
-
-### Asset Store
-
 
 ## Realidad Virtual
 
