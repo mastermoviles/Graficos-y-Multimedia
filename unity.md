@@ -312,7 +312,7 @@ Con este modo activo podremos lanzar la aplicación en el móvil sin tener que c
 
 ### Google VR 
 
-Google VR, originalmente conocido como Google Cardboard es el SDK de Google para desarrollar aplicaciones de realidad virtual usando sus visores de VR. Hasta ahora principalmente el Google Cardboard, pero recientemente han anunciado el primer producto similar al anteriormente visto Samsung Gear VR, conocido como Google Daydream. El SDK de Google VR es compatible con cualquiera de sus visores por lo que las aplicaciones que desarrollemos para el Google Cardboard se podrán utilizar también en Google Daydream. Unity, por defecto, no incluye soporte nativo para Google Cardboard, pero podemos encontrar un _plugin_ muy sencillo de utilizar en la web oficial:
+Google VR, originalmente conocido como Google Cardboard es el SDK de Google para desarrollar aplicaciones de realidad virtual usando sus visores de VR. Hasta ahora principalmente el Google Cardboard, pero recientemente han anunciado el primer producto similar al anteriormente visto Samsung Gear VR, conocido como Google Daydream. El SDK de Google VR es compatible con cualquiera de sus visores por lo que las aplicaciones que desarrollemos para el Google Cardboard se podrán utilizar también en Google Daydream. Unity, por defecto, no incluye soporte nativo para Google Cardboard, pero podemos encontrar un _plugin_ muy sencillo de utilizar en la web oficial:![](/assets/unity-vr-googlevr-gvrviewermain.jpg)
 
 [https://developers.google.com/vr/unity/](https://developers.google.com/vr/unity/)
 
@@ -322,10 +322,11 @@ Recientemente, ha aparecido una compilación personalizada de Unity que incorpor
 
 La forma más sencilla de añadir soporte a nuestro proyecto Unity para Cardboard o similares es añadir a nuestro proyecto el _prefab_ `GvrViewerMain`. Este _prefab_ tiene los componentes necesarios de forma que al ejecutar nuestra aplicación se generarán las imágenes estéreo utilizando nuestra cámara principal de la escena.
 
-![Componente Stereo Controller](imagenes/unity/unity-vr-cb-stereo.png)
+![Prefab GrvViewerMain](imagenes/unity/unity-vr-googlevr-gvrviewermain.jpg)
 
 ![Aplicación con Google Cardboard](imagenes/unity/unity-vr-cb.png)
 
+Además, el SDK de Google para Unity cuenta con otros _prefabs_ que nos permiten facilmente utilizar el movimiento de la cabeza para interactuar con nuestra escena. Usando el _prefab_ `reticle` podemos facilmente implementar esta funcionalidad en nuestra aplicación. 
 
 ## Realidad Aumentada
 
