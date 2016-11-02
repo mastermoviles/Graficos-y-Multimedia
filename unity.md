@@ -312,7 +312,7 @@ Con este modo activo podremos lanzar la aplicación en el móvil sin tener que c
 
 ### Google VR 
 
-Google VR, originalmente conocido como Google Cardboard es el SDK de Google para desarrollar aplicaciones de realidad virtual usando sus visores de VR. Hasta ahora principalmente el Google Cardboard, pero recientemente han anunciado el primer producto similar al anteriormente visto Samsung Gear VR, conocido como Google Daydream. El SDK de Google VR es compatible con cualquiera de sus visores por lo que las aplicaciones que desarrollemos para el Google Cardboard se podrán utilizar también en Google Daydream. Unity, por defecto, no incluye soporte nativo para Google Cardboard, pero podemos encontrar un _plugin_ muy sencillo de utilizar en la web oficial:![](/assets/unity-vr-googlevr-gvrviewermain.jpg)
+Google VR, originalmente conocido como Google Cardboard es el SDK de Google para desarrollar aplicaciones de realidad virtual usando sus visores de VR. Hasta ahora principalmente el Google Cardboard, pero recientemente han anunciado el primer producto similar al anteriormente visto Samsung Gear VR, conocido como Google Daydream. El SDK de Google VR es compatible con cualquiera de sus visores por lo que las aplicaciones que desarrollemos para el Google Cardboard se podrán utilizar también en Google Daydream. Unity, por defecto, no incluye soporte nativo para Google Cardboard, pero podemos encontrar un _plugin_ muy sencillo de utilizar en la web oficial:
 
 [https://developers.google.com/vr/unity/](https://developers.google.com/vr/unity/)
 
