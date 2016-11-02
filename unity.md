@@ -322,11 +322,17 @@ Recientemente, ha aparecido una compilación personalizada de Unity que incorpor
 
 La forma más sencilla de añadir soporte a nuestro proyecto Unity para Cardboard o similares es añadir a nuestro proyecto el _prefab_ `GvrViewerMain`. Este _prefab_ tiene los componentes necesarios de forma que al ejecutar nuestra aplicación se generarán las imágenes estéreo utilizando nuestra cámara principal de la escena.
 
-![Prefab GrvViewerMain](imagenes/unity/unity-vr-googlevr-gvrviewermain.jpg)
+![Prefab GrvViewerMain](imagenes/unity/unity-vr-gvrviewermain.png)
+
+Desde este _prefab_ podemos ajustar la distorsión de las lentes, así como seleccionar el tamaño de la pantalla sobre el que la aplicación se va a ejecutar. Por ahora, además nos permite seleccionar que versión de Google Cardboard vamos a utilizar, de forma que se generarán las vistas correspondientes para el visor seleccionado (distorsión).
 
 ![Aplicación con Google Cardboard](imagenes/unity/unity-vr-cb.png)
 
-Además, el SDK de Google para Unity cuenta con otros _prefabs_ que nos permiten facilmente utilizar el movimiento de la cabeza para interactuar con nuestra escena. Usando el _prefab_ `reticle` podemos facilmente implementar esta funcionalidad en nuestra aplicación. 
+Además, el SDK de Google para Unity cuenta con otros _prefabs_ que nos permiten facilmente utilizar el movimiento de la cabeza para interactuar con nuestra escena. Usando el _prefab_ `GvrReticle` podemos implementar esta funcionalidad en nuestra aplicación. También incorpora otras utilidades como un _prefab_ para mostrar una etiqueta flotante en nuestra aplicación con la tasa de imágenes por segundo a la que la aplicación esta siendo ejecutada: `GvrFPSCanvas`. Esto es importante ya que en las aplicaciones de Realidad Virtual es necesario maximizar la tasa de imágenes por segundo de forma que el usuario no sienta sensación de mareo o perciba y que el movimiento de la cámara alrededor de la escena sea lo más suave posible.
+
+Para integrar el `GvrReticle` a nuestra aplicación y habilitar la interacción con modelos de la escena tendremos que seguir los siguientes pasos. Primero, añadimos el _prefab_ `GvrReticle` y los ponemos en la jerarquía de nuestra aplicación debajo de la cámara principal. Desde el inspector del prefab podremos cambiar algunos ajustes como el color del puntero, la forma, o la animación que se produce al apuntar a un objecto de nuestra escena con el que se puede interactuar. Además, tenemos que añadir a nuestra escena un objeto `EventSystem` y añadir la componente `Gaze Input Module`.  Por último, añadiremos el objeto con el que vamos a interactuar, por ejempo un cubo, y nos aseguraremos que tiene habilitada la componente `Box Collider`. De esta forma nuestra aplicación en Unity podrá comprobar cuando el puntero intersecta con el cubo 3D. También tenemos que añadir a nuestra cámara principal la componente `Physics Raycaster (Script)`, de forma que nuestra cámara podrá detectar colisiones con los objetos de la escena mediante  `raycasting`.
+
+![Ejemplo escena con GvrViewerMain, GvrReticle y GvrFPSCanvas.](imagenes/unity/unity-vr-gvrreticle.png)
 
 ## Realidad Aumentada
 
