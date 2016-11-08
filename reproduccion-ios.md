@@ -369,11 +369,7 @@ Podemos responder a esta notificación deteniendo la reproducción:
 
 **Swift**
 ```swift
-- (void)routeChanged:(id)sender {
- if([self.player isPlaying]) {
- [self.player pause];
- }
-}
+func routeChanged(_ sender: Any) { if self.player.isPlaying() {   self.player.pause() }}
 ```
 **Objective-C**
 ```objectivec
