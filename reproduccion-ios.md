@@ -54,10 +54,10 @@ encontraremos una serie de funciones con las que crear y reproducir sonidos. Pod
 tipo a partir de la URL del fichero de audio, mediante la función `AudioServicesCreateSystemSoundID`.
 
 **Swift**
-``swift
+```swift
 var sonido = SystemSoundID()
 var urlSonido = Bundle.main.url(forResource: "alarma", withExtension: "caf")
-AudioServicesCreateSystemSoundID((urlSonido as! CFURLRef), sonido)
+AudioServicesCreateSystemSoundID((urlSonido as! CFURL), sonido)
 ```
 **Objective-C**
 ```objectivec
@@ -91,6 +91,16 @@ En este caso también debemos proporcionar el sonido a reproducir, pero además 
 
 Si necesitamos que nuestra aplicación reproduzca música de cualquier duración, y no necesitamos tener un gran control sobre la forma en la que se reproduce el sonido \(por ejemplo posicionamiento _stereo_\), entonces podemos utilizar el reproductor de audio `AVAudioPlayer`. Con esto podremos reproducir ficheros de cualquier duración, lo cual nos será de utilidad para reproducir música de fondo en nuestra aplicación. Soporta todos los formatos vistos anteriormente, y su uso resulta muy sencillo:
 
+**Swift**
+```swift
+ var error: Error? = nil
+ var urlMusica = Bundle.main.url(forResource: "musica", withExtension: "mp3")
+ let player = try! AVAudioPlayer(contentsOf: urlMusica!)
+ player.prepareToPlay()
+ player.play()
+```
+
+**Objective-C**
 ```objectivec
 NSError *error = nil;
 NSURL *urlMusica = [[NSBundle mainBundle] URLForResource:@"musica"
@@ -130,6 +140,12 @@ tanto dentro de nuestra aplicación, como controlando el estado de reproducción
 
 La sesión de audio nos permite especificar el uso que nuestra aplicación quiere hacer del audio. Tendremos un objto `AVAudioSession` por cada aplicación, que podrá ser obtenido como un _singleton_:
 
+**Swift**
+```swift
+var audioSession = AVAudioSession.sharedInstance()
+```
+
+**Objective-C**
 ```objectivec
 AVAudioSession *audioSession = [AVAudioSession sharedInstance];
 ```
