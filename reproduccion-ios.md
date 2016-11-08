@@ -296,6 +296,10 @@ Estos eventos externos vienen de los auriculares, o de la pantalla de bloqueo, y
 
 Además, para controlar estos eventos, el controlador que reproduzca el audio debe pasar a ser el _first responder_:
 
+```swift
+self.becomeFirstResponder()
+```
+
 ```objectivec
 [self becomeFirstResponder];
 ```
