@@ -412,6 +412,13 @@ imagen final se calculará en el momento en el que la imagen `CIImage` final sea
 
 Podemos crear una imagen de este tipo a partir de imágenes de Core Graphics:
 
+**Swift**
+```swift
+var cgImage = UIImage(named: "imagen.png")!.cgImage!
+var ciImage = CIImage(cgImage: cgImage)
+```
+
+**Objective-C**
 ```objectivec
 CGImageRef cgImage = [UIImage imageNamed: @"imagen.png"].CGImage;
 CIImage *ciImage = [CIImage imageWithCGImage: cgImage];
@@ -426,6 +433,16 @@ de tipo `CIImage`. Esto lo haremos con el inicializador `initWithCIImage:`, y po
 la representación de la imagen como `CIImage` mediante la propiedad `CIImage` de `UIImage`.
 Dicha imagen podrá ser dibujada en el contexto gráfico como se ha visto en sesiones anteriores:
 
+**Swift**
+```swift
+var uiImage = UIImage(ciImage: ciImage)
+var ciImage = uiImage.ciImage!
+...
+// En drawRect: (o con algún contexto gráfico activo)
+uiImage.draw(at: CGPoint.zero)
+```
+
+**Objective-C**
 ```objectivec
 UIImage *uiImage = [UIImage imageWithCIImage: ciImage];
 ...
@@ -436,8 +453,6 @@ CIImage *ciImage = uiImage.CIImage;
 // En drawRect: (o con algún contexto gráfico activo)
 [uiImage drawAtPoint: CGPointZero];
 ```
-
-
 
 > Cuando queramos crear una imagen para mostrar en la interfaz (`UIImage`) a partir de una imagen de Core
 Image (`CIImage`), deberemos llevar cuidado porque la imagen puede no mostrarse correctamente en
@@ -462,6 +477,12 @@ imagen como un dato de tipo `CGRect`. Más adelante veremos que resulta de utili
 Los filtros que podemos aplicar sobre la imagen se representan con la clase `CIFilter`. Podemos
 crear diferentes filtros a partir de su nombre:
 
+**Swift**
+```swift
+var filter = CIFilter(name: "CISepiaTone")
+```
+
+**Objective-C**
 ```objectivec
 CIFilter *filter = [CIFilter filterWithName: @"CISepiaTone"];
 ```
@@ -492,6 +513,13 @@ podremos tener otros parámetros que nos permitan ajustar el funcionamiento del 
 del filtro para convertir la imagen a tono sepia tendremos un parámetro que nos permitirá controlar la intensidad
 de la imagen sepia:
 
+**Swift**
+```swift
+let filter = CIFilter(name: "CISepiaTone")
+filter?.setValue(ciImage, forKey: kCIInputImageKey)
+filter?.setValue(0.5, forKey: kCIInputIntensityKey)
+```
+**Objective-C**
 ```objectivec
 CIFilter *filter =
     [CIFilter filterWithName:@"CISepiaTone"
@@ -505,6 +533,13 @@ Podemos ver que para la propiedad correspondiente a la imagen de entrada tenemos
 `kCIInputImageKey`, aunque también podríamos especificarla como la cadena `@"inputImage"`.
 Las propiedades de los filtros también pueden establecerse independientemente utilizando KVC:
 
+**Swift**
+```swift
+filter?.setValue(ciImage, forKey: kCIInputImageKey)
+filter?.setValue(0.8, forKey: kCIInputIntensityKey)
+```
+
+**Objective-C**
 ```objectivec
 [filter setValue: ciImage forKey: @"inputImage"];
 [filter setValue: [NSNumber numberWithFloat:0.8]
@@ -516,6 +551,12 @@ para MacOS, pero varios de esos filtros no están disponibles en iOS). Podemos o
 en nuestra plataforma desde la aplicación con los métodos `filterNamesInCategories:` y
 `filterNamesInCategory:`. Por ejemplo, podemos obtener la lista de todos los filtros con:
 
+**Swift**
+```swift
+var filters = CIFilter.filterNames(inCategories: nil)
+```
+
+**Objective-C**
 ```objectivec
 NSArray *filters = [CIFilter filterNamesInCategories: nil];
 ```
@@ -531,6 +572,12 @@ nombre del filtro con su propiedad `name` y las listas de sus parámetros de ent
 La propiedad más importante de los filtros es `outputImage`. Esta propiedad nos da la imagen
 producida por el filtro en forma de objeto `CIImage`:
 
+**Swift**
+```swift
+let outputImage = UIImage(ciImage: (filter?.outputImage)!)
+```
+
+**Objective-C**
 ```objectivec
 CIImage *filteredImage = filter.outputImage;
 ```
@@ -540,6 +587,15 @@ operaciones que se deben hacer en ella. Es decir, la imagen que obtenemos como i
 contiene la imagen original y un conjunto de filtros a aplicar. Podemos encadenar varios filtros en una
 imagen:
 
+**Swift**
+```swift
+for filter: CIFilter in filters {
+   filter[kCIInputImageKey] = filteredImage
+   filteredImage = filter.outputImage
+}
+```
+
+**Objective-C**
 ```objectivec
 for(CIFilter *filter in filters) {
     [filter setValue: filteredImage forKey: kCIInputImageKey];
@@ -554,6 +610,14 @@ imagen, bien en pantalla, o bien en forma de imagen `CGImageRef`.
 Por ejemplo, podemos renderizar la imagen directamente en el contexto gráfico actual. Ese será el momento
 en el que se aplicarán realmente los filtros a la imagen, para mostrar la imagen resultante en pantalla:
 
+**Swift**
+```swift
+override func draw(_ rect: CGRect)
+{
+    UIImage(ciImage: filteredImage).draw(at: CGPoint.zero)
+}
+```
+**Objective-C**
 ```objectivec
 - (void)drawRect:(CGRect)rect
 {
@@ -589,6 +653,11 @@ procesar imágenes en segundo plano deberemos utilizar el contexto basado en CPU
 
 Para crear un contexto basado en CPU utilizaremos el método `contextWithOption:`
 
+**Swift**
+```swift
+var context = CIContext(options: nil)
+```
+**Objective-C**
 ```objectivec
 CIContext *context = [CIContext contextWithOptions:nil];
 ```
@@ -598,6 +667,12 @@ Con este tipo de contexto la imagen se renderizará como `CGImageRef` mediante e
 Si queremos renderizar la imagen entera podemos utilizar el atributo `extent` de `CIImage`,
 que nos devuelve sus dimensiones:
 
+**Swift**
+```swift
+var cgiimg = context.createCGImage((filter?.outputImage)!, from: (filter?.outputImage?.extent)!)
+```
+
+**Objective-C**
 ```objectivec
 CGImageRef cgImage = [context createCGImage:filteredImage
                                    fromRect:filteredImage.extent];
@@ -609,20 +684,39 @@ En el caso del contexto basado en GPU, en primer lugar deberemos crear el contex
 Esto se hará de forma automática en el caso en el que utilicemos la plantilla de Xcode de aplicación basada en
 OpenGL, aunque podemos también crearlo de forma sencilla en cualquier aplicación con el siguiente código:
 
+**Swift**
+```swift 
+let api: EAGLRenderingAPI = EAGLRenderingAPI.openGLES2 
+var glContext = EAGLContext(api: api)
+```
+
+**Objective-C**
 ```objectivec
 EAGLContext *glContext =
     [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 ```
 
-Una vez contamos con el contexto de OpenGL, podemos crear el contexto de Core Image basado en GPU con el
-método `contextWithEAGLContext:`
+Una vez contamos con el contexto de OpenGL, podemos crear el contexto de Core Image basado en GPU con el método `contextWithEAGLContext:`
 
+**Swift**
+```swift
+var context = CIContext(glContext, options: nil)
+```
+
+**Objective-C**
 ```objectivec
 CIContext *context = [CIContext contextWithEAGLContext: glContext];
 ```
 
 Para realizar el procesamiento en tiempo real, si no necesitamos una alta fidelidad de color, se recomienda desactivar el uso del _color space_:
 
+**Swift**
+```swift
+var options = [kCIContextWorkingColorSpace: NSNull()]
+var context = CIContext(glContext, options: options)
+```
+
+**Objective-C**
 ```objectivec
 NSDictionary *options = @{ kCIContextWorkingColorSpace : [NSNull null] };
 CIContext *context = [CIContext contextWithEAGLContext:glContext options:options];
@@ -633,6 +727,14 @@ o `drawImage:inRect:fromRect:` del objeto `CIContext`. Con estos métodos la ima
 Para hacer esto podemos utilizar una vista de tipo `GLKView`. Podemos crear esta vista de la siguiente
 forma:
 
+**Swift**
+```swift
+var rect : CGRect = CGRect(x: 0, y: 0, width: 320, height: 480)
+var glkView = GLKView(frame: rect, context: glContext!)
+glkView.delegate = self
+```
+
+**Objective-C**
 ```objectivec
 GLKView *glkView = [[GLKView alloc] initWithFrame: CGRect(0,0,320,480)
                                           context: glContext];
@@ -642,11 +744,19 @@ glkView.delegate = self;
 El delegado de la vista OpenGL deberá definir un método `glkView:drawInRect:` en el que deberemos
 definir la forma de renderizar la vista OpenGL. Aquí podemos hacer que se renderice la imagen filtrada:
 
+**Swift**
+```swift
+func glkView(_ view: GLKView!, drawIn rect: CGRect) {
+    ...
+    context.draw(filteredImage, atPoint: CGPoint.zero,  fromRect: filteredImage.extent())}
+```
+
+**Objective-C**
 ```objectivec
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-...
+   ...
 
-[context drawImage: filteredImage
+   [context drawImage: filteredImage
            atPoint: CGPointZero
           fromRect: filteredImage.extent];
 }
@@ -654,12 +764,17 @@ definir la forma de renderizar la vista OpenGL. Aquí podemos hacer que se rende
 
 Para hacer que la vista OpenGL actualice su contenido deberemos llamar a su método `display`:
 
+**Swift**
+```swift
+glkView.display()
+```
+
+**Objective-C**
 ```objectivec
 [glkView display];
 ```
 
-Esto se hará normalmente cuando hayamos definido nuevos filtros para la imagen, y queramos que se actualice
-el resultado en pantalla.
+Esto se hará normalmente cuando hayamos definido nuevos filtros para la imagen, y queramos que se actualice el resultado en pantalla.
 
 > La inicialización del contexto es una operación costosa que se debe hacer una única vez.
 Una vez inicializado, notaremos que el procesamiento de las imágenes es mucho más fluido.
@@ -714,6 +829,13 @@ A parte de los filtros vistos anteriormente, Core Image también incluye detecto
 Los detectores los crearemos mediante la clase `CIDetector`. Deberemos proporcionar el tipo de detector a utilizar, por ejemplo `CIDetectorTypeFace` para el detector de caras. Podemos además especificar una serie de parámetros, como
 el nivel de precisión que queremos obtener:
 
+**Swift**
+```swift
+let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: options)!
+```
+
+**Objective-C**
 ```objectivec
 CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
      context:nil
@@ -724,6 +846,12 @@ CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
 Una vez creado el detector, podemos ejecutarlo para que procese la imagen (de tipo `CIImage`) en busca de las características deseadas
 (en este caso estas características son las caras):
 
+**Swift**
+```swift
+let features = faceDetector.features(in: ciImage)
+```
+
+**Objetive-C**
 ```objectivec
 NSArray* features = [detector featuresInImage:ciImage];
 ```
