@@ -357,7 +357,7 @@ Podemos estar al tanto es estos cambios de _hardware_ de reproducción \(_route 
 **Swift**
 ```swift
 var nc = NotificationCenter.default
- nc.addObserver(self, selector: #selector(self.routeChanged), name: AVAudioSessionRouteChangeNotification, object: nil)
+nc.addObserver(self, selector: #selector(self.routeChanged), name: NSNotification.Name.AVAudioSessionRouteChange, object: nil)
 ```
 **Objective-C**
 ```objectivec
