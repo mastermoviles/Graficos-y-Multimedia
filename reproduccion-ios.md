@@ -454,8 +454,7 @@ self.moviePlayer = MPMoviePlayerController(contentURL: movieUrl)
 
 **Objective-C**
 ```objectivec
-self.moviePlayer =
-    [[MPMoviePlayerController alloc] initWithContentURL:movieUrl];
+self.moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:movieUrl];
 ```
 
 ![Reproductor de video embedded](imagenes/video_control_embed.jpg)
@@ -482,19 +481,24 @@ deberemos hacer que esta vista se redimensione de forma flexible en ancho y alto
 
 **Swift**
 ```swift
- self.moviePlayer.view.autoresizingMask =
- UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+ self.moviePlayer.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
 ```
 **Objective-C**
 ```objectivec
-    self.moviePlayer.view.autoresizingMask =
-    UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+ self.moviePlayer.view.autoresizingMask =
+ UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 ```
 
 ![Reproductor de video en vertical](imagenes/video_player_background_black.jpg)
 
 Por último, comenzamos la reproducción del vídeo con `play`:
 
+**Swift**
+```swift
+self.moviePlayer.play()
+```
+
+**Objective-C**
 ```objectivec
 [self.moviePlayer play];
 ```
@@ -508,6 +512,11 @@ sistema de notificaciones de Cocoa. Concretamente, para este caso necesitaremos 
 tratar mediante notificaciones. En nuestro caso vamos a ver cómo programar la notificación para ser avisados de
 la finalización del vídeo:
 
+**Swift**
+```swift
+NotificationCenter.default.addObserver(self, selector: #selector(self.videoPlaybackDidFinish), name: MPMoviePlayerPlaybackDidFinishNotification, object: self.moviePlayer)
+```
+**Objective-C**
 ```objectivec
 [[NSNotificationCenter defaultCenter] addObserver: self
          selector: @selector(videoPlaybackDidFinish:)
@@ -519,6 +528,16 @@ En este caso, cuando recibamos la notificación se avisará al método que hayam
 queremos que el reproductor desaparezca de pantalla, podemos hacer que en este método se elimine como subvista,
 se nos retire como observadores de la notificación, y se libere de memoria el reproductor:
 
+**Swift**
+```swift
+func videoPlaybackDidFinish(_ notification: Notification)
+  self.moviePlayer.view.removeFromSuperview()
+  NotificationCenter.default.removeObserver(self, name:   MPMoviePlayerPlaybackDidFinishNotification, object: self.moviePlayer)
+  self.moviePlayer = nil
+}
+```
+
+**Objective-C**
 ```objectivec
 -(void) videoPlaybackDidFinish: (NSNotification*) notification {
     [self.moviePlayer.view removeFromSuperview];
@@ -539,6 +558,12 @@ aspecto. Para cambiar los controles mostrados sobre el vídeo podemos utilizar l
 enumeración `MPMovieControlStyle`. Si queremos que el reproductor de vídeo quede totalmente
 integrado en nuestra aplicación, podemos especificar que no se muestre ningún control del sistema:
 
+**Swift**
+```swift
+self.moviePlayer.controlStyle = .none
+```
+
+**Objective-C**
 ```objectivec
 self.moviePlayer.controlStyle = MPMovieControlStyleNone;
 ```
@@ -550,6 +575,11 @@ podemos incluir una imagen de fondo, que se verá en todas aquellas zonas que no
 Para ello podemos utilizar la vista de fondo del video \(`backgroundView`\). Cualquier subvista que
 añadamos a dicha vista, se mostrará como fondo del vídeo. Por ejemplo podemos motrar una imagen con:
 
+**Swift**
+```swift
+self.moviePlayer.backgroundViewUIImageView(image: UIImage(named: "fondo.png")!)
+```
+**Objective-C**
 ```objectivec
 [self.moviePlayer.backgroundView addSubview: [[[UIImageView alloc]
                        initWithImage:[UIImage imageNamed:@"fondo.png"]];
@@ -565,6 +595,14 @@ es una capa \(es un subtipo de `CALayer`\) que podemos utilizar para mostrar la 
 Este tipo de reproductor nos da un mayor control sobre la forma en la que se muestra el vídeo,
 desacoplando la gestión del origen del vídeo y la visualización de dicho vídeo en pantalla.
 
+**Swift**
+```swift
+let videoURL = NSURL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+let player = AVPlayer(url: videoURL! as URL)
+let playerLayer = AVPlayerLayer(player: player)
+self.view.layer.addSublayer(playerLayer)
+```
+**Objective-C**
 ```objectivec
 AVPlayer *player = [AVPlayer playerWithUrl: videoUrl];
 
@@ -574,6 +612,15 @@ AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
 
 A partir de iOS 8 aparece además la clase `AVPlayerViewController`, que nos proporciona un controllador que permite reproducir vídeo de forma sencilla mediante un objeto `AVPlayer` a pantalla completa o en PiP \(_Picture in Picture_\):
 
+**Swift**
+```swift
+var controller = AVPlayerViewController()
+let player = AVPlayer(url: videoURL! as URL)
+controller.player = player
+self.present(controller, animated: true, completion: { _ in })
+```
+
+**Objective-C**
 ```objectivec
 AVPlayerViewController *controller = [[AVPlayerViewController alloc] init];
 AVPlayer *player = [AVPlayer playerWithURL:videoUrl];
@@ -590,6 +637,12 @@ La nueva clase `AVPlayerViewController` nos permitirá también poner una vista 
 
 Para tener control sobre el estado del vídeo en reproducción podemos utilizar KVO sobre propiedades del objeto `AVPlayer`, o podemos suscribirlos a la notificación `AVPlayerItemDidPlayToEndTimeNotification` del _item_ que se esté reproduciendo actualmente para estar al tanto de su finalización:
 
+**Swift**
+```swift
+ NotificationCenter.default.addObserver(self, selector: #selector(self.reproduccionFinalizada), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+```
+
+**Objective-C**
 ```objectivec
 [[NSNotificationCenter defaultCenter]
         addObserver:self
