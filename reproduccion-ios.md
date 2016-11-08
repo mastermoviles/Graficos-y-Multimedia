@@ -167,6 +167,20 @@ Según la categoría que asignemos a la sesión el sonido se podrá mezclar con 
 
 Podemos establecer y activar una determinada categoría de forma global para nuestra aplicación con:
 
+**Swift**
+```swift
+var audioSession = AVAudioSession.sharedInstance()
+var error: Error? = nil
+
+do {
+    try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+    try audioSession.setActive(true)
+}
+catch let error {
+}
+```
+
+**Objective-C**
 ```objectivec
 AVAudioSession *audioSession = [AVAudioSession sharedInstance];
 
@@ -185,6 +199,25 @@ El _singleton_ `AVAudioSession` también nos proporciona información sobre si o
 
 Mediante la propiedad anterior podemos tomar la decisión de reproducir música de fondo sólo en el caso de que otra aplicación no lo esté haciendo:
 
+**Swift**
+```swift
+if self.audioSession.isOtherAudioPlaying {
+ // El sonido de esta aplicación se mezcla con el de fondo
+ do {
+   try self.audioSession.setCategory(AVAudioSessionCategoryAmbient)
+ }
+ catch let error {
+ }
+}else{
+ do {
+   try self.audioSession.setCategory(AVAudioSessionCategorySoloAmbient)
+ } catch let error {
+ }
+ self.reproduceMusica()
+}
+```
+
+**Objective-C**
 ```objectivec
 if ([self.audioSession isOtherAudioPlaying]) {
     // El sonido de esta aplicación se mezcla con el de fondo
@@ -218,6 +251,21 @@ Esta reproducción en segundo plano también nos servirá para emitir la reprodu
 ### Metadatos del audio
 
 Podemos establecer metadatos del medio que actualmente se esté reproduciendo con:
+
+```swift
+NSDictionary *info = @{
+
+ MPMediaItemPropertyTitle : @"By the Throat",
+
+ MPMediaItemPropertyArtist : @"CHVRCHES",
+
+ MPMediaItemPropertyAlbumTitle : @"The Bones of What You Believe"
+
+};
+
+[[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo: info];
+
+```
 
 ```objectivec
 NSDictionary *info = @{
