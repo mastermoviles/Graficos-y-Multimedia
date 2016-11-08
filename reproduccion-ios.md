@@ -296,15 +296,37 @@ Estos eventos externos vienen de los auriculares, o de la pantalla de bloqueo, y
 
 Además, para controlar estos eventos, el controlador que reproduzca el audio debe pasar a ser el _first responder_:
 
+**Swift**
 ```swift
 self.becomeFirstResponder()
 ```
-
+**Objetive-C**
 ```objectivec
 [self becomeFirstResponder];
 ```
 
 Será el _first responder_ el que recibirá el evento externo:
+
+```swift
+ override func remoteControlReceived(with event: UIEvent?) {
+   if event?.type == .remoteControl {
+     if event?.subtype == .remoteControlTogglePlayPause {
+       if self.player.isPlaying() {
+         self.player.pause()
+       }
+       else {
+         self.player.play()
+       }
+     }
+     else if event?.subtype == .remoteControlPause {
+       self.player.pause()
+     }
+     else if event?.subtype == .remoteControlPlay {
+       self.player.play()
+     }
+   }
+ }
+```
 
 ```objectivec
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event {
