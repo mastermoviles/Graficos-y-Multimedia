@@ -53,12 +53,13 @@ Los sonidos del sistema se representan con el tipo `SystemSoundID`. Se trata de 
 encontraremos una serie de funciones con las que crear y reproducir sonidos. Podemos crear un objeto de este
 tipo a partir de la URL del fichero de audio, mediante la función `AudioServicesCreateSystemSoundID`.
 
-```
+**Swift**
+``swift
 var sonido = SystemSoundID()
 var urlSonido = Bundle.main.url(forResource: "alarma", withExtension: "caf")
 AudioServicesCreateSystemSoundID((urlSonido as! CFURLRef), sonido)
 ```
-
+**Objective-C**
 ```objectivec
 SystemSoundID sonido;
 NSURL *urlSonido = [[NSBundle mainBundle] URLForResource:@"alarma"  withExtension:@"caf"];
