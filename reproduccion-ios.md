@@ -252,21 +252,16 @@ Esta reproducción en segundo plano también nos servirá para emitir la reprodu
 
 Podemos establecer metadatos del medio que actualmente se esté reproduciendo con:
 
+**Swift**
 ```swift
-NSDictionary *info = @{
-
- MPMediaItemPropertyTitle : @"By the Throat",
-
- MPMediaItemPropertyArtist : @"CHVRCHES",
-
- MPMediaItemPropertyAlbumTitle : @"The Bones of What You Believe"
-
-};
-
-[[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo: info];
+var info = [MPMediaItemPropertyTitle: "By the Throat",
+ MPMediaItemPropertyArtist: "CHVRCHES",
+ MPMediaItemPropertyAlbumTitle: "The Bones of What You Believe"]
+MPNowPlayingInfoCenter.default().nowPlayingInfo = info
 
 ```
 
+**Objective-C**
 ```objectivec
 NSDictionary *info = @{
   MPMediaItemPropertyTitle : @"By the Throat",
@@ -287,6 +282,12 @@ Podemos permitir que la reproducción de nuestra aplicación se controle de form
 
 Para utilizar estos controles remotos la aplicación debe ser capaz de recibir eventos de control:
 
+**Swift**
+```swift
+UIApplication.shared.beginReceivingRemoteControlEvents()
+```
+
+**Objective-C**
 ```objectivec
 [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
 ```
