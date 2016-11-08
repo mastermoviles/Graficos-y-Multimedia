@@ -307,6 +307,7 @@ self.becomeFirstResponder()
 
 Será el _first responder_ el que recibirá el evento externo:
 
+**Swift**
 ```swift
  override func remoteControlReceived(with event: UIEvent?) {
    if event?.type == .remoteControl {
@@ -328,6 +329,7 @@ Será el _first responder_ el que recibirá el evento externo:
  }
 ```
 
+**Objective-C**
 ```objectivec
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event {
     if(event.type == UIEventTypeRemoteControl) {
@@ -352,6 +354,12 @@ Es recomendable que los reproductores multimedia respondan ante un cambio de dis
 
 Podemos estar al tanto es estos cambios de _hardware_ de reproducción \(_route change_\) mediante la notificación `AVAudioSessionRouteChangeNotification`.
 
+**Swift**
+```swift
+var nc = NotificationCenter.default
+ nc.addObserver(self, selector: #selector(self.routeChanged), name: AVAudioSessionRouteChangeNotification, object: nil)
+```
+**Objective-C**
 ```objectivec
 NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 [nc addObserver:self selector:@selector(routeChanged:) name:AVAudioSessionRouteChangeNotification object:nil];
@@ -359,6 +367,15 @@ NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 
 Podemos responder a esta notificación deteniendo la reproducción:
 
+**Swift**
+```swift
+- (void)routeChanged:(id)sender {
+ if([self.player isPlaying]) {
+ [self.player pause];
+ }
+}
+```
+**Objective-C**
 ```objectivec
 - (void)routeChanged:(id)sender {
     if([self.player isPlaying]) {
