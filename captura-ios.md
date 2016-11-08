@@ -8,6 +8,13 @@ La forma más sencilla de realizar una captura con la cámara del dispositivo es
 Para ello contamos con un controlador predefinido que simplificará esta tarea, ya que sólo deberemos ocuparnos
 de instanciarlo, mostrarlo y obtener el resultado:
 
+**Swift**
+```swift
+var picker = UIImagePickerController()
+picker.sourceType = .camera
+self.present(picker, animated: true, completion: nil)
+```
+**Objective-C**
 ```objectivec
 UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -19,6 +26,11 @@ hemos especificado la cámara del dispositivo, sin embargo, también podremos ha
 la colección de fotos del usuario (`UIImagePickerControllerSourceTypePhotoLibrary`), o del carrete
 de la cámara (`UIImagePickerControllerSourceTypeSavedPhotosAlbum`):
 
+**Swift**
+```swift
+picker.sourceType = .savedPhotosAlbum
+```
+**Objective-C**
 ```objectivec
 picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
 ```
@@ -26,6 +38,12 @@ picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
 Si lo que queremos es almacenar una fotografía en el carrete de fotos del dispositivo podemos utilizar
 la función `UIImageWriteToSavedPhotosAlbum`:
 
+**Swift**
+```swift
+var image : UIImage = ...;
+UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.guardada), nil)
+```
+**Objective-C**
 ```objectivec
 UIImage *image = ...;
 
@@ -43,6 +61,14 @@ almacenarla. Para ello debemos crear un objeto que adopte el delegado `UIImagePi
 establecer dicho objeto en el propiedad `delegate` del controlador. Deberemos definir el siguiente método
 del delegado:
 
+**Swift**
+```swift
+func imagePickerController(picker: UIImagePickerController,   didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+ let pickedImage = info[UIImagePickerControllerOriginalImage]
+ UIImageWriteToSavedPhotosAlbum(pickedImage as! UIImage, self, #selector(self.guardada), nil)
+}
+```
+**Objective-C**
 ```objectivec
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -82,6 +108,12 @@ conveniente.
 
 Especificaremos la entrada mediante un objeto de tipo `AVCaptureInput` (o subclases suyas). Si queremos que la fuente de vídeo se obtenga de un dispositivo de captura, utilizaremos como entrada un objeto de la subclase `AVCaptureDeviceInput`, que inicializaremos proporcionando un objeto `AVCaptureDevice` que definirá el dispositivo del cual queremos capturar:
 
+**Swift**
+```swift
+var captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)!
+var captureInput = try! AVCaptureDeviceInput(device: captureDevice)
+```
+**Objective-C**
 ```objectivec
 AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
 AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error: nil];
@@ -103,15 +135,25 @@ La salida se especificará mediante subclases de `AVCaptureOutput`. Según el de
 
 Por ejemplo, para establecer la salida de tipo `AVCaptureStillImageOutput` podemos hacer lo siguiente:
 
+**Swift**
+```swift
+var captureOutput = AVCaptureStillImageOutput()
+```
+**Objective-C**
 ```objectivec
 captureOutput = [[AVCaptureStillImageOutput alloc] init];
 ```
 
 Con este tipo de salida de captura, en todo momento podremos tomar un fotograma a partir de la entrada con:
 
+**Swift**
+```swift
+
+```
+**Objective-C**
 ```objectivec
 AVCaptureConnection *connection = [[self.captureOutput connections] objectAtIndex:0];
-      
+
 [self.captureOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
      
      NSData *data = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
