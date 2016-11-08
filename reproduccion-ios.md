@@ -369,7 +369,11 @@ Podemos responder a esta notificación deteniendo la reproducción:
 
 **Swift**
 ```swift
-func routeChanged(_ sender: Any) { if self.player.isPlaying() {   self.player.pause() }}
+func routeChanged(_ sender: Any) {
+ if self.player.isPlaying() {
+   self.player.pause()
+ }
+}
 ```
 **Objective-C**
 ```objectivec
@@ -391,6 +395,11 @@ inicializar el reproductor a partir de una URL \(`NSURL`\). Recordemos que la UR
 un recurso local como remoto, por ejemplo podemos acceder a un video incluido entre los recursos de la aplicación
 de la siguiente forma:
 
+**Swift**
+```swift
+var movieUrl = Bundle.main.url(forResource: "video", withExtension: "m4v")
+```
+**Objective-C**
 ```objectivec
 NSURL *movieUrl = [[NSBundle mainBundle] URLForResource:@"video" withExtension:@"m4v"];
 ```
@@ -399,6 +408,14 @@ Para reproducir el vídeo utilizando el reproductor nativo del dispositivo simpl
 controlador y mostrarlo de forma modal. Podemos fijarnos en que tenemos un método específico para mostrar el controlador
 de reproducción de video de forma modal:
 
+**Swift**
+```swift
+ let controller = MPMoviePlayerViewController(contentURL: movieUrl)
+ self.presentMoviePlayerViewControllerAnimated(controller)
+ controller?.release()
+```
+
+**Objective-C**
 ```objectivec
 MPMoviePlayerViewController *controller =
     [[MPMoviePlayerViewController alloc] initWithContentURL:movieUrl];
@@ -430,6 +447,12 @@ la vista \(`UIViewController`\).
 En primer lugar, creamos un objeto `MPMoviePlayerController` a partir del a URL con el
 vídeo a reproducir:
 
+**Swift**
+```swift
+self.moviePlayer = MPMoviePlayerController(contentURL: movieUrl)
+```
+
+**Objective-C**
 ```objectivec
 self.moviePlayer =
     [[MPMoviePlayerController alloc] initWithContentURL:movieUrl];
@@ -443,6 +466,12 @@ darle un tamaño a dicha vista. Por ejemplo, si queremos que ocupe todo el espac
 utilizar como tamaño de la vista de vídeo el mismo tamaño \(propiedad `bounds`\) de la vista actual, y
 añadir el vídeo como subvista suya:
 
+**Swift**
+```swift
+self.moviePlayer.view.frame = self.view.boundsself.view.addSubview(self.moviePlayer.view)
+```
+
+**Objective-C**
 ```objectivec
 self.moviePlayer.view.frame = self.view.bounds;
 [self.view addSubview: self.moviePlayer.view];
