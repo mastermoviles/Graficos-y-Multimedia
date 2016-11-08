@@ -148,7 +148,7 @@ Con este tipo de salida de captura, en todo momento podremos tomar un fotograma 
 
 **Swift**
 ```swift
-
+...
 ```
 **Objective-C**
 ```objectivec
