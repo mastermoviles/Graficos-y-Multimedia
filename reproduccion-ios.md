@@ -480,6 +480,12 @@ self.moviePlayer.view.frame = self.view.bounds;
 Si queremos que la vista del reproductor de vídeo cambie de tamaño al cambiar la orientación de la pantalla,
 deberemos hacer que esta vista se redimensione de forma flexible en ancho y alto:
 
+**Swift**
+```swift
+ self.moviePlayer.view.autoresizingMask =
+ UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+```
+**Objective-C**
 ```objectivec
     self.moviePlayer.view.autoresizingMask =
     UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
