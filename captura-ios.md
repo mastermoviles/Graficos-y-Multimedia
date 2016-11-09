@@ -271,6 +271,12 @@ if([captureSession canAddOutput:captureOutput]) {
 
 Después de configurar la sesión, deberemos iniciar la captura con `startRunning`:
 
+**Swift**
+```swift
+captureSession.startRunning()
+```
+
+**Objective-C**
 ```objectivec
 [captureSession startRunning];
 ```
@@ -282,6 +288,29 @@ de vídeo, y como salida los fotogramas del vídeo sin compresión como datos cr
 Tras configurar la entrada, la salida, y la sesión de captura, ponemos dicha sesión en funcionamiento
 con `startRunning`:
 
+**Swift**
+```swift
+ // Entrada del dispositivo de captura de video 
+ var captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)!
+ var captureInput = try! AVCaptureDeviceInput(device: captureDevice)
+
+ // Salida como fotogramas "crudos" (sin comprimir)
+ var captureOutput = AVCaptureVideoDataOutput()
+ captureOutput.alwaysDiscardsLateVideoFrames = true
+
+ var queue = DispatchQueue(label: "cameraQueue")
+ captureOutput.setSampleBufferDelegate(self, queue: queue)
+ captureOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)]
+
+ // Creación de la sesión de captura
+ self.captureSession = AVCaptureSession()
+ self.captureSession?.sessionPreset = AVCaptureSessionPreset1280x720
+ self.captureSession?.addInput(captureInput)
+ self.captureSession?.addOutput(captureOutput)
+ self.captureSession?.startRunning()
+```
+
+**Objective-C**
 ```objectivec
    // Entrada del dispositivo de captura de video
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -313,6 +342,17 @@ Una vez haya comenzado la sesión de captura, se comenzarán a producir fotogram
 capturado. Para consumir estos fotogramas deberemos implementar el método delegado
 `captureOutput:didOutputSampleBuffer:fromConnection:`
 
+**Swift**
+```swift
+func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+
+ print("captured \(sampleBuffer)")
+    
+ }
+
+```
+
+**Objective-C**
 ```objectivec
 - (void)captureOutput:(AVCaptureOutput *)captureOutput
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
@@ -397,8 +437,6 @@ En el método anterior observamos que podemos procesar y modificar el _buffer_ d
     return result;
 }
 ```
-
-
 
 ## Procesamiento de imágenes en iOS
 
