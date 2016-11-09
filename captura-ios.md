@@ -166,20 +166,38 @@ La clase `AVCaptureStillImageOutput` ha sido desaprobada en iOS 10.0 y por lo ta
 
 Para capturar en memoria y poder procesar fotogramas podemos utiliza el tipo de salida `AVCaptureVideoDataOutput`:
 
+**Swift**
+```swift
+var captureOutput = AVCaptureVideoDataOutput()
+captureOutput.alwaysDiscardsLateVideoFrames = true
+
+var queue = DispatchQueue(label: "cameraQueue")
+captureOutput.setSampleBufferDelegate(self, queue: queue)
+
+captureOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)]
+```
+
+**Objective-C**
 ```objectivec
-    AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
+AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
     captureOutput.alwaysDiscardsLateVideoFrames = YES;
     //captureOutput.minFrameDuration = CMTimeMakeWithSeconds(1, 1);
     
-    dispatch_queue_t queue = dispatch_queue_create("cameraQueue", NULL);
+dispatch_queue_t queue = dispatch_queue_create("cameraQueue", NULL);
     [captureOutput setSampleBufferDelegate: self queue: queue];
     
-    NSDictionary *videoSettings = @{ (NSString*)kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA) };    
+NSDictionary *videoSettings = @{ (NSString*)kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA) };    
     [captureOutput setVideoSettings: videoSettings];
 ```
 
 En este caso tenemos que proporcionar un delegado de tipo `AVCaptureVideoDataOutputSampleBufferDelegate`, que tendrá que definir un método como el siguiente que será invocado cada vez que se capture un fotograma:
 
+**Swift**
+```swift
+func captureOutput(_ captureOutput: AVCaptureOutput, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) { // Procesar datos de sampleBuffer}
+```
+
+**Objective-C**
 ```objectivec
 - (void)captureOutput:(AVCaptureOutput *)captureOutput
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
@@ -196,6 +214,36 @@ Podemos utilizar este método para procesar el vídeo.
 
 La sessión de captura coordina la entrada y la salida. Podemos establecer diferentes _presets_ para la sesión, según la calidad con la que queramos capturar el medio. En el siguiente ejemplo utilizamos un _preset_ para capturar vídeo en 720p, y tras ello añadimos la entrada y la salida de la sesión:
 
+**Swift**
+```swift
+ var captureSession = AVCaptureSession()
+
+ // Establece preset
+ if captureSession.canSetSessionPreset(AVCaptureSessionPreset1280x720) {
+   captureSession.sessionPreset = AVCaptureSessionPreset1280x720
+ }
+ else {
+   print("Preset no compatible")
+ }
+
+ // Establece entrada
+ if captureSession.canAddInput(captureInput) {
+   captureSession.addInput(captureInput)
+ }
+ else {
+   print("No se puede añadir entrada")
+ }
+
+ // Establece salida
+ if captureSession.canAddOutput(captureOutput) {
+   captureSession.addOutput(captureOutput)
+ }
+ else {
+   print("No se puede añadir salida")
+ }
+```
+
+**Objective-C**
 ```objectivec
 AVCaptureSession *captureSession = [[AVCaptureSession alloc] init];
     
