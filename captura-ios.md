@@ -828,7 +828,10 @@ definir la forma de renderizar la vista OpenGL. Aquí podemos hacer que se rende
 
 **Swift**
 ```swift
-..
+func glkView(_ view: GLKView!, drawIn rect: CGRect) {
+ ...
+ context.draw(filteredImage, atPoint: CGPoint.zero,fromRect: filteredImage.extent())
+}
 ```
 
 **Objective-C**
