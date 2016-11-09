@@ -90,9 +90,6 @@ Si queremos tener un mayor control sobre la forma en la que se almacenan los dif
 deberemos utilizar el _framework_ Assets. Con esta librería podemos por ejemplo guardar metadatos con las fotografías, como
 puede ser la localización donde fue tomada.
 
-
-
-
 ## Captura avanzada de vídeo
 
 A partir de iOS 4.0 en el _framework_ AVFoundation se incorpora la posibilidad de acceder
@@ -146,10 +143,6 @@ captureOutput = [[AVCaptureStillImageOutput alloc] init];
 
 Con este tipo de salida de captura, en todo momento podremos tomar un fotograma a partir de la entrada con:
 
-**Swift**
-```swift
-...
-```
 **Objective-C**
 ```objectivec
 AVCaptureConnection *connection = [[self.captureOutput connections] objectAtIndex:0];
@@ -164,6 +157,10 @@ AVCaptureConnection *connection = [[self.captureOutput connections] objectAtInde
      
 }];
 ```
+
+La clase `AVCaptureStillImageOutput` ha sido desaprobada en iOS 10.0 y por lo tanto no soporta nuevas características, como la obtención de datos en crudo o imágenes en vivo. En iOS 10.0 y posteriores se recomienda utilizar `AVCapturePhotoOutput` en su lugar.
+
+
 
 #### Procesamiento en tiempo real
 
@@ -438,7 +435,6 @@ Dicha imagen podrá ser dibujada en el contexto gráfico como se ha visto en ses
 var uiImage = UIImage(ciImage: ciImage)
 var ciImage = uiImage.ciImage!
 ...
-// En drawRect: (o con algún contexto gráfico activo)
 uiImage.draw(at: CGPoint.zero)
 ```
 
@@ -450,7 +446,6 @@ UIImage *uiImage = [UIImage imageWithCIImage: ciImage];
 CIImage *ciImage = uiImage.CIImage;
 ...
 
-// En drawRect: (o con algún contexto gráfico activo)
 [uiImage drawAtPoint: CGPointZero];
 ```
 
@@ -657,6 +652,7 @@ Para crear un contexto basado en CPU utilizaremos el método `contextWithOption:
 ```swift
 var context = CIContext(options: nil)
 ```
+
 **Objective-C**
 ```objectivec
 CIContext *context = [CIContext contextWithOptions:nil];
