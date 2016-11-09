@@ -41,7 +41,7 @@ la función `UIImageWriteToSavedPhotosAlbum`:
 **Swift**
 ```swift
 var image : UIImage = ...;
-UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.guardada), nil)
+UIImageWriteToSavedPhotosAlbum(image, self, selector(self.guardada), nil)
 ```
 **Objective-C**
 ```objectivec
