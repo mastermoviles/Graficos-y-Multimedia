@@ -345,10 +345,9 @@ capturado. Para consumir estos fotogramas deberemos implementar el método deleg
 **Swift**
 ```swift
 func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
-
- print("captured \(sampleBuffer)")
-    
- }
+   var image = self.imageFromSampleBuffer(sampleBuffer)
+   self.ivPreview.performSelector(onMainThread:   #selector(self.setImage), withObject: image, waitUntilDone: true)
+}
 
 ```
 
@@ -368,6 +367,49 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 Vemos que el primer paso consiste en transformar el _buffer_ del fotograma actual en un objeto `UIImage` que podamos mostrar. Para ello podemos definir un método como el siguiente:
 
+**Swift**
+```swift
+func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage {
+
+ // Get a CMSampleBuffer's Core Video image buffer for the media data
+ var imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+
+ // Lock the base address of the pixel buffer
+ CVPixelBufferLockBaseAddress(imageBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+
+ // Get the number of bytes per row for the pixel buffer
+ var baseAddress = CVPixelBufferGetBaseAddress(imageBuffer!)
+
+ // Get the number of bytes per row for the pixel buffer
+ var bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer!)
+
+ // Get the pixel buffer width and height
+ var width = CVPixelBufferGetWidth(imageBuffer!)
+ var height = CVPixelBufferGetHeight(imageBuffer!)
+
+ // Create a device-dependent RGB color space
+ var colorSpace = CGColorSpaceCreateDeviceRGB()
+
+ // Create a bitmap graphics context with the sample buffer data
+ let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue)
+
+var output = self.procesaImagen(UInt8(baseAddress))
+
+ var context = CGContext(data: output, width: width, height: height, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+
+ // Create a Quartz image from the pixel data in the bitmap graphics context
+ var quartzImage = context!.makeImage();
+
+ // Unlock the pixel buffer
+ CVPixelBufferUnlockBaseAddress(imageBuffer!,CVPixelBufferLockFlags(rawValue: 0));
+
+ // Create an image object from the Quartz image
+ let image = UIImage(cgImage: quartzImage!)
+     return image
+ }
+```
+
+**Objective-C**
 ```objectivec
 - (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
 {
