@@ -467,7 +467,8 @@ añadir el vídeo como subvista suya:
 
 **Swift**
 ```swift
-self.moviePlayer.view.frame = self.view.boundsself.view.addSubview(self.moviePlayer.view)
+self.moviePlayer.view.frame = self.view.bounds
+self.view.addSubview(self.moviePlayer.view)
 ```
 
 **Objective-C**
