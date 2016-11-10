@@ -110,8 +110,6 @@ CGContextSetLineWidth(c, 0.1f);
 Encontramos también funciones para establecer líneas punteadas, o para establecer la forma de dibujar los extremos o los puntos de unión de las líneas.
 
 
-
-
 ###Primitivas geométricas
 
 Una de las primitivas geométricas más sencillas que podemos dibujar es el rectángulo. En primer lugar debemos definir la posición y dimensiones del rectángulo mediante un objeto de tipo `CGRect` (encontramos la macro `CGRectMake` con la que podemos inicializarlo).

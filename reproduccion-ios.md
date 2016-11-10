@@ -578,7 +578,7 @@ añadamos a dicha vista, se mostrará como fondo del vídeo. Por ejemplo podemos
 
 **Swift**
 ```swift
-self.moviePlayer.view.addSubview( UIImageView(image: UIImage(named: "fondo.png")!))
+self.moviePlayer.backgroundView.addSubview( UIImageView(image: UIImage(named: "fondo.png")!))
 ```
 **Objective-C**
 ```objectivec
