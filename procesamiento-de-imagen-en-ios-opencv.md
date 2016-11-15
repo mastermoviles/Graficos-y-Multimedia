@@ -34,5 +34,13 @@ Para utilizar OpenCV en iOS tendremos que descargarnos la versión correspondien
 
 El siguiente paso será crear un nuevo proyecto en xcode y añadir las librerías necesarias para usar OpenCV en nuestro proyecto. Creamos un proyecto nuevo (Single View) y simplemente arrastramos al explorador del proyecto el fichero `opencv2.framework`, nos aparecerá un diálogo para importarlo en el proyecto. Marcamos la opción copiar si es necesario.
 
-Con este paso ya tendremos OpenCV añadido a nuestro proyecto, pero para poder utilizarlo tendremos que crear una cabecera puente (Bridging header), que nos permita utilizar código Objetive-C++ desde código Swift. Para crear la cabecera puente, vamos a File > New > File (⌘N) y en iOS > Source seleccionamos `Cocoa Touch Class`. Lo llamaremos OpenCVWrapper, en este fichero escribiremos el código que servirá de envoltorio para utilizar funciones OpenCV en Objective-C++.
+![](imagenes/opencv/ios_opencv_import_lib.png)
+
+Con este paso ya tendremos OpenCV añadido a nuestro proyecto, pero para poder utilizarlo tendremos que crear una cabecera puente (Bridging header), que nos permita utilizar código Objetive-C++ desde código Swift. Para crear la cabecera puente, vamos a File > New > File (⌘N) y en iOS > Source seleccionamos `Cocoa Touch Class`. Lo llamaremos OpenCVWrapper, en este fichero escribiremos el código que servirá de envoltorio para utilizar funciones OpenCV en Objective-C++. Al crear este fichero Xcode nos sugerirá crear la cabecera puente: `nombreproyecto-Bridging-header.h`. Todas las librerías que incluyamos desde este fichero header, las clases y métodos definidas en las mismas serán accesibles desde nuestro código en Swift.
+
+Con estos pasos habremos creados tres nuevos ficheros en nuestro proyecto: `OpenCVWrapper.h`, `OpenCVWrapper.m` y `nombre-proyecto-Bridging-Header.h`. Como hemos comentado, la cabecera puente será nuestra interfaz para usar funciones de OpenCV, por lo tanto tenemos que añadir el envoltorio que hemos creado: 
+
+```
+#import "OpenCVWrapper.h"
+```
 
