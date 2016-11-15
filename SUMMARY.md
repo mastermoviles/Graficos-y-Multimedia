@@ -8,11 +8,12 @@
 * [Gráficos en iOS](graficos-ios.md)
 * [Reproducción de medios en iOS](reproduccion-ios.md)
 * [Captura y procesamiento de medios en iOS](captura-ios.md)
+* [Procesamiento de imágenes en iOS: OpenCV](procesamiento-de-imagen-en-ios-opencv.md)
 * [Reproducción de medios en Android](reproduccion-android.md)
 * [Captura de medios en Android](captura-android.md)
 * [Emisión de medios](procesamiento-android.md)
 * [Reproducción en dispositivos externos](mirroring.md)
 * [Aplicaciones Adobe Air](adobe-air.md)
 * [Síntesis y reconocimiento del habla](habla-android.md)
-* [Proyecto multimedia](proyecto.md)
+* Procesamiento de imagen en iOS: OpenCV
 
