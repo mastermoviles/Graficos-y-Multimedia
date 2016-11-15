@@ -44,3 +44,72 @@ Con estos pasos habremos creados tres nuevos ficheros en nuestro proyecto: `Open
 #import "OpenCVWrapper.h"
 ```
 
+Con esto ya estamos listos para empezar a utilizar OpenCV en nuestro proyecto, por ello vamos a crear una sencilla aplicación que cargue una imagen y convierta la imagen a escala de grises utilizando la función predefinida en OpenCV `cv::cvtColor(imageMat, gray, CV_RGBA2GRAY);``
+
+Añadimos un ImageView (cargar imagen) y un botón a la interfaz de la apliación que creamos anteriormente. Al pulsar el botón convertiremos la imágen a escala de grises. Para ello, en la clase OpenCVWrapper que creamos anteriormente para utilizar la funcionalidad de la librería escribimos nuestra propia función para convertir a escala de grises. La función tomará como entrada una imagen en formato UIImage, la convertirá a formato OpenCV, cv::Mat, y finalmente se convertirá de vuelta al formato UIImage para su visualizaión.
+Para convertir imágenes entre UIImage y el formato de OpenCV, utilizaremos los métodos definidos en las cabeceras:
+ * `#import "opencv2/highgui/ios.h"`
+ * `#import <opencv2/highgui/cap_ios.h>`
+
+En estas cabeceras se encuentran definidos métodos para interoperar con tipos de datos propios de iOS.
+
+Convertir una imagen a formato cv::Mat:
+
+`UIImageToMat(image,imageMat);`
+
+Convertir formato cv::Mat a UIImage
+
+`MatToUIImage(gray);`
+
+Finalmente crearemos una función `convertImageToGrayScale`en la clase `OpenCVWrapper`. Esta clase nos servirá de interfaz con OpenCV y la utilizaremos desde nuestro código en Swift
+
+***Objective-C*** ( OpenCVWrapper.mm )
+```
+#import "OpenCVWrapper.h"
+
+@implementation OpenCVWrapper
+
++(UIImage *) convertImageToGrayscale: (UIImage *)image
+{
+ cv::Mat imageMat;
+ UIImageToMat(image,imageMat);
+ if(imageMat.channels() == 1){ return image; }
+ cv::Mat gray;
+ // Convert the image to grayscale
+ cv::cvtColor(imageMat, gray, CV_RGBA2GRAY);
+ return MatToUIImage(gray);
+}
+@end
+
+```
+
+***Objective-C*** ( OpenCVWrapper.h )
+```
+#import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
+
+// Need this ifdef, so the C++ header won't confuse Swift
+#ifdef __cplusplus
+ #import <opencv2/opencv.hpp>
+ #import "opencv2/highgui/ios.h"
+ #import <opencv2/highgui/cap_ios.h>
+#endif
+
+@interface OpenCVWrapper : NSObject
+
++(UIImage *) convertImageToGrayscale: (UIImage *)Image;
+
+@end
+
+```
+
+Finalmente desde nuestro código Swift llamaremos a la función `convertImageToGrayscale` al accionar el botón 'convertir':
+
+```
+@IBAction func botonConvertirGrises(_ sender: UIButton) 
+{
+    imagen.image = OpenCVWrapper.convertImage(toGrayscale: imagen!.image)
+}
+```
+
