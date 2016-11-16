@@ -298,4 +298,23 @@ Finalmente, implementaremos el método `processImage`, el cual se encargará de 
     cv::cvtColor(image, image, CV_RGBA2GRAY);
 }
 
+### Ejercicios
+
+1. En primer lugar, crea un nuevo proyecto en Xcode y enlaza la librería OpenCV. Crea las clases envoltorio, así como la librería puente para poder utilizar OpenCV en tu código Swift.
+
+(a) Diseña una interfaz de usuario que contenga inicialmente un `ImageView` y un botón para convertir una imagen que cargaremos en el `imageView` a escala de grises.
+
+(b) Implementa en el envoltorio para utilizar OpenCV un método que nos permita convertir una imagen a escala de grises. Al pulsar el botón creado anteriormente se convertirá la imagen a escala de grises.
+
+(c) Implementa un método para la detección de bordes en la imagen que hemos cargado. Para mejorar la detección de líneas es muy común utilizar un filtro de suavizado (emborronamiento) de la imagen antes de llevar a cabo la detección usando el filtro de Canny. Implementa estas dos operaciones en el envoltorio y añade un componente `slider`que nos permite cambiar los umbrales que utilizamos en el método de Canny. Al mover el slider actualizaremos la imagen con los nuevos resultados.
+
+(d) Añade un nuevo botón a la interfaz que nos permita detectar caras en la imagen. Utilizaremos un clasificador en cascada como el visto anteriormente. Implementa un envoltorio en Objective-C++ para utilizar esta funcionalidad el `ViewController` (Swift).
+
+2. Utiliza la clase `CvVideoCamera` de OpenCV para obtener un flujo de vídeo en nuestra aplicación iOS y procesar las imágenes obtenidas.
+
+(a) Lleva a cabo un procesamiento de extracción de bordes sobre el flujo de vídeo obtenido en tiempo real de la cámara. 
+
+(b) Detecta caras sobre flujo de vídeo obtenido de la cámara utilizando el clasificador en cascada de OpenCV; `cv::CascadeClassifier`. Dibuja un rectángulo sobre cada una de las caras detectadas, utiliza las funciones de dibujado de formas básicas de OpenCV (`cv::rectangle(cvImage, tl, br, magenta, 4, 8, 0);`).
+
+Para el ejercicio 2 utiliza la plantilla que hemos dejado en el repositorio de la asignatura: `plantillas-multimedia-graficos-ios-swift`. Nombre proyecto: `CapturaVideoOpenCV`.
 
