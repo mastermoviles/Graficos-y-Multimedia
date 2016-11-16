@@ -292,11 +292,13 @@ En el método anterior hemos definido las propiedades para el flujo de vídeo a 
 
 Finalmente, implementaremos el método `processImage`, el cual se encargará de procesar cada imágen del flujo de vídeo. Podemos aplicar filtros y técnicas como las vistas anteriormente: conversión escala de grises, detección de bordes, suavizado, detección de caras, etcétera.
 
+```
 - (void)processImage:(cv::Mat&)image
 {
     // Procesamiento imagen con OpenCV: ejemplo, conversión escala de grises
     cv::cvtColor(image, image, CV_RGBA2GRAY);
 }
+```
 
 ### Ejercicios
 
