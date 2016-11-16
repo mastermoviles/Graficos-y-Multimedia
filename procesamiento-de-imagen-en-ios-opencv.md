@@ -300,7 +300,7 @@ Finalmente, implementaremos el método `processImage`, el cual se encargará de 
 
 ### Ejercicios
 
-1. En primer lugar, crea un nuevo proyecto en Xcode y enlaza la librería OpenCV. Crea las clases envoltorio, así como la librería puente para poder utilizar OpenCV en tu código Swift.
+1.- En primer lugar, crea un nuevo proyecto en Xcode y enlaza la librería OpenCV. Crea las clases envoltorio, así como la librería puente para poder utilizar OpenCV en tu código Swift.
 
 (a) Diseña una interfaz de usuario que contenga inicialmente un `ImageView` y un botón para convertir una imagen que cargaremos en el `imageView` a escala de grises.
 
@@ -310,7 +310,7 @@ Finalmente, implementaremos el método `processImage`, el cual se encargará de 
 
 (d) Añade un nuevo botón a la interfaz que nos permita detectar caras en la imagen. Utilizaremos un clasificador en cascada como el visto anteriormente. Implementa un envoltorio en Objective-C++ para utilizar esta funcionalidad el `ViewController` (Swift).
 
-2. Utiliza la clase `CvVideoCamera` de OpenCV para obtener un flujo de vídeo en nuestra aplicación iOS y procesar las imágenes obtenidas.
+2.- Utiliza la clase `CvVideoCamera` de OpenCV para obtener un flujo de vídeo en nuestra aplicación iOS y procesar las imágenes obtenidas.
 
 (a) Lleva a cabo un procesamiento de extracción de bordes sobre el flujo de vídeo obtenido en tiempo real de la cámara. 
 
