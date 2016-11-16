@@ -229,7 +229,73 @@ Por último, en OpenCV podemos también ajustar el rendimiento del clasificador,
 
 OpenCV también implementa sus clases propias para la captura de vídeo, de forma que nos permite abstraernos a la hora de utilizar la cámara de nuestro dispositivo móvil y utilizar el recurso que tengamos disponible. La clase OpenCV para obtener un flujo de vídeo en nuestra app es `CvVideoCamera`. Utilizando esta clase podremos facilmente obtener vídeo de la cámara de nuestro dispositivo y además procesarlo usando las distintas funcionalidades que OpenCV nos ofrece.
 
+Para poder utilizar esta clase en nuestro proyecto iOS, tendremos que enlazar las siguientes librerías en el proyecto:
 
+![](imagenes/opencv/ios_opencv_cvvideocamera_libraries.png)
 
+Además, añadiremos la siguiente cabecera en el wrapper de OpenCV: `#import <opencv2/highgui/cap_ios.h>``
+
+Para la utilización de `CvVideoCamera`en Swift, escribiremos también un wrapper como hicimos anteriormente para las funciones de procesamiento de imagen y detección de caras.
+
+CvVideoCaptureWrapper.mm
+```
+// Class extension to adopt the delegate protocol
+@interface CvVideoCameraWrapper () <CvVideoCameraDelegate>
+{
+
+}
+@end
+
+@implementation CvVideoCameraWrapper
+{
+ ViewController * viewController;
+ UIImageView * imageView;
+ CvVideoCamera * videoCamera;
+}
+
+// Otros métodos para inicializar y procesar imágenes del vídeo
+...
+```
+
+CvVideoCaptureWrapper.h
+```
+// This is a forward declaration; we cannot include *-Swift.h in a header.
+@class ViewController;
+@interface CvVideoCameraWrapper : NSObject
+    -(id)initWithController:(ViewController*)c andImageView (UIImageView*)iv;
+@end
+```
+
+Finalmente, imlementaremos dos métodos en nuestra clase `CvVideoCameraWrapper`, un método para inicializar la cámara con las opciones que deseemos, y otro método para llevar a cabo procesamiento del flujo de vídeo de la cámara.
+
+Método inicialización cámara
+```
+-(id)initWithController:(ViewController*)c andImageView:(UIImageView*)iv 
+{
+    viewController = c;
+    imageView = iv;
+    videoCamera = [[CvVideoCamera alloc] initWithParentView:imageView];
+
+    // ... set up the camera
+    videoCamera.delegate = self;
+    videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
+    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
+    videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeLeft;
+    videoCamera.defaultFPS = 30;
+    videoCamera.rotateVideo = !videoCamera.rotateVideo;
+    [videoCamera start];
+    return self;
+}
+```
+
+En el método anterior hemos definido las propiedades para el flujo de vídeo a obtener de la cámara: resolución, cámara (frontal o trasera), configuración (por defecto), imágenes por segundo, rotar el vídeo, etcétera. Además, en este método asignamos objetos como el imageView donde vamos a renderizar las imágenes de la cámara y el controlador que se hará cargo de esta vista.
+
+Finalmente, implementaremos el método `processImage`, el cual se encargará de procesar cada imágen del flujo de vídeo. Podemos aplicar filtros y técnicas como las vistas anteriormente: conversión escala de grises, detección de bordes, suavizado, detección de caras, etcétera.
+
+- (void)processImage:(cv::Mat&)image
+{
+    // Procesamiento imagen con OpenCV: ejemplo, conversión escala de grises
+    cv::cvtColor(image, grey, CV_RGBA2GRAY);
+}
 
 
