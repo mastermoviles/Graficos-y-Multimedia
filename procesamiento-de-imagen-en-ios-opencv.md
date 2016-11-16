@@ -295,7 +295,7 @@ Finalmente, implementaremos el método `processImage`, el cual se encargará de 
 - (void)processImage:(cv::Mat&)image
 {
     // Procesamiento imagen con OpenCV: ejemplo, conversión escala de grises
-    cv::cvtColor(image, grey, CV_RGBA2GRAY);
+    cv::cvtColor(image, image, CV_RGBA2GRAY);
 }
 
 
