@@ -212,3 +212,14 @@ for(unsigned int i = 0; i < faces.size(); i++)
 Como podemos apreciar arriba, una vez detectadas las caras, utilizando funciones OpenCV dibujamos gráficos sobre la imagen que posteriormente visualizaremos en el ImageView de nuestra app móvil.
 
 ![](imagenes/opencv/ios_opencv_face_detector.png)
+
+Aunque iOS también tiene su propio detector de caras como hemos visto anteriormente, el clasificador de OpenCV nos ofrece más posibilidades, permitiéndonos detectar más objetos por tantos siendo más flexible. Si no existiese un clasificador pre-entrenado para el tipo de objeto que queremos detectar, siempre podemos entrenar nuestro propio clasificador nuevos propio conjunto de imágenes previamente anotadas. Esta tarea puede requerir de tiempo y esfuerzo en términos de investigación, aunque es factible.
+
+Por último, en OpenCV podemos también ajustar el rendimiento del clasificador, ya que el clasificador en cascada es una técnica costa computacionalmente. Ajustando algunos de los parámetros del método `detectMultiScale`podemos mejorar el rendimiento, aunque por otro lado la precisión del método podría reducirse. Además de ajustar los parámetros, OpenCV implementa otro tipo de características, denominadas Local Binary Patterns (LBP), que se puede utilizar para el clasificador en cascada. Este tipo de características son más eficientes de computar ya que estan basadas principalmente en cómputos que se pueden llevar a cabo con aritmética entera, siendo por lo tanto más eficientes y funcionando 2-3 veces más rápido que las características de Haar (punto flotante). Otra opción para mejorar el rendimiento podría ser no procesar todos las imágenes de nuestro flujo de vídeo y llevar a cabo algúna técnica de seguimiento entre detecciónes (Optical flow).
+
+### Captura de vídeo
+
+OpenCV también implementa sus clases propias para la captura de vídeo, de forma que nos permite abstraernos a la hora de utilizar la cámara de nuestro dispositivo móvil y utilizar el recurso que tengamos disponible.
+
+
+
