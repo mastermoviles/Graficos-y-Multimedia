@@ -1,5 +1,7 @@
 # Procesamiento de imágenes en iOS: OpenCV
 
+![](imagenes/opencv/ios_opencv_logo.png)
+
 En esta sección vamos a ver como llevar a cabo procesamiento de imágenes en iOS utilizando la librería de visión por computador **OpenCV**.
 
 ## OpenCV
@@ -30,6 +32,8 @@ Además, OpenCV cuenta con una librería de aprendizaje automático que contiene
 
 OpenCV es una librería escrita en C/C++, por lo que utilizando Objective-C no hay mucho problema para su integración en iOS. Sin embargo, con Swift la cosa es ligeramente más complicada, y necesitaremos utilizar una cabecera puente en nuestro proyecto para acceder a funciones de OpenCV. Por ello tendremos que escribir un poco de Objective-C++ en nuestros proyectos.
 
+![](imagenes/opencv/ios_opencv_swift_objc++.png)
+
 ### Enlazando la librería OpenCV en nuestro proyecto
 
 Para utilizar OpenCV en iOS tendremos que descargarnos la versión correspondiente para esta plataforma de la web oficial. En concreto vamos a utilizar la versión 2.4.13 para iOS. [Enlace descarga](https://sourceforge.net/projects/opencvlibrary/files/opencv-ios/2.4.13/opencv2.framework.zip/download).
@@ -45,6 +49,7 @@ Con estos pasos habremos creados tres nuevos ficheros en nuestro proyecto: `Open
 ```
 #import "OpenCVWrapper.h"
 ```
+
 ### Primer ejemplo: Conversión imagen a escala de grises
 Con esto ya estamos listos para empezar a utilizar OpenCV en nuestro proyecto, por ello vamos a crear una sencilla aplicación que cargue una imagen y convierta la imagen a escala de grises utilizando la función predefinida en OpenCV `cv::cvtColor(imageMat, gray, CV_RGBA2GRAY);``
 
@@ -65,7 +70,7 @@ Convertir formato cv::Mat a UIImage
 
 Finalmente crearemos una función `convertImageToGrayScale`en la clase `OpenCVWrapper`. Esta clase nos servirá de interfaz con OpenCV y la utilizaremos desde nuestro código en Swift
 
-***Objective-C*** ( OpenCVWrapper.mm )
+**( OpenCVWrapper.mm )**
 ```
 #import "OpenCVWrapper.h"
 
@@ -85,7 +90,7 @@ Finalmente crearemos una función `convertImageToGrayScale`en la clase `OpenCVWr
 
 ```
 
-***Objective-C*** ( OpenCVWrapper.h )
+**( OpenCVWrapper.h )**
 ```
 #import <Foundation/Foundation.h>
 
@@ -146,8 +151,64 @@ A continuación vamos a ver otro filtro un poco más complejo, en concreto un fi
 Los argumentos que recibe este método son los siguientes:
 
 * Imagen origen en escala de grises
-* Imagen bordes detectados
+* Imagen salida con los bordes detectados
 * lowThreshold: umbral inferior para la detección de bordes
 * highThreshold: umbral superior para la detección de bordes
 * kernel_size: tamaño de la convolución 2D en las dimensiones X e Y. Por defecto 3.
 
+![](imagenes/opencv/ios_opencv_edge_detector.png)
+
+En OpenCV encontramos muchos otras funciones de procesamiento de imágen y visión por computador que podemos utilizar en nuestra aplicación, toda la documentación sobre la librería y métodos disponibles se puede encontrar [online](http://docs.opencv.org/2.4/index.html).
+
+### Detector de caras
+
+A continuación, vamos a ver como utilizar OpenCV para poner en funcionamiento un detector de caras en nuestra aplicación móvil. OpenCV implementa clasificadores en cascada para detectar múltiples objetos. En nuestro caso vamos a cargar un modelo para el clasificador que esta entrenado para detectar caras. En concreto usaremos el clasificador basado en las características de Haar. Podeis encontrar más información sobre la implementación de este método en el siguiente [enlace](http://docs.opencv.org/2.4/modules/objdetect/doc/cascade_classification.html). El trabajo original se basa en el siguiente artículo científico:
+
+```
+[Viola01] Paul Viola and Michael J. Jones. Rapid Object Detection using a Boosted Cascade of Simple Features. IEEE CVPR, 2001. 
+```
+
+Para utilizar este método en nuestro proyecto vamos a crear un nuevo wrapper que nos sirva de interfaz para el objeto `cv::CascadeClassifier`. Este objeto OpenCV nos permitirá cargar un modelo entrenado para la detección de caras así como la detección en sí. Crearemos un método para inicializar el clasificador con el modelo detector de caras.
+
+```
+NSString* cascadePath = [[NSBundle mainBundle] pathForResource:@"haarcascade_frontalface_alt2" ofType:@"xml"];
+faceDetector.load([cascadePath UTF8String]);
+```
+
+Podremos descargas este modelo y otros previamente entrenados desde el [repositorio](https://github.com/opencv/opencv/tree/master/data/haarcascades) oficial de la librería  OpenCV. Encontramos otros modelos para detectar ojos, personas, tronco superior, etcétera. 
+
+Crearemos otro método dentro de nuestro wrapper para llevar a cabo la detección de caras dada una imagen de entrada.
+
+```
+-(UIImage *) detectFaces: (UIImage *)image
+```
+
+Este método contiene toda la lógica necesaria para detectar caras en una imagen utilizando la función 
+
+```
+faceDetector.detectMultiScale(gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
+```
+
+El método `detectFaces` contendría el siguiente código (Se ha eliminado el código para interoperar con UIImage y convertir a escala de grises por claridad):
+
+```
+// Detect faces
+std::vector<cv::Rect> faces;
+faceDetector.detectMultiScale(gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
+
+// Draw all detected faces
+for(unsigned int i = 0; i < faces.size(); i++)
+{
+    const cv::Rect& face = faces[i];
+    // Get top-left and bottom-right corner points
+    cv::Point tl(face.x, face.y);
+    cv::Point br = tl + cv::Point(face.width, face.height);
+    // Draw rectangle around the face
+    cv::Scalar magenta = cv::Scalar(255, 0, 255);
+    cv::rectangle(cvImage, tl, br, magenta, 4, 8, 0);
+}
+```
+
+Como podemos apreciar arriba, una vez detectadas las caras, utilizando funciones OpenCV dibujamos gráficos sobre la imagen que posteriormente visualizaremos en el ImageView de nuestra app móvil.
+
+![](imagenes/opencv/ios_opencv_face_detector.png)
