@@ -189,6 +189,14 @@ Este método contiene toda la lógica necesaria para detectar caras en una image
 faceDetector.detectMultiScale(gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
 ```
 
+Esta función recibe los siguientes parámetros:
+
+* Imagen de entrada (escala de grises)
+* Factor de escala: especifica cuanto se escala la imagen en cada iteración
+* Número mínimo de vecinos: especifica cuantos vecinos (detecciones) como mínimo debe tener una detección para considerarse como válida.
+* `CV_HAAR_SCALE_IMAGE`: especifica que se escale la imagen y no el detector. Esto mejora el rendimiento del detector.
+* Tamaño mínimo: tamaño mínimo posible de una cara a detectar en la imágen.
+
 El método `detectFaces` contendría el siguiente código (Se ha eliminado el código para interoperar con UIImage y convertir a escala de grises por claridad):
 
 ```
@@ -219,7 +227,9 @@ Por último, en OpenCV podemos también ajustar el rendimiento del clasificador,
 
 ### Captura de vídeo
 
-OpenCV también implementa sus clases propias para la captura de vídeo, de forma que nos permite abstraernos a la hora de utilizar la cámara de nuestro dispositivo móvil y utilizar el recurso que tengamos disponible.
+OpenCV también implementa sus clases propias para la captura de vídeo, de forma que nos permite abstraernos a la hora de utilizar la cámara de nuestro dispositivo móvil y utilizar el recurso que tengamos disponible. La clase OpenCV para obtener un flujo de vídeo en nuestra app es `CvVideoCamera`. Utilizando esta clase podremos facilmente obtener vídeo de la cámara de nuestro dispositivo y además procesarlo usando las distintas funcionalidades que OpenCV nos ofrece.
+
+
 
 
 
