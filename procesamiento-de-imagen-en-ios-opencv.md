@@ -30,9 +30,11 @@ Además, OpenCV cuenta con una librería de aprendizaje automático que contiene
 
 OpenCV es una librería escrita en C/C++, por lo que utilizando Objective-C no hay mucho problema para su integración en iOS. Sin embargo, con Swift la cosa es ligeramente más complicada, y necesitaremos utilizar una cabecera puente en nuestro proyecto para acceder a funciones de OpenCV. Por ello tendremos que escribir un poco de Objective-C++ en nuestros proyectos.
 
+### Enlazando la librería OpenCV en nuestro proyecto
+
 Para utilizar OpenCV en iOS tendremos que descargarnos la versión correspondiente para esta plataforma de la web oficial. En concreto vamos a utilizar la versión 2.4.13 para iOS. [Enlace descarga](https://sourceforge.net/projects/opencvlibrary/files/opencv-ios/2.4.13/opencv2.framework.zip/download).
 
-El siguiente paso será crear un nuevo proyecto en xcode y añadir las librerías necesarias para usar OpenCV en nuestro proyecto. Creamos un proyecto nuevo (Single View) y simplemente arrastramos al explorador del proyecto el fichero `opencv2.framework`, nos aparecerá un diálogo para importarlo en el proyecto. Marcamos la opción copiar si es necesario.
+El siguiente paso será crear un nuevo proyecto en Xcode y añadir las librerías necesarias para usar OpenCV en nuestro proyecto. Creamos un proyecto nuevo (Single View) y simplemente arrastramos a la ventana donde se muestran los ficheros del proyecto el fichero `opencv2.framework`, al hacer esto nos aparecerá un diálogo para importarlo en el proyecto. Marcamos la opción copiar si es necesario.
 
 ![](imagenes/opencv/ios_opencv_import_lib.png)
 
@@ -43,7 +45,7 @@ Con estos pasos habremos creados tres nuevos ficheros en nuestro proyecto: `Open
 ```
 #import "OpenCVWrapper.h"
 ```
-
+### Primer ejemplo: Conversión imagen a escala de grises
 Con esto ya estamos listos para empezar a utilizar OpenCV en nuestro proyecto, por ello vamos a crear una sencilla aplicación que cargue una imagen y convierta la imagen a escala de grises utilizando la función predefinida en OpenCV `cv::cvtColor(imageMat, gray, CV_RGBA2GRAY);``
 
 Añadimos un ImageView (cargar imagen) y un botón a la interfaz de la apliación que creamos anteriormente. Al pulsar el botón convertiremos la imágen a escala de grises. Para ello, en la clase OpenCVWrapper que creamos anteriormente para utilizar la funcionalidad de la librería escribimos nuestra propia función para convertir a escala de grises. La función tomará como entrada una imagen en formato UIImage, la convertirá a formato OpenCV, cv::Mat, y finalmente se convertirá de vuelta al formato UIImage para su visualizaión.
@@ -104,7 +106,7 @@ Finalmente crearemos una función `convertImageToGrayScale`en la clase `OpenCVWr
 
 ```
 
-Finalmente desde nuestro código Swift llamaremos a la función `convertImageToGrayscale` al accionar el botón 'convertir':
+Finalmente, desde nuestro código Swift llamaremos a la función `convertImageToGrayscale` al accionar el botón 'convertir':
 
 ```
 @IBAction func botonConvertirGrises(_ sender: UIButton) 
@@ -112,4 +114,40 @@ Finalmente desde nuestro código Swift llamaremos a la función `convertImageToG
     imagen.image = OpenCVWrapper.convertImage(toGrayscale: imagen!.image)
 }
 ```
+
+![](imagenes/opencv/ios_opencv_grayscale.png)
+
+### Otros ejemplos
+
+A continuación vamos a ver como aplicar a nuestra imagen otros filtros típicos en procesamiento de imagen. Por ejemplo, un filtro de emborronamiento, del inglés, blur. De igual manera que hicimos anteriormente, creamos una nuevo método en nuestra interfaz `OpenCVWrapper`. En este caso usaremos una de las funciones de filtrado de OpenCV, se trata de un método para emborronar la imagen: 
+
+```+(UIImage *) blurImage: (UIImage *)Image;```
+
+El nuevo método quedaría de la siguiente forma:
+
+```
++(UIImage *) blurImage: (UIImage *)image
+{
+     cv::Mat imageMat;
+     UIImageToMat(image,imageMat);
+     cv::Mat blurImage;
+     cv::GaussianBlur( imageMat, blurImage, cv::Size( 3, 3 ), 0, 0 );
+     return MatToUIImage(blurImage);
+}
+
+```
+
+A continuación vamos a ver otro filtro un poco más complejo, en concreto un filtro detector de bordes, [algoritmo de Canny](https://es.wikipedia.org/wiki/Algoritmo_de_Canny). Este filtro se encuentra implementado en OpenCV y por lo tanto podemos usarlo para procesar nuestras imágenes. 
+
+```
+ cv::Canny(gray, edges, 0, 50, 3);
+```
+
+Los argumentos que recibe este método son los siguientes:
+
+* Imagen origen en escala de grises
+* Imagen bordes detectados
+* lowThreshold: umbral inferior para la detección de bordes
+* highThreshold: umbral superior para la detección de bordes
+* kernel_size: tamaño de la convolución 2D en las dimensiones X e Y. Por defecto 3.
 
