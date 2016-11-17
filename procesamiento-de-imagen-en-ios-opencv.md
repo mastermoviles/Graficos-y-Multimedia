@@ -320,3 +320,5 @@ Finalmente, implementaremos el método `processImage`, el cual se encargará de 
 
 Para el ejercicio 2 utiliza la plantilla que hemos dejado en el repositorio de la asignatura: `plantillas-multimedia-graficos-ios-swift`. Nombre proyecto: `CapturaVideoOpenCV`.
 
+Recuerda que el ejercicio 2 debe desplegarse sobre un dispositivo real, debido a que el emulador no soporta el uso de la cámara.
+
