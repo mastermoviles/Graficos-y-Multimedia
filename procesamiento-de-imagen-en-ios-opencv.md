@@ -316,7 +316,7 @@ Finalmente, implementaremos el método `processImage`, el cual se encargará de 
 
 (a) Lleva a cabo un procesamiento de extracción de bordes sobre el flujo de vídeo obtenido en tiempo real de la cámara. 
 
-(b) Detecta caras sobre flujo de vídeo obtenido de la cámara utilizando el clasificador en cascada de OpenCV; `cv::CascadeClassifier`. Dibuja rectángulo de forma similar al ejercicio 1.
+(b) Añade un slider a la interfaz de usuario para modificar los parámetros del detector de bordes de Canny y otro slider para cambiar el nivel de suavizado de la imagen. Observa como estos parámetros alteran la imagen resultado.
 
 Para el ejercicio 2 utiliza la plantilla que hemos dejado en el repositorio de la asignatura: `plantillas-multimedia-graficos-ios-swift`. Nombre proyecto: `CapturaVideoOpenCV`.
 
