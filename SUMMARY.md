@@ -15,5 +15,3 @@
 * [Reproducción en dispositivos externos](mirroring.md)
 * [Aplicaciones Adobe Air](adobe-air.md)
 * [Síntesis y reconocimiento del habla](habla-android.md)
-* Procesamiento de imagen en iOS: OpenCV
-
