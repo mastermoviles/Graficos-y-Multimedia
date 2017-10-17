@@ -305,19 +305,19 @@ Con este modo activo podremos lanzar la aplicación en el móvil sin tener que c
 
 ### Google VR
 
-Google VR, originalmente conocido como Google Cardboard es el SDK de Google para desarrollar aplicaciones de realidad virtual usando sus visores de VR. Hasta ahora principalmente el Google Cardboard, pero recientemente han anunciado el primer producto similar al anteriormente visto Samsung Gear VR, conocido como Google Daydream. El SDK de Google VR es compatible con cualquiera de sus visores por lo que las aplicaciones que desarrollemos para el Google Cardboard se podrán utilizar también en Google Daydream. Unity, por defecto, no incluye soporte nativo para Google Cardboard, pero podemos encontrar un _plugin_ muy sencillo de utilizar en la web oficial:
+Google VR, originalmente conocido como Google Cardboard es el SDK de Google para desarrollar aplicaciones de realidad virtual usando sus visores de VR. Hasta ahora principalmente el Google Cardboard, pero recientemente han lanzado el primer producto similar al anteriormente visto, Samsung Gear VR, conocido como Google Daydream. El SDK de Google VR es compatible con cualquiera de sus visores por lo que las aplicaciones que desarrollemos para el Google Cardboard se puede utilizar también en Google Daydream. 
 
 [https://developers.google.com/vr/unity/](https://developers.google.com/vr/unity/)
 
 El plugin consiste en un paquete de _assets_ que podemos incluir en nuestro proyecto \(deberemos añadir todo su contenido\).
 
-Recientemente ha aparecido una compilación personalizada de Unity que incorpora el SDK de Google VR de forma nativa. Esta compilación personalizada, que se basa en Unity 2017, es compatible el objetivo de compilación de Android con soporte para VR para Daydream y el Samsung Gear VR.
+Recientemente ha aparecido una compilación personalizada de Unity que incorpora el SDK de Google VR de forma nativa. Esta compilación personalizada, que se basa en Unity 2017, es compatible el objetivo de compilación de Android con soporte para VR para Daydream y el Samsung Gear VR. Entre las características de GoogleVR para desarrollar aplicaciones encontramos el soporte para controladores, escenas de ejemplos, scripts con ciertas funciones ya implementadas, sonido espacial, etcétera.
 
 A continuación vamos a ver la forma de añadir soporte a nuestro proyecto Unity para utilizar el visor de tipo Cardboard o similares. Al igual que con otros plugins o addons, se han creado una serie de _prefabs_ que nos van a facilitar la tarea de hacer nuestro proyecto compatible. Lo primero que tenemos que hacer es configurar el proyecto para que soporte Realidad Virtual, o en su defecto generar un par de imágenes estéreo para cada ojo. Desde player setting, habilitaremos en la sección XR settings el soporte para Realidad virtual y el conjunto de SDKs a utilizar, en nuestro caso el de Cardboard.
 
 ![](imagenes/unity/unity_player_settings_vr.png)
 
-Una vez configurado el proyecto, el primer prefab que tenemos que añadir es `GvrEditorEmulator`, este nos va permitir que al ejecutar nuestra escena se active el rendering estéreo.
+Una vez configurado el proyecto, el primer prefab que tenemos que añadir es `GvrEditorEmulator`, este nos va permitir que al ejecutar nuestra escena se active el rendering estéreo, así como la emulación en el editor Unity del movimiento de la cabeza utilizando el teclado. En concreto, utilizaremos Alt + ratón para girar la cabeza y Ctrl + ratón para inclinarla. De igual manera, al hacer click con el ratón simularemos la pulsación del botón disponible en los visores tipo Cardboard. Gracias al uso de este prefab ya podremos utilizar la orientación de nuestra cabeza para ver la escena completo \(360º\). Además, Google VR SDK incluye un sistema de eventos para permitir que los desarrolladores creen aplicaciones con cierta capacidad de interacción con la escena. Este sistema es compatible tanto con Daydream como Cardboard. Para utilizarlo tendremos que añadir a nuestra escena el prefab `GvrEventSystem`. Una vez añadido este prefab podremos hacer uso en nuestra escena de un puntero para seleccionar objetos o interactuar con la escena. Dentro del SDK encontramos el prefab GvrReticlePointer que un vez añadido a nuestra escena, en concreto deberemos añadirlo a nuestra cámara principal, el sistema de puntero aparecera en nuestra escena una vez lo ejecutemos. 
 
 **Para Google VR SDK v0.6 e inferiores**
 
