@@ -315,9 +315,9 @@ Recientemente ha aparecido una compilación personalizada de Unity que incorpora
 
 A continuación vamos a ver la forma de añadir soporte a nuestro proyecto Unity para utilizar el visor de tipo Cardboard o similares. Al igual que con otros plugins o addons, se han creado una serie de _prefabs_ que nos van a facilitar la tarea de hacer nuestro proyecto compatible. Lo primero que tenemos que hacer es configurar el proyecto para que soporte Realidad Virtual, o en su defecto generar un par de imágenes estéreo para cada ojo. Desde player setting, habilitaremos en la sección XR settings el soporte para Realidad virtual y el conjunto de SDKs a utilizar, en nuestro caso el de Cardboard.
 
-![](/assets/unity_player_settings_vr.png)
+![](imagenes/unity/unity_player_settings_vr.png)
 
- Una vez configurado el proyecto, el primer prefab que tenemos que añadir es `GvrEditorEmulator`, este nos va permitir que al ejecutar nuestra escena se active el rendering estéreo.
+Una vez configurado el proyecto, el primer prefab que tenemos que añadir es `GvrEditorEmulator`, este nos va permitir que al ejecutar nuestra escena se active el rendering estéreo.
 
 **Para Google VR SDK v0.6 e inferiores**
 
