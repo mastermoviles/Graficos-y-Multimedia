@@ -317,13 +317,13 @@ A continuación vamos a ver la forma de añadir soporte a nuestro proyecto Unity
 
 ![](imagenes/unity/unity_player_settings_vr.png)
 
-Una vez configurado el proyecto, el primer prefab que tenemos que añadir es `GvrEditorEmulator`, este nos va permitir que al ejecutar nuestra escena se active el rendering estéreo, así como la emulación en el editor Unity del movimiento de la cabeza utilizando el teclado. En concreto, utilizaremos Alt + ratón para girar la cabeza y Ctrl + ratón para inclinarla. De igual manera, al hacer click con el ratón simularemos la pulsación del botón disponible en los visores tipo Cardboard. Gracias al uso de este prefab ya podremos utilizar la orientación de nuestra cabeza para ver la escena completo \(360º\). Además, Google VR SDK incluye un sistema de eventos para permitir que los desarrolladores creen aplicaciones con cierta capacidad de interacción con la escena. Este sistema es compatible tanto con Daydream como Cardboard. Para utilizarlo tendremos que añadir a nuestra escena el prefab `GvrEventSystem`. Una vez añadido este prefab podremos hacer uso en nuestra escena de un puntero para seleccionar objetos o interactuar con la escena. Dentro del SDK encontramos el prefab `GvrReticlePointer` que una vez añadido a nuestra escena, en concreto deberemos añadirlo a nuestra cámara principal, el sistema de puntero aparecera en nuestra escena una vez lo ejecutemos \(Cuando enfoquemos un objeto con el que se pueda interactuar el puntero generará una animación que podemos configurar y personalizar\). Finalmente, el SDK cuenta con dos scripts para habilitar el sistema de interacción: `GvrPointerGraphicRaycaster` y `GvrPointerPhysicsRaycaster` . Estos scripts sustituyen a las versiones equivalentes de Unity para calcular la intersección de un rayo virtual lanzado \(Ray casting\) desde la cámara hacia la escena y hacia gráficos dibujados en un canvas 2D. Los scripts se encuentran en la siguiente ruta: `Assets/GoogleVR/Scripts/EventSystem`. Estos scripts se añadirán como componentes a la cámara principal para que funcionen correctamente. Además, cada objeto de la escena con el que queramos interactuar debe responder a los eventos generados, para ello bien podemos utilizar el componente `EventTrigger` o el sistema de eventos de Unity mediante scripts que desarrollemos y añadamos a los objetos.
+Una vez configurado el proyecto, el primer prefab que tenemos que añadir es `GvrEditorEmulator`, este nos va permitir que al ejecutar nuestra escena se active el rendering estéreo, así como la emulación en el editor Unity del movimiento de la cabeza utilizando el teclado. En concreto, utilizaremos Alt + ratón para girar la cabeza y Ctrl + ratón para inclinarla. De igual manera, al hacer click con el ratón simularemos la pulsación del botón disponible en los visores tipo Cardboard. Gracias al uso de este prefab ya podremos utilizar la orientación de nuestra cabeza para ver la escena completo \(360º\). Además, Google VR SDK incluye un sistema de eventos para permitir que los desarrolladores creen aplicaciones con cierta capacidad de interacción con la escena. Este sistema es compatible tanto con Daydream como Cardboard. Para utilizarlo tendremos que añadir a nuestra escena el prefab `GvrEventSystem`. Una vez añadido este prefab podremos hacer uso en nuestra escena de un puntero para seleccionar objetos o interactuar con la escena. Dentro del SDK encontramos el prefab `GvrReticlePointer` que una vez añadido a nuestra escena, en concreto deberemos añadirlo a nuestra cámara principal, el sistema de puntero aparecera en nuestra escena una vez lo ejecutemos \(Cuando enfoquemos un objeto con el que se pueda interactuar el puntero generará una animación que podemos configurar y personalizar\). Finalmente, el SDK cuenta con dos scripts para habilitar el sistema de interacción: `GvrPointerGraphicRaycaster` y `GvrPointerPhysicsRaycaster` . Estos scripts sustituyen a las versiones equivalentes de Unity para calcular la intersección de un rayo virtual lanzado \(Ray casting\) desde la cámara hacia la escena y hacia gráficos dibujados en un canvas 2D. Los scripts se encuentran en la siguiente ruta: `Assets/GoogleVR/Scripts/EventSystem`. Estos scripts se añadirán como componentes a la cámara principal para que funcionen correctamente. Además, cada objeto de la escena con el que queramos interactuar debe responder a los eventos generados, para ello bien podemos utilizar el componente `EventTrigger` o el sistema de eventos de Unity mediante scripts que desarrollemos y añadamos a los objetos. En el caso de la interacción con modelos 3D a través del script `GvrPointerGraphicRaycaster`  es necesario que los modelos tengan una componente _collider_, permitiendo así que el_ raycaster_ pueda detectar la colisión con el modelo 3D.
 
 La jerarquía de objetos en la escena quedaría como se muestra en la siguiente imagen:
 
 ![](imagenes/unity/unity-vr-jerarquia.png)
 
-En la siguiente imagen podemos ver la previsualización de la cámara en la escena, en las últimas versiones del SDK se ha deshabilitado el rendering previo de las dos vistas estéreo. Se puede apreciar como al enfocar el objeto flotante, el puntero produce una animación, en este caso formando un circulo que se expande y se contrae. De esta forma podemos facilmente identificar los objetos de la escena con los que se puede interactuar. 
+En la siguiente imagen podemos ver la previsualización de la cámara en la escena, en las últimas versiones del SDK se ha deshabilitado el rendering previo de las dos vistas estéreo. Se puede apreciar como al enfocar el objeto flotante, el puntero produce una animación, en este caso formando un circulo que se expande y se contrae. De esta forma podemos facilmente identificar los objetos de la escena con los que se puede interactuar.
 
 ![](/imagenes/unity/unity-vr-escena.png)
 
@@ -518,41 +518,13 @@ Para configurar el proyecto anterior y que nos permita renderizar un par de imá
 
 Si desplegamos de nuevo la aplicación en el dispositivo móvil y lo insertamos en el casco de realidad virtual, podremos visualizar la aplicación de realida aumentada que anteriormente desarrollamos de forma más immersiva.
 
-&lt;!--
+## Nuevos frameworks de realidad aumentada \(sin marcadores\)
 
-## Scripting
+### ARKit 
 
-### Creación de scripts
 
-### Estructura de un script
 
-### Ciclo del juego
+### ARCore
 
-### Acceso a los componentes y polimorfismo
 
-### Interfaz pública del script
-
-### Búsqueda de objetos
-
-### Creación y destrucción de objetos
-
-### Corrutinas
-
-## Controles multiplataforma
-
-### Controles predefinidos en pantalla
-
-## Patrones de diseño
-
-### Controlador de la escena
-
-### Comunicación entre componentes
-
-### Patrón delegado
-
-### Sistema de eventos
-
-### Patrón singleton
-
---&gt;
 
