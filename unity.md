@@ -520,11 +520,34 @@ Si desplegamos de nuevo la aplicación en el dispositivo móvil y lo insertamos 
 
 ## Nuevos frameworks de realidad aumentada \(sin marcadores\)
 
-### ARKit 
+### ARKit
+
+ARKit es un nuevo framework que permite crear facilmente experiencias de realidad aumentada sin el uso de marcadores. El uso de esta tecnología proporciona un sistema de tracking muy estable capaz de mezclar objetos virtuales con el entorno que nos rodea. Este framework requiere el uso de un dispositivo Apple compatible, modelos de iPhone e iPad con procesador A9 o posterior: iPad Pro, iPad 2017, iPhone 6S, 7, 8 y X. Es necesario tener instalado iOS 11 y xcode 9 o superior.
+
+Aunque podemos desarrollar nuestra aplicación con soporte ARKit mediante el uso de SceneKit en Swift 4, en este curso vamos a ver que existen plugins para entornos de desarrollo de videojuegos y aplicaciones como Unity y Unreal Engine. En este curso nos vamos a centrar en el uso del plugin de ARKit para Unity. Para más información sobre como desarrollar para otras plataformas podéis consultar la siguiente lista de tutoriales: [https://github.com/olucurious/Awesome-ARKit](https://github.com/olucurious/Awesome-ARKit)
+
+### Plugin ARKit para Unity
+
+Este plugin desarrollado para Unity nos permite, mediante la utilización de scripts, acceder a la interfaz nativa de ARKit desde Unity. Los scripts son asociados a GameObjects de nuestra escena dotándola así de capacidad para aumentar el mundo real con objetos virtuales. El script se puede descargar descargar desde la asset store o desde su repositorio en [bitbucket](https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/).
+
+A continuación vamos a ver los scripts mínimos necesarios para visualizar un objeto virtual en la escena real.
+
+* UnityARCameraManager: este script debe añadirse dentro un game object vacio o bien debajo de la cámara de la escena que queremos que sea controlada por ARKit. Este script además inicializa el objeto sesión de ARKit que provee toda la información sobre el tracking de la cámara en la escena: matriz de roto-translación.
+* UnityARVideo: este script debe añadirse a la cámara. Se encarga de renderizar el vídeo de la cámara como background en nuestra aplicación.
+
+Con estos dos scripts en nuestra escena ya podemos colocar un objeto virtual en 3D en nuestra escena. Ahora bien, existen otros scripts que nos  proveen con funcionalidad adicional como interacción:
+
+* UnityARAmbient: este script se añade sobre la luz de nuestra escena y nos permite cambiar la intensidad de la misma acorde a la luz que hay en el mundo real. De esta forma se consigue que en escenas con poca iluminación, los objetos virtuales se integren y se minimice la diferencia con los objetos reales. 
+* UnityARHitTestExample: este script se ejecuta cada vez que tocamos la pantalla. Se encarga de calcular la intersección entre la posición de la pantalla pulsada \(rayo virtual\) y los planos y/o keypoints más cercanos detectados en la escena. De esta forma nos permite colocar objetos sobre las superficies de la escena real.
+
+Por último cabe destacar que el plugin incorpora scripts para ayudarnos a desarrollar aplicaciones de realidad aumentada, así como una serie de escenas de ejemplos que vamos a describir a continuación:
+
+* UnityARKitScene: esta es la escena más básica que encontramos entre las escenas de ejemplo. Se puede utilizar como proyecto base para crear nuestras aplicaciones. Por defecto se puede exportar y probar en un dispositivo iOS compatible.
+* UnityARBallz: muestra el uso de colliders y cuerpos rígidos en una app con realidad aumentada.
+* UnityARShadows: muestra el uso de un material para renderizar sombras sobre objetos reales, especialmente sobre planos.
+* UnityParticlePainter: esta escena de ejemplo nos permite dibujar particulas virtuales en nuestro entorno, aumentando el contenido del mundo real.
 
 
-
-### ARCore
 
 
 
