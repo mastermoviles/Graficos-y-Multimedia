@@ -1,0 +1,62 @@
+site_name: Gráficos y Multimedia
+use_directory_urls: false
+
+plugins:
+    - search
+#    - pdf-export:
+#        combined: true
+
+nav:
+
+- Introducción: 'README.md'
+- Formatos de audio y vídeo: 'formatos.md'
+- Difusión de medios: 'streaming.md'
+- El motor Unity: 'unity.md'
+- Gráficos de alto rendimiento en Android: 'graficos-android.md'
+- Gráficos en iOS: 'graficos-ios.md'
+- Reproducción de medios en iOS: 'reproduccion-ios.md'
+- Captura y procesamiento de medios en iOS: 'captura-ios.md'
+- Procesamiento de imágenes en iOS - OpenCV: 'procesamiento-de-imagen-en-ios-opencv.md'
+- Reproducción de medios en Android: 'reproduccion-android.md'
+- Captura de medios en Android: 'captura-android.md'
+- Emisión de medios: 'procesamiento-android.md'
+- Reproducción en dispositivos externos: 'mirroring.md'
+- Aplicaciones Adobe Air: 'adobe-air.md'
+- Síntesis y reconocimiento del habla: 'habla-android.md'
+
+theme:
+    language: es
+    name: 'material'
+    palette:
+        primary: 'Indigo'
+        accent: 'Indigo'
+    font:
+        text: 'Roboto'
+        code: 'Roboto Mono'
+    logo: 'imagenes/logo.png'
+
+# Ponemos como idioma de búsqueda el inglés
+# para conseguir que busque correctamente
+# todas las palabras en castellano, sin eliminar
+# los excesivos derivados que se definen en
+# https://github.com/MihaiValentin/lunr-languages/blob/master/lunr.es.js
+
+extra:
+    search:
+        language: 'en'
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+markdown_extensions:
+    - admonition
+    - codehilite:
+        linenums: true
+    - footnotes
+    - meta
+    - sane_lists
+    - toc:
+       permalink: true
+       toc_depth: 3
+    - pymdownx.superfences
+    - pymdownx.arithmatex
