@@ -14,21 +14,21 @@ permiten reproducir y manipular contenido multimedia. Según las necesidades de
 nuestra aplicación, deberemos seleccionar uno u otro. A continuación mostramos
 los más destacados y sus características:
 
-* **Media Player \(MP\)**: Nos da acceso a la librería multimedia del iPod. Con esta librería podemos
+* **Media Player (MP)**: Nos da acceso a la librería multimedia del iPod. Con esta librería podemos
   reproducir medios de forma sencilla incrustando el reproductor de medios del dispositivo en nuestra
   aplicación, y personalizándolo para que se adapte a nuestra interfaz y quede integrado correctamente.
-* **AV Foundation \(AV\)**: Esta librería nos permite controlar la reproducción y captura de audio y vídeo
+* **AV Foundation (AV)**: Esta librería nos permite controlar la reproducción y captura de audio y vídeo
   a bajo nivel. Con ella por ejemplo podremos tener acceso a los fotogramas capturados por la cámara en tiempo
   real, permitiendo implementar aplicaciones basadas en visión artificial.
-* **Audio Toolbox \(AU\)**: Se trata de una librería de manipulación de audio, que nos permite capturar,
+* **Audio Toolbox (AU)**: Se trata de una librería de manipulación de audio, que nos permite capturar,
   reproducir, y convertir el formato del audio.
-* **OpenAL framework \(AL\)**: Nos da un gran control sobre la reproducción de audio. Por ejemplo,
+* **OpenAL framework (AL)**: Nos da un gran control sobre la reproducción de audio. Por ejemplo,
   nos permite reproducir audio posicional, es decir, nos dará control
   sobre la posición en la que se encuentra la fuente de audio, para que así cada sonido se oiga con más fuerza
   por el altavoz que corresponda. Esto es especialmente interesante para videojuegos, para implementar de esta forma
   sonido en estéreo.
-* **Assets Library \(AL\)**: Nos da acceso a nuestra librería multimedia de fotos y vídeos.
-* **Core Image \(CI\)**: Es una API incorporada a partir de iOS 5. Permite procesar imágenes de forma
+* **Assets Library (AL)**: Nos da acceso a nuestra librería multimedia de fotos y vídeos.
+* **Core Image (CI)**: Es una API incorporada a partir de iOS 5. Permite procesar imágenes de forma
   eficiente, aprovechando al máximo la arquitectura _hardware_ del dispositivo, y evitando que tengamos
   que ir a programar a bajo nivel para implementar estas funcionalidades de forma óptima. Con estas funciones podremos
   crear filtros para fotografía, o implementar procedimientos de visión artificial como por ejemplo el reconocimiento
@@ -41,12 +41,12 @@ aplicaciones de forma personalizada, y en la API para procesamiento de imágenes
 
 En primer lugar vamos a ver algunas formas de reproducir audio en dispositivos iOS. Debemos distinguir dos tipos de sonidos:
 
-* **Sonidos del sistema**. Se reproducen mediante el servicio de sonidos del sistema \(_System Sound Services_\). Se debe utilizar únicamente para sonidos como _clicks_, alertas o notificaciones.
-* **Sonidos de la aplicación**. Se reproduce mediante APIs como `AVAudioPlayer` \(perteneciente a _AV Foundation_\). Se utilizará para música de fondo o sonidos.
+* **Sonidos del sistema**. Se reproducen mediante el servicio de sonidos del sistema (_System Sound Services_). Se debe utilizar únicamente para sonidos como _clicks_, alertas o notificaciones.
+* **Sonidos de la aplicación**. Se reproduce mediante APIs como `AVAudioPlayer` (perteneciente a _AV Foundation_). Se utilizará para música de fondo o sonidos.
 
 ### Reproducción de sonidos del sistema
 
-El servicio de sonidos del sistema \(_System Sound Services_\) nos permite reproducir sonidos sencillos. Este servicio está destinado a utilizarse para sonidos de la interfaz, como por ejemplo la pulsación de un botón o una alarma. Los sonidos que permite reproducir este servicio no pueden pasar de los 30 segundos de duración, y el formato sólo puede ser Linear PCM o IMA4, dentro de ficheros `.caf`, `.aif`, o `.wav`. También nos permite activar la vibración del dispositivo. No tenemos apenas ningún control sobre los sonidos reproducidos por este
+El servicio de sonidos del sistema (_System Sound Services_) nos permite reproducir sonidos sencillos. Este servicio está destinado a utilizarse para sonidos de la interfaz, como por ejemplo la pulsación de un botón o una alarma. Los sonidos que permite reproducir este servicio no pueden pasar de los 30 segundos de duración, y el formato sólo puede ser Linear PCM o IMA4, dentro de ficheros `.caf`, `.aif`, o `.wav`. También nos permite activar la vibración del dispositivo. No tenemos apenas ningún control sobre los sonidos reproducidos por este
 servicio, ni siquiera podemos alterar su volumen, sonarán con el volumen que haya seleccionado el usuario en el dispositivo.
 
 Los sonidos del sistema se representan con el tipo `SystemSoundID`. Se trata de una API C, por lo que
@@ -66,7 +66,7 @@ NSURL *urlSonido = [[NSBundle mainBundle] URLForResource:@"alarma"  withExtensio
 AudioServicesCreateSystemSoundID((CFURLRef)urlSonido, &sonido);
 ```
 
-> En este caso la URL se debe indicar mediante el tipo `CFURLRef`. Este es un tipo de datos de Core Foundation. Se trata de una estructura de datos \(no un objeto Objective-C\), que está vinculada a la clase `NSURL`. Podemos encontrar diferentes tipos de Core Foundation \(con prefijo `CF`\) vinculados a objetos de Cocoa Touch. Estos objetos pueden convertirse directamente a su tipo Core Foundation correspondiente simplemente mediante un _cast_.
+> En este caso la URL se debe indicar mediante el tipo `CFURLRef`. Este es un tipo de datos de Core Foundation. Se trata de una estructura de datos (no un objeto Objective-C), que está vinculada a la clase `NSURL`. Podemos encontrar diferentes tipos de Core Foundation (con prefijo `CF`) vinculados a objetos de Cocoa Touch. Estos objetos pueden convertirse directamente a su tipo Core Foundation correspondiente simplemente mediante un _cast_.
 
 Tras hacer esto, el sonido queda registrado como sonido del sistema y se le asigna un identificador, que podemos almacenar en una
 variable de tipo `SystemSoundID`.
@@ -89,7 +89,7 @@ En este caso también debemos proporcionar el sonido a reproducir, pero además 
 
 ### Reproducción de música
 
-Si necesitamos que nuestra aplicación reproduzca música de cualquier duración, y no necesitamos tener un gran control sobre la forma en la que se reproduce el sonido \(por ejemplo posicionamiento _stereo_\), entonces podemos utilizar el reproductor de audio `AVAudioPlayer`. Con esto podremos reproducir ficheros de cualquier duración, lo cual nos será de utilidad para reproducir música de fondo en nuestra aplicación. Soporta todos los formatos vistos anteriormente, y su uso resulta muy sencillo:
+Si necesitamos que nuestra aplicación reproduzca música de cualquier duración, y no necesitamos tener un gran control sobre la forma en la que se reproduce el sonido (por ejemplo posicionamiento _stereo_), entonces podemos utilizar el reproductor de audio `AVAudioPlayer`. Con esto podremos reproducir ficheros de cualquier duración, lo cual nos será de utilidad para reproducir música de fondo en nuestra aplicación. Soporta todos los formatos vistos anteriormente, y su uso resulta muy sencillo:
 
 **Swift**
 ```swift
@@ -118,11 +118,11 @@ es una operación lenta. Por ello tenemos el método `prepareToPlay` que nos per
 recursos necesarios para que pueda comenzar la reproducción. Una vez hayamos hecho esto, al llamar a `play` la reproducción
 comenzará de forma instantánea.
 
-Con esta API, en el reproductor \(objeto `AVAudioPlayer`\) tenemos una serie de propiedades con las que podemos hacer que
-la música se reproduzca de forma cíclica \(`numberOfLoops`\), o controlar su volumen \(`volume`\). También podemos definir un delegado
-sobre el reproductor \(`delegate`\) de tipo `AVAudioPlayerDelegate`, para así poder controlar los eventos que ocurran en él, como
+Con esta API, en el reproductor (objeto `AVAudioPlayer`) tenemos una serie de propiedades con las que podemos hacer que
+la música se reproduzca de forma cíclica (`numberOfLoops`), o controlar su volumen (`volume`). También podemos definir un delegado
+sobre el reproductor (`delegate`) de tipo `AVAudioPlayerDelegate`, para así poder controlar los eventos que ocurran en él, como
 por ejemplo la finalización de la reproducción del audio. Podemos también saber en cualquier momento si se está reproduciendo audio
-actualmente \(`playing`\), y podemos pausar, reanudar, o deterner la reproducción con los métodos `pause`,
+actualmente (`playing`), y podemos pausar, reanudar, o deterner la reproducción con los métodos `pause`,
 `play` y `stop`.
 
 Esta librería es adecuada para reproductores multimedia, en los que simplemente nos interese reproducir música y
@@ -159,7 +159,7 @@ Según el uso que vayamos a hacer del audio, podemos especificar diferentes cate
 
 | Categoría | Mezcla | Silencio |
 | --- | --- | --- |
-| `AVAudioSessionCategorySoloAmbient` \(categoría **por defecto**\) | No | Si |
+| `AVAudioSessionCategorySoloAmbient` (categoría **por defecto**) | No | Si |
 | `AVAudioSessionCategoryAmbient` | Si | Si |
 | `AVAudioSessionCategoryPlayback` | No | No |
 
@@ -231,14 +231,14 @@ if ([self.audioSession isOtherAudioPlaying]) {
 Algunos escenarios típicos son los siguientes:
 
 * **Aplicación donde el audio resulta imprescindible**, como por ejemplo un reproductor multimedia. En este caso la categoría adecuada será `AVAudioSessionCategoryPlayback`. No se mezclará con otras aplicaciones y podrá seguir reproduciéndose con la pantalla apagada.
-* **Aplicación con audio secundario opcional**. En algunas aplicaciones puede interesarnos dar la opción de que el usuario pueda ponerse su música preferida de fondo. Por ejemplo en un videojuego podemos tener una banda sonora de fondo y efectos de sonido. Si el usuario ya está reproduciendo música en el móvil podemos tomar la decisión de mezclar dicha música con los efectos del juego, mientras que si no hay ninguna música reproduciéndose se puede utilizar la banda sonora por defecto del juego. Podemos utilizar `AVAudioSessionCategorySoloAmbient` en caso de que no haya música reproduciéndose \(lo comprobaremos con la propiedad `isOtherAudioPlaying`\), o `AVAudioSessionCategoryAmbient` en caso contrario.
+* **Aplicación con audio secundario opcional**. En algunas aplicaciones puede interesarnos dar la opción de que el usuario pueda ponerse su música preferida de fondo. Por ejemplo en un videojuego podemos tener una banda sonora de fondo y efectos de sonido. Si el usuario ya está reproduciendo música en el móvil podemos tomar la decisión de mezclar dicha música con los efectos del juego, mientras que si no hay ninguna música reproduciéndose se puede utilizar la banda sonora por defecto del juego. Podemos utilizar `AVAudioSessionCategorySoloAmbient` en caso de que no haya música reproduciéndose (lo comprobaremos con la propiedad `isOtherAudioPlaying`), o `AVAudioSessionCategoryAmbient` en caso contrario.
 * **Aplicación en la que resulte adecuado combinar el audio**. Aquí podemos encontrar como ejemplo alguna aplicación para crear música, en la que pueda ser interesante poner una música de fondo mientras tocamos un instrumento para acompañarla. En este caso siempre utilizaremos `AVAudioSessionCategoryAmbient`.
 
 ### Reproducción de audio en segundo plano
 
 Aunque en iOS la multitarea está restringida a un limitado conjunto de funcionalidades, una de las funcionalidades que se permiten ejecutar en segundo plano es la reproducción de música. Para poder reproducir música aunque tengamos silenciado el móvil o la pantalla esté bloqueada deberemos reproducirla dentro de una sesión con categoría `AVAudioSessionCategoryPlayback`.
 
-Además de esto, para poder continuar la reproducción con la aplicación cerrada deberemos declarar en `Info.plist` que uno de los modos el los que nuestra aplicación puede funcionar en segundo plano \(_background_\) es la reproducción de música, añadiendo el _item_ `audio` a la propiedad `UIBackgroundModes`.
+Además de esto, para poder continuar la reproducción con la aplicación cerrada deberemos declarar en `Info.plist` que uno de los modos el los que nuestra aplicación puede funcionar en segundo plano (_background_) es la reproducción de música, añadiendo el _item_ `audio` a la propiedad `UIBackgroundModes`.
 
 ![Reproducción de audio en segundo plano](imagenes/ios-audio-background.png)
 
@@ -350,9 +350,9 @@ Será el _first responder_ el que recibirá el evento externo:
 
 ### Desconexión de los auriculares
 
-Es recomendable que los reproductores multimedia respondan ante un cambio de dispositivo de reproducción \(auriculares, altavoces externos\). Por ejemplo, si desconectamos los auriculares durante la reproducción de música sería recomendable pausarla automáticamente. En otras aplicaciones, como los videojuegos, esto no es importante.
+Es recomendable que los reproductores multimedia respondan ante un cambio de dispositivo de reproducción (auriculares, altavoces externos). Por ejemplo, si desconectamos los auriculares durante la reproducción de música sería recomendable pausarla automáticamente. En otras aplicaciones, como los videojuegos, esto no es importante.
 
-Podemos estar al tanto es estos cambios de _hardware_ de reproducción \(_route change_\) mediante la notificación `AVAudioSessionRouteChangeNotification`.
+Podemos estar al tanto es estos cambios de _hardware_ de reproducción (_route change_) mediante la notificación `AVAudioSessionRouteChangeNotification`.
 
 **Swift**
 ```swift
@@ -391,7 +391,7 @@ Vamos a ver ahora cómo reproducir video en dispositivos iOS. Para reproducir vi
 ### Reproductor multimedia
 
 La reproducción de video puede realizarse de forma sencilla con la clase `MPMoviePlayerViewController`. Debemos
-inicializar el reproductor a partir de una URL \(`NSURL`\). Recordemos que la URL puede referenciar tanto
+inicializar el reproductor a partir de una URL (`NSURL`). Recordemos que la URL puede referenciar tanto
 un recurso local como remoto, por ejemplo podemos acceder a un video incluido entre los recursos de la aplicación
 de la siguiente forma:
 
@@ -442,7 +442,7 @@ Para poder tener control sobre el reproductor de vídeo, en lugar de utilizar si
 `MPMoviePlayerViewController`, utilizaremos la clase `MPMoviePlayerController`. Debemos
 remarcar que esta clase ya no es un `UIViewController`, sino que simplemente es una clase
 que nos ayudará a controlar la reproducción del vídeo, pero deberemos utilizar nuestro propio controlador de
-la vista \(`UIViewController`\).
+la vista (`UIViewController`).
 
 En primer lugar, creamos un objeto `MPMoviePlayerController` a partir del a URL con el
 vídeo a reproducir:
@@ -460,9 +460,9 @@ self.moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:movieUrl]
 ![Reproductor de video embedded](imagenes/video_control_embed.jpg)
 
 Ahora deberemos mostrar el controlador en algún sitio. Para ello deberemos añadir la vista de reproducción de
-video \(propiedad `view` del controlador de vídeo\) a la jerarquía de vistas en pantalla. También deberemos
+video (propiedad `view` del controlador de vídeo) a la jerarquía de vistas en pantalla. También deberemos
 darle un tamaño a dicha vista. Por ejemplo, si queremos que ocupe todo el espacio de nuestra vista actual podemos
-utilizar como tamaño de la vista de vídeo el mismo tamaño \(propiedad `bounds`\) de la vista actual, y
+utilizar como tamaño de la vista de vídeo el mismo tamaño (propiedad `bounds`) de la vista actual, y
 añadir el vídeo como subvista suya:
 
 **Swift**
@@ -573,7 +573,7 @@ Cuando el tamaño del vídeo reproducido no se ajuste totalmente a la relación 
 veremos que algunas zonas quedan en negro. Podemos observar esto por ejemplo en la imagen en la que
 reproducimos vídeo desde la orientación vertical del dispositivo. Para evitar que la pantalla quede vacía
 podemos incluir una imagen de fondo, que se verá en todas aquellas zonas que no abarque el vídeo.
-Para ello podemos utilizar la vista de fondo del video \(`backgroundView`\). Cualquier subvista que
+Para ello podemos utilizar la vista de fondo del video (`backgroundView`). Cualquier subvista que
 añadamos a dicha vista, se mostrará como fondo del vídeo. Por ejemplo podemos motrar una imagen con:
 
 **Swift**
@@ -592,7 +592,7 @@ self.moviePlayer.backgroundView.addSubview( UIImageView(image: UIImage(named: "f
 
 A partir de iOS 4.0 tenemos la posibilidad de reproducir video con `AVPlayer` y
 `AVPlayerLayer`. El primer objeto es el reproductor de vídeo, mientras que el segundo
-es una capa \(es un subtipo de `CALayer`\) que podemos utilizar para mostrar la reproducción.
+es una capa (es un subtipo de `CALayer`) que podemos utilizar para mostrar la reproducción.
 Este tipo de reproductor nos da un mayor control sobre la forma en la que se muestra el vídeo,
 desacoplando la gestión del origen del vídeo y la visualización de dicho vídeo en pantalla.
 
@@ -611,7 +611,7 @@ AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
 [self.view.layer addSublayer:playerLayer];
 ```
 
-A partir de iOS 8 aparece además la clase `AVPlayerViewController`, que nos proporciona un controllador que permite reproducir vídeo de forma sencilla mediante un objeto `AVPlayer` a pantalla completa o en PiP \(_Picture in Picture_\):
+A partir de iOS 8 aparece además la clase `AVPlayerViewController`, que nos proporciona un controllador que permite reproducir vídeo de forma sencilla mediante un objeto `AVPlayer` a pantalla completa o en PiP (_Picture in Picture_):
 
 **Swift**
 ```swift
@@ -652,7 +652,7 @@ Para tener control sobre el estado del vídeo en reproducción podemos utilizar 
         object:[player currentItem]];
 ```
 
-Para utilizar PiP \(disponible únicamente en iPad a partir de iOS 9\) deberemos activar el modo _Audio, AirPlay and Picture in Picture_ como _Background Modes_, en la pestaña _Capabilities_ de nuestro _target_, y además configurar la sesión de audio de forma apropiada, como hemos visto anteriormente.
+Para utilizar PiP (disponible únicamente en iPad a partir de iOS 9) deberemos activar el modo _Audio, AirPlay and Picture in Picture_ como _Background Modes_, en la pestaña _Capabilities_ de nuestro _target_, y además configurar la sesión de audio de forma apropiada, como hemos visto anteriormente.
 
 ## Ejercicios
 
@@ -661,23 +661,23 @@ Para utilizar PiP \(disponible únicamente en iPad a partir de iOS 9\) deberemos
 Vamos en primer lugar a ver cómo crear un reproductor de vídeo en iOS. Tenemos una plantilla en el
 proyecto `VideoPlayer`. Vemos que tiene un botón _Reproducir vídeo_, y un fichero `video.m4v`. La reproducción de vídeo deberá comenzar en el método `playVideo:`, que es el que se ejecuta al pulsar el botón anterior. Se pide:
 
-_a\)_ Reproducir el vídeo con la pantalla de reproducción predefinida \(`MPMoviePlayerViewController`\).
+_a)_ Reproducir el vídeo con la pantalla de reproducción predefinida (`MPMoviePlayerViewController`).
 
-_b\)_ Comentar el código implementado en el punto anterior. Ahora vamos a crear un reproductor propio
+_b)_ Comentar el código implementado en el punto anterior. Ahora vamos a crear un reproductor propio
 mediante `MPMoviePlayerController`. Crearemos un reproductor de este tipo, haremos que su tamaño sea
 el mismo tamaño de la vista principal, añadiremos el reproductor a dicha vista como subvista, y comenzaremos la reproducción.
-_c\)_ Con el reproductor anterior tenemos el problema de que al finalizar el vídeo el reproductor
+_c)_ Con el reproductor anterior tenemos el problema de que al finalizar el vídeo el reproductor
 se queda en pantalla y no hay forma de salir de él. Vamos a escuchar la notificación de reproducción finalizada para que cuando esto ocurra el reproductor sea eliminado de pantalla. Cuando recibamos esta notificación llamaremos al método `videoPlaybackDidFinish:`, que ya se encuentra implementado.
 
-_d\)_ Si giramos el dispositivo veremos que el vídeo no se adapta de forma correcta a la pantalla.
+_d)_ Si giramos el dispositivo veremos que el vídeo no se adapta de forma correcta a la pantalla.
 Ajustar su propiedad `autoresizingMask` para que sea flexible tanto de ancho como de alto.
 Comprobar ahora que al girar la pantalla el vídeo se adapta correctamente.
 
-_e\)_ Al reproducir el vídeo en vertical gran parte de la pantalla queda en negro. Vamos a decorar
+_e)_ Al reproducir el vídeo en vertical gran parte de la pantalla queda en negro. Vamos a decorar
 el fondo para darle un mejor aspecto. Crearemos una vista que muestre la imagen `fondo.png`, y
 la mostraremos como subvista de la vista de fondo del vídeo.
 
-_f\)_ Por último, para que el reproductor quede totalmente integrado en nuestra aplicación, eliminaremos los controles de reproducción que incorpora por defecto. De esta forma el usuario no podrá saltar el vídeo, ni volver atrás en él.
+_f)_ Por último, para que el reproductor quede totalmente integrado en nuestra aplicación, eliminaremos los controles de reproducción que incorpora por defecto. De esta forma el usuario no podrá saltar el vídeo, ni volver atrás en él.
 
-_g\)_ Modifica el código anterior para utilizar `AVPlayerViewController` y `AVPlayer`. Ten en cuenta que deberás incluir los _frameworks_ `AVFoundation` y `AVKit`, y sus _imports_ correspondientes.
+_g)_ Modifica el código anterior para utilizar `AVPlayerViewController` y `AVPlayer`. Ten en cuenta que deberás incluir los _frameworks_ `AVFoundation` y `AVKit`, y sus _imports_ correspondientes.
 
