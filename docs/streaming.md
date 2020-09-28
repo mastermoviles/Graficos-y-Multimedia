@@ -10,7 +10,7 @@ En los dispositivos móviles podemos reproducir tanto medios almacenados localme
 
 Los _podcasts_ surgieron como el mecanismo de difusión de medios para el iPod. De hecho, su nombre viene de iPod + _broadcast_.
 
-Un _podcast_ se define como un canal que contiene contenido episódico multimedia. Estos episodios pueden ser audios, vídeos, o incluso libros. El creados del _podcast_ podrá añadir nuevos episodios al canal en cualquier momento.
+Un _podcast_ se define como un canal que contiene contenido episódico multimedia. Estos episodios pueden ser audios, vídeos, o incluso libros. El creador del _podcast_ podrá añadir nuevos episodios al canal en cualquier momento.
 
 Como usuarios podemos suscribirnos a un _podcast_ en nuestros dispositivos. Esto hará que cuando se publique un nuevo episodio éste se descargue de forma automática en nuestro dispositivo en el momento que el que contemos con una conexión Wi-Fi o por cable. De esta forma podremos reproducirlo _offline_ posteriormente, sin necesidad de consumir datos móviles.
 
@@ -318,9 +318,11 @@ También encontramos servidores que podemos instalar en nuestro propio equipo co
 Para poder utilizar Wowza Media Server deberemos seguir los siguientes pasos:
 
 * El primer lugar debemos configurar un usuario y password para acceder al servidor. Para ello editamos el fichero `/Library/WowzaStreamingEngine/conf/admin.password` y añadimos la siguiente linea:
+
 ```
 admin mastermoviles
 ```
+
 Con esto habremos creado un usuario `admin` con _password_ `mastermoviles`.
 
 * Iniciamos el servidor, entrando en _Aplicaciones > Wowza Streaming Engine_ y seleccionando _Start Standalone Mode_
@@ -379,10 +381,10 @@ Si abrimos estos enlaces desde el navegador de dispositivos que estén en una re
 
 A partir de iOS 9 sólo se permite establecer conexiones mediante SSL (`https`) por motivos de seguridad. Aunque podemos añadir excepciones en nuestra aplicaciones para poder seguir accediendo mediante `http`, no es recomendable hacerlo. Vamos a ver a continuación la forma de configurar Wowza para poder acceder a los contenidos multimedia mediante SSL tal como se recomienda a partir de iOS 9.
 
-Para poder configurar `https` en Wowza deberemos crearnos un certificado cuyo nombre (`CN`) coincida con el dominio a proteger. Por ejemplo, si nuestro contenido va a estar en `eps.ua.es`, deberemos crear un certificado con `CN=eps.ua.es`. Esto nos serviará para aseguramos de que no se está suplantando al servidor. Además, nuestro certificado deberá estar firmado por una autoridad de certificación (CA), como por ejemplo Verisign o Thawte. 
+Para poder configurar `https` en Wowza deberemos crearnos un certificado cuyo nombre (`CN`) coincida con el dominio a proteger. Por ejemplo, si nuestro contenido va a estar en `eps.ua.es`, deberemos crear un certificado con `CN=eps.ua.es`. Esto nos serviará para aseguramos de que no se está suplantando al servidor. Además, nuestro certificado deberá estar firmado por una autoridad de certificación (CA), como por ejemplo Verisign o Thawte.
 Como alternativa, veremos también la posibilidad de convertirnos nosotros mismos en "autoridad de certificación", aunque en ese caso deberemos proporcionar al usuario nuestro certificado raíz para que lo instale en su dispositivo como certificado de confianza.
 
-Una vez creado el certificado, se incluirá en Wowza y se habilitará un puerto de acceso mediante SSL utilizando dicho certificado. 
+Una vez creado el certificado, se incluirá en Wowza y se habilitará un puerto de acceso mediante SSL utilizando dicho certificado.
 
 Vamos a ver a continuación cómo realizar esta configuración paso a paso:
 
@@ -394,7 +396,7 @@ En primer lugar debemos crear el certificado para nuestro sitio web. Imaginemos 
 keytool -genkey -keysize 2048 -alias wowza -keyalg RSA -keystore mastermoviles.eps.ua.es.jks
 ```
 
-En el asistente para la creación de las claves, cuando nos pregunte por el _Common Name_ (CN) es importante indicar `mastermoviles.eps.ua.es`, ya que debe coincidir con el dominio del sitio web a proteger. 
+En el asistente para la creación de las claves, cuando nos pregunte por el _Common Name_ (CN) es importante indicar `mastermoviles.eps.ua.es`, ya que debe coincidir con el dominio del sitio web a proteger.
 
 > Al crear el almacén de claves y el _alias_ `wowza`, que será la clave que utilice Wowza para establecer el canal SSL, deberemos especificar el mismo _password_ para el almacén y para el _alias_.
 
@@ -408,7 +410,7 @@ Esta solicitud podrá ser enviada a una autoridad de certificación para que nos
 
 #### Autofirmar nuestro certificado
 
-Si optamos por solicitar nuestro certificado firmado a una autoridad de certificación (CA) existente no será necesario realizar este paso. 
+Si optamos por solicitar nuestro certificado firmado a una autoridad de certificación (CA) existente no será necesario realizar este paso.
 
 En caso de trabajar en un ámbito de pruebas, o en un proyecto de ámbito cerrado, puede ser conveniente firmar nosotros mismos nuestro certificado, en lugar de solicitarlo a una CA, aunque en este caso a quienes conecten a nuestro sitio web les aparecerá como "No seguro", a no ser que se instalen y confíen en nuestro certificado raíz autofirmado.
 
@@ -432,11 +434,11 @@ Una vez tenemos el certificado raíz autofirmado, podemos firmar con él el cert
 openssl x509 -req -in mastermoviles.eps.ua.es.csr -out mastermoviles.eps.ua.es.cer -CAkey eps.ua.es.key -CA eps.ua.es.cer -days 365 -CAcreateserial -CAserial serial
 ```
 
-Con esto obtenemos un certificado firmado por nosotros mismos. Si hubiésemos recurrido a una CA, nos habría proporcionado también este mismo fichero `cer`, pero en ese caso firmado por un certificado raíz en el que ya confían los diferentes dispositivos. 
+Con esto obtenemos un certificado firmado por nosotros mismos. Si hubiésemos recurrido a una CA, nos habría proporcionado también este mismo fichero `cer`, pero en ese caso firmado por un certificado raíz en el que ya confían los diferentes dispositivos.
 
 #### Incluir el certificado firmado en el almacen de claves
 
-Una vez tenemos nuestro certificado firmado por una CA (o por un certificado raíz nuestro autofirmado), deberemos importar el certificado de la CA y nuestro certificado firmado por ella en nuestro almacén de claves. 
+Una vez tenemos nuestro certificado firmado por una CA (o por un certificado raíz nuestro autofirmado), deberemos importar el certificado de la CA y nuestro certificado firmado por ella en nuestro almacén de claves.
 
 En caso de haber creado un certificado raíz autofirmado, lo importamos en nuestro almacén de claves. En caso de haber obtenido el certificado de una CA, en su lugar importaremos el certificado puente de dicha CA:
 
@@ -450,11 +452,11 @@ Además también debemos importar en el almacén el certificado propio de nuestr
 keytool -import -alias wowza -trustcacerts -file mastermoviles.eps.ua.es.cer -keystore mastermoviles.eps.ua.es.jks
 ```
 
-Con esto ya tendremos listo el almacen de claves para ser utilizado en Wowza. 
+Con esto ya tendremos listo el almacen de claves para ser utilizado en Wowza.
 
 #### Configuración del puerto seguro en Wowza
 
-Una vez contamos con nuestro almacen de claves configurado para nuestro sitio web, podemos configurar un puerto seguro en Wowza para acceder a través de él al contenido mediante SSL. Para ello, en la consola de Wowza entramos en la pestaña _Server_ y dentro de ella en _Virtual Host Setup_. Veremos la lista de puertos (_Host Ports_) activos actualmente. Si pulsamos el botón _Edit_ podremos editar este lista o añadir nuevos puertos. 
+Una vez contamos con nuestro almacen de claves configurado para nuestro sitio web, podemos configurar un puerto seguro en Wowza para acceder a través de él al contenido mediante SSL. Para ello, en la consola de Wowza entramos en la pestaña _Server_ y dentro de ella en _Virtual Host Setup_. Veremos la lista de puertos (_Host Ports_) activos actualmente. Si pulsamos el botón _Edit_ podremos editar este lista o añadir nuevos puertos.
 
 Para configurar un nuevo puerto que utilice SSL pulsamos sobre _Add Host Port..._ e introducimos la siguiente información:
 
@@ -464,18 +466,20 @@ Para configurar un nuevo puerto que utilice SSL pulsamos sobre _Add Host Port...
 * **Port(s)**: El puerto al que conectaremos mediante SSL. Si el puerto no seguro por defecto es 1935, podríamos utilizar para SSL por ejemplo el puerto 1936.
 * **Enable SSL/StreamLock**: Será importante marcar esta casilla para que este puerto utilice conexión segura con SSL.
 * **Keystore Path**: Indicamos aquí la ruta del almacén de claves que hemos creado anteriormente. Dado que lo hemos copiado en el directorio de configuración de Wowza, podemos indicar una ruta como la siguiente:
+
 ```
 ${com.wowza.wms.context.VHostConfigHome}/conf/mastermoviles.eps.ua.es.jks
 ```
+
 * **Keystore Password**: Indicamos aquí el _password_ que hemos utilizado en nuestro almacén de claves (debe ser el mismo _password_ para el almacén y para el _alias_ `wowza` que almacena la clave a utilizar por este servidor.
 
-![](imagenes/wowza-ssl-1.png) 
+![](imagenes/wowza-ssl-1.png)
 
 Una vez introducidos los datos pulsamos _Add_ y veremos el nuevo puerto en la lista:
 
-![](imagenes/wowza-ssl-2.png) 
+![](imagenes/wowza-ssl-2.png)
 
-Ya podemos guardar pulsando en _Save_ y reiniciar el servidor (nos aparecerá un botón _Restart Now_ invitándonos a hacerlo para que se apliquen los cambios). 
+Ya podemos guardar pulsando en _Save_ y reiniciar el servidor (nos aparecerá un botón _Restart Now_ invitándonos a hacerlo para que se apliquen los cambios).
 
 Tras esto ya podremos acceder a los contenidos desde un navegador o desde nuestras aplicaciones.
 
@@ -485,29 +489,29 @@ Si nuestro certificado no está firmado por una CA válida, sino que está autof
 
 En caso de que intentemos acceder a uno de los vídeos por SSL en Wowza, el navegador nos indicará lo siguiente:
 
-![](imagenes/cert-web-1.PNG) 
+![](imagenes/cert-web-1.PNG)
 
 Aquí es **muy importante no pulsar sobre _Continuar_**, sino pulsar sobre _Detalles_ para que nos abra la siguiente vista:
 
-![](imagenes/cert-web-2.PNG) 
+![](imagenes/cert-web-2.PNG)
 
-Aquí vemos los detalles del certificado y podemos indicarle que confíe en él. Una vez sea de confianza ya tendremos acceso a los contenidos. 
+Aquí vemos los detalles del certificado y podemos indicarle que confíe en él. Una vez sea de confianza ya tendremos acceso a los contenidos.
 
 En caso de querer que nuestras aplicaciones puedan acceder, tendremos que instalar el certificado raíz en el dispositivo como certificado de confianza. Para ello enviaremos el certificado creado (fichero `.cer`) al dispositivo, por ejemplo como adjunto en un email. Abriremos el fichero y veremos lo siguiente:
 
-![](imagenes/cert-perfil-1.PNG) 
+![](imagenes/cert-perfil-1.PNG)
 
 Aquí vemos que el certificado aparece como no válido, indicando que está _Sin verificar_. Si pulsamos sobre _Instalar_ podremos hacer que pase a ser de confianza, tal como nos indica en la siguiente pantalla:
 
-![](imagenes/cert-perfil-2.PNG) 
+![](imagenes/cert-perfil-2.PNG)
 
 Volvemos a pulsar sobre _Instalar_ para confirmar la instalación y que lo guarde como certificado de confianza. A continuación veremos que el certificado ya está _Verificado_:
 
-![](imagenes/cert-perfil-3.PNG) 
+![](imagenes/cert-perfil-3.PNG)
 
 Una vez instalado el certificado raíz, si abrimos el certificado de nuestro sitio web veremos que ya nos aparece directamente como _Verificado_, ya que está firmado por un certificado raíz que actualmente es de confianza:
 
-![](imagenes/cert-perfil-4.PNG) 
+![](imagenes/cert-perfil-4.PNG)
 
 Con esto ya tendremos el dispositivo configurado para que pueda acceder a los vídeos en nuestro dominio mediante protocolo seguro. Con este sistema hay que remarcar que deberemos distribuir el certificado raíz entre todos aquellos que vayan a utilizar la aplicación, para que así lo puedan instalar como certificado de confianza. Para no tener que hacer esto deberíamos enviar nuestra aplicación para que la firme una CA válida, cuyo certificado raíz ya venga como certificado de confianza en el dispositivo.
 
@@ -549,6 +553,7 @@ Vamos a probar el efecto de utilizar o no _faststart_ en un vídeo MP4. Se pide:
 * Abre el fichero con un editor de texto o hexadecimal. ¿Dónde está el bloque `moov`? Si cuentas con un dispositivo móvil Android o emulador con una versión previa a la 2.2, accede a la URL del vídeo desde su navegador. ¿Qué ocurre?
 
 * Modificar el vídeo con `ffmpeg` para añadir _faststart_.
+
 ```bash
 ffmpeg -i video.mp4 -c:a copy -c:v copy -movflags faststart video_fs.mp4
 ```

@@ -9,7 +9,7 @@ Existen dos formas básicas de capturar medios:
 
 ## Captura de medios mediante _intents_
 
-La forma más sencilla de capturar medios es lanzando la aplicación nativa que realiza esta tarea mediante un _intent_. Al lanzar el _intent_ deberemos indicar mediante un parámetro \(_extra_\) el lugar donde queremos guardar el medio capturado. Deberemos seleccionar la ubicación adecuada según el uso que le queramos dar.
+La forma más sencilla de capturar medios es lanzando la aplicación nativa que realiza esta tarea mediante un _intent_. Al lanzar el _intent_ deberemos indicar mediante un parámetro (_extra_) el lugar donde queremos guardar el medio capturado. Deberemos seleccionar la ubicación adecuada según el uso que le queramos dar.
 
 ### Almacenamiento de medios
 
@@ -17,7 +17,7 @@ En cualquier caso los medios deberán ser almacenados en la tarjeta SD para no g
 
 * `Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)` indica el directorio externo donde almacenar los medios de forma pública e independiente de la aplicación. Se recomienda crear dentro de estas carpeta un subdirectorio por cada aplicación.
 
-  > Este método sólo esta disponible a partir de Android 2.2 \(API 8\). Si queremos compatibilidad con APIs anteriores utilizaremos Environment.getExternalStorageDirectory\(\)
+  > Este método sólo esta disponible a partir de Android 2.2 (API 8). Si queremos compatibilidad con APIs anteriores utilizaremos Environment.getExternalStorageDirectory()
 
 * `Context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)` nos indica un directorio propio de la aplicación donde almacenar los medios. Si la aplicación se desinstala, todos los medios almacenados en este directorio se borrarán.
 
@@ -27,15 +27,15 @@ Para poder escribir en el soporte de almacenamiento externo deberemos solicitar 
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-En los dispositivos Android también contamos con un proveedor de contenido denominado _Media Store_. Este proveedor de contenidos consiste en una base de datos de medios almacenados en el dispositivo donde podremos registrar aquellos medios que capturemos desde nuestra aplicación, de forma que sean fácilmente accesibles desde cualquier otra aplicación del dispositivo. Más adelante veremos como registrar un fichero \(fotografía, audio o vídeo\) en esta base de datos.
+En los dispositivos Android también contamos con un proveedor de contenido denominado _Media Store_. Este proveedor de contenidos consiste en una base de datos de medios almacenados en el dispositivo donde podremos registrar aquellos medios que capturemos desde nuestra aplicación, de forma que sean fácilmente accesibles desde cualquier otra aplicación del dispositivo. Más adelante veremos como registrar un fichero (fotografía, audio o vídeo) en esta base de datos.
 
 ### Toma de fotografías
 
-En esta sección veremos cómo tomar fotografías desde nuestra aplicación y utilizar la imagen obtenida para realizar alguna tarea. Como veremos se tratará ni más ni menos que un ejemplo clarísimo de _intent_ implícito, en el que pediremos al sistema que se lance una actividad que pueda tomar fotografías. Por medio de este mecanismo de comunicación obtendremos la imagen capturada \(o una dirección a la localización de la misma en el dispositivo\) para trabajar con ellas.
+En esta sección veremos cómo tomar fotografías desde nuestra aplicación y utilizar la imagen obtenida para realizar alguna tarea. Como veremos se tratará ni más ni menos que un ejemplo clarísimo de _intent_ implícito, en el que pediremos al sistema que se lance una actividad que pueda tomar fotografías. Por medio de este mecanismo de comunicación obtendremos la imagen capturada (o una dirección a la localización de la misma en el dispositivo) para trabajar con ellas.
 
 > Hoy en día es posible simular la cámara del dispositivo virtual por medio de una webcam, así que no es necesario utilizar un dispositivo real para poder probar estos ejemplos.
 
-La acción a solicitar mediante el `Intent` implícito será `MediaStore.ACTION_IMAGE_CAPTURE` \(más adelante hablaremos de la clase `MediaStore`\). Lanzaremos el `Intent` por medio del método `startActivityForResult`, con lo que en realidad estaremos haciendo uso de una subactividad. Recuerda que esto tenía como consecuencia que al terminar la subactividad se invoca el método `onActivityResult` de la actividad padre. En este caso el identificador que se le ha dado a la subactividad es `TAKE_PICTURE`, que se habrá definido como una constante en cualquier otro lugar de la clase:
+La acción a solicitar mediante el `Intent` implícito será `MediaStore.ACTION_IMAGE_CAPTURE` (más adelante hablaremos de la clase `MediaStore`). Lanzaremos el `Intent` por medio del método `startActivityForResult`, con lo que en realidad estaremos haciendo uso de una subactividad. Recuerda que esto tenía como consecuencia que al terminar la subactividad se invoca el método `onActivityResult` de la actividad padre. En este caso el identificador que se le ha dado a la subactividad es `TAKE_PICTURE`, que se habrá definido como una constante en cualquier otro lugar de la clase:
 
 ```java
 startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), TAKE_PICTURE);
@@ -49,7 +49,7 @@ Según los parámetros del `Intent` anterior, podemos hablar de dos modos de fun
   desde `onActivityResult`, contendrá un parámetro extra de nombre `data`, que consistirá en un thumbnail de tipo `Bitmap`.
 * **Modo de imagen completa**: la captura de imágenes se realizará de esta forma si se especifica una URI como valor del parámetro extra `MediaStore.EXTRA_OUTPUT` del `Intent` usado para lanzar la actividad de toma de fotografías. En este caso se guardará la imagen obtenida por la cámara, en su resolución completa, en el destino indicado en dicho parámetro extra.  En este caso el `Intent` de respuesta no se usará para devolver un thumbnail, y por lo tanto el parámetro extra `data` tendrá como valor `null`.
 
-En el siguiente ejemplo tenemos el esqueleto de una aplicación en el que se utiliza un `Intent` para tomar una fotografía, ya sea en modo thumbnail o en modo de imagen completa. Según queramos una cosa o la otra deberemos llamar a los métodos `getThumbnailPicture` o `saveFullImage`, respectivamente. En `onActivityResult` se determina el modo empleado examinando el valor del campo extra `data` del `Intent` de respuesta. Por último, una vez tomada la fotografía, se puede almacenar en el _Media Store_ \(hablamos de esto un poco más adelante\) o procesarla dentro de nuestra aplicación antes de descartarla.
+En el siguiente ejemplo tenemos el esqueleto de una aplicación en el que se utiliza un `Intent` para tomar una fotografía, ya sea en modo thumbnail o en modo de imagen completa. Según queramos una cosa o la otra deberemos llamar a los métodos `getThumbnailPicture` o `saveFullImage`, respectivamente. En `onActivityResult` se determina el modo empleado examinando el valor del campo extra `data` del `Intent` de respuesta. Por último, una vez tomada la fotografía, se puede almacenar en el _Media Store_ (hablamos de esto un poco más adelante) o procesarla dentro de nuestra aplicación antes de descartarla.
 
 ```java
 private static int TAKE_PICTURE = 1;
@@ -100,7 +100,7 @@ La acción de captura de vídeo que se pasa como parámetro al `Intent` acepta d
 
 * `EXTRA_OUTPUT`: por defecto el vídeo grabado será guardado en el _Media Store_. Para almacenarlo en cualquier otro lugar indicaremos una URI como parámetro extra utilizando este identificador.
 * `EXTRA_VIDEO_QUALITY`: mediante un entero podemos especificar la calidad del vídeo capturado. Sólo hay dos valores posibles: 0 para tomar vídeos en baja resolución
-  y 1 para tomar vídeos en alta resolución \(este último valor es el que se toma por defecto\).
+  y 1 para tomar vídeos en alta resolución (este último valor es el que se toma por defecto).
 
 A continuación se puede ver un ejemplo en el que se combinan todos estos conceptos vistos hasta ahora:
 
@@ -299,7 +299,7 @@ try {
 
 ### API de Camara 2
 
-A partir de Android 5.0 \(_Lollipop_\) aparece una nueva versión de API de cámara \(`android.hardware.camera2`\), que nos permite tener un mayor control sobre este dispositivo, pasando la antigua API a estar desaprobada. Sin embargo, la nueva API no es compatible con versiones anteriores de Android, por lo que si queremos mantener la compatibilidad con versiones de Android anteriores a la 5.0 \(API 21\) deberemos utilizar la antigua cámara, o bien código separado para cada versión:
+A partir de Android 5.0 (_Lollipop_) aparece una nueva versión de API de cámara (`android.hardware.camera2`), que nos permite tener un mayor control sobre este dispositivo, pasando la antigua API a estar desaprobada. Sin embargo, la nueva API no es compatible con versiones anteriores de Android, por lo que si queremos mantener la compatibilidad con versiones de Android anteriores a la 5.0 (API 21) deberemos utilizar la antigua cámara, o bien código separado para cada versión:
 
 ```java
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -378,7 +378,7 @@ mediaRecorder.start();
 ```
 
 Cuando se desee finalizar la grabación se deberá hacer uso en primer lugar del método `stop`, y a continuación invocar el método `reset`. Una vez seguidos estos pasos es posible volver a utilizar el objeto invocando de nuevo a `setAudioSource` y `setVideoSource`. Llama a `release` para liberar  
-los recursos asociados al objeto `MediaRecorder` \(el objeto no podrá volver a ser usado, se tendrá que crear de nuevo\):
+los recursos asociados al objeto `MediaRecorder` (el objeto no podrá volver a ser usado, se tendrá que crear de nuevo):
 
 ```java
 mediaRecorder.stop();
@@ -488,8 +488,8 @@ que se previsualizará el vídeo siendo grabado.
 
 Debes seguir los siguientes pasos:
 
-* Añade los permisos necesarios en el _Manifest_ de la aplicación para poder grabar audio y vídeo y para poder guardar el resultado en la tarjeta SD \(recuerda
-  que el siguiente código debe aparecer antes del elemento `application`\):
+* Añade los permisos necesarios en el _Manifest_ de la aplicación para poder grabar audio y vídeo y para poder guardar el resultado en la tarjeta SD (recuerda
+  que el siguiente código debe aparecer antes del elemento `application`):
 
 ```xml
 <uses-permission android:name="android.permission.CAMERA"/>
