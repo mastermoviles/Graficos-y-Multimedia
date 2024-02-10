@@ -1,0 +1,1239 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="reproduccion-android.html">
+      
+      
+        <link rel="next" href="procesamiento-android.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Captura de medios en Android - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#captura-de-medios-en-android" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Captura de medios en Android
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Captura de medios en Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="captura-android.html" class="md-nav__link md-nav__link--active">
+        Captura de medios en Android
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#captura-de-medios-mediante-intents" class="md-nav__link">
+    Captura de medios mediante intents
+  </a>
+  
+    <nav class="md-nav" aria-label="Captura de medios mediante intents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#almacenamiento-de-medios" class="md-nav__link">
+    Almacenamiento de medios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toma-de-fotografias" class="md-nav__link">
+    Toma de fotografías
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-de-video" class="md-nav__link">
+    Captura de vídeo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#captura-de-medios-desde-nuestra-actividad" class="md-nav__link">
+    Captura de medios desde nuestra actividad
+  </a>
+  
+    <nav class="md-nav" aria-label="Captura de medios desde nuestra actividad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-camara" class="md-nav__link">
+    La cámara
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-de-fotografias" class="md-nav__link">
+    Captura de fotografías
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-de-camara-2" class="md-nav__link">
+    API de Camara 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-de-video-con-mediarecorder" class="md-nav__link">
+    Captura de vídeo con MediaRecorder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-y-controlando-la-grabacion-de-video" class="md-nav__link">
+    Configurando y controlando la grabación de vídeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previsualizacion" class="md-nav__link">
+    Previsualización
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agregar-ficheros-multimedia-en-el-media-store" class="md-nav__link">
+    Agregar ficheros multimedia en el Media Store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grabacion-de-video-con-mediarecorder" class="md-nav__link">
+    Grabación de vídeo con MediaRecorder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#captura-de-medios-mediante-intents" class="md-nav__link">
+    Captura de medios mediante intents
+  </a>
+  
+    <nav class="md-nav" aria-label="Captura de medios mediante intents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#almacenamiento-de-medios" class="md-nav__link">
+    Almacenamiento de medios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toma-de-fotografias" class="md-nav__link">
+    Toma de fotografías
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-de-video" class="md-nav__link">
+    Captura de vídeo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#captura-de-medios-desde-nuestra-actividad" class="md-nav__link">
+    Captura de medios desde nuestra actividad
+  </a>
+  
+    <nav class="md-nav" aria-label="Captura de medios desde nuestra actividad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-camara" class="md-nav__link">
+    La cámara
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-de-fotografias" class="md-nav__link">
+    Captura de fotografías
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-de-camara-2" class="md-nav__link">
+    API de Camara 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-de-video-con-mediarecorder" class="md-nav__link">
+    Captura de vídeo con MediaRecorder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-y-controlando-la-grabacion-de-video" class="md-nav__link">
+    Configurando y controlando la grabación de vídeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previsualizacion" class="md-nav__link">
+    Previsualización
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agregar-ficheros-multimedia-en-el-media-store" class="md-nav__link">
+    Agregar ficheros multimedia en el Media Store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grabacion-de-video-con-mediarecorder" class="md-nav__link">
+    Grabación de vídeo con MediaRecorder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="captura-de-medios-en-android">Captura de medios en Android<a class="headerlink" href="#captura-de-medios-en-android" title="Permanent link">&para;</a></h1>
+<p>En esta sesión nos centraremos en estudiar los métodos para capturar audio y vídeo desde un dispositivo Android. Las últimas versiones del SDK de Android permiten emular la captura de video y audio en nuestros dispositivos virtuales, lo cual facilitará las pruebas de este tipo de aplicaciones. En concreto, es posible realizar esta simulación por medio de una webcam, que se utilizará para captar lo que se supone que estaría captando la cámara del dispositivo real.</p>
+<p>Existen dos formas básicas de capturar medios:</p>
+<ul>
+<li>Utilizar un <em>intent</em> para llamar a la aplicación de captura y obtener el resultado que ésta nos proporcione.</li>
+<li>Crear nuestra propia aplicación de captura. Este método es más complejo pero nos permite personalizar la forma en la que se realiza la captura.</li>
+</ul>
+<h2 id="captura-de-medios-mediante-intents">Captura de medios mediante <em>intents</em><a class="headerlink" href="#captura-de-medios-mediante-intents" title="Permanent link">&para;</a></h2>
+<p>La forma más sencilla de capturar medios es lanzando la aplicación nativa que realiza esta tarea mediante un <em>intent</em>. Al lanzar el <em>intent</em> deberemos indicar mediante un parámetro <span class="arithmatex"><span class="MathJax_Preview">_extra_</span><script type="math/tex">_extra_</script></span> el lugar donde queremos guardar el medio capturado. Deberemos seleccionar la ubicación adecuada según el uso que le queramos dar.</p>
+<h3 id="almacenamiento-de-medios">Almacenamiento de medios<a class="headerlink" href="#almacenamiento-de-medios" title="Permanent link">&para;</a></h3>
+<p>En cualquier caso los medios deberán ser almacenados en la tarjeta SD para no gastar el almacenamiento externo y permitir a los usuarios tener acceso a los medios capturados. Básicamente tenemos dos opciones:</p>
+<ul>
+<li><code>Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)</code> indica el directorio externo donde almacenar los medios de forma pública e independiente de la aplicación. Se recomienda crear dentro de estas carpeta un subdirectorio por cada aplicación.</li>
+</ul>
+<blockquote>
+<p>Este método sólo esta disponible a partir de Android 2.2 <span class="arithmatex"><span class="MathJax_Preview">API 8</span><script type="math/tex">API 8</script></span>. Si queremos compatibilidad con APIs anteriores utilizaremos Environment.getExternalStorageDirectory()</p>
+</blockquote>
+<ul>
+<li><code>Context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)</code> nos indica un directorio propio de la aplicación donde almacenar los medios. Si la aplicación se desinstala, todos los medios almacenados en este directorio se borrarán.</li>
+</ul>
+<p>Para poder escribir en el soporte de almacenamiento externo deberemos solicitar el siguiente permiso:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>En los dispositivos Android también contamos con un proveedor de contenido denominado <em>Media Store</em>. Este proveedor de contenidos consiste en una base de datos de medios almacenados en el dispositivo donde podremos registrar aquellos medios que capturemos desde nuestra aplicación, de forma que sean fácilmente accesibles desde cualquier otra aplicación del dispositivo. Más adelante veremos como registrar un fichero <span class="arithmatex"><span class="MathJax_Preview">fotografía, audio o vídeo</span><script type="math/tex">fotografía, audio o vídeo</script></span> en esta base de datos.</p>
+<h3 id="toma-de-fotografias">Toma de fotografías<a class="headerlink" href="#toma-de-fotografias" title="Permanent link">&para;</a></h3>
+<p>En esta sección veremos cómo tomar fotografías desde nuestra aplicación y utilizar la imagen obtenida para realizar alguna tarea. Como veremos se tratará ni más ni menos que un ejemplo clarísimo de <em>intent</em> implícito, en el que pediremos al sistema que se lance una actividad que pueda tomar fotografías. Por medio de este mecanismo de comunicación obtendremos la imagen capturada <span class="arithmatex"><span class="MathJax_Preview">o una dirección a la localización de la misma en el dispositivo</span><script type="math/tex">o una dirección a la localización de la misma en el dispositivo</script></span> para trabajar con ellas.</p>
+<blockquote>
+<p>Hoy en día es posible simular la cámara del dispositivo virtual por medio de una webcam, así que no es necesario utilizar un dispositivo real para poder probar estos ejemplos.</p>
+</blockquote>
+<p>La acción a solicitar mediante el <code>Intent</code> implícito será <code>MediaStore.ACTION_IMAGE_CAPTURE</code> <span class="arithmatex"><span class="MathJax_Preview">más adelante hablaremos de la clase <code>MediaStore</code></span><script type="math/tex">más adelante hablaremos de la clase <code>MediaStore</code></script></span>. Lanzaremos el <code>Intent</code> por medio del método <code>startActivityForResult</code>, con lo que en realidad estaremos haciendo uso de una subactividad. Recuerda que esto tenía como consecuencia que al terminar la subactividad se invoca el método <code>onActivityResult</code> de la actividad padre. En este caso el identificador que se le ha dado a la subactividad es <code>TAKE_PICTURE</code>, que se habrá definido como una constante en cualquier otro lugar de la clase:</p>
+<div class="highlight"><pre><span></span><code><span class="n">startActivityForResult</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">ACTION_IMAGE_CAPTURE</span><span class="p">),</span><span class="w"> </span><span class="n">TAKE_PICTURE</span><span class="p">);</span>
+</code></pre></div>
+<p>Si no hemos hecho ningún cambio al respecto en nuestro sistema, esta llamada lanzará la actividad nativa para la toma de fotografías. No podemos evitar recordar una vez más la ventaja que esto supone para el desarrollador Android, ya que en lugar de tener que desarrollar una nueva actividad para la captura de imágenes desde cero, es posible hacer uso de los recursos del sistema.</p>
+<p>Según los parámetros del <code>Intent</code> anterior, podemos hablar de dos modos de funcionamiento en cuanto a la toma de fotografías:</p>
+<ul>
+<li><strong>Modo thumbnail</strong>: este es el modo de funcionamiento por defecto. El <code>Intent</code> devuelto como respuesta por la subactividad, al que podremos acceder
+  desde <code>onActivityResult</code>, contendrá un parámetro extra de nombre <code>data</code>, que consistirá en un thumbnail de tipo <code>Bitmap</code>.</li>
+<li><strong>Modo de imagen completa</strong>: la captura de imágenes se realizará de esta forma si se especifica una URI como valor del parámetro extra <code>MediaStore.EXTRA_OUTPUT</code> del <code>Intent</code> usado para lanzar la actividad de toma de fotografías. En este caso se guardará la imagen obtenida por la cámara, en su resolución completa, en el destino indicado en dicho parámetro extra.  En este caso el <code>Intent</code> de respuesta no se usará para devolver un thumbnail, y por lo tanto el parámetro extra <code>data</code> tendrá como valor <code>null</code>.</li>
+</ul>
+<p>En el siguiente ejemplo tenemos el esqueleto de una aplicación en el que se utiliza un <code>Intent</code> para tomar una fotografía, ya sea en modo thumbnail o en modo de imagen completa. Según queramos una cosa o la otra deberemos llamar a los métodos <code>getThumbnailPicture</code> o <code>saveFullImage</code>, respectivamente. En <code>onActivityResult</code> se determina el modo empleado examinando el valor del campo extra <code>data</code> del <code>Intent</code> de respuesta. Por último, una vez tomada la fotografía, se puede almacenar en el <em>Media Store</em> <span class="arithmatex"><span class="MathJax_Preview">hablamos de esto un poco más adelante</span><script type="math/tex">hablamos de esto un poco más adelante</script></span> o procesarla dentro de nuestra aplicación antes de descartarla.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TAKE_PICTURE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">Uri</span><span class="w"> </span><span class="n">ficheroSalidaUri</span><span class="p">;</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getThumbailPicture</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">ACTION_IMAGE_CAPTURE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">TAKE_PICTURE</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">saveFullImage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">ACTION_IMAGE_CAPTURE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="na">getExternalStorageDirectory</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;prueba.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ficheroSalidaUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">fromFile</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="w">    </span><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">EXTRA_OUTPUT</span><span class="p">,</span><span class="w"> </span><span class="n">ficheroSalidaUri</span><span class="p">);</span>
+<span class="w">    </span><span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">TAKE_PICTURE</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onActivityResult</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">requestCode</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resultCode</span><span class="p">,</span><span class="w"> </span><span class="n">Intent</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">requestCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TAKE_PICTURE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Uri</span><span class="w"> </span><span class="n">imagenUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Comprobamos si el Intent ha devuelto un thumbnail</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">hasExtra</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">thumbnail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">getParcelableExtra</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="c1">// HACER algo con el thumbnail</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">             </span><span class="c1">// HACER algo con la imagen almacenada en ficheroSalidaUri</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="captura-de-video">Captura de vídeo<a class="headerlink" href="#captura-de-video" title="Permanent link">&para;</a></h3>
+<p>La manera más sencilla de comenzar a grabar vídeo es mediante la constante <code>ACTION_VIDEO_CAPTURE</code> definida en la clase <code>MediaStore</code>, que deberá utilizarse conjuntamente con un <code>Intent</code> que se pasará como parámetro a <code>startActivityForResult</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">startActivityForResult</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">ACTION_VIDEO_CAPTURE</span><span class="p">),</span><span class="w"> </span><span class="n">GRABAR_VIDEO</span><span class="p">);</span>
+</code></pre></div>
+<p>Esto lanzará la aplicación nativa de grabación de vídeos en Android, permitiendo al usuario comenzar o detener la grabación, revisar lo que se ha grabado, y volver a comenzar la grabación en el caso en el que se desee. La ventaja como desarrolladores será la misma de siempre: al utilizar el componente nativo nos ahorramos el tener que desarrollar una actividad para la captura de vídeo desde cero.</p>
+<p>La acción de captura de vídeo que se pasa como parámetro al <code>Intent</code> acepta dos párametros extra opcionales, cuyos identificadores se definen como constantes en la clase <code>MediaStore</code>:</p>
+<ul>
+<li><code>EXTRA_OUTPUT</code>: por defecto el vídeo grabado será guardado en el <em>Media Store</em>. Para almacenarlo en cualquier otro lugar indicaremos una URI como parámetro extra utilizando este identificador.</li>
+<li><code>EXTRA_VIDEO_QUALITY</code>: mediante un entero podemos especificar la calidad del vídeo capturado. Sólo hay dos valores posibles: 0 para tomar vídeos en baja resolución
+  y 1 para tomar vídeos en alta resolución <span class="arithmatex"><span class="MathJax_Preview">este último valor es el que se toma por defecto</span><script type="math/tex">este último valor es el que se toma por defecto</script></span>.</li>
+</ul>
+<p>A continuación se puede ver un ejemplo en el que se combinan todos estos conceptos vistos hasta ahora:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">GRABAR_VIDEO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ALTA_CALIDAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BAJA_CALIDAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">guardarVideo</span><span class="p">(</span><span class="n">Uri</span><span class="w"> </span><span class="n">uri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">ACTION_VIDEO_CAPTURE</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Si se define una uri se especifica que se desea almacenar el</span>
+<span class="w">    </span><span class="c1">// vídeo en esa localización. En caso contrario se hará uso</span>
+<span class="w">    </span><span class="c1">// del Media Store</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">uri</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">        </span><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">EXTRA_OUTPUT</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// En la siguiente línea podríamos utilizar cualquiera de las</span>
+<span class="w">    </span><span class="c1">// dos constantes definidas anteriormente: ALTA_CALIDAD o BAJA_CALIDAD</span>
+<span class="w">    </span><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">EXTRA_VIDEO_QUALITY</span><span class="p">,</span><span class="w"> </span><span class="n">ALTA_CALIDAD</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">GRABAR_VIDEO</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onActivityResult</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">requestCode</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resultCode</span><span class="p">,</span><span class="w"> </span><span class="n">Intent</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">requestCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">GRABAR_VIDEO</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Uri</span><span class="w"> </span><span class="n">videoGrabado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">// Hacer algo con el vídeo</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="captura-de-medios-desde-nuestra-actividad">Captura de medios desde nuestra actividad<a class="headerlink" href="#captura-de-medios-desde-nuestra-actividad" title="Permanent link">&para;</a></h2>
+<p>En el caso en el que se desee reemplazar la aplicación nativa de captura o se quiera tener más control sobre la grabación será posible utilizar la clase <code>MediaRecorder</code>.</p>
+<p>Para poder capturar audio y video desde nuestra propia actividad, sin lanzar la aplicación nativa, será necesario incluir los siguientes permisos en el <em>manifest</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.CAMERA&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.RECORD_AUDIO&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<h3 id="la-camara">La cámara<a class="headerlink" href="#la-camara" title="Permanent link">&para;</a></h3>
+<p>Tanto si queremos tomar fotografías como grabar vídeo necesitaremos tener acceso a la cámara del dispositivo. Para ello deberemos solicitar el permiso <code>CAMERA</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.CAMERA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>También deberemos indicar en el <em>manifest</em> que la aplicación utiliza la característica de la cámara:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.camera&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Podemos especificar diferentes requerimientos de <em>hardware</em> de la cámara para nuestra aplicación:</p>
+<ul>
+<li>En el caso de que la aplicación pueda utilizar la cámara, pero no sea obligatorio contar con una cámara para poder ejecutar nuestra aplicación, podremos indicar que dicha característica no es obligatoria con:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.camera&quot;</span><span class="w"> </span><span class="na">android:required=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Dentro del código de la aplicación, podremos detectar si la cámara está presente con:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span><span class="w"> </span><span class="n">tieneCamara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getPackageManager</span><span class="p">().</span><span class="na">hasSystemFeature</span><span class="p">(</span><span class="n">PackageManager</span><span class="p">.</span><span class="na">FEATURE_CAMERA</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>Actualmente es habitual encontrar dispositivos que incorporan más de una cámara. Si necesitamos que el dispositivo cuente con cámara frontal se puede especificar el siguiente requerimiento:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.camera.front&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Podemos consultar el número de cámaras con las que cuenta el dispositivo con:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">numCamaras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Camera</span><span class="p">.</span><span class="na">getNumberOfCameras</span><span class="p">();</span>
+</code></pre></div>
+<ul>
+<li>También podemos solicitar otras características, como que cuente con <em>autofocus</em> o <em>flash</em>.</li>
+</ul>
+<p>Para acceder a la cámara utilizaremos el método <code>Camera.open()</code>. Este método abrirá la cámara principal del dispositivo, si queremos utilizar otra cámara podremos utilizar <code>Camara.open(int numCamara)</code>.</p>
+<p>Podemos utilizar el objeto <code>Camera</code> para mostrar la previsualización de la cámara mientras hacemos captura de foto o vídeo. Para ello necesitaremos una vista de tipo <code>SurfaceView</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CameraPreview</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">SurfaceView</span>
+<span class="w">                        </span><span class="kd">implements</span><span class="w"> </span><span class="n">SurfaceHolder</span><span class="p">.</span><span class="na">Callback</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">mHolder</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Camera</span><span class="w"> </span><span class="n">mCamera</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CameraPreview</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">Camera</span><span class="w"> </span><span class="n">camera</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mCamera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">camera</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">mHolder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getHolder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">mHolder</span><span class="p">.</span><span class="na">addCallback</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceCreated</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="c1">// Pone en marcha el preview de la camara</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mCamera</span><span class="p">.</span><span class="na">setPreviewDisplay</span><span class="p">(</span><span class="n">holder</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mCamera</span><span class="p">.</span><span class="na">startPreview</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceDestroyed</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceChanged</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mHolder</span><span class="p">.</span><span class="na">getSurface</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">                    </span><span class="c1">// Detiene el preview con el formato anterior</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mCamera</span><span class="p">.</span><span class="na">stopPreview</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">                    </span><span class="c1">// Reanuda el preview con el nuevo formato</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mCamera</span><span class="p">.</span><span class="na">setPreviewDisplay</span><span class="p">(</span><span class="n">mHolder</span><span class="p">);</span>
+<span class="w">                </span><span class="n">mCamera</span><span class="p">.</span><span class="na">startPreview</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span><span class="w"> </span><span class="p">}</span>
+<span class="w">             </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Podemos utilizar la vista anterior en una actividad:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CapturaActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Activity</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Camera</span><span class="w"> </span><span class="n">mCamera</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">CameraPreview</span><span class="w"> </span><span class="n">mPreview</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">mCamera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Camera</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">mPreview</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CameraPreview</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">mCamera</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">setContentView</span><span class="p">(</span><span class="n">mPreview</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// No tiene acceso a la camara</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Dentro de esta actividad podremos capturar fotos directamente a través del objeto <code>Camera</code> mientras se previsualiza, o capturar vídeo utilizando un objeto <code>MediaRecorder</code>.</p>
+<p>Es importante liberar la cámara cuando no se vaya a utilizar más con <code>Camera.release()</code>. Un lugar adecuado para hacer esto puede ser el método <code>onDestroy()</code> de la actividad:</p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDestroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kd">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">();</span>
+<span class="w">                </span><span class="n">mCamera</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="captura-de-fotografias">Captura de fotografías<a class="headerlink" href="#captura-de-fotografias" title="Permanent link">&para;</a></h3>
+<p>Podemos utilizar el objeto <code>Camera</code> para tomar fotografías. Para ello llamaremos al método <code>takePicture</code> pasando como parámetro un <em>listener</em> de tipo <code>PictureCallback</code>, al que se llamará cuando la imagen haya sido tomada:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mCamera</span><span class="p">.</span><span class="na">takePicture</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PictureCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onPictureTaken</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Camera</span><span class="w"> </span><span class="n">camera</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Grabar data en directorio de medios</span>
+<span class="w">                </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>El primer parámetro de <code>takePicture</code> es opcional y nos permite definir un <em>callback</em> para el obturador. El segundo y tercer parámetro sirve para especificar un <em>callback</em> para guardar la imagen en formato RAW y JPEG respectivamente.</p>
+<p>Por ejemplo, podríamos guardar la imagen JPEG en el almacenamiento externo con:</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="na">getExternalStorageDirectory</span><span class="p">(),</span>
+<span class="w">                             </span><span class="s">&quot;prueba.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">FileOutputStream</span><span class="w"> </span><span class="n">fos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="w">    </span><span class="n">fos</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="w">    </span><span class="n">fos</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="api-de-camara-2">API de Camara 2<a class="headerlink" href="#api-de-camara-2" title="Permanent link">&para;</a></h3>
+<p>A partir de Android 5.0 <span class="arithmatex"><span class="MathJax_Preview">_Lollipop_</span><script type="math/tex">_Lollipop_</script></span> aparece una nueva versión de API de cámara <span class="arithmatex"><span class="MathJax_Preview"><code>android.hardware.camera2</code></span><script type="math/tex"><code>android.hardware.camera2</code></script></span>, que nos permite tener un mayor control sobre este dispositivo, pasando la antigua API a estar desaprobada. Sin embargo, la nueva API no es compatible con versiones anteriores de Android, por lo que si queremos mantener la compatibilidad con versiones de Android anteriores a la 5.0 <span class="arithmatex"><span class="MathJax_Preview">API 21</span><script type="math/tex">API 21</script></span> deberemos utilizar la antigua cámara, o bien código separado para cada versión:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION</span><span class="p">.</span><span class="na">SDK_INT</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION_CODES</span><span class="p">.</span><span class="na">LOLLIPOP</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Camara 2</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Camara 1</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La nueva API de cámara deja desaprobada la clase <code>Camera</code>, y en su lugar utilizar <code>CameraDevice</code>. Para acceder a las cámaras disponibles se proporciona la clase <code>CameraManager</code>.</p>
+<h3 id="captura-de-video-con-mediarecorder">Captura de vídeo con <code>MediaRecorder</code><a class="headerlink" href="#captura-de-video-con-mediarecorder" title="Permanent link">&para;</a></h3>
+<p>Podemos utilizar la clase <code>MediaRecorder</code> para capturar audio o video desde nuestras propias actividades. La creación de un objeto de esta clase es sencilla:</p>
+<div class="highlight"><pre><span></span><code><span class="n">MediaRecorder</span><span class="w"> </span><span class="n">mediaRecorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaRecorder</span><span class="p">();</span>
+</code></pre></div>
+<p>La clase <code>MediaRecorder</code> permite especificar el origen del audio o vídeo, el formato del fichero de salida y los <em>codecs</em> a utilizar. Como en el caso de la clase <code>MediaPlayer</code>, la clase <code>MediaRecorder</code> maneja la grabación mediante una máquina de estados. Esto quiere decir que el orden en el cual se inicializa y se realizan operaciones con los objetos de este tipo es importante. En resumen, los pasos para utilizar un objeto <code>MediaRecorder</code> serían los siguientes:</p>
+<ul>
+<li>Crear un nuevo objeto <code>MediaRecorder</code>.</li>
+<li>Asignarle las fuentes a partir de las cuales grabar el contenido.</li>
+<li>Definir el formato de salida.</li>
+<li>Especificar las características del vídeo: <em>codec</em>, <em>framerate</em> y resolución de salida.</li>
+<li>Seleccionar un fichero de salida.</li>
+<li>Prepararse para la grabación.</li>
+<li>Realizar la grabación.</li>
+<li>Terminar la grabación.</li>
+</ul>
+<p>Una vez finalizamos la grabación hemos de hacer uso del método <code>release</code> del objeto <code>MediaRecorder</code> para liberar todos sus recursos asociados:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="configurando-y-controlando-la-grabacion-de-video">Configurando y controlando la grabación de vídeo<a class="headerlink" href="#configurando-y-controlando-la-grabacion-de-video" title="Permanent link">&para;</a></h3>
+<p>Como se ha indicado anteriormente, antes de grabar se deben especificar la fuente de entrada, el formato de salida, el codec de audio o vídeo y el fichero de salida, en ese estricto orden.</p>
+<p>Los métodos <code>setAudioSource</code> y <code>setVideoSource</code> permiten especificar la fuente de datos por medio de constantes estáticas definidas en  <code>MediaRecorder.AudioSource</code> y <code>MediaRecorder.VideoSource</code>, respectivamente. El siguiente paso consiste en especificar el formato de salida por medio del método <code>setOutputFormat</code> que recibirá como parámetro una constante entre las definidas en <code>MediaRecorder.OutputFormat</code>. A continuación usamos el método <code>setAudioEnconder</code> o <code>setVideoEncoder</code> para especificar el codec usado para la grabación, utilizando alguna de las constantes definidas en <code>MediaRecorder.AudioEncoder</code> o <code>MediaRecorder.VideoEncoder</code>, respectivamente. Es en este punto en el que podremos definir el framerate o la resolución de salida si se desea. Finalmente indicamos la localización del fichero donde se guardará el contenido grabado por medio del método <code>setOutputFile</code>. El último paso antes de la grabación será la invocación del método <code>prepare</code>.</p>
+<p>El siguiente código muestra cómo configurar un objeto <code>MediaRecorder</code> para capturar audio y vídeo del micrófono y la cámara usando un codec estándar y grabando el resultado en la tarjeta SD:</p>
+<div class="highlight"><pre><span></span><code><span class="n">MediaRecorder</span><span class="w"> </span><span class="n">mediaRecorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaRecorder</span><span class="p">();</span>
+
+<span class="n">mCamera</span><span class="p">.</span><span class="na">unlock</span><span class="p">();</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setCamera</span><span class="p">(</span><span class="n">mCamera</span><span class="p">);</span>
+
+<span class="c1">// Configuramos las fuentes de entrada</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setAudioSource</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">AudioSource</span><span class="p">.</span><span class="na">MIC</span><span class="p">);</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setVideoSource</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">VideoSource</span><span class="p">.</span><span class="na">CAMERA</span><span class="p">);</span>
+
+<span class="c1">// Seleccionamos el formato de salida</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setOutputFormat</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">OutputFormat</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+
+<span class="c1">// Seleccionamos el codec de audio y vídeo</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setAudioEncoder</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">AudioEncoder</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setVideoEncoder</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">VideoEncoder</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+
+<span class="c1">// Especificamos el fichero de salida</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setOutputFile</span><span class="p">(</span><span class="s">&quot;/mnt/sdcard/mificherodesalida.mp4&quot;</span><span class="p">);</span>
+
+<span class="c1">// Nos preparamos para grabar</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">prepare</span><span class="p">();</span>
+</code></pre></div>
+<blockquote>
+<p>Recuerda que los métodos que hemos visto en el ejemplo anterior deben invocarse en ese orden concreto, ya que de lo contrario se lanzará una excepción de tipo<br />
+<em>Illegal State Exception</em>.</p>
+</blockquote>
+<p>Para comenzar la grabación, una vez inicializados todos los parámetros, utilizaremos el método <code>start</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+</code></pre></div>
+<p>Cuando se desee finalizar la grabación se deberá hacer uso en primer lugar del método <code>stop</code>, y a continuación invocar el método <code>reset</code>. Una vez seguidos estos pasos es posible volver a utilizar el objeto invocando de nuevo a <code>setAudioSource</code> y <code>setVideoSource</code>. Llama a <code>release</code> para liberar<br />
+los recursos asociados al objeto <code>MediaRecorder</code> <span class="arithmatex"><span class="MathJax_Preview">el objeto no podrá volver a ser usado, se tendrá que crear de nuevo</span><script type="math/tex">el objeto no podrá volver a ser usado, se tendrá que crear de nuevo</script></span>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">stop</span><span class="p">();</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">reset</span><span class="p">();</span>
+<span class="n">mediaRecorder</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="previsualizacion">Previsualización<a class="headerlink" href="#previsualizacion" title="Permanent link">&para;</a></h3>
+<p>Durante la grabación de vídeo es recomendable mostrar una previsualización de lo que se está captando a través de la cámara en tiempo real. Para ello utilizaremos el método <code>setPreviewDisplay</code>, que nos permitirá asignar un objeto <code>Surface</code> sobre el cual mostrar dicha previsualización.</p>
+<p>El comportamiento en este caso es muy parecido al de la clase <code>MediaPlayer</code> para la reproducción de vídeo. Debemos definir una actividad que incluya una vista de tipo <code>SurfaceView</code> en su interfaz y que implemente la interfaz <code>SurfaceHolder.Callback</code>. Una vez que el objeto <code>SurfaceHolder</code> ha sido creado podemos<br />
+asignarlo al objeto <code>MediaRecorder</code> invocando al método <code>setPreviewDisplay</code>, tal como se puede ver en el siguiente código. El vídeo comenzará a previsualizarse tan pronto como se haga uso del método <code>prepare</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CapturaActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Activity</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">SurfaceHolder</span><span class="p">.</span><span class="na">Callback</span>
+<span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">MediaRecorder</span><span class="w"> </span><span class="n">mMediaRecorder</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">main</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">SurfaceView</span><span class="w"> </span><span class="n">surface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">SurfaceView</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">surface</span><span class="p">);</span>
+<span class="w">        </span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">surface</span><span class="p">.</span><span class="na">getHolder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">addCallback</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="p">.</span><span class="na">SURFACE_TYPE_PUSH_BUFFERS</span><span class="p">);</span>
+<span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">setFixedSize</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceCreated</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mMediaRecorder</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">setAudioSource</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">AudioSource</span><span class="p">.</span><span class="na">MIC</span><span class="p">);</span>
+<span class="w">                </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">setVideoSource</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">VideoSource</span><span class="p">.</span><span class="na">CAMERA</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">setOutputFormat</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">OutputFormat</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">setAudioEncoder</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">AudioEncoder</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+<span class="w">                </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">setVideoEncoder</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">VideoEncoder</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">setOutputFile</span><span class="p">(</span><span class="s">&quot;/sdcard/myoutputfile.mp4&quot;</span><span class="p">);</span>
+
+<span class="w">                </span><span class="c1">// Asociando la previsualización a la superficie</span>
+<span class="w">                </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">setPreviewDisplay</span><span class="p">(</span><span class="n">holder</span><span class="p">.</span><span class="na">getSurface</span><span class="p">());</span>
+<span class="w">                </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">prepare</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalStateException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceDestroyed</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mMediaRecorder</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceChanged</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">,</span>
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="agregar-ficheros-multimedia-en-el-media-store">Agregar ficheros multimedia en el Media Store<a class="headerlink" href="#agregar-ficheros-multimedia-en-el-media-store" title="Permanent link">&para;</a></h2>
+<p>El comportamiento por defecto en Android con respecto al acceso de contenido multimedia es que los ficheros multimedia generados u obtenidos por una aplicación no podrán ser accedidos por el resto. En el caso de que deseemos que un nuevo fichero multimedia sí pueda ser accedido desde el exterior de nuestra aplicación deberemos almacenarlo en el <em>Media Store</em>, que mantiene una base de datos de la metainformación de todos los ficheros almacenados tanto en dispositivos externos como internos del terminal telefónico.</p>
+<blockquote>
+<p>El <em>Media Store</em> es un proveedor de contenidos, y por lo tanto utilizaremos el mecanismo estándar para acceso a dichos proveedores para acceder a la información que contiene.</p>
+</blockquote>
+<p>Existen varias formas de incluir un fichero multimedia en el <em>Media Store</em>. La más sencilla es hacer uso de la clase <code>MediaScannerConnection</code>, que permitirá determinar automáticamente de qué tipo de fichero se trata, de tal forma que se pueda añadir sin necesidad de proporcionar ninguna información adicional.</p>
+<p>La clase <code>MediaScannerConnection</code> proporciona un método <code>scanFile</code> para realizar esta tarea. Sin embargo, antes de escanear un fichero se deberá llamar al método <code>connect</code> y esperar una conexión al <em>Media Store</em>. La llamada a <code>connect</code> es asíncrona, lo cual quiere decir que deberemos crear un objeto <code>MediaScannerConnectionClient</code> que nos notifique en el momento en el que se complete la conexión. Esta misma clase también puede ser utilizada para que se lleve a cabo una notificación en el momento en el que el escaneado se haya completado, de tal forma que ya podremos desconectarnos del <em>Media Store</em>.</p>
+<p>En el siguiente ejemplo de código podemos ver un posible esqueleto para un objeto <code>MediaScannerConnectionClient</code>. En este código se hace uso de una instancia de la clase <code>MediaScannerConnection</code> para manejar la conexión y escanear el fichero. El método <code>onMediaScannerConected</code> será llamado cuando la conexión ya se haya establecido, con lo que ya será posible escanear el fichero. Una vez se complete el escaneado se llamará al método <code>onScanCompleted</code>, en el que lo más aconsejable es llevar a cabo la desconexión del <em>Media Store</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">MediaScannerConnectionClient</span><span class="w"> </span><span class="n">mediaScannerClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaScannerConnectionClient</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">MediaScannerConnection</span><span class="w"> </span><span class="n">msc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">msc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaScannerConnection</span><span class="p">(</span><span class="n">getApplicationContext</span><span class="p">(),</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="n">msc</span><span class="p">.</span><span class="na">connect</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onMediaScannerConnected</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">msc</span><span class="p">.</span><span class="na">scanFile</span><span class="p">(</span><span class="s">&quot;/mnt/sdcard/DCIM/prueba.mp4&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onScanCompleted</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="w"> </span><span class="n">uri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Realizar otras acciones adicionales</span>
+
+<span class="w">        </span><span class="n">msc</span><span class="p">.</span><span class="na">disconnect</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h2>
+<h3 id="grabacion-de-video-con-mediarecorder">Grabación de vídeo con MediaRecorder<a class="headerlink" href="#grabacion-de-video-con-mediarecorder" title="Permanent link">&para;</a></h3>
+<p>En este ejercicio optativo utilizaremos la aplicación <em>Video</em> que se te proporciona en las plantillas para crear una aplicación que permita guardar vídeo, mostrándolo en pantalla mientras éste se graba. La interfaz de la actividad principal tiene dos botones, <em>Grabar</em> y <em>Parar</em>, y una vista <code>SurfaceView</code> sobre la<br />
+que se previsualizará el vídeo siendo grabado.</p>
+<p>Debes seguir los siguientes pasos:</p>
+<ul>
+<li>Añade los permisos necesarios en el <em>Manifest</em> de la aplicación para poder grabar audio y vídeo y para poder guardar el resultado en la tarjeta SD <span class="arithmatex"><span class="MathJax_Preview">recuerda
+  que el siguiente código debe aparecer antes del elemento <code>application</code></span><script type="math/tex">recuerda
+  que el siguiente código debe aparecer antes del elemento <code>application</code></script></span>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.CAMERA&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.RECORD_AUDIO&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<ul>
+<li>Añade un atributo a la clase <code>VideoActivity:</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">MediaRecorder</span><span class="w"> </span><span class="n">mediaRecorder</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>Inicializa el objeto <code>MediaRecorder</code> en el método <code>onCreate</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">mediaRecorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaRecorder</span><span class="p">();</span>
+</code></pre></div>
+<ul>
+<li>Para poder previsualizar el vídeo en el <code>SurfaceView</code> hemos de obtener su <em>holder</em>. Como esta operación es asíncrona, debemos añadir los manejadores adecuados, de tal forma que sólo se pueda reproducir la previsualización cuando todo esté listo. El primer paso consiste en hacer que la clase <code>VideoActivity</code> implemente la interfaz <code>SurfaceHolder.Callback</code>. Para implementar esta interfaz deberás añadir los siguiente métodos a la clase:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceCreated</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// TODO: asociar la superficie al MediaRecorder</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceDestroyed</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// TODO: liberar los recursos</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Añadimos en <code>onCreate</code> el código necesario para obtener el <em>holder</em> de la superficie y asociarle como manejador la propia clase <code>VideoActivity</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">m_holder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">superficie</span><span class="p">.</span><span class="na">getHolder</span><span class="p">();</span>
+<span class="n">m_holder</span><span class="p">.</span><span class="na">addCallback</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="n">m_holder</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="p">.</span><span class="na">SURFACE_TYPE_PUSH_BUFFERS</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>Gracias al método <code>surfaceCreated</code> podremos asociar el objeto <code>MediaRecorder</code> al <em>holder</em> del <code>SurfaceView</code>. Dentro de esta misma función le daremos al atributo booleano <code>preparado</code> el valor true, lo cual nos permitirá saber que ya podemos iniciar la reproducción:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setPreviewDisplay</span><span class="p">(</span><span class="n">holder</span><span class="p">.</span><span class="na">getSurface</span><span class="p">());</span>
+<span class="n">preparado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>En el método <code>surfaceDestroyed</code> simplemente invocaremos el método <code>release</code> del objeto <code>MediaRecorder</code>, para liberar los recursos del objeto<br />
+  al finalizar la actividad.</p>
+</li>
+<li>
+<p>Se ha añadido un método <code>configurar</code> a la clase <code>VideoActivity</code> que se utilizará para indicar la fuente de audio y vídeo, el nombre del fichero donde<br />
+  guardaremos el vídeo grabado, y algunos parámetros más. En esa función debes añadir el siguiente código. Fíjate cómo se ha incluido una llamada a <code>prepare</code> al final:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mediaRecorder</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Inicializando el objeto MediaRecorder</span>
+<span class="w">        </span><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setAudioSource</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">AudioSource</span><span class="p">.</span><span class="na">MIC</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setVideoSource</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">VideoSource</span><span class="p">.</span><span class="na">CAMERA</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setOutputFormat</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">OutputFormat</span><span class="p">.</span><span class="na">THREE_GPP</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setAudioEncoder</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">AudioEncoder</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setVideoEncoder</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">VideoEncoder</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="na">getExternalStoragePublicDirectory</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="na">DIRECTORY_PICTURES</span><span class="p">),</span><span class="s">&quot;video.mp4&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">setOutputFile</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="na">getPath</span><span class="p">());</span>
+
+<span class="w">        </span><span class="n">mediaRecorder</span><span class="p">.</span><span class="na">prepare</span><span class="p">();</span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalStateException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Sólo queda introducir el código necesario para iniciar y detener la reproducción. En el manejador del botón <em>Grabar</em> invocaremos al método <code>start</code> del objeto <code>MediaRecorder</code>, sin olvidar realizar una llamada previa al método <code>configurar</code>.</p>
+</li>
+<li>
+<p>En el manejador del botón <em>Parar</em> invocamos en primer lugar el método <code>stop</code> y en segundo lugar el método <code>reset</code> del objeto <code>MediaRecorder</code>. Con esto podríamos volver a utilizar este objeto llamando a <code>configurar</code> y a <code>start</code>.</p>
+</li>
+</ul>
+<blockquote>
+<p>A la hora de redactar estos ejercicios existía un bug que impedía volver a utilizar un objeto <code>MediaRecorder</code> tras haber usado <code>reset</code>. Puede que sea necesario que tras hacer un <code>reset</code> debas invocar el método <code>release</code> y crear una nueva instancia del objeto <code>MediaRecorder</code> con el operador <code>new</code>.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

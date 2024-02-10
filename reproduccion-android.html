@@ -1,0 +1,1301 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="procesamiento-de-imagen-en-ios-opencv.html">
+      
+      
+        <link rel="next" href="captura-android.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Reproducción de medios en Android - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reproduccion-de-medios-en-android" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reproducción de medios en Android
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reproducción de medios en Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="reproduccion-android.html" class="md-nav__link md-nav__link--active">
+        Reproducción de medios en Android
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-audio" class="md-nav__link">
+    Reproducción de audio
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción de audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-fuentes-de-audio" class="md-nav__link">
+    Tipos de fuentes de audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion-del-reproductor-de-medios" class="md-nav__link">
+    Inicialización del reproductor de medios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion-asincrona" class="md-nav__link">
+    Inicialización asíncrona
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-del-reproductor-de-medios" class="md-nav__link">
+    Métodos del reproductor de medios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liberacion-del-reproductor-de-medios" class="md-nav__link">
+    Liberación del reproductor de medios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streams-de-audio-y-control-de-volumen" class="md-nav__link">
+    Streams de audio y control de volumen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-audio-en-segundo-plano" class="md-nav__link">
+    Reproducción de audio en segundo plano
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-del-foco-del-audio" class="md-nav__link">
+    Gestión del foco del audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desconexion-de-auriculares" class="md-nav__link">
+    Desconexión de auriculares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-video" class="md-nav__link">
+    Reproducción de vídeo
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción de vídeo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproducir-video-mediante-videoview" class="md-nav__link">
+    Reproducir vídeo mediante VideoView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducir-video-con-mediaplayer" class="md-nav__link">
+    Reproducir vídeo con MediaPlayer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproducir-de-un-clip-de-audio" class="md-nav__link">
+    Reproducir de un clip de audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evento-de-finalizacion-de-la-reproduccion" class="md-nav__link">
+    Evento de finalización de la reproducción
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducir-un-clip-de-video-usando-videoview" class="md-nav__link">
+    Reproducir un clip de vídeo usando VideoView
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-audio" class="md-nav__link">
+    Reproducción de audio
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción de audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-fuentes-de-audio" class="md-nav__link">
+    Tipos de fuentes de audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion-del-reproductor-de-medios" class="md-nav__link">
+    Inicialización del reproductor de medios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion-asincrona" class="md-nav__link">
+    Inicialización asíncrona
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-del-reproductor-de-medios" class="md-nav__link">
+    Métodos del reproductor de medios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liberacion-del-reproductor-de-medios" class="md-nav__link">
+    Liberación del reproductor de medios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streams-de-audio-y-control-de-volumen" class="md-nav__link">
+    Streams de audio y control de volumen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-audio-en-segundo-plano" class="md-nav__link">
+    Reproducción de audio en segundo plano
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-del-foco-del-audio" class="md-nav__link">
+    Gestión del foco del audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desconexion-de-auriculares" class="md-nav__link">
+    Desconexión de auriculares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-video" class="md-nav__link">
+    Reproducción de vídeo
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción de vídeo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproducir-video-mediante-videoview" class="md-nav__link">
+    Reproducir vídeo mediante VideoView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducir-video-con-mediaplayer" class="md-nav__link">
+    Reproducir vídeo con MediaPlayer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproducir-de-un-clip-de-audio" class="md-nav__link">
+    Reproducir de un clip de audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evento-de-finalizacion-de-la-reproduccion" class="md-nav__link">
+    Evento de finalización de la reproducción
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducir-un-clip-de-video-usando-videoview" class="md-nav__link">
+    Reproducir un clip de vídeo usando VideoView
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="reproduccion-de-medios-en-android">Reproducción de medios en Android<a class="headerlink" href="#reproduccion-de-medios-en-android" title="Permanent link">&para;</a></h1>
+<p>La capacidad de reproducir contenido multimedia es una característica presente en la práctica totalidad de las terminales telefónicas existentes en el mercado hoy en día. Muchos usuarios prefieren utilizar las capacidades multimedia de su teléfono, en lugar de tener que depender de otro dispositivo adicional para ello.</p>
+<p>En esta sesión vamos a aprender a añadir contenido multimedia en nuestras aplicaciones. En concreto, veremos cómo reproducir audio o video en una actividad.</p>
+<p>La reproducción de contenido multimedia se lleva a cabo por medio de la clase <code>MediaPlayer</code>. Dicha clase nos permite la reproducción de archivos multimedia almacenados como recursos de la aplicación, en ficheros locales, en proveedores de contenido, o servidos por medio de <em>streaming</em> a partir de una URL. En todos los casos, como desarrolladores, la clase <code>MediaPlayer</code> nos permitirá abstraernos del formato así como del origen del fichero a reproducir.</p>
+<h2 id="reproduccion-de-audio">Reproducción de audio<a class="headerlink" href="#reproduccion-de-audio" title="Permanent link">&para;</a></h2>
+<h3 id="tipos-de-fuentes-de-audio">Tipos de fuentes de audio<a class="headerlink" href="#tipos-de-fuentes-de-audio" title="Permanent link">&para;</a></h3>
+<p>Podemos reproducir audio proveniente de diferentes fuentes:</p>
+<ul>
+<li>Un recurso de la aplicación</li>
+<li>Un fichero en el dispositivo local</li>
+<li>Una URL remota</li>
+</ul>
+<p>Incluir un fichero de audio en los recursos de la aplicación para poder ser reproducido durante su ejecución es muy sencillo. Simplemente creamos una carpeta <code>raw</code> dentro de la carpeta <code>res</code>, y almacenamos en ella sin comprimir el fichero o ficheros que deseamos reproducir. A partir de ese momento el fichero se identificará dentro del código como <code>R.raw.nombre_fichero</code> (obsérvese que no es necesario especificar la extensión del fichero).</p>
+<p>Para reproducir un fichero de audio almacenado en el móvil o en un servidor remoto simplemente deberemos especificar su URL (local o remota).</p>
+<blockquote>
+<p><strong>Importante</strong>: En caso de necesitar reproducir un medio alojado en una URL remota, será necesario que la aplicación solicite el permiso <code>INTERNET</code> en el fichero <code>AndroidManifest.xml</code>:
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div></p>
+</blockquote>
+<h3 id="inicializacion-del-reproductor-de-medios">Inicialización del reproductor de medios<a class="headerlink" href="#inicializacion-del-reproductor-de-medios" title="Permanent link">&para;</a></h3>
+<p>Para reproducir un fichero de audio tendremos que seguir una secuencia de pasos. En primer lugar deberemos crear una instancia de la clase <code>MediaPlayer</code> e indicar qué fichero será el que se reproducirá. Tenemos dos opciones para hacer esto.</p>
+<p>La <strong>primera opción</strong> para inicializar la reproducción multimedia es por medio del método <code>setDataSource</code>, el cual asigna una fuente multimedia a una instancia ya existente de la clase <code>MediaPlayer</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">mediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">();</span>
+<span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setDataSource</span><span class="p">(</span><span class="s">&quot;/sdcard/test.mp3&quot;</span><span class="p">);</span>
+<span class="n">mediaPlayer</span><span class="p">.</span><span class="na">prepare</span><span class="p">();</span>
+</code></pre></div>
+<p>Al instanciar la clase <code>MediaPlayer</code> se encontrará en estado <em>idle</em>. En este estado lo primero que debemos hacer es indicar el fichero a reproducir. Una vez hecho esto pasa a estado <em>inicializado</em>. En este estado ya sabe qué fichero ha de reproducir, pero todavía no se ha preparado para ello (inicializar <em>bufferes</em>, etc), por lo que no podrá comenzar la reproducción. Para prepararlo deberemos llamar al método <code>prepare()</code>, con lo que tendremos el reproductor listo para empezar a reproducir el audio.</p>
+<p>La <strong>segunda opción</strong> consiste en crear una instancia de la clase <code>MediaPlayer</code> por medio del método <code>create</code>. En este caso se deberá pasar como parámetro, además del contexto de la aplicación, el identificador del recurso, como se puede ver en el siguiente ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Context</span><span class="w"> </span><span class="n">appContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getApplicationContext</span><span class="p">();</span>
+
+<span class="c1">// Recurso de la aplicación</span>
+<span class="n">MediaPlayer</span><span class="w"> </span><span class="n">resourcePlayer</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="n">MediaPlayer</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">appContext</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">raw</span><span class="p">.</span><span class="na">my_audio</span><span class="p">);</span>
+<span class="c1">// Fichero local (en la tarjeta de memoria)</span>
+<span class="n">MediaPlayer</span><span class="w"> </span><span class="n">filePlayer</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="n">MediaPlayer</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">appContext</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;file:///sdcard/localfile.mp3&quot;</span><span class="p">));</span>
+<span class="c1">// URL</span>
+<span class="n">MediaPlayer</span><span class="w"> </span><span class="n">urlPlayer</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="n">MediaPlayer</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">appContext</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;http://site.com/audio/audio.mp3&quot;</span><span class="p">));</span>
+<span class="c1">// Proveedor de contenido</span>
+<span class="n">MediaPlayer</span><span class="w"> </span><span class="n">contentPlayer</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="n">MediaPlayer</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">appContext</span><span class="p">,</span><span class="w"> </span><span class="n">Settings</span><span class="p">.</span><span class="na">System</span><span class="p">.</span><span class="na">DEFAULT_RINGTONE_URI</span><span class="p">);</span>
+</code></pre></div>
+<p>En este caso el método <code>create()</code> se encarga de asignar la fuente de audio y además pasar el reproductor a estado <em>preparado</em>. Por lo tanto, en este caso no será necesario llamar a <code>prepare()</code>, sino que podremos reproducir el medio directamente. Aunque es más sencillo que la primera opción, también resulta menos flexible.</p>
+<h3 id="inicializacion-asincrona">Inicialización asíncrona<a class="headerlink" href="#inicializacion-asincrona" title="Permanent link">&para;</a></h3>
+<p>La llamada a <code>prepare()</code> puede resultar bastante costosa y producir un retardo considerable, especialmente cuando accedemos a medios externos a la aplicación. Por este motivo debemos evitar llamarla desde el hilo de eventos, para evitar bloquear este hilo.</p>
+<p>Podemos crear un hilo secundario y realizar la preparación del medio desde él, pero también contamos con una variante del método anterior que nos facilitará realizar la preparación de forma asíncrona, fuera del hilo de eventos. Esta variante es <code>prepareAsync()</code>.</p>
+<p>Podemos utilizar un <em>listener</em> de tipo <code>MediaPlayer.OnPreparedListener</code> para que se nos notifique con el método <code>onPrepared</code> cuándo está preparado el reproductor, y así poder comenzar la reproducción. Este listener se deberá registrar en el <code>MediaPlayer</code> con el método <code>setOnPreparedListener()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiActividad</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Activity</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">.</span><span class="na">OnPreparedListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">reproducir</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">();</span>
+<span class="w">        </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">setOnPreparedListener</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">prepareAsync</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onPrepared</span><span class="p">(</span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="metodos-del-reproductor-de-medios">Métodos del reproductor de medios<a class="headerlink" href="#metodos-del-reproductor-de-medios" title="Permanent link">&para;</a></h3>
+<p>Una vez que la instancia de la clase <code>MediaPlayer</code> ha sido inicializada, podemos comenzar la reproducción mediante el método <code>start</code>. También es posible utilizar los métodos <code>stop</code> y <code>pause</code> para detener y pausar la reproducción. Si se detuvo la reproducción de audio mediante el método <code>stop</code> será imprescindible invocar el método <code>prepare</code> antes de poder reproducirlo de nuevo mediante una llamada a <code>start</code>. Por otra parte, si se detuvo la reproducción por medio de <code>pause</code>, tan sólo será necesario hacer una llamada a <code>start</code> para continuar en el punto donde ésta se dejó.</p>
+<p>Otros métodos de la clase <code>MediaPlayer</code> que podríamos considerar interesante utilizar son los siguientes:</p>
+<ul>
+<li><code>setLooping</code> nos permite especificar si el clip de audio deberá volver a reproducirse cada vez que finalice.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">isLooping</span><span class="p">())</span>
+<span class="w">    </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setLooping</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><code>setScreenOnWhilePlaying</code> nos permitirá conseguir que la pantalla se encuentre activada siempre durante la reproducción. Tiene más sentido en el caso de la reproducción de video, que será tratada en la siguiente sección.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setScreenOnWhilePlaying</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><code>setVolume</code> modifica el volumen. Recibe dos parámetros que deberán ser dos números reales entre 0 y 1, indicando el volumen del canal izquierdo y del canal derecho,
+respectivamente. El valor 0 indica silencio total mientras que el valor 1 indica máximo volumen.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setVolume</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><code>seekTo</code> permite avanzar o retroceder a un determinado punto del archivo de audio. Podemos obtener la duración total del clip de audio con el método <code>getDuration</code>,
+mientras que <code>getCurrentPosition</code> nos dará la posición actual. En el siguiente código se puede ver un ejemplo de uso de estos tres últimos métodos.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">getCurrentPosition</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">getDuration</span><span class="p">();</span>
+
+<span class="n">mediaPlayer</span><span class="p">.</span><span class="na">seekTo</span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">duration</span><span class="o">-</span><span class="n">pos</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="liberacion-del-reproductor-de-medios">Liberación del reproductor de medios<a class="headerlink" href="#liberacion-del-reproductor-de-medios" title="Permanent link">&para;</a></h3>
+<p>Una acción muy importante que deberemos llevar a cabo una vez haya finalizado definitivamente la reproducción (porque se vaya a salir de la aplicación o porque se vaya a cerrar la actividad donde se reproduce el audio) es destruir la instancia de la clase <code>MediaPlayer</code> y liberar su memoria. Para ello deberemos hacer uso del método <code>release</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">mediaPlayer</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+<span class="w">    </span><span class="n">mediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Por ejemplo, si nuestra actividad crea un reproductor en <code>start()</code>, deberemos asegurarnos de destruirlo siempre en <code>stop()</code> para evitar que pueda haber más de uno simultáneamente.</p>
+<h3 id="streams-de-audio-y-control-de-volumen"><em>Streams</em> de audio y control de volumen<a class="headerlink" href="#streams-de-audio-y-control-de-volumen" title="Permanent link">&para;</a></h3>
+<p>Android reproduce el audio en diferentes <em>streams</em> según su naturaleza: música, alarmas, notificaciones, llamadas, etc. Cada uno de estos <em>streams</em> tiene su propio nivel de volumen, de forma que el volumen del tono de llamada puede ser distinto al volumen del reproductor de música. Cuando el usuario manipule los botones de control de volumen del dispositivo, estará modificando el volumen del <em>stream</em> que esté sonando actualmente.</p>
+<p>A la hora de reproducir sonido con el <code>MediaPlayer</code> podemos especificar el <em>stream</em> dentro del cual lo queremos reproducir con <code>setAudioStreamType</code>. Siempre llamaremos a este método en el estado <em>idle</em>, antes de haber especificado la fuente de audio:</p>
+<div class="highlight"><pre><span></span><code><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">mediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">();</span>
+<span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setAudioStreamType</span><span class="p">(</span><span class="n">AudioManager</span><span class="p">.</span><span class="na">STREAM_MUSIC</span><span class="p">);</span>
+<span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setDataSource</span><span class="p">(</span><span class="n">getApplicationContext</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;sdcard/test.mp3&quot;</span><span class="p">);</span>
+<span class="n">mediaPlayer</span><span class="p">.</span><span class="na">prepare</span><span class="p">();</span>
+<span class="n">mediaPlayer</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+</code></pre></div>
+<blockquote>
+<p>Es importante destacar que no podremos especificar el <em>stream</em> de audio si lo creamos con el atajo <code>create</code>.</p>
+</blockquote>
+<p>Como hemos comentado, cuando usamos los botones de control de volumen del dispositivos afectamos al <em>stream</em> que esté sonando actualmente. Si no estuviese sonando ningún audio, entonces por defecto afectaría al <em>stream</em> del tono de llamada.</p>
+<p>Si estamos dentro de una aplicación como por ejemplo un videojuego, aunque no esté sonando nada normalmente nos interesará que al manipular el control de volumen dentro del videojuego se modifique el volumen de música del juego, y no el del todo de llamada. Para indicar a qué <em>stream</em> debe afectar el volumen utilizaremos el método <code>setVolumenControlStream()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">setVolumeControlStream</span><span class="p">(</span><span class="n">AudioManager</span><span class="p">.</span><span class="na">STREAM_MUSIC</span><span class="p">);</span>
+</code></pre></div>
+<p>Cuando la actividad o fragmento en el que hayamos llamado al método anterior esté visible, el control de volumen afectará al <em>stream</em> de música, y no al por defecto.</p>
+<h3 id="reproduccion-de-audio-en-segundo-plano">Reproducción de audio en segundo plano<a class="headerlink" href="#reproduccion-de-audio-en-segundo-plano" title="Permanent link">&para;</a></h3>
+<p>Puede intersarnos dejar nuestro reproductor funcionando en segundo plano aunque cerremos la actividad, por ejemplo para implementar un reproductor de música o de <em>podcasts</em>. Para hacer esto deberemos iniciar el reproductor desde un servicio, en lugar de una actividad:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiServicio</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">.</span><span class="na">OnPreparedListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ACTION_PLAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;es.ua.jtech.action.PLAY&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">EXTRA_URI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;es.ua.jtech.extras.URI&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">onStartCommand</span><span class="p">(</span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">startId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intent</span><span class="p">.</span><span class="na">getAction</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">ACTION_PLAY</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">();</span>
+<span class="w">            </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">setDataSource</span><span class="p">(</span><span class="n">intent</span><span class="p">.</span><span class="na">getExtra</span><span class="p">(</span><span class="n">EXTRA_URI</span><span class="p">));</span>
+<span class="w">            </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">setOnPreparedListener</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">prepareAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onPrepared</span><span class="p">(</span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">player</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cuando el móvil no se esté utilizando normalmente la pantalla y la CPU se apagarán automáticamente para ahorrar batería. Si esto ocurre la música se detendrá. Para evitarlo necesitamos adquirir lo que se conoce como un <em>wake lock</em>. Esto nos permitirá mantener el móvil activo aunque el usuario no lo esté utilizando.</p>
+<p>Para poder obtener un <em>wake lock</em> lo primero que deberemos es solicitar el permiso correspondiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.WAKE_LOCK&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Una vez contemos con el permiso, podemos indicar al reproductor de medios que necesitamos un <em>wake lock</em> parcial (se puede apagar la pantalla pero no la CPU):</p>
+<div class="highlight"><pre><span></span><code><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">setWakeMode</span><span class="p">(</span><span class="n">getApplicationContext</span><span class="p">(),</span><span class="w"> </span><span class="n">PowerManager</span><span class="p">.</span><span class="na">PARTIAL_WAKE_LOCK</span><span class="p">);</span>
+</code></pre></div>
+<p>Si estamos accediendo a un fichero remoto deberemos indicar también que no se apague la WiFi, mediante un <em>wifi lock</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">WifiLock</span><span class="w"> </span><span class="n">wifiLock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">WifiManager</span><span class="p">)</span><span class="w"> </span><span class="n">getSystemService</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">WIFI_SERVICE</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="na">createWifiLock</span><span class="p">(</span><span class="n">WifiManager</span><span class="p">.</span><span class="na">WIFI_MODE_FULL</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wifilock&quot;</span><span class="p">);</span>
+
+<span class="n">wifiLock</span><span class="p">.</span><span class="na">acquire</span><span class="p">();</span>
+</code></pre></div>
+<p>Al parar o pausar la reproducción podemos liberar este <em>lock</em> para así ahorrar batería:</p>
+<div class="highlight"><pre><span></span><code><span class="n">wifiLock</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+</code></pre></div>
+<p>Aunque la reproducción se produzca en segundo plano, normalmente el usuario querrá estar al tanto de la reproducción y poder deternerla. Por ello es conveniente que el servicio funcione en modo <em>foreground</em>. Para ello deberemos crear una notificación de tipo <em>ongoing</em> (evento en curso) que se mostrará en la barra de notificaciones mientras el servicio esté activo. Llamando a <code>startForeground()</code> desde nuestro servicio haremos que dicha notificación se muestre mientras el servicio esté activo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Crea un PendingIntent para iniciar la actividad ReproductorActivity</span>
+<span class="n">PendingIntent</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PendingIntent</span><span class="p">.</span><span class="na">getActivity</span><span class="p">(</span><span class="n">getApplicationContext</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">getApplicationContext</span><span class="p">(),</span><span class="w"> </span><span class="n">ReproductorActivity</span><span class="p">.</span><span class="na">class</span><span class="p">),</span>
+<span class="w">                </span><span class="n">PendingIntent</span><span class="p">.</span><span class="na">FLAG_UPDATE_CURRENT</span><span class="p">);</span>
+
+<span class="c1">// Creamos una notificación que lance el PendingIntentAnterior</span>
+<span class="n">Notification</span><span class="w"> </span><span class="n">notification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Notification</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="n">mContext</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setContentTitle</span><span class="p">(</span><span class="s">&quot;Reproductor de musica&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setContentText</span><span class="p">(</span><span class="s">&quot;Reproduciendo &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombreCancion</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setSmallIcon</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">icono_play</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setTicker</span><span class="p">(</span><span class="s">&quot;Reproduccion en curso&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setOngoing</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">addAction</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">icono_play</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Reproductor de musica&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pi</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="n">startForeground</span><span class="p">(</span><span class="n">NOTIFICATION_ID</span><span class="p">,</span><span class="w"> </span><span class="n">notification</span><span class="p">);</span>
+</code></pre></div>
+<p>En el código anterior podemos ver que hemos añadido a la notificación un <code>PendingIntent</code> para que al pulsar sobre ella se abra la actividad del reproductor, y así el usuario podría pausar, detener, o cambiar la música que esté sonando.</p>
+<p>Cuando queramos que nuestro servicio deje de funcionar en modo <em>foreground</em> llamaremos a:</p>
+<div class="highlight"><pre><span></span><code><span class="n">stopForeground</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div>
+<p>También podríamos incluir en la propia notificación controles para poder parar o reanudar el audio. Para ello podríamos utilizar un objeto de tipo <code>RemoteViews</code> y cargar en él el <em>layout</em> que queramos que tenga la notificación. Al construir la notificación podremos establecer la vista remota a aplicar con <code>setContent</code>. </p>
+<div class="highlight"><pre><span></span><code><span class="n">RemoteViews</span><span class="w"> </span><span class="n">remoteViews</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RemoteViews</span><span class="p">(</span><span class="n">getPackageName</span><span class="p">(),</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">notificacion_audio</span><span class="p">);</span>
+
+<span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">ACTION_PLAY</span><span class="p">);</span><span class="w">       </span>
+<span class="n">pendingIntent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PendingIntent</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="n">getApplicationContext</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">REQUEST_CODE_PLAY</span><span class="p">,</span><span class="w"> </span><span class="n">intent</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PendingIntent</span><span class="p">.</span><span class="na">FLAG_UPDATE_CURRENT</span><span class="p">);</span>
+
+<span class="n">remoteViews</span><span class="p">.</span><span class="na">setOnClickPendingIntent</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">boton_play</span><span class="p">,</span>
+<span class="w">        </span><span class="n">pendingIntent</span><span class="p">);</span>
+
+<span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">ACTION_PAUSE</span><span class="p">);</span><span class="w">       </span>
+<span class="n">pendingIntent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PendingIntent</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="n">getApplicationContext</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">REQUEST_CODE_PAUSE</span><span class="p">,</span><span class="w"> </span><span class="n">intent</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PendingIntent</span><span class="p">.</span><span class="na">FLAG_UPDATE_CURRENT</span><span class="p">);</span>
+
+<span class="n">remoteViews</span><span class="p">.</span><span class="na">setOnClickPendingIntent</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">boton_pause</span><span class="p">,</span>
+<span class="w">        </span><span class="n">pendingIntent</span><span class="p">);</span>
+
+<span class="n">Notification</span><span class="w"> </span><span class="n">notification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NotificationCompat</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="n">getApplicationContext</span><span class="p">())</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setSmallIcon</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">ic_launcher</span><span class="p">).</span><span class="na">setOngoing</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setWhen</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">())</span><span class="w">                </span>
+<span class="w">        </span><span class="p">.</span><span class="na">setContent</span><span class="p">(</span><span class="n">remoteViews</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="n">startForeground</span><span class="p">(</span><span class="n">NOTIFICATION_ID</span><span class="p">,</span><span class="w"> </span><span class="n">notification</span><span class="p">);</span><span class="w">     </span>
+</code></pre></div>
+<p>Al pulsar los botones de la notificación se lanzará un <em>intent</em> con una acción <code>ACTION_PLAY</code> o <code>ACTION_PAUSE</code>, definidas ambas por nuestra aplicación. Haremos que nuestro servicio se ejecute cuando se lancen dichas acciones, añadiéndolas a un<code>&lt;intent-filter&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;service</span>
+<span class="w">    </span><span class="na">android:name=</span><span class="s">&quot;es.ua.jtech.MiServicio&quot;</span>
+<span class="w">    </span><span class="na">android:exported=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;intent-filter&gt;</span>
+<span class="w">        </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;eps.ua.es.ACTION_PLAY&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;eps.ua.es.ACTION_PAUSE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<p>Deberemos actualizar el código del servicio para que soporte también la acción <code>ACTION_PAUSE</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiServicio</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">.</span><span class="na">OnPreparedListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ACTION_PLAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;es.ua.jtech.action.PLAY&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ACTION_PAUSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;es.ua.jtech.action.PAUSE&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">EXTRA_URI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;es.ua.jtech.extras.URI&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">onStartCommand</span><span class="p">(</span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">startId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intent</span><span class="p">.</span><span class="na">getAction</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">ACTION_PLAY</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">();</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">setDataSource</span><span class="p">(</span><span class="n">intent</span><span class="p">.</span><span class="na">getExtra</span><span class="p">(</span><span class="n">EXTRA_URI</span><span class="p">));</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">setOnPreparedListener</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">prepareAsync</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intent</span><span class="p">.</span><span class="na">getAction</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">ACTION_PAUSE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">pause</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onPrepared</span><span class="p">(</span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">player</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A partir de Android 4.0 también podemos utilizar la clase <code>RemoteControlClient</code> para implementar estos controles, y a partir de Android 5.0 este mecanismo es reemplazado por la clase <code>MediaSession</code>. Podemos obtener más información sobre el nuevo mecanismo en:</p>
+<p>http://developer.android.com/guide/topics/ui/notifiers/notifications.html#controllingMedia</p>
+<h3 id="gestion-del-foco-del-audio">Gestión del foco del audio<a class="headerlink" href="#gestion-del-foco-del-audio" title="Permanent link">&para;</a></h3>
+<p>La posibilidad de reproducir audio en un servicio en segundo plano nos trae también la problemática de poder tener varios sonidos reproduciéndose simultáneamente. Por ejemplo, podemos estar reproduciendo músia al mismo tiempo que suena la alerta por la llegada de un mensaje, lo cual puede suponer que no oigamos el aviso de mensaje.</p>
+<p>Para evitar este problema deberemos coordinar la reproducción de los diferentes audios. La forma que tiene Android de resolverlo es mediante un sistema en el que cada aplicación podrá solitar el foco para reproducir audio. Por ejemplo, si estamos reproduciendo música y otra aplicación solicita el foco, podemos deterner la música momentáneamente o bajar su volumen (técnica conocida como <em>ducking</em>) mientras la otra aplicación reproduce el sonido, hasta que nos devuelva el foco.</p>
+<p>En primer lugar deberemos solicitar el foco para reproducir audio mediante el servicio <code>AudioManager</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AudioManager</span><span class="w"> </span><span class="n">audioManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">AudioManager</span><span class="p">)</span><span class="w"> </span><span class="n">getSystemService</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">AUDIO_SERVICE</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audioManager</span><span class="p">.</span><span class="na">requestAudioFocus</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AudioManager</span><span class="p">.</span><span class="na">STREAM_MUSIC</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AudioManager</span><span class="p">.</span><span class="na">AUDIOFOCUS_GAIN</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">AudioManager</span><span class="p">.</span><span class="na">AUDIOFOCUS_REQUEST_GRANTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// No se ha concedido el foco</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En este caso anterior vemos que hemos solicitado el foco para el <em>stream</em> de reproducción de música. Además, al solicitar el foco debemos proporcional un <em>listener</em> de tipo <code>AudioManager.OnAudioFocusChangeListener</code> que tendrá  siguiente estructura:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MiServicio</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Service</span>
+<span class="w">                </span><span class="kd">implements</span><span class="w"> </span><span class="n">AudioManager</span><span class="p">.</span><span class="na">OnAudioFocusChangeListener</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onAudioFocusChange</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">focusChange</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">focusChange</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="n">AudioManager</span><span class="p">.</span><span class="na">AUDIOFOCUS_GAIN</span><span class="p">:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">initMediaPlayer</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">isPlaying</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">setVolume</span><span class="p">(</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="n">AudioManager</span><span class="p">.</span><span class="na">AUDIOFOCUS_LOSS</span><span class="p">:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">isPlaying</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">stop</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+<span class="w">                </span><span class="n">mMediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="n">AudioManager</span><span class="p">.</span><span class="na">AUDIOFOCUS_LOSS_TRANSIENT</span><span class="p">:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">isPlaying</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">pause</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="n">AudioManager</span><span class="p">.</span><span class="na">AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK</span><span class="p">:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">isPlaying</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">mMediaPlayer</span><span class="p">.</span><span class="na">setVolume</span><span class="p">(</span><span class="mf">0.1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Vemos en este ejemplo que hay varias mas de perder el foco:</p>
+<ul>
+<li><code>AUDIOFOCUS_LOSS</code>: Se pierde de forma definitiva. Detenemos y liberamos el reproductor.</li>
+<li><code>AUDIOFOCUS_LOSS_TRANSIENT</code>: Se pierde de forma temporal. Pausamos el reproductor.</li>
+<li><code>AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK</code>: Se pierde de forma temporal y se permite que simplemente reduzcamos el volumen del audio actual (<em>ducking</em>).</li>
+</ul>
+<p>Cuando ganemos el foco de nuevo (<code>AUDIOFOCUS_GAIN</code>) deberemos inicializar el reproductor si no estaba inicializado todavía, reanudar la reproducción si se había pausado, y restaurar el volumen original.</p>
+<blockquote>
+<p>La característica <em>audio focus</em> sólo está disponible a partir de Android 2.2 (API 8). Si queremos tener compatibiliad con versiones anteriores deberemos comprobar la versión de Android en código y sólo utilizar <em>audio focus</em> si es mayor o igual que la 8.</p>
+</blockquote>
+<h3 id="desconexion-de-auriculares">Desconexión de auriculares<a class="headerlink" href="#desconexion-de-auriculares" title="Permanent link">&para;</a></h3>
+<p>Estamos acostumbrados a ver que en las aplicaciones móviles para reproducir música, al desconectar los auriculares la reproducción se detiene automáticamente para evitar que el ruido repentino pudiera causar molestias.</p>
+<p>Este comportamiento no es automático, sino que lo deberemos programar nosotros. Para ello deberemos capturar el <em>intent</em> <code>AUDIO_BECOMING_NOISY</code> mediante un <em>broadcast receiver</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;receiver</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;.MusicIntentReceiver&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;intent-filter&gt;</span>
+<span class="w">      </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.media.AUDIO_BECOMING_NOISY&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</code></pre></div>
+<p>Dentro del <em>broadcast receiver</em> podremos por ejemplo realizar la acción de detener la reproducción actual:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MusicIntentReceiver</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">android</span><span class="p">.</span><span class="na">content</span><span class="p">.</span><span class="na">BroadcastReceiver</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nd">@Override</span>
+<span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onReceive</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intent</span><span class="p">.</span><span class="na">getAction</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">android</span><span class="p">.</span><span class="na">media</span><span class="p">.</span><span class="na">AudioManager</span><span class="p">.</span><span class="na">ACTION_AUDIO_BECOMING_NOISY</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">stopMusic</span><span class="p">();</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="reproduccion-de-video">Reproducción de vídeo<a class="headerlink" href="#reproduccion-de-video" title="Permanent link">&para;</a></h2>
+<h3 id="reproducir-video-mediante-videoview">Reproducir vídeo mediante VideoView<a class="headerlink" href="#reproducir-video-mediante-videoview" title="Permanent link">&para;</a></h3>
+<p>La reproducción de vídeo es muy similar a la reproducción de audio, salvo dos particularidades. En primer lugar, no es posible reproducir un clip de vídeo almacenado como parte de los recursos de la aplicación. En este caso no existe ningún método para reproducir un vídeo a partir de un <code>id</code> de recurso. Lo que si que podemos hacer es representar un recurso <code>raw</code> de tipo vídeo mediante una URL. Esta URL tendrá la siguiente forma (hay que especificar como <em>host</em> el paquete de nuestra aplicación, y como ruta el <em>id</em> del recurso):</p>
+<div class="highlight"><pre><span></span><code><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;android.resource://es.ua.jtech/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">raw</span><span class="p">.</span><span class="na">video</span><span class="p">)</span>
+</code></pre></div>
+<p>En segundo lugar, el vídeo necesitará de una superficie para poder reproducirse. Esta superficie se corresponderá con una vista dentro del layout de la actividad.</p>
+<p>Existen varias alternativas para la reproducción de vídeo, teniendo en cuenta lo que acabamos de comentar. La más sencilla es hacer uso de una vista de tipo <code>VideoView</code>, que encapsula tanto la creación de una superficie en la que reproducir el vídeo como el control del mismo mediante una instancia de la clase <code>MediaPlayer</code>. Este método será el que veamos en primer lugar.</p>
+<p>El primer paso consistirá en añadir la vista <code>VideoView</code> a la interfaz gráfica de la aplicación. Para ello añadimos el elemento en el archivo de layout correspondiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;VideoView</span><span class="w"> </span><span class="na">android:id=</span><span class="s">&quot;@+id/superficie&quot;</span>
+<span class="w">          </span><span class="na">android:layout_height=</span><span class="s">&quot;fill_parent&quot;</span>
+<span class="w">          </span><span class="na">android:layout_width=</span><span class="s">&quot;fill_parent&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/VideoView&gt;</span>
+</code></pre></div>
+<p>Dentro del código Java podremos acceder a dicho elemento de la manera habitual, es decir, mediante el método <code>findViewById</code>. Una vez hecho esto, asignaremos una fuente que se corresponderá con el contenido multimedia a reproducir. El <code>VideoView</code> se encargará de la inicialización del objeto <code>MediaPlayer</code>. Para asignar un video a reproducir podemos utilizar cualquiera de estos dos métodos:</p>
+<div class="highlight"><pre><span></span><code><span class="n">videoView1</span><span class="p">.</span><span class="na">setVideoUri</span><span class="p">(</span><span class="s">&quot;http://www.mysite.com/videos/myvideo.3gp&quot;</span><span class="p">);</span>
+<span class="n">videoView2</span><span class="p">.</span><span class="na">setVideoPath</span><span class="p">(</span><span class="s">&quot;/sdcard/test2.3gp&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Una vez inicializada la vista se puede controlar la reproducción con los métodos <code>start</code>, <code>stopPlayback</code>, <code>pause</code> y <code>seekTo</code>. La clase <code>VideoView</code> también incorpora el método <code>setKeepScreenOn(boolean)</code>con la que se podrá controlar el comportamiento de la iluminación de la pantalla durante la reproducción del clip de vídeo. Si se pasa como parámetro el valor <code>true</code> ésta permanecerá constantemente iluminada.</p>
+<p>El siguiente código muestra un ejemplo de asignación de un vídeo a una vista <code>VideoView</code> y de su posterior reproducción. Dicho código puede ser utilizado a modo de esqueleto en nuestra propia aplicación. También podemos ver un ejemplo de uso de <code>seekTo</code>, en este caso para avanzar hasta la posición intermedia del video.</p>
+<div class="highlight"><pre><span></span><code><span class="n">VideoView</span><span class="w"> </span><span class="n">videoView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">VideoView</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">superficie</span><span class="p">);</span>
+<span class="n">videoView</span><span class="p">.</span><span class="na">setKeepScreenOn</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="n">videoView</span><span class="p">.</span><span class="na">setVideoPath</span><span class="p">(</span><span class="s">&quot;/sdcard/ejemplo.3gp&quot;</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">videoView</span><span class="p">.</span><span class="na">canSeekForward</span><span class="p">())</span>
+<span class="w">    </span><span class="n">videoView</span><span class="p">.</span><span class="na">seekTo</span><span class="p">(</span><span class="n">videoView</span><span class="p">.</span><span class="na">getDuration</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">videoView</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+
+<span class="c1">// Hacer algo durante la reproducción</span>
+
+<span class="n">videoView</span><span class="p">.</span><span class="na">stopPlayback</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="reproducir-video-con-mediaplayer">Reproducir vídeo con MediaPlayer<a class="headerlink" href="#reproducir-video-con-mediaplayer" title="Permanent link">&para;</a></h3>
+<p>La segunda alternativa para la reproducción de vídeo consiste en la creación de una superficie en la que dicho vídeo se reproducirá y en el uso directo de la clase <code>MediaPlayer</code>. La superficie deberá ser asignada manualmente a la instancia de la clase <code>MediaPlayer</code>. En caso contrario el vídeo no se mostrará. Además, la clase <code>MediaPlayer</code> requiere que la superficie sea un objeto de tipo <code>SurfaceHolder</code>.</p>
+<p>Un ejemplo de objeto <code>SurfaceHolder</code> podría ser la vista <code>SurfaceView</code>, que podremos añadir al XML del layout correspondiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;SurfaceView</span>
+<span class="w">    </span><span class="na">android:id=</span><span class="s">&quot;@+id/superficie&quot;</span>
+<span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;200dip&quot;</span>
+<span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;200dip&quot;</span>
+<span class="w">    </span><span class="na">android:layout_gravity=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/SurfaceView&gt;</span>
+</code></pre></div>
+<p>El siguiente paso será la inicialización el objeto <code>SurfaceView</code> y la asignación del mismo a la instancia de la clase <code>MediaPlayer</code> encargada de reproducir el vídeo. El siguiente código muestra cómo hacer esto. Obsérvese que es necesario que la actividad implemente la interfaz <code>SurfaceHolder.Callback</code>. Esto es así porque los objetos de la clase <code>SurfaceHolder</code> se crean de manera asíncrona, por lo que debemos añadir un mecanismo que permita esperar a que dicho objeto haya sido creado antes de poder reproducir el vídeo.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiActividad</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Activity</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">SurfaceHolder</span><span class="p">.</span><span class="na">Callback</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">mediaPlayer</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">main</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mediaPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">();</span>
+<span class="w">        </span><span class="n">SurfaceView</span><span class="w"> </span><span class="n">superficie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">SurfaceView</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">superficie</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Obteniendo el objeto SurfaceHolder a partir del SurfaceView</span>
+<span class="w">        </span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">superficie</span><span class="p">.</span><span class="na">getHolder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">addCallback</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="p">.</span><span class="na">SURFACE_TYPE_PUSH_BUFFERS</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Este manejador se invoca tras crearse la superficie, momento</span>
+<span class="w">    </span><span class="c1">// en el que podremos trabajar con ella</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceCreated</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setDisplay</span><span class="p">(</span><span class="n">holder</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalStateException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Y este manejador se invoca cuando se destruye la superficie,</span>
+<span class="w">    </span><span class="c1">// momento que podemos aprovechar para liberar los recursos asociados</span>
+<span class="w">    </span><span class="c1">// al objeto MediaPlayer</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceDestroyed</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceChanged</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Una vez que hemos asociado la superficie al objeto de la clase <code>MediaPlayer</code> debemos asignar a dicho objeto el clip de vídeo a reproducir. Ya que habremos creado el objeto <code>MediaPlayer</code> previamente, la única posibilidad que tendremos será utilizar el método <code>setDataSource</code>, como se muestra en el siguiente ejemplo. Recuerda que cuando se utiliza dicho método es necesario llamar también al método <code>prepare</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">surfaceCreated</span><span class="p">(</span><span class="n">SurfaceHolder</span><span class="w"> </span><span class="n">holder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setDisplay</span><span class="p">(</span><span class="n">holder</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">setDataSource</span><span class="p">(</span><span class="s">&quot;/mnt/sdcard/DCIM/video.mp4&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">prepare</span><span class="p">();</span>
+<span class="w">        </span><span class="n">mediaPlayer</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalStateException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;MEDIA_PLAYER&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h2>
+<h3 id="reproducir-de-un-clip-de-audio">Reproducir de un clip de audio<a class="headerlink" href="#reproducir-de-un-clip-de-audio" title="Permanent link">&para;</a></h3>
+<p>Se te proporciona en las plantillas de la sesión la aplicación <em>Audio</em>. Dicha aplicación contiene un clip de audio almacenado en los recursos, cuyo nombre
+es <em>zelda_nes.mp3</em>. La aplicación contiene una única actividad con una serie de botones, a los que añadiremos funcionalidad para poder controlar la reproducción del clip de audio.</p>
+<p>Se te pide hacer lo siguiente:</p>
+<ul>
+<li>
+<p>Añade el código necesario en el constructor para crear una instancia de la clase <code>MediaPlayer</code> (donde el objeto <code>mp</code> habrá sido declarado como un
+atributo de la clase):
+<div class="highlight"><pre><span></span><code><span class="n">mp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MediaPlayer</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">raw</span><span class="p">.</span><span class="na">zelda_nes</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Modifica el manejador del botón <em>Reproducir</em> para que cada vez que se pulse éste se deshabilite, se habiliten los botones <em>Pausa</em> y <em>Detener</em>, y empiece a reproducirse el clip de audio mediante la invocación del método <code>start</code> del objeto <code>MediaPlayer</code>.</p>
+<blockquote>
+<p>Para habilitar o deshabilitar botones usaremos el método <code>setEnabled</code>, que recibe como parámetro un booleano.</p>
+</blockquote>
+</li>
+<li>
+<p>Modifica el manejador del botón <em>Detener</em> para que cada vez que se pulse se deshabilite dicho botón y el botón <em>Pausa</em>, se habilite el botón <em>Reproducir</em>, y se
+detenga la reproducción del audio mediante
+el método <code>stop</code>. Invoca también el método <code>prepare</code> del objeto <code>MediaPlayer</code> para dejarlo todo preparado por si se desea reproducir de nuevo el audio.</p>
+</li>
+<li>
+<p>Modifica el manejador del botón <em>Pausa</em>. Si el audio estaba en reproducción el texto del botón pasará a ser <em>Reanudar</em> y se pausará la reproducción por medio
+del método <em>pause</em>. Si ya estaba en pausa el texto del botón volverá a ser <em>Pausa</em> y se reanudará la reproducción del audio. No olvides cambiar la etiqueta del botón a <em>Pausa</em> si se pulsa el botón <em>Detener</em>.</p>
+</li>
+<li>
+<p>Observa que cuando detienes la reproducción con <code>stop</code> y la reanudas con <code>start</code> el archivo de audio continúa reproduciéndose en el punto donde se detuvo. ¿Qué tendrías que hacer para que al pulsar el botón <code>Reproducir</code> la reproducción comenzara siempre por el principio?</p>
+</li>
+<li>
+<p>Libera los recursos asociados al objeto <code>MediaPlayer</code> en el método <code>onDestroy</code>. No olvides invocar al método <code>onDestroy</code> de la superclase.</p>
+</li>
+</ul>
+<h3 id="evento-de-finalizacion-de-la-reproduccion">Evento de finalización de la reproducción<a class="headerlink" href="#evento-de-finalizacion-de-la-reproduccion" title="Permanent link">&para;</a></h3>
+<p>El objeto <code>MediaPlayer</code> no pasa automáticamente al estado de detenido una vez que se reproduce completamente el clip de audio, sino que es necesario detener la reproducción a mano. Por lo tanto, en este ejercicio vamos a añadir un manejador para el evento que se dispara cuando el clip de audio finaliza. Añade el siguiente código en el método <code>onCreate</code>, tras la inicialización del objeto <code>MediaPlayer</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mp</span><span class="p">.</span><span class="na">setOnCompletionListener</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">OnCompletionListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCompletion</span><span class="p">(</span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">mp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// TODO Rellena con tu código</span>
+
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+</code></pre></div>
+<p>Lo que tiene que hacer este manejador es exactamente lo mismo que se debería hacer en el caso de haber pulsado el botón de <code>Detener</code>, es decir, habilitar el botón <em>Reproducir</em>, deshabilitar el resto, e invocar al método <code>stop</code>.</p>
+<h3 id="reproducir-un-clip-de-video-usando-videoview">Reproducir un clip de vídeo usando VideoView<a class="headerlink" href="#reproducir-un-clip-de-video-usando-videoview" title="Permanent link">&para;</a></h3>
+<p>Para este ejercicio se te proporciona en las plantillas el proyecto <em>Video</em>, que contiene una única actividad para controlar la reproducción de un clip de video, que se incluye en los recursos del proyecto (fichero <code>/res/raw/tetris.3gp</code>). En este caso tendremos un botón etiquetado como <em>Reproducir</em>, un botón etiquetado como <em>Detener</em> y una vista de tipo <em>TextView</em> que usaremos para mostrar la duración del vídeo, el cual se mostrará en una vista de tipo <code>VideoView</code>.</p>
+<p>Los pasos que debes seguir son los siguientes:</p>
+<ul>
+<li>Modifica el manejador del botón <em>Reproducir</em> para que cuando éste se pulse se deshabilite y se habilite el botón <em>Detener</em>.</li>
+<li>Modifica el manejador del botón <em>Detener</em> para que cuando éste se pulse se deshabilite y se habilite el botón <em>Reproducir</em>.</li>
+<li>
+<p>Prepara el vídeo a reproducir al pulsar el botón <em>Reproducir</em> con la siguiente línea de código (pero no utilices el método <code>start</code> para reproducirlo todavía):
+<div class="highlight"><pre><span></span><code><span class="n">superficie</span><span class="p">.</span><span class="na">setVideoUri</span><span class="p">(</span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;android.resource://es.ua.jtech.android.video/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">raw</span><span class="p">.</span><span class="na">tetris</span><span class="p">));</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Detén la ejecución del vídeo cuando se pulse el botón <em>Detener</em> por medio del método <code>stopPlayback</code>.</p>
+</li>
+<li>
+<p>Para poder reproducir el vídeo y poder obtener su duración y mosrtrarla en el <code>TextView</code>, hemos de esperar a que la superficie donde se va a reproducir esté preparada. Para ello hemos de implementar el manejador para el evento <code>OnPreparedListener</code> de la vista <code>VideoView</code>. Añade el manejador:
+<div class="highlight"><pre><span></span><code><span class="n">superficie</span><span class="p">.</span><span class="na">setOnPreparedListener</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">OnPreparedListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onPrepared</span><span class="p">(</span><span class="n">MediaPlayer</span><span class="w"> </span><span class="n">mp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Tu código aquí</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Añade código en el manejador anterior para comenzar la reproducción por medio del método <code>start</code>. Obtén la duración en minutos y segundos por medio del método
+<code>getDuration</code> del <code>VideoView</code> y muéstrala en el <code>TextView</code> con el formato <em>mm:ss</em>.</p>
+<blockquote>
+<p>El método <code>getDuration</code> devuelve la duración del vídeo en milisegundos.</p>
+</blockquote>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

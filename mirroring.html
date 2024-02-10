@@ -1,0 +1,1136 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="procesamiento-android.html">
+      
+      
+        <link rel="next" href="adobe-air.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Reproducción en dispositivos externos - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reproduccion-en-dispositivos-externos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reproducción en dispositivos externos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reproducción en dispositivos externos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="mirroring.html" class="md-nav__link md-nav__link--active">
+        Reproducción en dispositivos externos
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enrutado-de-medios-en-android" class="md-nav__link">
+    Enrutado de medios en Android
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrutado de medios en Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccion-de-ruta" class="md-nav__link">
+    Selección de ruta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexion-con-la-ruta-seleccionada" class="md-nav__link">
+    Conexión con la ruta seleccionada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-remota" class="md-nav__link">
+    Reproducción remota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emision-a-un-dispositivo-secundario" class="md-nav__link">
+    Emisión a un dispositivo secundario
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airplay-en-ios" class="md-nav__link">
+    AirPlay en iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="AirPlay en iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccion-de-enrutamiento-con-airplay" class="md-nav__link">
+    Selección de enrutamiento con AirPlay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airplay-y-reproduccion-de-video" class="md-nav__link">
+    AirPlay y reproducción de vídeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pantalla-secundaria" class="md-nav__link">
+    Pantalla secundaria
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-la-pantalla-secundaria" class="md-nav__link">
+    Eventos de la pantalla secundaria
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-para-televisores" class="md-nav__link">
+    Aplicaciones para televisores
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicaciones para televisores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apple-tv-y-tvos" class="md-nav__link">
+    Apple TV y tvOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-tv" class="md-nav__link">
+    Android TV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enrutado-de-medios-en-android" class="md-nav__link">
+    Enrutado de medios en Android
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrutado de medios en Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccion-de-ruta" class="md-nav__link">
+    Selección de ruta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexion-con-la-ruta-seleccionada" class="md-nav__link">
+    Conexión con la ruta seleccionada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-remota" class="md-nav__link">
+    Reproducción remota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emision-a-un-dispositivo-secundario" class="md-nav__link">
+    Emisión a un dispositivo secundario
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airplay-en-ios" class="md-nav__link">
+    AirPlay en iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="AirPlay en iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccion-de-enrutamiento-con-airplay" class="md-nav__link">
+    Selección de enrutamiento con AirPlay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airplay-y-reproduccion-de-video" class="md-nav__link">
+    AirPlay y reproducción de vídeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pantalla-secundaria" class="md-nav__link">
+    Pantalla secundaria
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventos-de-la-pantalla-secundaria" class="md-nav__link">
+    Eventos de la pantalla secundaria
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-para-televisores" class="md-nav__link">
+    Aplicaciones para televisores
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicaciones para televisores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apple-tv-y-tvos" class="md-nav__link">
+    Apple TV y tvOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-tv" class="md-nav__link">
+    Android TV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="reproduccion-en-dispositivos-externos">Reproducción en dispositivos externos<a class="headerlink" href="#reproduccion-en-dispositivos-externos" title="Permanent link">&para;</a></h1>
+<p>Existen diferentes sistemas que nos permiten reproducir los contenidos multimedia de nuestros dispositivos en dispositivos externos, tales como pantallas de TV u ordenadores. Encontramos diferentes alternativas, como <em>Chromecast</em>, <em>Miracast</em> y <em>Airplay</em>.</p>
+<p><em>Airplay</em> es un protocolo propietario de Apple que en principio se diseñó para transmitir contenidos multimedia desde iPhone o iPad al dispositivo Apple TV, aunque actualmente puede utilizarse para enviar contenidos entre diferentes tipos de dispositivos conectados a la misma red.</p>
+<p><em>Chromecast</em> es un dispositivo fabricado por Google que se conecta al puerto HDMI del televisor y nos permite reproducir en él contenidos multimedia enviados desde distintos tipos de dispositivos móviles (Android e iOS).</p>
+<p>Encontramos también otros protocolos para esta misma funcionalidad, como por ejemplo <em>Miracast</em>, que está presente en determinados televisores. También podemos encontrar dispositivos HDMI que soportan todos los protocolos anteriores.</p>
+<p>En cualquiera de estos casos, estas tecnologías nos permitirán visualizar en otras pantallas las fotos o vídeos almacenados en el móvil, reproducir audio, o incluso mostrar lo mismo que se esté visualizando en la pantalla del móvil (<em>mirroring</em>).</p>
+<p>Existen dos formas básicas de operar:</p>
+<ul>
+<li><strong>Reproducción remota</strong>: El dispositivo externo funciona de forma independiente. Nosotros simplemente le indicamos lo que debe reproducir desde el móvil, y él se encarga de gestionar el acceso y la reproducción del medio. Así puede funcionar por ejemplo la aplicación <em>You Tube</em> con pantallas externas configuradas. Envía al dispositivo externo la indicación del vídeo que queremos reproducir, y el dispositivo se encarga de conectarse y reproducir el vídeo.</li>
+<li><strong>Retransmisión de medios</strong>: El dispositivo móvil se encarga de retransmitir vía <em>streaming</em> los contenidos al dispositivo remoto secundario. Este dispositivo simplemente reproducirá lo que esté recibiendo desde el móvil, sin autonomía propia.</li>
+</ul>
+<p>Vamos a ver a continuación cómo preparar nuestras aplicaciones para que soporten estas tecnologías. Hablaremos de <em>enrutado de medios</em> para referirnos al camino de salida que tomarán para su reproducción (altavoz o pantalla del móvil, auriculares, pantalla externa, etc).</p>
+<h2 id="enrutado-de-medios-en-android">Enrutado de medios en Android<a class="headerlink" href="#enrutado-de-medios-en-android" title="Permanent link">&para;</a></h2>
+<p>En Android podremos definir la forma en la que realizar el <em>enrutado de medios</em> mediante la clase <code>MediaRouter</code>. Las aplicaciones <em>enrutarán</em> los medios a través de un objeto <code>MediaRouter</code>, y éste se conectará con un <code>MediaRouteProvider</code> (que puede representar un dispositivos <em>Chromecast</em>, <em>Miracast</em>, etc).</p>
+<h3 id="seleccion-de-ruta">Selección de ruta<a class="headerlink" href="#seleccion-de-ruta" title="Permanent link">&para;</a></h3>
+<p>Para utilizar esta API deberemos utilizar la librería de compatibilidad v7. Las aplicaciones que utilicen <em>enrutado de medios</em> deberán incluir en el <em>Action Bar</em> un botón para seleccionar la ruta de salida. Para ello incluiremos el siguiente <em>item</em> en el menú, indicando que deberá aparecer siempre en la barra como <em>acción</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;menu</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+<span class="w">      </span><span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+<span class="w">      </span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">android:id=</span><span class="s">&quot;@+id/media_route_menu_item&quot;</span>
+<span class="w">        </span><span class="na">android:title=</span><span class="s">&quot;@string/media_route_menu_title&quot;</span>
+<span class="w">        </span><span class="na">app:actionProviderClass=</span><span class="s">&quot;android.support.v7.app.MediaRouteActionProvider&quot;</span>
+<span class="w">        </span><span class="na">app:showAsAction=</span><span class="s">&quot;always&quot;</span>
+<span class="w">    </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/menu&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Este botón puede también ser añadido de <em>forma alternativa</em> mediante un objeto <code>MediaRouteButton</code>.</p>
+</blockquote>
+<p>Una vez definido el botón, deberemos hacer que al pulsar sobre él se muestre un cuadro selector de ruta. Para ello deberemos crear un objeto <code>MediaRouteSelector</code> en el que deberemos indicar el tipo de dispositivos con los que podemos conectar:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MediaRouteSelector</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">addControlCategory</span><span class="p">(</span><span class="n">MediaControlIntent</span><span class="p">.</span><span class="na">CATEGORY_LIVE_AUDIO</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">addControlCategory</span><span class="p">(</span><span class="n">MediaControlIntent</span><span class="p">.</span><span class="na">CATEGORY_LIVE_VIDEO</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">addControlCategory</span><span class="p">(</span><span class="n">MediaControlIntent</span><span class="p">.</span><span class="na">CATEGORY_REMOTE_PLAYBACK</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</code></pre></div>
+<p>Esto podemos hacerlo por ejemplo en el método <code>onCreate</code>.</p>
+<p>Las posibles categorías de dispositivos externos son:</p>
+<ul>
+<li><code>CATEGORY_LIVE_AUDIO</code>: Sistemas de sonido que reciben el audio vía <em>streaming</em></li>
+<li><code>CATEGORY_LIVE_VIDEO</code>: Sistemas de vídeo que reciben el contenido vía <em>streaming</em></li>
+<li><code>CATEGORY_REMOTE_PLAYBACK</code>: Dispositivos que pueden realizar la reproducción de forma autónoma.</li>
+</ul>
+<p>Por último, deberemos añadir este selector al botón del menú:</p>
+<div class="highlight"><pre><span></span><code><span class="n">MediaRouteSelector</span><span class="w"> </span><span class="n">mSelector</span><span class="p">;</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onCreateOptionsMenu</span><span class="p">(</span><span class="n">Menu</span><span class="w"> </span><span class="n">menu</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreateOptionsMenu</span><span class="p">(</span><span class="n">menu</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">getMenuInflater</span><span class="p">().</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">menu</span><span class="p">.</span><span class="na">sample_media_router_menu</span><span class="p">,</span><span class="w"> </span><span class="n">menu</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">MenuItem</span><span class="w"> </span><span class="n">mediaRouteMenuItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">findItem</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">media_route_menu_item</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MediaRouteActionProvider</span><span class="w"> </span><span class="n">mediaRouteActionProvider</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="p">(</span><span class="n">MediaRouteActionProvider</span><span class="p">)</span><span class="n">MenuItemCompat</span><span class="p">.</span><span class="na">getActionProvider</span><span class="p">(</span>
+<span class="w">            </span><span class="n">mediaRouteMenuItem</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mediaRouteActionProvider</span><span class="p">.</span><span class="na">setRouteSelector</span><span class="p">(</span><span class="n">mSelector</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Para que el botón de selección de ruta se muestre deberemos tener un dispositivo compatible conectado en nuestra red.</p>
+</blockquote>
+<h3 id="conexion-con-la-ruta-seleccionada">Conexión con la ruta seleccionada<a class="headerlink" href="#conexion-con-la-ruta-seleccionada" title="Permanent link">&para;</a></h3>
+<p>Para conectar con una ruta en primer lugar debemos crear un objeto <code>MediaRouter</code> que es un objeto <em>singleton</em> que debe ser retenido por nuestra actividad:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="n">MediaRouter</span><span class="w"> </span><span class="n">mMediaRouter</span><span class="p">;</span>
+
+<span class="nd">@Override</span>
+<span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<span class="w">    </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">mMediaRouter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MediaRouter</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Necesitaremos proporcionar a este objeto un <em>callback</em> de tipo <code>MediaRouter.Callback</code> para responder ante los eventos de <em>enrutamiento</em>. Al menos deberemos definir los siguientes métodos en el <em>callback</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">MediaRouter</span><span class="p">.</span><span class="na">Callback</span><span class="w"> </span><span class="n">mMediaRouterCallback</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">MediaRouter</span><span class="p">.</span><span class="na">Callback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRouteSelected</span><span class="p">(</span><span class="n">MediaRouter</span><span class="w"> </span><span class="n">router</span><span class="p">,</span><span class="w"> </span><span class="n">RouteInfo</span><span class="w"> </span><span class="n">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Se establece la conexión a un dispositivo de salida</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRouteUnselected</span><span class="p">(</span><span class="n">MediaRouter</span><span class="w"> </span><span class="n">router</span><span class="p">,</span><span class="w"> </span><span class="n">RouteInfo</span><span class="w"> </span><span class="n">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Se ha desconectado de un dispositivo de salida</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRoutePresentationDisplayChanged</span><span class="p">(</span>
+<span class="w">            </span><span class="n">MediaRouter</span><span class="w"> </span><span class="n">router</span><span class="p">,</span><span class="w"> </span><span class="n">RouteInfo</span><span class="w"> </span><span class="n">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Hay un cambio de display en la nueva salida</span>
+<span class="w">        </span><span class="c1">// (por ejemplo distinto tamaño de pantalla)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Podemos añadir el <em>callback</em> en <code>onStart</code> y eliminarlo en <code>onStop</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onStart</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mMediaRouter</span><span class="p">.</span><span class="na">addCallback</span><span class="p">(</span><span class="n">mSelector</span><span class="p">,</span><span class="w"> </span><span class="n">mMediaRouterCallback</span><span class="p">,</span>
+<span class="w">            </span><span class="n">MediaRouter</span><span class="p">.</span><span class="na">CALLBACK_FLAG_REQUEST_DISCOVERY</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onStart</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onStop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mMediaRouter</span><span class="p">.</span><span class="na">removeCallback</span><span class="p">(</span><span class="n">mMediaRouterCallback</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onStop</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="reproduccion-remota">Reproducción remota<a class="headerlink" href="#reproduccion-remota" title="Permanent link">&para;</a></h3>
+<p>Si queremos utilizar el enfoque de reproducción remota, en primer lugar deberemos comprobar que el dispositivo externo soporta este modo de funcionamiento con:</p>
+<div class="highlight"><pre><span></span><code><span class="n">route</span><span class="p">.</span><span class="na">supportsControlCategory</span><span class="p">(</span>
+<span class="w">            </span><span class="n">MediaControlIntent</span><span class="p">.</span><span class="na">CATEGORY_REMOTE_PLAYBACK</span><span class="p">)</span>
+</code></pre></div>
+<p>Esto lo podemos hacer desde cualquiera de los métodos del <em>callback</em>. En caso de no soportarlo deberemos utilizar en modo de retransmisión desde el dispositivo.</p>
+<p>Una vez comprobado que tenemos soporte, podemos enviar comandos al dispositivo externo para controlar la reproducción (pausar, reanudar, parar, cambiar el volumen, etc).</p>
+<p>Podemos enviar el comando para que el dispositivo remoto inicie la reproducción de un vídeo en internet de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="n">RouteInfo</span><span class="w"> </span><span class="n">mRoute</span><span class="p">;</span>
+<span class="n">RemotePlaybackClient</span><span class="w"> </span><span class="n">mRemotePlaybackClient</span><span class="p">;</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">reproducirRemoto</span><span class="p">(</span><span class="n">RouteInfo</span><span class="w"> </span><span class="n">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Si había una ruta anterior, antes la liberamos</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mRoute</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">mRemotePlaybackClient</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mRemotePlaybackClient</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+<span class="w">        </span><span class="n">mRemotePlaybackClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">mRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">route</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mRemotePlaybackClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RemotePlaybackClient</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">mRoute</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Envía el comando de reproducción</span>
+<span class="w">    </span><span class="n">mRemotePlaybackClient</span><span class="p">.</span><span class="na">play</span><span class="p">(</span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;http://jtech.ua.es/dadm/video.mp4&quot;</span><span class="p">),</span>
+<span class="w">            </span><span class="s">&quot;video/mp4&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemActionCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="nd">@Override</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onResult</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">sessionId</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">MediaSessionStatus</span><span class="w"> </span><span class="n">sessionStatus</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">itemId</span><span class="p">,</span><span class="w"> </span><span class="n">MediaItemStatus</span><span class="w"> </span><span class="n">itemStatus</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="nd">@Override</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onError</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">error</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">Bundle</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Podemos utilizar el objeto <code>RemotePlaybackClient</code> para enviar diferentes comandos al dispositivo externo:</p>
+<ul>
+<li><code>play()</code></li>
+<li><code>pause()</code></li>
+<li><code>resume()</code></li>
+<li><code>seek()</code></li>
+<li><code>release()</code></li>
+</ul>
+<h3 id="emision-a-un-dispositivo-secundario">Emisión a un dispositivo secundario<a class="headerlink" href="#emision-a-un-dispositivo-secundario" title="Permanent link">&para;</a></h3>
+<p>Si el modo de reproducción remota no está disponible, podemos emitir directamente el medio desde nuestro dispositivo móvil. De esta forma el móvil se encarga de la reproducción, y envía el contenido al dispositivo externo.</p>
+<p>Para ello necesitamos un objeto de tipo <code>Presentation</code>, que define un segundo <em>display</em> donde mostraremos todo lo que queramos enviar al dispositivo remoto. Este objeto tiene su propio contexto y podemos incluir en el un <em>layout</em>, como si de una actividad se tratase. Podemos por ejemplo añadir en él un <code>SurfaceView</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PantallaSecundaria</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Presentation</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PantallaSecundaria</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">outerContext</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="n">display</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">outerContext</span><span class="p">,</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Resources</span><span class="w"> </span><span class="n">resources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getContext</span><span class="p">().</span><span class="na">getResources</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">pantalla_secundaria</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">mSurfaceView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">GLSurfaceView</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">surface_view</span><span class="p">);</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Podemos mostrar la presentación en la ruta establecida con:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">emitirContenido</span><span class="p">(</span><span class="n">RouteInfo</span><span class="w"> </span><span class="n">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Obtiene el display de la ruta seleccionada</span>
+<span class="w">    </span><span class="n">Display</span><span class="w"> </span><span class="n">selectedDisplay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">route</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">selectedDisplay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">route</span><span class="p">.</span><span class="na">getPresentationDisplay</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Cierra la presentacion actual si existe y tiene un display distinto al seleccionado</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mPresentation</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">mPresentation</span><span class="p">.</span><span class="na">getDisplay</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">selectedDisplay</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mPresentation</span><span class="p">.</span><span class="na">dismiss</span><span class="p">();</span>
+<span class="w">        </span><span class="n">mPresentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Muestra la presentación en el display seleccionado, si no lo estabamos haciendo ya</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mPresentation</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">selectedDisplay</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mPresentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PantallaSecundaria</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">selectedDisplay</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mPresentation</span><span class="p">.</span><span class="na">setOnDismissListener</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">DialogInterface</span><span class="p">.</span><span class="na">OnDismissListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nd">@Override</span>
+<span class="w">                    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDismiss</span><span class="p">(</span><span class="n">DialogInterface</span><span class="w"> </span><span class="n">dialog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dialog</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">mPresentation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">mPresentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">});</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mPresentation</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">WindowManager</span><span class="p">.</span><span class="na">InvalidDisplayException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mPresentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Podemos utilizar el <em>callback</em> del <code>MediaRouter</code> para comprobar el modo de emisión soportado e iniciar la reproducción por el método adecuado:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">MediaRouter</span><span class="p">.</span><span class="na">Callback</span><span class="w"> </span><span class="n">mMediaRouterCallback</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">MediaRouter</span><span class="p">.</span><span class="na">Callback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRouteSelected</span><span class="p">(</span><span class="n">MediaRouter</span><span class="w"> </span><span class="n">router</span><span class="p">,</span><span class="w"> </span><span class="n">RouteInfo</span><span class="w"> </span><span class="n">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">route</span><span class="p">.</span><span class="na">supportsControlCategory</span><span class="p">(</span>
+<span class="w">            </span><span class="n">MediaControlIntent</span><span class="p">.</span><span class="na">CATEGORY_REMOTE_PLAYBACK</span><span class="p">)){</span>
+<span class="w">            </span><span class="n">reproducirRemoto</span><span class="p">(</span><span class="n">route</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">emitirContenido</span><span class="p">(</span><span class="n">route</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRouteUnselected</span><span class="p">(</span><span class="n">MediaRouter</span><span class="w"> </span><span class="n">router</span><span class="p">,</span><span class="w"> </span><span class="n">RouteInfo</span><span class="w"> </span><span class="n">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRoutePresentationDisplayChanged</span><span class="p">(</span>
+<span class="w">            </span><span class="n">MediaRouter</span><span class="w"> </span><span class="n">router</span><span class="p">,</span><span class="w"> </span><span class="n">RouteInfo</span><span class="w"> </span><span class="n">route</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="airplay-en-ios"><em>AirPlay</em> en iOS<a class="headerlink" href="#airplay-en-ios" title="Permanent link">&para;</a></h2>
+<p>En iOS el contenido reproducido por <em>AVFoundation</em> tiene por defecto soporte para <em>AirPlay</em>, y se enruta automáticamente al dispositivo externo seleccionado actualmente.</p>
+<p>Para hacer posible la reproducción por AirPlay deberemos tener activado el modo <em>Audio, AirPlay and Picture in Picture</em> en <em>Background Modes</em>, desde la pestaña Capabilities de nuestro <em>target</em>, como vimos anteriormente. </p>
+<p>Esto será suficiente cuando lo que necesitemos sea emitir vídeo o audio al dispositivo externo, pero también podremos utilizar AirPlay para mostrar contenido propio en una segunda pantalla. Veremos a continuación con más detalle estas dos formas de trabajar con AirPlay.</p>
+<h3 id="seleccion-de-enrutamiento-con-airplay">Selección de enrutamiento con AirPlay<a class="headerlink" href="#seleccion-de-enrutamiento-con-airplay" title="Permanent link">&para;</a></h3>
+<p>Podemos enviar mediante AirPlay audio o vídeo almacenado localmente en el dispositivo, o al que accedemos de forma remota mediante <em>HTTP Live Streaming</em> o descarga progresiva, siendo <em>HTTP Live Streaming</em> el sistema preferido. En cualquier caso, siempre se debe acceder al contenido mediante HTTP. El audio y vídeo debe estar codificado en formatos compatibles con AirPlay: vídeo H.264 y audio AAC o MP3.</p>
+<p>AirPlay está por defecto activado cuando reproducimos medios con MoviePlayer o con AVFoundation. Para poder seleccionar el dispositivo de salida del audio o el vídeo podemos introducir un botón predefinido que nos mostrará la lista de posibles dispositivos. Esto lo haremos creando un objeto de tipo <code>MPVolumeView</code> y añadiéndolo a la vista donde queremos mostrarlo:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">MPVolumeView</span><span class="w"> </span><span class="o">*</span><span class="n">volumeView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="bp">MPVolumeView</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+<span class="p">[</span><span class="n">view</span><span class="w"> </span><span class="n">addSubview</span><span class="o">:</span><span class="w"> </span><span class="n">volumeView</span><span class="p">];</span>
+</code></pre></div>
+<p>Este componente mostrará un control de volumen y además el botón para seleccionar la salida. Si sólo queremos mostrar el botón podemos ocultar la barra de volumen de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">MPVolumeView</span><span class="w"> </span><span class="o">*</span><span class="n">volumeView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="bp">MPVolumeView</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+<span class="p">[</span><span class="n">volumeView</span><span class="w"> </span><span class="n">setShowsVolumeSlider</span><span class="o">:</span><span class="nb">NO</span><span class="p">];</span>
+<span class="p">[</span><span class="n">volumeView</span><span class="w"> </span><span class="n">sizeToFit</span><span class="p">];</span>
+<span class="p">[</span><span class="n">view</span><span class="w"> </span><span class="n">addSubview</span><span class="o">:</span><span class="w"> </span><span class="n">volumeView</span><span class="p">];</span>
+</code></pre></div>
+<p>También es posible añadir el botón anterior como botón de la barra de navegación o de herramientas, de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">MPVolumeView</span><span class="w"> </span><span class="o">*</span><span class="n">volumeView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="bp">MPVolumeView</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+<span class="p">[</span><span class="n">volumeView</span><span class="w"> </span><span class="n">setShowsVolumeSlider</span><span class="o">:</span><span class="nb">NO</span><span class="p">];</span>
+<span class="p">[</span><span class="n">volumeView</span><span class="w"> </span><span class="n">sizeToFit</span><span class="p">];</span>
+
+<span class="bp">UIBarButtonItem</span><span class="w"> </span><span class="o">*</span><span class="n">barButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">UIBarButtonItem</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">initWithCustomView</span><span class="o">:</span><span class="n">volumeView</span><span class="p">];</span>
+<span class="nb">self</span><span class="p">.</span><span class="n">navigationItem</span><span class="p">.</span><span class="n">rightBarButtonItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">barButton</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="airplay-y-reproduccion-de-video">AirPlay y reproducción de vídeo<a class="headerlink" href="#airplay-y-reproduccion-de-video" title="Permanent link">&para;</a></h3>
+<p>La emisión de vídeo por AirPlay estará activa por defecto tanto cuando utilicemos <code>AVPlayer</code> como <code>MPMoviePlayerController</code>. Podemos desactivarlo o volverlo a activar con las siguientes propiedades:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">AVPlayer</span><span class="w"> </span><span class="o">*</span><span class="n">player</span><span class="p">;</span>
+<span class="bp">MPMoviePlayerController</span><span class="w"> </span><span class="n">moviePlayerController</span><span class="p">;</span>
+
+<span class="p">...</span>
+
+<span class="n">moviePlayerController</span><span class="p">.</span><span class="n">allowsAirPlay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NO</span><span class="p">;</span>
+<span class="n">player</span><span class="p">.</span><span class="n">allowsAirPlayVideo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NO</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="pantalla-secundaria">Pantalla secundaria<a class="headerlink" href="#pantalla-secundaria" title="Permanent link">&para;</a></h3>
+<p>Vamos a ver ahora cómo manejar pantallas secundarias. Cuando tengamos nuestro dispositivo conectado a una pantalla secundaria por <em>AirPlay</em>, podremos o bien mostrar lo mismo que estamos mostrando en el dispositivo (<em>mirroring</em>), o contenido distinto. Por defecto tendremos el <em>mirroring</em> activado cuando nos conectemos por <em>AirPlay</em> a una pantalla secundaria. Vamos a estudiar cómo enviar un contenido diferente.</p>
+<p>Para que el contenido en la pantalla secundaria sea distinto al de la pantalla del móvil deberemos crearnos un objeto de tipo <code>UIWindow</code> para ella:</p>
+<div class="highlight"><pre><span></span><code><span class="k">@property</span><span class="w"> </span><span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span><span class="w"> </span><span class="k">strong</span><span class="p">)</span><span class="w"> </span><span class="bp">UIWindow</span><span class="w"> </span><span class="o">*</span><span class="n">ventanaSecundaria</span><span class="p">;</span>
+</code></pre></div>
+<p>Comprobaremos si hay más de una pantalla, y en tal caso crearemos nuestra nueva ventana (<code>UIWindow</code>) a partir de ella:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">([[</span><span class="bp">UIScreen</span><span class="w"> </span><span class="n">screens</span><span class="p">]</span><span class="w"> </span><span class="n">count</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="bp">UIScreen</span><span class="w"> </span><span class="o">*</span><span class="n">pantallaSecundaria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">UIScreen</span><span class="w"> </span><span class="n">screens</span><span class="p">]</span><span class="w"> </span><span class="n">objectAtIndex</span><span class="o">:</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="w">    </span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">UIWindow</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">initWithFrame</span><span class="o">:</span><span class="n">pantallaSecundaria</span><span class="p">.</span><span class="n">bounds</span><span class="p">];</span>
+<span class="w">    </span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="p">.</span><span class="n">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pantallaSecundaria</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="p">.</span><span class="n">hidden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NO</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Es importante asociar la nueva ventana a la pantalla secundaria antes de mostrarla</p>
+</blockquote>
+<p>Con esto ya se mostrará el contenido que añadamos a dicha ventana en nuestro dispositivo externo. Podremos volver a activar el <em>mirroring</em> simplemente eliminando la ventana secundaria de la pantalla secundaria.</p>
+<h3 id="eventos-de-la-pantalla-secundaria">Eventos de la pantalla secundaria<a class="headerlink" href="#eventos-de-la-pantalla-secundaria" title="Permanent link">&para;</a></h3>
+<p>Es importante estar al tanto de los eventos de conexión y desconexión de pantallas secundarias. Esto podemos hacerlo escuchando las siguientes notificaciones:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">NSNotificationCenter</span><span class="w"> </span><span class="o">*</span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">NSNotificationCenter</span><span class="w"> </span><span class="n">defaultCenter</span><span class="p">];</span>
+<span class="p">[</span><span class="n">center</span><span class="w"> </span><span class="n">addObserver</span><span class="o">:</span><span class="nb">self</span><span class="w"> </span><span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">pantallaConectada</span><span class="o">:</span><span class="p">)</span>
+<span class="w">            </span><span class="nl">name</span><span class="p">:</span><span class="n">UIScreenDidConnectNotification</span><span class="w"> </span><span class="n">object</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+<span class="p">[</span><span class="n">center</span><span class="w"> </span><span class="n">addObserver</span><span class="o">:</span><span class="nb">self</span><span class="w"> </span><span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">pantallaDesconectada</span><span class="o">:</span><span class="p">)</span>
+<span class="w">            </span><span class="nl">name</span><span class="p">:</span><span class="n">UIScreenDidDisconnectNotification</span><span class="w"> </span><span class="n">object</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Podemos crear la ventana secundaria cuando se conecte una segunda pantalla, y eliminarla cuando se desconecte:</p>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">pantallaConectada:</span><span class="p">(</span><span class="bp">NSNotification</span><span class="o">*</span><span class="p">)</span><span class="nv">aNotification</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="bp">UIScreen</span><span class="w"> </span><span class="o">*</span><span class="n">pantallaSecundaria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">aNotification</span><span class="w"> </span><span class="n">object</span><span class="p">];</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">UIWindow</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">initWithFrame</span><span class="o">:</span><span class="n">pantallaSecundaria</span><span class="p">.</span><span class="n">bounds</span><span class="p">];</span>
+<span class="w">        </span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="p">.</span><span class="n">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pantallaSecundaria</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">pantallaDesconectada:</span><span class="p">(</span><span class="bp">NSNotification</span><span class="o">*</span><span class="p">)</span><span class="nv">aNotification</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="p">.</span><span class="n">hidden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">YES</span><span class="p">;</span>
+<span class="w">        </span><span class="nb">self</span><span class="p">.</span><span class="n">ventanaSecundaria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nil</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="aplicaciones-para-televisores">Aplicaciones para televisores<a class="headerlink" href="#aplicaciones-para-televisores" title="Permanent link">&para;</a></h2>
+<p>Además de poder emitir medios desde los dispositivos móviles a dispositivos externos, también podemos crear aplicaciones que se ejecuten de forma directa en la TV. Para ello contamos con dispositivos como Apple TV, con el sistema operativo tvOS, o los diferentes dispositivos que implementan Android TV. Estos sistemas añaden a las API que ya conocemos de iOS y Android respectivamente funcionalidades adicionales diseñadas de forma específica para pantallas de televisor. </p>
+<p>Vamos a ver a continuación una introducción a estos sistemas tvOS y Android TV.</p>
+<h3 id="apple-tv-y-tvos">Apple TV y tvOS<a class="headerlink" href="#apple-tv-y-tvos" title="Permanent link">&para;</a></h3>
+<p>El sistema operativo tvOS deriva de iOS, pero se trata de un operativo diferente. Veremos que el desarrollo será muy similar al que ya conocemos de iOS, podemos desarrollar una aplicación tvOS con Xcode, e incluso una misma aplicación puede destinarse a iOS y tvOS creando dos <em>targets</em> distintos, y así reutilizar todas las clases que sean comunes. Una aplicación iOS se podrá normalmente ofrecer en tvOS sin tener que hacer cambios, simplemente añadiendo el <em>target</em> correspondiente. La principal diferencia entre estos dos sistemas es que tvOS añade algunos nuevos <em>frameworks</em> destinados a crear aplicaciones para TV.</p>
+<p>Los principales <em>frameworks</em> adicionales que encontramos en tvOS son:</p>
+<ul>
+<li><strong>TVMLKit</strong>: Permite utilizar un lenguaje de marcado propio (TVML) y Javascript para crear la interfaz de las aplicaciones para TV. Este <em>framework</em> nos proporciona el puente entre el código nativo de la aplicación y el código Javascript de la interfaz.</li>
+<li><strong>TVMLJS</strong>: Describe las APIs Javascript utilizadas en la interfaz TVML.</li>
+<li><strong>TVServices</strong>: Permite añadir una extensión a la <em>app</em> para que cuando la seleccionemos en el menú de aplicaciones, nos aparezca en pantalla una previsualización de información destacada de la aplicación (por ejemplo contenidos recomendados). </li>
+</ul>
+<p>Algunas de las principales cuestiones a tener en cuenta cuando diseñemos una aplicación tvOS son:</p>
+<ul>
+<li>La interfaz ya no es táctil. Normalmente manejaremos el dispositivo con el mando a distancia (<em>Siri Remote</em>) o con un mando de videojuegos. </li>
+<li>No es un dispositivo de uso personal. Los dispositivos móviles normalmente son personales, pero la TV es familiar. Deberemos tener esto en cuenta, por ejemplo creando diferentes perfiles como hacen por ejemplo aplicaciones como Netflix.</li>
+<li>El almacenamiento es limitado. Las aplicaciones pueden ocupar un máximo de 200Mb, y pueden almacenar un máximo de 500Kb de datos persistentes. Para poder tener aplicaciones más grandes, podemos utilizar <em>recursos bajo demanda</em> en la <em>App Store</em>, es decir, paquetes de la aplicación que se descargarán cuando se necesiten (por ejemplo, niveles adicionales de un juego). Para el almacenamiento de información, se puede almacenar en el directorio de caché (se puede borrar de una ejecución a la siguiente), o en iCloud.</li>
+</ul>
+<h3 id="android-tv">Android TV<a class="headerlink" href="#android-tv" title="Permanent link">&para;</a></h3>
+<p>Además de aplicaciones para dispositivos vestibles, Android también nos permite crear aplicaciones para dispositivos de TV.</p>
+<p>Las aplicaciones Android para televisores se crean utilizando la API 21 (Android 5.0). Se pueden utilizar además de forma opcional librerías de soporte para TV, como la librería <em>v17</em> (<em>leanback</em>), que depende de las librerías <em>v4</em> y <em>v7</em>, y nos proporciona elementos y estilos orientados a este tipo de pantallas.</p>
+<p>Una actividad se marca como destinada a televisores mediante la categoría <code>LEANBACK_LAUNCHER</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;activity</span>
+<span class="na">android:name=</span><span class="s">&quot;es.ua.eps.MainActivity&quot;</span>
+<span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;intent-filter&gt;</span>
+<span class="w">  </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.action.MAIN&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.LEANBACK_LAUNCHER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</code></pre></div>
+<p>Los televisores carecen de gran parte del <em>hardware</em> con el que contamos en dispositivos móviles. Si queremos hacer una aplicación que sirva tanto para teléfonos móviles como para televisores, deberemos declarar que dichas características no son requeridas (pantalla táctil, cámara, teléfono, etc) para que de esta manera pueda instalarse en ambos tipos de dispositivos:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.touchscreen&quot;</span>
+<span class="w">          </span><span class="na">android:required=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.telephony&quot;</span>
+<span class="w">        </span><span class="na">android:required=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.camera&quot;</span>
+<span class="w">        </span><span class="na">android:required=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.nfc&quot;</span>
+<span class="w">        </span><span class="na">android:required=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.gps&quot;</span>
+<span class="w">        </span><span class="na">android:required=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-feature</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.hardware.microphone&quot;</span>
+<span class="w">        </span><span class="na">android:required=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Deberemos comprobar en código si dichas características están disponibles antes de intentar utilizarlas, para así conseguir aplicaciones compatibles con distintos tipos de dispositivos.</p>
+<h4 id="navegacion">Navegación<a class="headerlink" href="#navegacion" title="Permanent link">&para;</a></h4>
+<p>La aplicación para TV deberá manejarse mediante un <em>pad</em> direccional (un mando de videojuegos o un mando a distancia). Para ello es importante que en los botones proporcionemos diferentes aspectos según si está seleccionado, pulsado, o no pulsado, y que en el <em>layout</em> especifiquemos de forma correcta el orden en el que recibirán el foco los distintos elementos de la interfaz..</p>
+<h4 id="estilo">Estilo<a class="headerlink" href="#estilo" title="Permanent link">&para;</a></h4>
+<p>El aspecto estándar recomendado para las aplicaciones de TV es <em>leanback</em>, perteneciente a la librería v17:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;activity</span>
+<span class="w">  </span><span class="na">android:name=</span><span class="s">&quot;es.ua.eps.MiTVActividad&quot;</span>
+<span class="w">  </span><span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
+<span class="w">  </span><span class="na">android:theme=</span><span class="s">&quot;@style/Theme.Leanback&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p>En cualquier caso, será importante que el tema que utilicemos no tenga barra de título. Si queremos utilizar otro estilo como tema, deberemos siempre utilizar uno que no tenga barra de título ni <em>action bar</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;activity</span>
+<span class="w">  </span><span class="na">android:name=</span><span class="s">&quot;es.ua.eps.MiTVActividad&quot;</span>
+<span class="w">  </span><span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
+<span class="w">  </span><span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.NoTitleBar&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<h4 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h4>
+<p>Los principales usos de las aplicaciones de TV son los videojuegos y la reproducción de medios. Dentro de la librería <em>v17</em> encontramos diferentes componentes orientados a las aplicaciones de TV, como por ejemplo <em>browsers</em> para el catálogo de medios y fichas para mostrar los metadatos de los medios en reproducción.</p>
+<p>Para el <em>browser</em> de medios se puede utilizar el tipo de fragmento <code>BrowseFragment</code>, que nos mostrará la lista de contenidos, y para ver los detalles de cada contenido tenemos <code>DetailsFragment</code>.</p>
+<p>Podemos también mostrar una ficha con los datos de la reproducción actual mediente el objeto <code>MediaSession</code>. Con su método <code>setMetadata()</code> podremos introducir los metadatos del medio en reproducción y así aparecerán en la ficha de <em>reproducción actual</em>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

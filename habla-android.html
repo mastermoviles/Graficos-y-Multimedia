@@ -1,0 +1,867 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="adobe-air.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Síntesis y reconocimiento del habla - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sintesis-y-reconocimiento-del-habla" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Síntesis y reconocimiento del habla
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Síntesis y reconocimiento del habla
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="habla-android.html" class="md-nav__link md-nav__link--active">
+        Síntesis y reconocimiento del habla
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintetizador-de-voz-de-android" class="md-nav__link">
+    Sintetizador de voz de Android
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconocimiento-del-habla-en-android" class="md-nav__link">
+    Reconocimiento del habla en Android
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintesis-de-voz-en-ios" class="md-nav__link">
+    Síntesis de voz en iOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconocimiento-del-habla-en-ios" class="md-nav__link">
+    Reconocimiento del habla en iOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintesis-de-voz-con-text-to-speech" class="md-nav__link">
+    Síntesis de voz con Text to Speech
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintetizador-de-voz-de-android" class="md-nav__link">
+    Sintetizador de voz de Android
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconocimiento-del-habla-en-android" class="md-nav__link">
+    Reconocimiento del habla en Android
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintesis-de-voz-en-ios" class="md-nav__link">
+    Síntesis de voz en iOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconocimiento-del-habla-en-ios" class="md-nav__link">
+    Reconocimiento del habla en iOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintesis-de-voz-con-text-to-speech" class="md-nav__link">
+    Síntesis de voz con Text to Speech
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sintesis-y-reconocimiento-del-habla">Síntesis y reconocimiento del habla<a class="headerlink" href="#sintesis-y-reconocimiento-del-habla" title="Permanent link">&para;</a></h1>
+<p>En esta sesión continuamos examinando las capacidades multimedia de Android presentando el sintetizador de voz <em>Text to Speech</em>, el cual permitirá que una actividad reproduzca por los altavoces la lectura de un determinado texto. Se trata de un componente relativamente sencillo de utilizar que puede mejorar la accesibilidad de nuestras aplicaciones en gran medida.</p>
+<h2 id="sintetizador-de-voz-de-android">Sintetizador de voz de Android<a class="headerlink" href="#sintetizador-de-voz-de-android" title="Permanent link">&para;</a></h2>
+<p>Android incorpora desde la versión 1.6 un motor de síntesis de voz conocido como <em>Text to Speech</em>. Mediante su API podremos hacer que nuestros programas "lean" un texto al usuario. Es necesario tener en cuenta que por motivos de espacio en disco los paquetes de lenguaje pueden no estar instalados en el dispositivo. Por lo tanto, antes de que nuestra aplicación utilice <em>Text to Speech</em> se podría considerar una buena práctica de programación el comprobar si dichos paquetes están instalados. Para ello podemos hacer uso de un <code>Intent</code> como el que se muestra a continuación:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">TextToSpeech</span><span class="p">.</span><span class="na">Engine</span><span class="p">.</span><span class="na">ACTION_CHECK_TTS_DATA</span><span class="p">);</span>
+<span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">TTS_DATA_CHECK</span><span class="p">);</span>
+</code></pre></div>
+<p>El método <code>onActivityResult()</code> recibirá un <code>CHECK_VOICE_DATA_PASS</code> si todo está correctamente instalado. En caso contrario deberemos iniciar una nueva actividad por medio de un nuevo <code>Intent</code> implícito que haga uso de la acción <code>ACTION_INSTALL_TTS_DATA</code> del motor <em>Text to Speech</em>.</p>
+<p>Una vez comprobemos que todo está instalado deberemos crear e inicializar una instancia de la clase <code>TextToSpeech</code>. Como no podemos utilizar dicha instancia hasta que esté inicializada (la inicialización se hace de forma asíncrona), la mejor opción es pasar como parámetro al constructor un manejador <code>onInitListener</code> de tal forma que en dicho  método se especifiquen las tareas a llevar a cabo por el sintetizador de voz una vez esté inicializado.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span><span class="w"> </span><span class="n">ttsIsInit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="n">TextToSpeech</span><span class="w"> </span><span class="n">tts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="n">tts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OnInitListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onInit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">.</span><span class="na">SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ttsIsInit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// Hablar</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Una vez que la instancia esté inicializada se puede utilizar el método <code>speak</code> para sintetizar voz por medio del dispositivo de salida por defecto. El primer parámetro será el texto a sintetizar y el segundo podrá ser o bien <code>QUEUE_ADD</code>, que añade una nueva salida de voz a la cola, o bien <code>QUEUE_FLUSH</code>, que elimina todo lo que hubiera en la cola y lo sustituye por el nuevo texto.</p>
+<div class="highlight"><pre><span></span><code><span class="n">tts</span><span class="p">.</span><span class="na">speak</span><span class="p">(</span><span class="s">&quot;Hello, Android&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">.</span><span class="na">QUEUE_ADD</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+</code></pre></div>
+<p>Otros métodos de interés de la clase <code>TextToSpeech</code> son:</p>
+<ul>
+<li><code>setPitch</code> y <code>setSpeechRate</code> permiten modificar el tono de voz y la velocidad. Ambos métodos aceptan un parámetro real.</li>
+<li><code>setLanguage</code> permite modificar la pronunciación. Se le debe pasar como parámetro una instancia de la clase <code>Locale</code> para indicar el país y la lengua a
+utilizar.</li>
+<li>El método <code>stop</code> se debe utilizar al terminar de hablar; este método detiene la síntesis de voz.</li>
+<li>El método <code>shutdown</code> permite liberar los recursos reservados por el motor de <em>Text to Speech</em>.</li>
+</ul>
+<p>El siguiente código muestra un ejemplo en el que se comprueba si todo está correctamente instalado, se inicializa una nueva instancia de la clase <code>TextToSpeech</code>, y se utiliza dicha clase para decir una frase en español. Al llamar al método <code>initTextToSpeech</code> se desencadenará todo el proceso.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TTS_DATA_CHECK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="w"> </span><span class="n">tts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">ttsIsInit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initTextToSpeech</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Engine</span><span class="p">.</span><span class="na">ACTION_CHECK_TTS_DATA</span><span class="p">);</span>
+<span class="w">    </span><span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">TTS_DATA_CHECK</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onActivityResult</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">requestCode</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resultCode</span><span class="p">,</span>
+<span class="w">                                </span><span class="n">Intent</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">requestCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TTS_DATA_CHECK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resultCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Engine</span><span class="p">.</span><span class="na">CHECK_VOICE_DATA_PASS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">tts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OnInitListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onInit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">.</span><span class="na">SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">ttsIsInit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">Locale</span><span class="w"> </span><span class="n">loc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Locale</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tts</span><span class="p">.</span><span class="na">isLanguageAvailable</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span>
+<span class="w">                            </span><span class="n">TextToSpeech</span><span class="p">.</span><span class="na">LANG_AVAILABLE</span><span class="p">)</span>
+<span class="w">                                </span><span class="n">tts</span><span class="p">.</span><span class="na">setLanguage</span><span class="p">(</span><span class="n">loc</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">tts</span><span class="p">.</span><span class="na">setPitch</span><span class="p">(</span><span class="mf">0.8f</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">tts</span><span class="p">.</span><span class="na">setSpeechRate</span><span class="p">(</span><span class="mf">1.1f</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">speak</span><span class="p">();</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Intent</span><span class="w"> </span><span class="n">installVoice</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Engine</span><span class="p">.</span><span class="na">ACTION_INSTALL_TTS_DATA</span><span class="p">);</span>
+<span class="w">            </span><span class="n">startActivity</span><span class="p">(</span><span class="n">installIntent</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">speak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tts</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ttsIsInit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">tts</span><span class="p">.</span><span class="na">speak</span><span class="p">(</span><span class="s">&quot;Hola Android&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">.</span><span class="na">QUEUE_ADD</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDestroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tts</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">tts</span><span class="p">.</span><span class="na">stop</span><span class="p">();</span>
+<span class="w">        </span><span class="n">tts</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="reconocimiento-del-habla-en-android">Reconocimiento del habla en Android<a class="headerlink" href="#reconocimiento-del-habla-en-android" title="Permanent link">&para;</a></h2>
+<p>Otro sensor que podemos utilizar para introducir información en
+nuestras aplicaciones es el micrófono que incorpora el dispositivo.
+Tanto el micrófono como la cámara se pueden utilizar para capturar
+audio y video. Una característica altamente interesante
+de los dispositivos Android es que nos permiten realizar reconocimiento
+del habla de forma sencilla para introducir texto en nuestras
+aplicaciones.</p>
+<p>Para realizar este reconocimiento deberemos utilizar <em>intents</em>.
+Concretamente, crearemos un <code>Intent</code> mediante las
+constantes definidas en la clase <code>RecognizerIntent</code>,
+que es la clase principal que deberemos utilizar para utilizar
+esta característica.</p>
+<p>Lo primer que deberemos hacer es crear un <code>Intent</code>
+para inicial el reconocimiento:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span>
+<span class="w">    </span><span class="n">RecognizerIntent</span><span class="p">.</span><span class="na">ACTION_RECOGNIZE_SPEECH</span><span class="p">);</span>
+</code></pre></div>
+<p>Una vez creado, podemos añadir una serie de parámetros para
+especificar la forma en la que se realizará el reconocimiento. Estos
+parámetros se introducen llamando a:</p>
+<div class="highlight"><pre><span></span><code><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">parametro</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span>
+</code></pre></div>
+<p>Los parámetros se definen como constantes de la clase
+<code>RecognizerIntent</code>, todas ellas tienen el prefijo
+<code>EXTRA_</code>. Algunos de estos parámetros son:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parámetro</th>
+<th align="left">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>EXTRA_LANGUAGE_MODEL</code></td>
+<td align="left"><strong>Obligatorio</strong>. Debemos especificar el tipo de lenguaje utilizado. Puede ser lenguaje orientado a realizar una búsqueda web (<code>LANGUAGE_MODEL_WEB_SEARCH</code>), o lenguaje de tipo general (<code>LANGUAGE_MODEL_FREE_FORM</code>).</td>
+</tr>
+<tr>
+<td align="left"><code>EXTRA_LANGUAGE</code></td>
+<td align="left"><strong>Opcional</strong>. Se especifica para hacer el reconocimiento en un idioma diferente al idioma por defecto del dispositivo. Indicaremos el idioma mediante la etiqueta IETF correspondiente, como por ejemplo <code>"es-ES"</code> o <code>"en-US"</code></td>
+</tr>
+<tr>
+<td align="left"><code>EXTRA_PROMPT</code></td>
+<td align="left"><strong>Opcional</strong>. Nos permite indicar el texto a mostrar en la pantalla mientras se realiza el reconocimiento. Se especifica mediante una cadena de texto.</td>
+</tr>
+<tr>
+<td align="left"><code>EXTRA_MAX_RESULTS</code></td>
+<td align="left"><strong>Opcional</strong>. Nos permite especificar el número máximo de posibles resultados que queremos que nos devuelva. Se especifica mediante un número entero.</td>
+</tr>
+</tbody>
+</table>
+<p>Una vez creado el <em>intent</em> y especificados los parámetros,
+podemos lanzar el reconocimiento llamando, desde nuestra actividad, a:</p>
+<div class="highlight"><pre><span></span><code><span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">codigo</span><span class="p">);</span>
+</code></pre></div>
+<p>Como código deberemos especifica un entero que nos permita identificar
+la petición que estamos realizado. En la actividad deberemos definir el <em>callback</em> <code>onActivityResult</code>,
+que será llamado cuando el reconocimiento haya finalizado. Aquí deberemos
+comprobar en primer lugar que el código de petición al que corresponde
+el <em>callback</em> es el que pusimos al lanzar la actividad. Una
+vez comprobado esto, obtendremos una lista con los resultados obtenidos
+de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onActivityResult</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">requestCode</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">resultCode</span><span class="p">,</span><span class="w"> </span><span class="n">Intent</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">requestCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">codigo</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">resultCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">RESULT_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resultados</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="n">data</span><span class="p">.</span><span class="na">getStringArrayListExtra</span><span class="p">(</span>
+<span class="w">                </span><span class="n">RecognizerIntent</span><span class="p">.</span><span class="na">EXTRA_RESULTS</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Utilizar los resultados obtenidos</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">onActivityResult</span><span class="p">(</span><span class="n">requestCode</span><span class="p">,</span><span class="w"> </span><span class="n">resultCode</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="sintesis-de-voz-en-ios">Síntesis de voz en iOS<a class="headerlink" href="#sintesis-de-voz-en-ios" title="Permanent link">&para;</a></h2>
+<p>La síntesis de voz aparece a partir de iOS 7. Hasta entonces la única forma de implementar síntesis de voz era utilizar la característica de accesibilidad <em>Voice Over</em>, lo cual forzaba a tener que tener activada esta característica.</p>
+<p>A partir e iOS 7 aparece la clase <code>AVSpeechSynthesizer</code> que nos permite sintetizar voz en cualquier aplicación.</p>
+<p>En primer lugar deberemos establecer el texto a vocalizar mediante un objeto de tipo <code>AVSpeechUtterance</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AVSpeechUtterance</span><span class="w"> </span><span class="o">*</span><span class="n">utterance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">AVSpeechUtterance</span><span class="w"> </span><span class="n">speechUtteranceWithString</span><span class="o">:</span><span class="w"> </span><span class="s">@&quot;Hola mundo&quot;</span><span class="p">];</span>
+</code></pre></div>
+<p>Este objeto nos permite también especificar otras propiedades de la locución, como el <em>pitch</em> o la voz a utilizar.</p>
+<p>Una vez definido y configurado el <em>utterance</em>, podremos reproducirlo con:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AVSpeechSynthesizer</span><span class="w"> </span><span class="o">*</span><span class="n">synthesizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="n">AVSpeechSynthesizer</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">synthesizer</span><span class="w"> </span><span class="n">speakUtterance</span><span class="o">:</span><span class="w"> </span><span class="n">utterance</span><span class="p">];</span>
+</code></pre></div>
+<p>A través de este objeto podremos pausar o reanudar la locución, o conocer si actualmente está reproduciéndose.</p>
+<h2 id="reconocimiento-del-habla-en-ios">Reconocimiento del habla en iOS<a class="headerlink" href="#reconocimiento-del-habla-en-ios" title="Permanent link">&para;</a></h2>
+<p>Los dispositivos iOS cuentan con el asistente Siri que utiliza reconocimiento de voz para realizar diferentes operaciones. Estas operaciones se realizan a nivel del Sistema Operativo, y nos permiten utilizar diferentes servicios que proporciona la plataforma, como por ejemplo hacer una llamada, leer los mensajes, o consultar el tiempo que hace.</p>
+<p>A partir de iOS 10 aparece SiriKit, que nos permite integrar las funcionalidades que ofrecen nuestras aplicaciones en este entorno. De esta forma, través del asistente Siri podremos utilizar comandos que lanzarán determinadas funcionalidades de nuestra aplicación.</p>
+<p>Si queremos tener un mayor control sobre el reconocimiento de voz dentro de nuestra aplicación, podemos encontrar APIs de terceros que nos proporcionan dicha funcionalidad, como por ejemplo las siguientes:</p>
+<ul>
+<li><em>SpeechKit</em></li>
+</ul>
+<p>http://developer.nuance.com/</p>
+<ul>
+<li><em>MindMeld</em></li>
+</ul>
+<p>https://expectlabs.com/docs/sdks/ios/gettingStarted</p>
+<ul>
+<li><em>OpenEars</em></li>
+</ul>
+<p>http://www.politepix.com/openears/</p>
+<h2 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h2>
+<h3 id="sintesis-de-voz-con-text-to-speech">Síntesis de voz con Text to Speech<a class="headerlink" href="#sintesis-de-voz-con-text-to-speech" title="Permanent link">&para;</a></h3>
+<p>En este primer ejercicio vamos a utilizar el motor <em>Text to Speech</em> para crear una aplicación que lea el texto contenido en un <code>EditText</code> de la actividad principal. Para ello el primer paso será descargar de las plantillas la aplicación <em>SintesisVoz</em>. La aplicación contiene una única actividad. La idea es que al pulsar el botón <em>Leer</em> se lea el texto en el cuadro de edición. Existen dos botones de radio para escoger la pronunciación (inglés o español).</p>
+<p>Deberemos seguir los siguientes pasos:</p>
+<ul>
+<li>Inserta el código necesario en el método <code>initTextToSpeech</code> para que se lance un <code>Intent</code> implícito para comprobar si el motor <em>Text to Speech</em> está instalado en el sistema:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Engine</span><span class="p">.</span><span class="na">ACTION_CHECK_TTS_DATA</span><span class="p">);</span>
+<span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">TTS_DATA_CHECK</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>En el manejador <code>onActivityResult</code> incorporamos el código necesario para inicializar el motor <em>Text to Speech</em> en el caso en el que esté instalado, o para
+instalarlo en el caso en el que no lo estuviera.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">requestCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TTS_DATA_CHECK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resultCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Engine</span><span class="p">.</span><span class="na">CHECK_VOICE_DATA_PASS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">tts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OnInitListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onInit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">.</span><span class="na">SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">ttsIsInit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">Locale</span><span class="w"> </span><span class="n">loc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Locale</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tts</span><span class="p">.</span><span class="na">isLanguageAvailable</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+<span class="w">                                </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">TextToSpeech</span><span class="p">.</span><span class="na">LANG_AVAILABLE</span><span class="p">)</span>
+<span class="w">                        </span><span class="n">tts</span><span class="p">.</span><span class="na">setLanguage</span><span class="p">(</span><span class="n">loc</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">tts</span><span class="p">.</span><span class="na">setPitch</span><span class="p">(</span><span class="mf">0.8f</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">tts</span><span class="p">.</span><span class="na">setSpeechRate</span><span class="p">(</span><span class="mf">1.1f</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Intent</span><span class="w"> </span><span class="n">installVoice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Engine</span><span class="p">.</span><span class="na">ACTION_INSTALL_TTS_DATA</span><span class="p">);</span>
+<span class="w">        </span><span class="n">startActivity</span><span class="p">(</span><span class="n">installVoice</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>En el código anterior <code>tts</code> es un objeto de la clase <code>TextToSpeech</code> que ya está definido en la plantilla. La variable booleana <code>ttsIsInit</code> tendrá valor <code>true</code> en el caso en el que el motor de síntesis de voz se haya inicializado correctamente. La utilizaremos más adelante para comprobar si se puede leer o no un texto. Mediante el objeto <code>loc</code> inicializamos el idioma a español, ya que es el botón de radio seleccionado por defecto al iniciar la actividad.</p>
+</blockquote>
+<ul>
+<li>Añade el código necesario en el método <code>onDestroy</code> para liberar los recursos asociados a la instancia de <em>Text to Speech</em> cuando la actividad vaya a ser
+destruida:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tts</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">tts</span><span class="p">.</span><span class="na">stop</span><span class="p">();</span>
+<span class="w">    </span><span class="n">tts</span><span class="p">.</span><span class="na">shutdown</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>El manejador del click del botón <em>Leer</em> simplemente llama al método <code>speak</code>, que será el encargado de utilizar el objeto <code>TextToSpeech</code> para leer
+el texto en la vista <code>EditText</code>. Introduce el código necesario para hacer esto; no olvides de comprobar si
+el motor <em>Text to Speech</em> está inicializado por medio de la variable booleana <code>ttsIsInit</code>.</li>
+<li>Por último añade el código necesario a los manejadores del click de los botones de radio para que se cambie el idioma a español o inglés según corresponda. Observa cómo se usa
+la clase <code>Locale</code> en <code>onActivityResult</code> para hacer exactamente lo mismo.</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1340 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="streaming.html">
+      
+      
+        <link rel="next" href="graficos-android.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>El motor Unity - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-motor-unity" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              El motor Unity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          El motor Unity
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="unity.html" class="md-nav__link md-nav__link--active">
+        El motor Unity
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-unity" class="md-nav__link">
+    Introducción a Unity
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción a Unity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-editor-de-unity" class="md-nav__link">
+    El editor de Unity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura-orientada-a-componentes" class="md-nav__link">
+    Arquitectura Orientada a Componentes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-escena-3d" class="md-nav__link">
+    La escena 3D
+  </a>
+  
+    <nav class="md-nav" aria-label="La escena 3D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadir-game-objects-a-la-escena" class="md-nav__link">
+    Añadir game objects a la escena
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-de-los-objetos-en-la-escena" class="md-nav__link">
+    Posicionamiento de los objetos en la escena
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-de-objetos" class="md-nav__link">
+    Jerarquía de objetos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegacion-en-la-escena" class="md-nav__link">
+    Navegación en la escena
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assets" class="md-nav__link">
+    Assets
+  </a>
+  
+    <nav class="md-nav" aria-label="Assets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefabs" class="md-nav__link">
+    Prefabs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paquetes-de-assets" class="md-nav__link">
+    Paquetes de assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-store" class="md-nav__link">
+    Asset Store
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaz-de-usuario" class="md-nav__link">
+    Interfaz de usuario
+  </a>
+  
+    <nav class="md-nav" aria-label="Interfaz de usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    Canvas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementos-de-la-ui" class="md-nav__link">
+    Elementos de la UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-en-el-espacio-de-la-ui" class="md-nav__link">
+    Posicionamiento en el espacio de la UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalado-del-canvas" class="md-nav__link">
+    Escalado del Canvas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realidad-virtual" class="md-nav__link">
+    Realidad Virtual
+  </a>
+  
+    <nav class="md-nav" aria-label="Realidad Virtual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oculus-rift-samsung-gear-vr" class="md-nav__link">
+    Oculus Rift / Samsung Gear VR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-vr" class="md-nav__link">
+    Google VR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realidad-aumentada" class="md-nav__link">
+    Realidad Aumentada
+  </a>
+  
+    <nav class="md-nav" aria-label="Realidad Aumentada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#librerias-de-realidad-aumentada" class="md-nav__link">
+    Librerías de realidad aumentada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desarrollando-una-aplicacion-de-realidad-aumentada-con-vuforia" class="md-nav__link">
+    Desarrollando una aplicación de Realidad aumentada con Vuforia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-realidad-aumentada" class="md-nav__link">
+    Ejercicio realidad aumentada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realidad-mixta" class="md-nav__link">
+    Realidad mixta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuevos-frameworks-de-realidad-aumentada-sin-marcadoressin-marcadores" class="md-nav__link">
+    Nuevos frameworks de realidad aumentada sin marcadoressin marcadores
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuevos frameworks de realidad aumentada sin marcadoressin marcadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arkit" class="md-nav__link">
+    ARKit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-arkit-para-unity" class="md-nav__link">
+    Plugin ARKit para Unity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-unity" class="md-nav__link">
+    Introducción a Unity
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción a Unity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-editor-de-unity" class="md-nav__link">
+    El editor de Unity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura-orientada-a-componentes" class="md-nav__link">
+    Arquitectura Orientada a Componentes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-escena-3d" class="md-nav__link">
+    La escena 3D
+  </a>
+  
+    <nav class="md-nav" aria-label="La escena 3D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadir-game-objects-a-la-escena" class="md-nav__link">
+    Añadir game objects a la escena
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-de-los-objetos-en-la-escena" class="md-nav__link">
+    Posicionamiento de los objetos en la escena
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-de-objetos" class="md-nav__link">
+    Jerarquía de objetos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegacion-en-la-escena" class="md-nav__link">
+    Navegación en la escena
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assets" class="md-nav__link">
+    Assets
+  </a>
+  
+    <nav class="md-nav" aria-label="Assets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefabs" class="md-nav__link">
+    Prefabs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paquetes-de-assets" class="md-nav__link">
+    Paquetes de assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-store" class="md-nav__link">
+    Asset Store
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaz-de-usuario" class="md-nav__link">
+    Interfaz de usuario
+  </a>
+  
+    <nav class="md-nav" aria-label="Interfaz de usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    Canvas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementos-de-la-ui" class="md-nav__link">
+    Elementos de la UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posicionamiento-en-el-espacio-de-la-ui" class="md-nav__link">
+    Posicionamiento en el espacio de la UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalado-del-canvas" class="md-nav__link">
+    Escalado del Canvas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realidad-virtual" class="md-nav__link">
+    Realidad Virtual
+  </a>
+  
+    <nav class="md-nav" aria-label="Realidad Virtual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oculus-rift-samsung-gear-vr" class="md-nav__link">
+    Oculus Rift / Samsung Gear VR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-vr" class="md-nav__link">
+    Google VR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realidad-aumentada" class="md-nav__link">
+    Realidad Aumentada
+  </a>
+  
+    <nav class="md-nav" aria-label="Realidad Aumentada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#librerias-de-realidad-aumentada" class="md-nav__link">
+    Librerías de realidad aumentada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desarrollando-una-aplicacion-de-realidad-aumentada-con-vuforia" class="md-nav__link">
+    Desarrollando una aplicación de Realidad aumentada con Vuforia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-realidad-aumentada" class="md-nav__link">
+    Ejercicio realidad aumentada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realidad-mixta" class="md-nav__link">
+    Realidad mixta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuevos-frameworks-de-realidad-aumentada-sin-marcadoressin-marcadores" class="md-nav__link">
+    Nuevos frameworks de realidad aumentada sin marcadoressin marcadores
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuevos frameworks de realidad aumentada sin marcadoressin marcadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arkit" class="md-nav__link">
+    ARKit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-arkit-para-unity" class="md-nav__link">
+    Plugin ARKit para Unity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="el-motor-unity">El motor Unity<a class="headerlink" href="#el-motor-unity" title="Permanent link">&para;</a></h1>
+<p><strong>Unity</strong> es un motor genérico para la creación de videojuegos 2D y 3D enfocado hacia el desarrollo casual. La curva de aprendizaje del motor es bastante suave, especialmente si lo comparamos con motores más complejos como Unreal Engine 4, y nos permitirá realizar un desarrollo rápido de videojuegos. Esta característica hace este motor muy apropiado también para crear rápidamente prototipos de nuestros juegos.</p>
+<p>A partir de la versión Unity 5, existen dos ediciones: <em>Personal</em> y <em>Profesional</em>. La primera es gratuita e incluye todas las funcionalidades del motor. La segunda incluye funcionalidades adicionales de soporte <span class="arithmatex"><span class="MathJax_Preview">construcción en la nube, herramientas de trabajo en equipo, etc</span><script type="math/tex">construcción en la nube, herramientas de trabajo en equipo, etc</script></span>, y es de pago <span class="arithmatex"><span class="MathJax_Preview">suscripción de $75 o pago único de $1.500</span><script type="math/tex">suscripción de $75 o pago único de $1.500</script></span>. La versión <em>Personal</em> podrá ser utilizada por cualquier individuo o empresa cuyas ganancias anuales no superen los $100.000.</p>
+<p>Uno de los puntos fuertes de Unity es la posibilidad de exportar a gran cantidad de plataformas. Soporta las <strong>plataformas móviles iOS, Android, Windows Phone y Blackberry</strong>, y además también permite exportar a web <span class="arithmatex"><span class="MathJax_Preview">WebGL</span><script type="math/tex">WebGL</script></span>, a videoconsolas <span class="arithmatex"><span class="MathJax_Preview">PS4, PS3, PS Vita, Xbox One, Xbox 360, Wii U, etc</span><script type="math/tex">PS4, PS3, PS Vita, Xbox One, Xbox 360, Wii U, etc</script></span> y a ordenadores <span class="arithmatex"><span class="MathJax_Preview">Mac, Windows y Linux</span><script type="math/tex">Mac, Windows y Linux</script></span>.</p>
+<h2 id="introduccion-a-unity">Introducción a Unity<a class="headerlink" href="#introduccion-a-unity" title="Permanent link">&para;</a></h2>
+<h3 id="el-editor-de-unity">El editor de Unity<a class="headerlink" href="#el-editor-de-unity" title="Permanent link">&para;</a></h3>
+<p>Unity incorpora su propia herramienta integrada para la creación de videojuegos, que nos permite incluso crear algunos videojuegos de forma visual sin la necesidad de programar.</p>
+<p>Dentro del entorno del editor de Unity encontramos diferentes paneles, de los cuales destacamos los siguientes:</p>
+<ul>
+<li><strong>Project</strong>: Encontramos aquí todos los recursos <span class="arithmatex"><span class="MathJax_Preview">_assets_</span><script type="math/tex">_assets_</script></span> que componen nuestro proyecto. Estos recursos pueden ser por ejemplo texturas, <em>clips</em> de audio, <em>scripts</em>, o escenas. Destacamos aquí el <em>asset</em> de tipo <strong>escena</strong>, que es el componente que nos permite definir cada estado <span class="arithmatex"><span class="MathJax_Preview">pantalla</span><script type="math/tex">pantalla</script></span> del juego. Al hacer doble <em>click</em> sobre una escena se abrirá para trabajar con ella desde el editor.</li>
+<li><strong>Hierarchy</strong>: La escena está formada por una serie de nodos <span class="arithmatex"><span class="MathJax_Preview">_game objects_</span><script type="math/tex">_game objects_</script></span> organizados de forma jerárquica. En este panel vemos el árbol de objetos que contiene la escena abierta actualmente. Podemos seleccionar en ella cualquier objeto pulsando sobre su nombre.</li>
+<li><strong>Scene</strong>: En este panel vemos de forma visual los elementos de la escena actual. Podremos movernos libremente por el espacio 3D de la escena para ubicar de forma correcta cada <em>game object</em> y tener una previsualización del escenario del juego.</li>
+<li><strong>Inspector</strong>: Muestra las propiedades del <em>game object</em> o el <em>asset</em> seleccionado actualmente en el entorno. </li>
+</ul>
+<p><img alt="Editor de Unity" src="imagenes/unity/unity-editor.png" /></p>
+<h3 id="arquitectura-orientada-a-componentes">Arquitectura Orientada a Componentes<a class="headerlink" href="#arquitectura-orientada-a-componentes" title="Permanent link">&para;</a></h3>
+<p>Como hemos comentado, <strong>todos</strong> los elementos de la escena son objetos de tipo <code>GameObject</code> organizados de forma jerárquica. Todos los objetos son del mismo tipo, independientemente de la función que desempeñen en el juego. Lo que diferencia a unos de otros son los <em>componentes</em> que incorporen. Cada objeto podrá contener varios componentes, y estos componentes determinarán las funciones del objeto.</p>
+<p>Por ejemplo, un objeto que incorpore un componente <code>Camera</code> será capaz de renderizar en pantalla lo que se vea en la escena desde su punto de vista. Si además incorpora un componente <code>Light</code>, emitirá luz que se proyectará sobre otros elementos de la escena, y si tiene un componente <code>Renderer</code>, tendrá un contenido gráfico que se renderizará dentro de la escena.</p>
+<p>Esto es lo que se conoce como <strong>Arquitectura Basada en Componentes</strong>, que nos proporciona la ventaja de que las funcionalidades de los componentes se podrán reutilizar en diferentes tipos de entidades del juego. Es especialmente útil cuando tener un gran número de diferentes entidades en el juego, pero que comparten módulos de funcionalidad.</p>
+<p>En Unity esta arquitectura se implementa mediante agregación. Si bien en todos los objetos de la escena son objetos que heredan de <code>GameObject</code>, éstos podrán contener un conjunto de componentes de distintos tipos <span class="arithmatex"><span class="MathJax_Preview"><code>Light</code>, , <code>Camera</code>, , <code>Renderer</code>, etc, etc</span><script type="math/tex"><code>Light</code>, , <code>Camera</code>, , <code>Renderer</code>, etc, etc</script></span> que determinarán el comportamiento del objeto.</p>
+<p>En el inspector podremos ver la lista de componentes que incorpora el objeto seleccionado actualmente, y modificar sus propiedades:</p>
+<p><img alt="Componentes de la cámara" src="imagenes/unity/unity-componentes-camera.png" /></p>
+<p>En esta figura anterior podemos observar que el objeto <span class="arithmatex"><span class="MathJax_Preview"><code>GameObject</code></span><script type="math/tex"><code>GameObject</code></script></span> que contiene la cámara del juego contiene los siguientes componentes:</p>
+<ul>
+<li><code>Transform</code>: Le da a la cámara una posición y orientación en la escena.</li>
+<li><code>Camara</code>: Hace que se comporte como cámara. Capta lo que se ve en la escena desde su posición y lo renderiza en pantalla o en una textura.</li>
+<li><code>GUILayer</code>: Permite introducir sobre la imagen renderizada elementos de la GUI <span class="arithmatex"><span class="MathJax_Preview">etiquetas de texto, botones, etc</span><script type="math/tex">etiquetas de texto, botones, etc</script></span>.</li>
+<li><code>FlareLayer</code>: Permite crear sobre la imagen renderizada un efecto de <em>destello</em>.</li>
+<li><code>AudioListener</code>: Escucha lo que se oye en la escena desde la posición de la cámara y lo reproduce a través de los altavoces.</li>
+</ul>
+<p>Podemos modificar los componentes, añadiendo o eliminando según nos convenga. Podemos <strong>eliminar</strong> un componente pulsando sobre su cabecera en el inspector con el botón derecho y seleccionando <em>Remove Component</em>. También podemos añadir componentes pulsando sobre el botón <em>Add Component</em> que encontramos en la parte inferior del inspector. Por ejemplo, podríamos añadir a la cámara un componente que haga que podamos moverla por el escenario pulsando determinadas teclas, o podríamos eliminar el componente <em>Audio Listener</em> para no escuchar por los altavoces lo que se oiga en el lugar de la cámara <span class="arithmatex"><span class="MathJax_Preview">en su lugar podríamos optar por ponerle este componente a nuestro personaje, para reproducir lo que se oiga desde su posición en la escena</span><script type="math/tex">en su lugar podríamos optar por ponerle este componente a nuestro personaje, para reproducir lo que se oiga desde su posición en la escena</script></span>.</p>
+<h2 id="la-escena-3d">La escena 3D<a class="headerlink" href="#la-escena-3d" title="Permanent link">&para;</a></h2>
+<p>El el editor de Unity veremos la escena con la que estemos trabajando actualmente, tanto de forma visual <span class="arithmatex"><span class="MathJax_Preview">_Scene_</span><script type="math/tex">_Scene_</script></span> como de forma jerárquica <span class="arithmatex"><span class="MathJax_Preview">_Hierarchy_</span><script type="math/tex">_Hierarchy_</script></span>. Nos podremos mover por ella y podremos añadir diferentes tipos de objetos.</p>
+<h3 id="anadir-game-objects-a-la-escena">Añadir <em>game objects</em> a la escena<a class="headerlink" href="#anadir-game-objects-a-la-escena" title="Permanent link">&para;</a></h3>
+<p>Podemos añadir a la escena nuevos <em>game objects</em> seleccionando en el menú la opción <em>GameObject &gt; Create Empty</em>, lo cual creará un nuevo objeto vacío con un único componente <code>Transform</code>, al que le deberíamos añadir los componentes que necesitásemos, o bien podemos crear objetos ya predefinidos mediante <em>GameObject &gt; Create Other</em>.</p>
+<p>Entre los tipos de objetos predefinidos que nos permite crear, encontramos diferentes formas geométricas como <em>Cube</em>, <em>Sphere</em>, <em>Capsule</em> o <em>Plane</em> entre otras. Estas figuras pueden resultarnos de utilidad como objetos <em>impostores</em> en primeras versiones del juego en las que todavía no contamos con nuestros propios modelos gráficos. Por ejemplo, podríamos utilizar un cubo que de momento haga el papel de nuestro personaje hasta que contemos con su modelo 3D.</p>
+<p><img alt="Menú de creación de un nuevo GameObject" src="imagenes/unity/unity-create-gameobject.png" /></p>
+<p>Si añadimos por ejemplo un <em>GameObject</em> de tipo <em>Cube</em> al seleccionarlo veremos sus propiedades en el inspector:</p>
+<p><img alt="Creación de un cubo" src="imagenes/unity/unity-cube.png" /></p>
+<p>Como podemos ver, este tipo de objetos geométricos tienen los siguientes componentes:</p>
+<ul>
+<li><code>Transform</code>: Posición, rotación y escalado del objeto en la escena 3D.</li>
+<li><code>Renderer</code>: Hace que el objeto se renderice en pantalla como una maya 3D. Con este componente conseguimos que el objeto tenga una representación gráfica dentro de la escena. En este caso se representa con la forma de un cubo, tal como podemos ver indicado en el componente <em>Mesh Filter</em>, pero podría ser otra forma geométrica, o cualquier maya que hayamos creado con alguna herramienta de modelado como Autodesk Maya, 3DS Max o Blender. También vemos que el <em>Renderer</em> lleva asociado un material, que se le aplicará a la maya al renderizarse. Podremos crear materiales e incluirlos como <em>assets</em> del proyecto, para así poderlos aplicar a las mayas.</li>
+<li><code>Collider</code>: Hace que el objeto tenga una geometría de colisión, que nos permita detectar cuando colisiona con otros objetos de la escena. En este caso la geometría de colisión es de tipo caja <span class="arithmatex"><span class="MathJax_Preview">_Box Collider_</span><script type="math/tex">_Box Collider_</script></span>, para así ajustarse a la forma de la geometría de su representación gráfica. </li>
+</ul>
+<h3 id="posicionamiento-de-los-objetos-en-la-escena">Posicionamiento de los objetos en la escena<a class="headerlink" href="#posicionamiento-de-los-objetos-en-la-escena" title="Permanent link">&para;</a></h3>
+<p>Todos los <em>game objects</em> incorporan al menos un componente <code>Transform</code> que nos permite situarlo en la escena, indicando su traslación, orientación y escala. Podremos introducir esta información en el editor, para así poder ajustar la posición del objeto de forma precisa.</p>
+<p>También podemos mover un objeto de forma visual desde la vista <em>Scene</em>. Al seleccionar un objeto, bien en <em>Scene</em> o en <em>Hierarchy</em>, veremos sobre él en <em>Scene</em> una serie de ejes que nos indicarán que podemos moverlo. El tipo de ejes que se mostrarán dependerá del tipo de transformación que tengamos activa en la barra superior:</p>
+<p><img alt="Modos de transformación de objetos" src="imagenes/unity/unity-transform.png" /></p>
+<p>Las posibles transformaciones son:</p>
+<ul>
+<li><strong>Traslación</strong>: Los ejes aparecerán como flechas y nos permitirán cambiar la posición del objeto.</li>
+<li><strong>Rotación</strong>: Veremos tres círculos alrededor del objeto que nos pemtirán rotarlo alrededor de sus ejes <em>x</em>, <em>y</em>, <em>z</em>. </li>
+<li><strong>Escalado</strong>: Veremos los ejes acabando en cajas, indicando que podemos escalar el objeto en <em>x</em>, <em>y</em>, <em>z</em>.</li>
+</ul>
+<p>Si pinchamos sobre uno de los ejes y arrastramos, trasladaremos, rotaremos, o escalaremos el objeto sólo en dicha eje. Si pinchamos sobre el objeto, pero no sobre ninguno de los ejes, podremos trasladarlo, rotarlo y escalarlo en todos los ejes al mismo tiempo.</p>
+<h3 id="jerarquia-de-objetos">Jerarquía de objetos<a class="headerlink" href="#jerarquia-de-objetos" title="Permanent link">&para;</a></h3>
+<p>Podremos <strong>organizar de forma jerárquica</strong> los objetos de la escena mediante la vista <em>Hierarchy</em>. Si arrastramos un <em>game object</em> sobre otro en esta vista, haremos que pase a ser su hijo en el árbol de la escena. Los objetos vacíos con un único componente <code>Transform</code> pueden sernos de gran utilidad para agrupar dentro de él varios objetos. De esta forma, moviendo el objeto padre podremos mover de forma conjunta todos los objetos que contiene. De esta forma estaremos creando objetos compuestos.</p>
+<p>También resulta de utilidad <strong>dar nombre</strong> a los objetos de la escena, para poder identificarlos fácilmente. Si hacemos <em>click</em> sobre el nombre de un objeto en la vista <em>Hierarchy</em> podremos editarlo y darle un nombre significativo <span class="arithmatex"><span class="MathJax_Preview">por ejemplo _Suelo_, _Pared_, _Enemigo_, etc</span><script type="math/tex">por ejemplo _Suelo_, _Pared_, _Enemigo_, etc</script></span>.</p>
+<p><img alt="Cambiar el nombre de un GameObject" src="imagenes/unity/unity-object-name.png" /></p>
+<h3 id="navegacion-en-la-escena">Navegación en la escena<a class="headerlink" href="#navegacion-en-la-escena" title="Permanent link">&para;</a></h3>
+<p>Además de podemos añadir objetos a la escena y moverlos a diferentes posiciones, deberemos poder movernos por la escena para posicionarnos en los puntos de vista que nos interesen para crear el contenido. Será importante conocer una serie de atajos de teclado para poder movernos con fluidez a través de la escena.</p>
+<p>Encontramos tres tipos de movimientos básicos para movernos por la escena en el editor:</p>
+<ul>
+<li><strong>Traslación lateral</strong>: Hacemos <em>click</em> sobre la escena y arrastramos el ratón.</li>
+<li><strong>Giro</strong>: Pulsamos <em>Alt + click</em> y arrastramos el ratón para girar nuestro punto de vista.</li>
+<li><strong>Avance</strong>: Pultamos <em>Ctrl + click</em> y arrastramos el ratón, o bien movemos la rueda del ratón para avanzar hacia delante o hace atrás en la dirección en la que estamos mirando.</li>
+</ul>
+<p>Con los comandos anteriores podremos desplazarnos libremente sobre la escena, pero también es importante conocer otras forma más directas de movernos a la posición que nos interese:</p>
+<ul>
+<li><strong>Ver un objeto</strong>: Si nos interesa ir rápidamente a un punto donde veamos de cerca un objeto concreto de la escena, podemos hacer doble <em>click</em> sobre dicho objeto en la vista <em>Hierarchy</em>.</li>
+<li><strong>Alineación con un objeto</strong>: Alinea la vista de la escena con el objeto seleccionado. Es especialmente útil cuando se utiliza con la cámara, ya que veremos la escena tal como se estaría bien desde la camara. Para hacer esto, seleccionaremos el <em>game object</em> con el que nos queramos alinear y seleccionaremos la opción del menú <em>GameObject &gt; Align View To Selected</em>.</li>
+</ul>
+<h2 id="assets">Assets<a class="headerlink" href="#assets" title="Permanent link">&para;</a></h2>
+<p>Los Assets en Unity hacen referencia a cualquiero item que podemos utilizar en nuestro juego/aplicación. Un asset puede ser un fichero creado fuera de la plataforma Unity, por ejemplo un modelo 3D, un fichero de audio, o cualquier otro tipo de fichero que este soportado. También existen algunos tipos de assets que pueden ser creados desde Unity, por ejemplo el controlador de una animación, controlador de un jugador, mezclador de audio o el render de una textura.</p>
+<h3 id="prefabs">Prefabs<a class="headerlink" href="#prefabs" title="Permanent link">&para;</a></h3>
+<p>Los prefabs son una colección de GameObjects y componentes predefinidos que se pueden reutilizar en nuestra aplicación. De esta forma, podemos crear un GameObject, añadir componentes y configurarlo con una serie de valores y posteriormente reutilizarlo en nuestra escena varias veces. Un prefab almcenará toda esta información y además a diferencia de copiar y pegar un GameObject existente en nuestra aplicación, si modificamos un prefab, el resto de prefabs en la escena también se modificarán propagando estos cambios. Al copiar y pegar un GameObject, los cambios que hagamos en el original no se propagan a la copia, por lo que cada instancia tiene sus propia configuración.</p>
+<p>En el inspector de un prefab tenemos 3 botones que no estan presentes en un objeto normal: Select, Revert y Apply.<br />
+El botón "Select" selecciona el prefab original del cual esta instancia fue creada y por lo tanto nos permite modificar todas las instancias que existan en la escena. Sin embargo, también podemos sobreescribir estos cambios en una determinada instancia de un prefab utilizando el botón "Apply". Finalmente, podemos usar el botón "Revert" para revertir la configuración del prefab a los valores default <span class="arithmatex"><span class="MathJax_Preview">valores del prefab original, antes de sobreescribir los cambios</span><script type="math/tex">valores del prefab original, antes de sobreescribir los cambios</script></span>.</p>
+<p>Los prefabs son la forma en que normalmente las librerías y SDKs tienen de ofrecer funcionalidades para Unity, por ejemplo ya veremos en la sección de realidad virtual o aumentada que utilizando Prefabs ya existentes podemos añadir estas funcionalidades a nuestra aplicación.</p>
+<h3 id="paquetes-de-assets">Paquetes de assets<a class="headerlink" href="#paquetes-de-assets" title="Permanent link">&para;</a></h3>
+<p>Los paquetes de Assets nos permiten en unity fácilmente reutilizar projectos y colecciones de assets. De hecho como ya veremos, los <code>Standard assets</code> y los items que encontramos en la <code>Asset store</code> se descargan en forma de pquetes. Podemos importar estos paquetes bien haciendo doble click en el fichero que se genera o bien desde el menu Assets &gt; Import package. Encontramos dos tipos de paquetes, los standard, que son colecciones ya disponibles por defecto al instalar Unity, y los paquetes personalizados que pueden ser creados por usuarios y descargarse online. De igual forma podemos exportar un paquete desde nuestro proyecto. Elige Assets &gt; Export package... y nos aparecerá un diálogo para seleccionar los assets que queremos incluir en nuestro paquete. Deja marcado la casilla <code>include dependencies</code> para añadir automáticamente los assets utilizados por losque has seleccionado. Al hacer click en <code>Export</code> podremos seleccionar donde almacenar el paquete que contiene los assets previamente seleccionados.</p>
+<h3 id="asset-store">Asset Store<a class="headerlink" href="#asset-store" title="Permanent link">&para;</a></h3>
+<p>Unity ha creado una tienda desde la que podemos descargar assets ya existentes. Estos assets pueden ser libres o comerciales, creados por la compañia Unity technologies o bien miembros de la comunidad. Podemos encontrar una gama muy variada de assets, que van desde texturas, modelos, animaciones, hasta proyectos completos, tutoriales y extensiones para el editor Unity. La tienda se puede acceder desde el propio entorno de Unity y los assets son descargados e instalados directamente en el proyecto que tengamos abierto. Los usuarios de Unity pueden publicar assets en la <code>Asset Store</code> y vender contenido que hayan creado.</p>
+<h2 id="interfaz-de-usuario">Interfaz de usuario<a class="headerlink" href="#interfaz-de-usuario" title="Permanent link">&para;</a></h2>
+<p>El sistema con el que cuenta Unity para crear la interfaz de usuario se introdujo a partir de la versión 4.6. Se trata de un sistema bastante versátil, que utilizado de forma adecuada nos permite crear interfaces como por ejemplo los menús o el HUD del juego que se adapten a diferentes tamaños y formas de pantalla.</p>
+<p>Todo el contenido de la interfaz de usuario estará contenido en nuestra escena dentro de un elemento tipo <code>Canvas</code> <span class="arithmatex"><span class="MathJax_Preview">es decir, un <em>game object</em> que cuente con un componente <code>Canvas</code></span><script type="math/tex">es decir, un <em>game object</em> que cuente con un componente <code>Canvas</code></script></span>. Dentro de él ubicaremos todos los componentes de la interfaz, como por ejemplo imágenes, etiquetas de texto o botones.</p>
+<h3 id="canvas">Canvas<a class="headerlink" href="#canvas" title="Permanent link">&para;</a></h3>
+<p>El <code>Canvas</code> será el panel 2D <span class="arithmatex"><span class="MathJax_Preview">_lienzo_</span><script type="math/tex">_lienzo_</script></span> donde podremos crear el contenido de la interfaz de usuario. Los componentes de la interfaz siempre deberán estar dentro de un <code>Canvas</code> en la jerarquía de la de escena. Si intentamos arrastrar sobre la escena un componente de la UI sin un <code>Canvas</code>, el <code>Canvas</code> se creará de forma automática.</p>
+<p><img alt="Componente Canvas" src="imagenes/unity/unity-ui-canvas.png" /></p>
+<p>Una propiedad importante del componente <code>Canvas</code> es <em>Render Mode</em>, que podrá tomar 3 valores:</p>
+<ul>
+<li><strong>Screen Space - Overlay</strong>: El <code>Canvas</code> se dibuja sobre el contenido que aparece en pantalla, ajustándose siempre al tamaño de la misma.</li>
+<li><strong>Screen Space - Camera</strong>: Similar a la anterior, pero en este caso debemos vincularlo a una cámara, indicando la distancia a la que estará el <code>Canvas</code> de la cámara seleccionada, y el <code>Canvas</code> se ajustará al tamaño que tenga el tronco de la cámara a dicha distancia. Se aplicarán sobre el <code>Canvas</code> los parámetros de la cámara seleccionada.</li>
+<li><strong>World Space</strong>: En este caso el <code>Canvas</code> se comportará como cualquier otro objeto 3D en la escena. Le daremos un tamaño fijo al panel y lo situaremos en una posición del mundo. Así podremos tener interfaces con las que podamos interactuar en nuestro mundo 3D.</li>
+</ul>
+<blockquote>
+<p>En la previsualización de la escena, cuando tengamos un <code>Canvas</code> de tipo <em>Screen Space</em> es posible que lo veamos de un tamaño mucho mayor que el resto de elementos de la escena. Esto se debe a que las unidades con las que trabaja internamente el <code>Canvas</code> son <em>pixels</em> en pantalla, mientras que es habitual que los elementos de la escena tengan dimensiones de alrededor de una unidad. Al ejecutar el juego no habrá ningún problema ya que el <code>Canvas</code> se ajustará al tamaño de la pantalla o de la cámara.</p>
+</blockquote>
+<h3 id="elementos-de-la-ui">Elementos de la UI<a class="headerlink" href="#elementos-de-la-ui" title="Permanent link">&para;</a></h3>
+<p>Una vez contamos con un <code>Canvas</code>, podemos añadir dentro de él diferentes componentes de la interfaz. Encontramos diferentes tipos de componentes como etiquetas de texto, imágenes o botones que podremos incluir de forma sencilla.</p>
+<h4 id="etiquetas-de-texto">Etiquetas de texto<a class="headerlink" href="#etiquetas-de-texto" title="Permanent link">&para;</a></h4>
+<p>Las etiquetas de texto serán objetos con un componente de tipo <code>Text</code>. Este componente nos permite indicar principalmente el texto a mostrar en la etiqueta, y también podemos especificar otras propiedades como la fuente, color, alineación o espaciado.</p>
+<p>Es de especial interés la propiedad <em>Best Fit</em>. Con ella podemos especificar un tamaño máximo y mínimo de la fuente, de forma que se ajuste de forma automática entre estos valores al tamaño máximo que podamos tener sin que el texto se salga de su espacio. Es interesante cuando el texto puede ser variable <span class="arithmatex"><span class="MathJax_Preview">por ejemplo diferentes idiomas</span><script type="math/tex">por ejemplo diferentes idiomas</script></span> y hay riesgo de que en algún caso quede demasiado largo y pudiera mostrarse truncado.</p>
+<p><img alt="Componente Text" src="imagenes/unity/unity-ui-text.png" /></p>
+<h4 id="imagenes">Imágenes<a class="headerlink" href="#imagenes" title="Permanent link">&para;</a></h4>
+<p>Las imágenes son objetos con un componente <code>Image</code>. En este componente deberemos introducir principalmente la textura o sprite a mostrar como imagen, que deberemos haber introducido previamente entre los <em>assets</em> del proyecto.</p>
+<p>Utilizaremos preferiblemente imágenes de tipo PNG, y las podremos incluir como <em>assets</em> simplemente arrastrándolas sobre la sección <em>Project</em> del editor <span class="arithmatex"><span class="MathJax_Preview">podemos organizarlas en carpetas</span><script type="math/tex">podemos organizarlas en carpetas</script></span>.</p>
+<p><img alt="Componente Image" src="imagenes/unity/unity-ui-image.png" /></p>
+<h4 id="botones">Botones<a class="headerlink" href="#botones" title="Permanent link">&para;</a></h4>
+<p>Un botón es un objeto con un componente <code>Button</code>, que además contendrá como hijo un objeto de tipo <em>Text</em> para mostrar la etiqueta del botón <span class="arithmatex"><span class="MathJax_Preview">se trata por separado el botón de su etiqueta</span><script type="math/tex">se trata por separado el botón de su etiqueta</script></span>. El botón tendrá una imagen que podremos mostrar como marco, y distintos colores con los que <em>tintar</em> el botón según el estado en el que se encuentre:</p>
+<ul>
+<li><em>Normal</em>: Botón activo pero sin pulsar ni seleccionar.</li>
+<li><em>Highlighted</em>: Botón activo y seleccionado para que se pueda pulsar. Este estado será útil cuando utilicemos un control mediante <em>joystick</em> o teclado: al pulsar los controles direccionales cambiaremos el botón seleccionado, y al pulsar la tecla de acción presionaremos el botón seleccionado actualmente.</li>
+<li><em>Pressed</em>: Botón actualmente presionado. </li>
+<li><em>Disabled</em>: Indica que el botón está deshabilitado y que no puede ser presionado.</li>
+</ul>
+<p>Además en la parte inferior podremos conectar el evento <em>On Click</em> del botón con algún método de nuestro código, para que al pulsar sobre el botón se ejecute dicho método.</p>
+<p><img alt="Componente Button" src="imagenes/unity/unity-ui-button.png" /></p>
+<h3 id="posicionamiento-en-el-espacio-de-la-ui">Posicionamiento en el espacio de la UI<a class="headerlink" href="#posicionamiento-en-el-espacio-de-la-ui" title="Permanent link">&para;</a></h3>
+<p>Todos los elementos de la UI de Unity se posicionan mediante un componente de tipo <code>RectTransform</code> <span class="arithmatex"><span class="MathJax_Preview">a diferencia del resto de objetos que tienen un componente <code>Tranform</code></span><script type="math/tex">a diferencia del resto de objetos que tienen un componente <code>Tranform</code></script></span>.</p>
+<p>La principal diferencia de <code>RectTransform</code> sobre <code>Tranform</code> es que nos permite indicar el área rectangular que ocupará el componente dentro del <code>Canvas</code>, además de las propiedades de posición, rotación y escala que tenemos en todos los objetos.</p>
+<p><img alt="Componente RectTransform" src="imagenes/unity/unity-ui-rect.png" /></p>
+<p>A la hora de definir el rectángulo que un componente de la UI ocupará en pantalla, lo primero que deberemos hacer es definir a qué posición de pantalla lo vamos a <em>anclar</em> <span class="arithmatex"><span class="MathJax_Preview">es decir, qué posición de la pantalla tomaremos como referencia para posicionarlo</span><script type="math/tex">es decir, qué posición de la pantalla tomaremos como referencia para posicionarlo</script></span>. Si es un menú que queramos que aparezca centrado, lo deberemos anclar al centro de la pantalla, mientras que si es un marcador que queramos que aparezca en una esquina de la pantalla, lo conveniente será anclarlo a dicha esquina. Unity nos proporciona algunos valores predefinidos típicos para el anclaje <span class="arithmatex"><span class="MathJax_Preview">_Anchor Presets_</span><script type="math/tex">_Anchor Presets_</script></span>:</p>
+<p><img alt="Tipos de anclaje" src="imagenes/unity/unity-ui-anchors.png" /></p>
+<p>La posición del objeto será relativa siempre al punto de anclaje. Además, con la propiedad <em>Pivot</em> indicaremos el punto del objeto <span class="arithmatex"><span class="MathJax_Preview">rectángulo</span><script type="math/tex">rectángulo</script></span> que haremos coincidir con la posición especificada. El <em>Pivot</em> se indicará siempre en coordenadas normalizadas, entre <em><span class="arithmatex"><span class="MathJax_Preview">0,0</span><script type="math/tex">0,0</script></span></em> y <em><span class="arithmatex"><span class="MathJax_Preview">1,1</span><script type="math/tex">1,1</script></span></em>. Con <em><span class="arithmatex"><span class="MathJax_Preview">0,0</span><script type="math/tex">0,0</script></span></em> indicamos la esquina inferior izquierda, con <em><span class="arithmatex"><span class="MathJax_Preview">1,1</span><script type="math/tex">1,1</script></span></em> la esquina superior derecha, y con <em><span class="arithmatex"><span class="MathJax_Preview">0.5,0.5</span><script type="math/tex">0.5,0.5</script></span></em> el centro del rectángulo.</p>
+<p>Por ejemplo, si queremos situar un botón centrado en pantalla, utilizaremos como punto de anclaje el centro de la pantalla, como posición <em><span class="arithmatex"><span class="MathJax_Preview">0,0,0</span><script type="math/tex">0,0,0</script></span></em> para situarlo exactamente en el punto de anclaje, y como <em>pivot</em> <em><span class="arithmatex"><span class="MathJax_Preview">0.5,0.5</span><script type="math/tex">0.5,0.5</script></span></em> para que el botón aparezca centrado en dicho punto. A continuación vemos un ejemplo:</p>
+<p><img alt="Anclaje en el centro de la pantalla" src="imagenes/unity/unity-ui-anchor-center.png" /></p>
+<p>En caso de querer ubicar un marcador en la esquina superior derecha de la pantalla, en primer lugar deberemos establecer el anclaje en dicha esquina. Para que quede lo mejor ajustado posible es recomendable que el <em>pivot</em> en este caso sea <em><span class="arithmatex"><span class="MathJax_Preview">1,1</span><script type="math/tex">1,1</script></span></em>, para que así lo que posicionemos sea la esquina superior derecha. De esta forma, si como posición indicamos <em><span class="arithmatex"><span class="MathJax_Preview">0,0,0</span><script type="math/tex">0,0,0</script></span></em> el objeto quedará perfectamente ajustado a la esquina. Podríamos modificar la posición si queremos darle un margen respecto a la esquina, pero de esta forma siempre quedará bien ajustado a la esquina y no se nos saldrá de pantalla. A continuación vemos un ejemplo:</p>
+<p><img alt="Anclaje en la esquina de la pantalla" src="imagenes/unity/unity-ui-anchor-corner.png" /></p>
+<p>Un caso algo más complejo es aquel en el que queremos que un elemento pueda <em>estirarse</em>. En este caso, en lugar de tener un ancla única, podemos establecer un ancla para cada esquina del objeto. Podemos ver sobre la imagen una serie de <em>flechas blancas</em> alrededor del título que definen los puntos de anclaje. Podemos arrastrar dichas flechas pulsando sobre ellas con el ratón para así modificar el anclaje:</p>
+<p><img alt="Anclaje personalizado" src="imagenes/unity/unity-ui-anchor-custom.png" /></p>
+<p>Vemos que al tener este anclaje <em>abierto</em> en lugar de dar una posición <em><span class="arithmatex"><span class="MathJax_Preview">x,y,z</span><script type="math/tex">x,y,z</script></span></em> al objeto lo que debemos introducir son valores <em>Left</em>, <em>Right</em>, <em>Top</em> y <em>Bottom</em>. Aquí introduciremos la distancia que debe haber entre los límites del objeto y la zona de anclaje. La zona de anclaje será siempre relativa al tamaño del <code>Canvas</code> <span class="arithmatex"><span class="MathJax_Preview">se estirará y se contraerá según la pantalla o ventana donde se ejecute el juego</span><script type="math/tex">se estirará y se contraerá según la pantalla o ventana donde se ejecute el juego</script></span>. De esta forma conseguimos que el rectángulo de nuestro componente se estire o se contraiga también según el espacio disponible, pudiendo hacer así por ejemplo que el título ocupe todo el espacio disponible.</p>
+<h3 id="escalado-del-canvas">Escalado del Canvas<a class="headerlink" href="#escalado-del-canvas" title="Permanent link">&para;</a></h3>
+<p>Normalmente en nuestro <code>Canvas</code> encontraremos un componente adicional que es el <code>CanvasScaler</code>. Se trata de un elemento importante a la hora de conseguir interfaces adaptables, ya que nos permite personalizar la forma en la que se escala el contenido del <code>Canvas</code> a distintos tamaños de pantalla.</p>
+<p>Podemos optar por tres modos:</p>
+<ul>
+<li><strong>Constant Pixel Size</strong>: Los tamaños de los objetos de la interfaz se especifican en píxels. Si la pantalla tiene más densidad los objetos se verán más pequeños <span class="arithmatex"><span class="MathJax_Preview">a no ser que los hagamos _estirables_ como hemos visto en el apartado anterior</span><script type="math/tex">a no ser que los hagamos _estirables_ como hemos visto en el apartado anterior</script></span>. </li>
+<li><strong>Constant Physical Size</strong>: En este caso, a diferencia del anterior, los objetos siempre ocuparán el mismo espacio físico, independientemente de la densidad de pantalla. El posicionamiento y tamaño de los objetos se especifican en píxeles, pero para una determinada densidad de referencia <span class="arithmatex"><span class="MathJax_Preview">indicada en <em>dpi</em> dentro del componente <code>CanvasScaler</code></span><script type="math/tex">indicada en <em>dpi</em> dentro del componente <code>CanvasScaler</code></script></span>. Si la pantalla destino tiene una densidad diferente, todos los valores se actualizarán para que todo acabe teniendo las mismas dimensiones físicas <span class="arithmatex"><span class="MathJax_Preview">en _cm_ reales</span><script type="math/tex">en _cm_ reales</script></span>.</li>
+<li><strong>Scale With Screen Size</strong>: Este último modo nos permite hacer que todo el contenido de la UI se escale según el tamaño de la pantalla destino. Diseñaremos la interfaz para un tamaño de pantalla <span class="arithmatex"><span class="MathJax_Preview">en pixeles</span><script type="math/tex">en pixeles</script></span> de referencia, indicado mediante una propiedad del componente <code>CanvasScaler</code>. Si la pantalla tiene diferente ancho o alto, todos los valores se escalarán de forma proporcional. Podemos indicar si queremos que se escale sólo según el ancho, sólo según el alto, o según una mezcla de ambos. </li>
+</ul>
+<p>El modo <em>Constant Pixel Size</em> será poco adecuado cuando estemos destinando el juego a pantallas que puedan tener diferente densidad, pero en caso de que no sea así nos permitirá ajustar mejor los contenidos de la interfaz <span class="arithmatex"><span class="MathJax_Preview">por ejemplo en caso de PC o videoconsolas</span><script type="math/tex">por ejemplo en caso de PC o videoconsolas</script></span>.</p>
+<p>En caso de destinar nuestro juego a dispositivos móviles, lo recomendable será utilizar <em>Constant Physical Size</em> o <em>Scale With Screen Size</em>. La primera nos puede venir bien por ejemplo para menús, donde nos interese que siempre los botones tengan siempre el mismo tamaño <span class="arithmatex"><span class="MathJax_Preview">suficiente para poder pulsar con el dedo sobre él, pero que no ocupe toda la pantalla en un dispositivos grande</span><script type="math/tex">suficiente para poder pulsar con el dedo sobre él, pero que no ocupe toda la pantalla en un dispositivos grande</script></span>. Por otro lado, para elementos del HUD con los que no tenemos que interactuar nos puede venir bien la segunda opción, para así hacer que se escale según la pantalla y no ocupen demasiado espacio en dispositivos pequeños.</p>
+<h2 id="realidad-virtual">Realidad Virtual<a class="headerlink" href="#realidad-virtual" title="Permanent link">&para;</a></h2>
+<p>Existen diferentes dispositivos de realidad virtual, que nos proporcionan una inmersión casi total en la escena, reflejando en la cámara los movimientos de nuestra cabeza, y proporcionando una visión estereoscópica de la escena. Entre los dispositivos más famosos se encuentran Oculus Rift, Samsung Gear VR y Google Cardboard. Aunque todos estos dispositivos proporcionan su propio SDK que podemos integrar en las plataformas nativas de desarrollo, es de especial interés su integración en el entorno Unity, que nos permitirá realizar aplicaciones que los soporten de forma casi inmediata. A continuación veremos cómo utilizarlos con este entorno.</p>
+<h3 id="oculus-rift-samsung-gear-vr">Oculus Rift / Samsung Gear VR<a class="headerlink" href="#oculus-rift-samsung-gear-vr" title="Permanent link">&para;</a></h3>
+<p>A partir de Unity 5.1 encontramos en este entorno soporte nativo para los dispositivos Oculus Rift y Samsung Gear VR. Ambos utilizan el mismo SDK y herramientas, con la diferencia de que Oculus Rift funciona sobre plataformas de sobremesa, mientras que Samsung Gear VR funciona sobre móviles Samsung.</p>
+<p>Para activar el soporte para estos dispositivos en Unity simplemente tendremos que entrar en <em>Player Settings</em> <span class="arithmatex"><span class="MathJax_Preview">_Edit &gt; Project Settings &gt; Player_</span><script type="math/tex">_Edit &gt; Project Settings &gt; Player_</script></span> y bien dentro de la plataforma <em>Standalone</em> <span class="arithmatex"><span class="MathJax_Preview">para Oculus Rift</span><script type="math/tex">para Oculus Rift</script></span> o <em>Android</em> <span class="arithmatex"><span class="MathJax_Preview">para Samsung Gear VR</span><script type="math/tex">para Samsung Gear VR</script></span> marcar la casilla <em>Virtual Reality Supported</em>, dentro de la sección <em>Other Settings &gt; Rendering</em>.</p>
+<p><img alt="Activar soporte de VR" src="imagenes/unity/unity-vr-activar.png" /></p>
+<p>Una vez hecho esto, automáticamente la cámara de la escena se comportará como una cámara VR, girando cuando giremos la cabeza y renderizando una imagen para cada ojo, para así proporcionar visión estéreo.</p>
+<h4 id="despliegue-de-la-aplicacion-en-un-dispositivo-de-prueba">Despliegue de la aplicación en un dispositivo de prueba<a class="headerlink" href="#despliegue-de-la-aplicacion-en-un-dispositivo-de-prueba" title="Permanent link">&para;</a></h4>
+<p>Antes de desplegar la aplicación en un dispositivo de prueba, deberemos añadir una firma que nos deberá proporcionar Oculus para nuestro dispositivo concreto. Dicha firma sólo se necesitará durante el desarrollo, cuando la aplicación se publique ya no hará falta.</p>
+<p>Para conseguir la firma en primer lugar necesitamos obtener el ID de nuestro dispositivo. Para ello lo conectaremos al sistema y ejecutaremos el comando:</p>
+<div class="highlight"><pre><span></span><code>adb<span class="w"> </span>devices
+</code></pre></div>
+<p>En la lista de dispositivos en la primera columna veremos los IDs que buscamos, con el siguiente formato:</p>
+<div class="highlight"><pre><span></span><code>* daemon started successfully *
+1235ba5e7a311272    device
+</code></pre></div>
+<p>En este caso, el ID que buscamos sería <code>1235ba5e7a311272</code>. Una vez localizado dicho ID, iremos a la siguiente página para solicitar la firma e introduciremos el ID <span class="arithmatex"><span class="MathJax_Preview">necesitaremos registrarnos previamente como usuarios de Oculus Developer, si no tenemos cuenta todavía</span><script type="math/tex">necesitaremos registrarnos previamente como usuarios de Oculus Developer, si no tenemos cuenta todavía</script></span>:</p>
+<p><a href="https://developer.oculus.com/osig/">https://developer.oculus.com/osig/</a></p>
+<p>Una vez introducido el ID nos descargará un fichero <code>.osig</code> que deberá ser introducido en nuestro proyecto de Unity en el siguiente directorio:</p>
+<div class="highlight"><pre><span></span><code>Assets/Plugins/Android/assets
+</code></pre></div>
+<p>Esto lo que hará será colocar dicho fichero en el directorio <code>assets</code> del proyecto Unity resultante. Una vez hecho esto ya podremos probar la aplicación en un dispositivo Samsung con Gear VR seleccionando la plataforma <em>Android</em> y pulsando sobre <em>Build &amp; Run</em>.</p>
+<p>Al desplegar la aplicación en el móvil Samsung, veremos que al ejecutarla nos pide conectar el dispositivo Gear VR al móvil. Una vez conectado, se ejecutará la aplicación y podremos ver nuestra escena de Unity de forma inmersiva.</p>
+<p><img alt="Conectar el dispositivo Gear VR" src="imagenes/unity/unity-vr-conectar.png" /></p>
+<p>Sin embargo, veremos que la imagen aparece algo distorsionada al verla a través de las lentes del Gear VR. Esto se debe a que aunque la cámara renderiza en estéreo y responde al movimiento de la cabeza, no se realiza la corrección adecuada a la imagen para verla a través de las lentes del Gear VR.</p>
+<h4 id="utilidades-de-oculus">Utilidades de Oculus<a class="headerlink" href="#utilidades-de-oculus" title="Permanent link">&para;</a></h4>
+<p>Aunque la cámara de Unity puede ser utilizada para aplicaciones de VR, hemos visto que tiene algunas carencias como por ejemplo el no realizar una corrección de la distorsión que realiza la lente.</p>
+<p><img alt="Resultado con OVRCameraRig" src="imagenes/unity/unity-vr-gear.png" /></p>
+<p>Para poder resolver estas carencias y tener la posibilidad de configurar e implementar diferentes componentes de la aplicación VR, Oculus proporciona una serie de utilidades en forma de paquete de <em>assets</em> para Unity que podemos descargar desde su web:</p>
+<p><a href="https://developer.oculus.com/downloads/">https://developer.oculus.com/downloads/</a></p>
+<p>Desde esta página podremos bajar tanto versiones actualizadas del <em>plugin</em> de Oculus/Gear para Unity <span class="arithmatex"><span class="MathJax_Preview">_OVR Plugin for Unity 5_</span><script type="math/tex">_OVR Plugin for Unity 5_</script></span> como las utilidades adicionales <span class="arithmatex"><span class="MathJax_Preview">_Oculus Utilities for Unity 5_</span><script type="math/tex">_Oculus Utilities for Unity 5_</script></span>.</p>
+<p>Para instalar el <em>plugin</em> simplemente tendremos que buscar dentro del directorio de instalación de Unity el directorio <code>VR</code> <span class="arithmatex"><span class="MathJax_Preview">en caso de MacOS tendremos que mirar dentro del contenido del paquete <code>Unity</code> para localizar dicho directorio para localizar dicho directorio</span><script type="math/tex">en caso de MacOS tendremos que mirar dentro del contenido del paquete <code>Unity</code> para localizar dicho directorio para localizar dicho directorio</script></span>, y dentro de él sustituir el directorio <code>oculus</code> y todo su contenido por el proporcionado por el <em>plugin</em>.</p>
+<p>Una vez actualizado el <em>plugin</em> podremos añadir las <em>utilities</em> cargándolo en el proyecto como paquete de <em>assets</em>.</p>
+<p>Uno de los <em>assets</em> más útiles es el <em>prefab</em> <code>OVRCameraRig</code>. Podemos utilizarlo en la escena en lugar de la cámara de Unity, y nos permitirá configurar diferentes propiedades de la cámara en la escena 3D, como por ejemplo la distancia entre los ojos. Además, aplicará de forma correcta la corrección a la distorsión introducida por las lentes.</p>
+<p><img alt="Componente OVR" src="imagenes/unity/unity-vr-ovr.png" /></p>
+<h4 id="modo-de-desarrollador">Modo de desarrollador<a class="headerlink" href="#modo-de-desarrollador" title="Permanent link">&para;</a></h4>
+<p>En los casos anteriores hemos probado la aplicación con el dispositivo Gear VR. Sin embargo, durante el desarrollo nos podría interesar poder probar la aplicación en el móvil sin la necesidad de tener que conectarlo al Gear VR.</p>
+<p>Podemos conseguir esto activando el modo desarrollador de Gear VR en el dispositivo móvil Samsung. Para poder hacer esto antes deberemos haber instalado alguna aplicación nuestra con la firma <code>osig</code>, en caso contrario no nos permitirá activarlo.</p>
+<p>Para activar el modo de desarrollador de Gear VR deberemos entra en <em>Ajustes &gt; Aplicaciones &gt; Administrador de aplicaciones &gt; Gear VR Service &gt; Almacenamiento &gt; Administrar almacenamiento</em> y pulsar repetidas veces sobre <em>VR Service Version</em>. Tras hacer esto nos aparecerán opciones para activar el modo de desarrollador.</p>
+<p><img alt="Activar modo de desarrollador" src="imagenes/unity/unity-vr-developer.png" /></p>
+<p>Con este modo activo podremos lanzar la aplicación en el móvil sin tener que conectar el dispositivo Gear VR, lo cual agilizará el desarrollo. Esta forma de probar la aplicación tendrá la limitación de que no reconocerá el giro de la cámara, ya que los sensores que utilizan estas aplicaciones para obtener la inclinación de la cabeza van integrados en el dispositivo Gear VR.</p>
+<h3 id="google-vr">Google VR<a class="headerlink" href="#google-vr" title="Permanent link">&para;</a></h3>
+<p>Google VR, originalmente conocido como Google Cardboard es el SDK de Google para desarrollar aplicaciones de realidad virtual usando sus visores de VR. Hasta ahora principalmente el Google Cardboard, pero recientemente han lanzado el primer producto similar al anteriormente visto, Samsung Gear VR, conocido como Google Daydream. El SDK de Google VR es compatible con cualquiera de sus visores por lo que las aplicaciones que desarrollemos para el Google Cardboard se puede utilizar también en Google Daydream.</p>
+<p><a href="https://developers.google.com/vr/unity/">https://developers.google.com/vr/unity/</a></p>
+<p>El plugin consiste en un paquete de <em>assets</em> que podemos incluir en nuestro proyecto <span class="arithmatex"><span class="MathJax_Preview">deberemos añadir todo su contenido</span><script type="math/tex">deberemos añadir todo su contenido</script></span>.</p>
+<p>Recientemente ha aparecido una compilación personalizada de Unity que incorpora el SDK de Google VR de forma nativa. Esta compilación personalizada, que se basa en Unity 2017, es compatible el objetivo de compilación de Android con soporte para VR para Daydream y el Samsung Gear VR. Entre las características de GoogleVR para desarrollar aplicaciones encontramos el soporte para controladores, escenas de ejemplos, scripts con ciertas funciones ya implementadas, sonido espacial, etcétera.</p>
+<p>A continuación vamos a ver la forma de añadir soporte a nuestro proyecto Unity para utilizar el visor de tipo Cardboard o similares. Al igual que con otros plugins o addons, se han creado una serie de <em>prefabs</em> que nos van a facilitar la tarea de hacer nuestro proyecto compatible. Lo primero que tenemos que hacer es configurar el proyecto para que soporte Realidad Virtual, o en su defecto generar un par de imágenes estéreo para cada ojo. Desde player setting, habilitaremos en la sección XR settings el soporte para Realidad virtual y el conjunto de SDKs a utilizar, en nuestro caso el de Cardboard.</p>
+<p><img alt="" src="imagenes/unity/unity_player_settings_vr.png" /></p>
+<p>Una vez configurado el proyecto, el primer prefab que tenemos que añadir es <code>GvrEditorEmulator</code>, este nos va permitir que al ejecutar nuestra escena se active el rendering estéreo, así como la emulación en el editor Unity del movimiento de la cabeza utilizando el teclado. En concreto, utilizaremos Alt + ratón para girar la cabeza y Ctrl + ratón para inclinarla. De igual manera, al hacer click con el ratón simularemos la pulsación del botón disponible en los visores tipo Cardboard. Gracias al uso de este prefab ya podremos utilizar la orientación de nuestra cabeza para ver la escena completo <span class="arithmatex"><span class="MathJax_Preview">360º</span><script type="math/tex">360º</script></span>. Además, Google VR SDK incluye un sistema de eventos para permitir que los desarrolladores creen aplicaciones con cierta capacidad de interacción con la escena. Este sistema es compatible tanto con Daydream como Cardboard. Para utilizarlo tendremos que añadir a nuestra escena el prefab <code>GvrEventSystem</code>. Una vez añadido este prefab podremos hacer uso en nuestra escena de un puntero para seleccionar objetos o interactuar con la escena. Dentro del SDK encontramos el prefab <code>GvrReticlePointer</code> que una vez añadido a nuestra escena, en concreto deberemos añadirlo a nuestra cámara principal, el sistema de puntero aparecera en nuestra escena una vez lo ejecutemos <span class="arithmatex"><span class="MathJax_Preview">Cuando enfoquemos un objeto con el que se pueda interactuar el puntero generará una animación que podemos configurar y personalizar</span><script type="math/tex">Cuando enfoquemos un objeto con el que se pueda interactuar el puntero generará una animación que podemos configurar y personalizar</script></span>. Finalmente, el SDK cuenta con dos scripts para habilitar el sistema de interacción: <code>GvrPointerGraphicRaycaster</code> y <code>GvrPointerPhysicsRaycaster</code> . Estos scripts sustituyen a las versiones equivalentes de Unity para calcular la intersección de un rayo virtual lanzado <span class="arithmatex"><span class="MathJax_Preview">Ray casting</span><script type="math/tex">Ray casting</script></span> desde la cámara hacia la escena y hacia gráficos dibujados en un canvas 2D. Los scripts se encuentran en la siguiente ruta: <code>Assets/GoogleVR/Scripts/EventSystem</code>. Estos scripts se añadirán como componentes a la cámara principal para que funcionen correctamente. Además, cada objeto de la escena con el que queramos interactuar debe responder a los eventos generados, para ello bien podemos utilizar el componente <code>EventTrigger</code> o el sistema de eventos de Unity mediante scripts que desarrollemos y añadamos a los objetos. En el caso de la interacción con modelos 3D a través del script <code>GvrPointerGraphicRaycaster</code>  es necesario que los modelos tengan una componente <em>collider</em>, permitiendo así que el_ raycaster_ pueda detectar la colisión con el modelo 3D.</p>
+<p>La jerarquía de objetos en la escena quedaría como se muestra en la siguiente imagen:</p>
+<p><img alt="" src="imagenes/unity/unity-vr-jerarquia.png" /></p>
+<p>En la siguiente imagen podemos ver la previsualización de la cámara en la escena, en las últimas versiones del SDK se ha deshabilitado el rendering previo de las dos vistas estéreo. Se puede apreciar como al enfocar el objeto flotante, el puntero produce una animación, en este caso formando un circulo que se expande y se contrae. De esta forma podemos facilmente identificar los objetos de la escena con los que se puede interactuar.</p>
+<p><img alt="" src="/imagenes/unity/unity-vr-escena.png" /></p>
+<p>Con esto tendríamos la funcionalidad básica para convertir nuestra escena en Unity en una experiencia de realidad virtual. El SDK está en contínuo desarrollo por lo que su API sufre cambios de forma frecuente. Para implementar otra de las características claves en una experiencia de realidad virtual, el sonido espacial, podemos también utilizar el SDK de GoogleVR. Este incluye toda la funcionalidad necesaria para dotar a nuestra escena de sonido espacial e immersivo. Podemos consultar una guía sobre su utilización en Unity en el siguiente enlace:<a href="https://developers.google.com/vr/unity/spatial-audio"> https://developers.google.com/vr/unity/spatial-audio</a>.</p>
+<p><strong>Guía uso Google VR SDK v0.6 e inferiores <span class="arithmatex"><span class="MathJax_Preview">Versión SDK anterior, no recomendado utilizarse, solo para mantenimiento de proyectos existentes, legacy </span><script type="math/tex">Versión SDK anterior, no recomendado utilizarse, solo para mantenimiento de proyectos existentes, legacy </script></span></strong></p>
+<p>La forma más sencilla de añadir soporte a nuestro proyecto Unity para Cardboard o similares es añadir a nuestro proyecto el <em>prefab</em> <code>GvrViewerMain</code>. Este <em>prefab</em> tiene los componentes necesarios de forma que al ejecutar nuestra aplicación se generarán las imágenes estéreo utilizando nuestra cámara principal de la escena.</p>
+<p><img alt="Prefab GrvViewerMain" src="imagenes/unity/unity-vr-gvrviewermain.png" /></p>
+<p>Desde este <em>prefab</em> podemos ajustar la distorsión de las lentes, así como seleccionar el tamaño de la pantalla sobre el que la aplicación se va a ejecutar. Por ahora, además nos permite seleccionar que versión de Google Cardboard vamos a utilizar, de forma que se generarán las vistas correspondientes para el visor seleccionado <span class="arithmatex"><span class="MathJax_Preview">distorsión</span><script type="math/tex">distorsión</script></span>.</p>
+<p><img alt="Aplicación con Google Cardboard" src="imagenes/unity/unity-vr-cb.png" /></p>
+<p>Además, el SDK de Google para Unity cuenta con otros <em>prefabs</em> que nos permiten facilmente utilizar el movimiento de la cabeza para interactuar con nuestra escena. Usando el <em>prefab</em> <code>GvrReticle</code> podemos implementar esta funcionalidad en nuestra aplicación. También incorpora otras utilidades como un <em>prefab</em> para mostrar una etiqueta flotante en nuestra aplicación con la tasa de imágenes por segundo a la que la aplicación esta siendo ejecutada: <code>GvrFPSCanvas</code>. Esto es importante ya que en las aplicaciones de Realidad Virtual es necesario maximizar la tasa de imágenes por segundo de forma que el usuario no sienta sensación de mareo o perciba y que el movimiento de la cámara alrededor de la escena sea lo más suave posible.</p>
+<p>Para integrar el <code>GvrReticle</code> a nuestra aplicación y habilitar la interacción con modelos de la escena tendremos que seguir los siguientes pasos. Primero, añadimos el <em>prefab</em> <code>GvrReticle</code> y los ponemos en la jerarquía de nuestra aplicación debajo de la cámara principal. Desde el inspector del prefab podremos cambiar algunos ajustes como el color del puntero, la forma, o la animación que se produce al apuntar a un objecto de nuestra escena con el que se puede interactuar. Además, tenemos que añadir a nuestra escena un objeto <code>EventSystem</code> y añadir la componente <code>Gaze Input Module</code>.  Por último, añadiremos el objeto con el que vamos a interactuar, por ejempo un cubo, y nos aseguraremos que tiene habilitada la componente <code>Box Collider</code>. De esta forma nuestra aplicación en Unity podrá comprobar cuando el puntero intersecta con el cubo 3D. También tenemos que añadir a nuestra cámara principal la componente <code>Physics Raycaster (Script)</code>, de forma que nuestra cámara podrá detectar colisiones con los objetos de la escena mediante  <code>raycasting</code>.</p>
+<p><img alt="Ejemplo escena con GvrViewerMain, GvrReticle y GvrFPSCanvas." src="imagenes/unity/unity-vr-gvrreticle.png" /></p>
+<h2 id="realidad-aumentada">Realidad Aumentada<a class="headerlink" href="#realidad-aumentada" title="Permanent link">&para;</a></h2>
+<p>Realidad aumentada es la expresión que usamos para referirnos a las tecnologías que nos permiten superponer modelos virtuales en el mundo real. La mayor diferencia con el término realidad virtual es que la realidad aumentada mezcla el mundo virtual y el real, mientras que en la realidad virtual no percibimos el mundo real y estamos immersos en un mundo virtual <span class="arithmatex"><span class="MathJax_Preview">no hay percepción del entorno en el que estamos</span><script type="math/tex">no hay percepción del entorno en el que estamos</script></span>.</p>
+<p>Si pensamos en la expresión "realidad aumentada" aplicada a dispositivos móviles, se traduce a la capacidad de superponer contenido en el mundo real a través de la cámara del dispositivo. Esto nos permite "mejorar" el mundo real superponiendo información o contenido multimedia. Por ejemplo, apuntar con la cámara de nuestro teléfono a una foto y que nos muestre una ventana 3D a través de la pantalla de nuestro teléfono donde podemos reproducir un vídeo. Cientos de aplicaciones relacionadas se estan utilizando en museos de todo el mundo para mostrar información tridimensional y aportar información adicional de objetos que se exhiben en los museos. Gracias a las pantallas táctiles de nuestros teléfonos, la realidad aumentada también nos proporciona cierta capaz de interacción entre el contenido virtual y el mundo real.</p>
+<p>Actualmente la mayoría de tecnologías que permiten "aumentar la realidad" utilizan marcadores con una forma conocida a priori, plano, cubo, cilindro, etcétera, de forma que el software utilizado es capaz de detectar dicho marcador y mostrar el contenido alrededor del mismo. Pese a que la mayoría utilizan marcadores, cabe destacar que en los últimos años con la aparición de sensores 3D como el dispositivo Kinect de Microsoft, la utilización de marcadores se ha reducido, ya que tenemos información geométrica del entorno <span class="arithmatex"><span class="MathJax_Preview">mundo real</span><script type="math/tex">mundo real</script></span> y por lo tanto podemos superponer información 3D de forma precisa. Debido a que la mayoría de dispositivos móviles no disponen de sensores 3D, la mayoría de tecnologías para "aumentar la realidad" en estos dispositivos se basan en la utilización de marcadores. En él ultimo año, han aparecido varios dispositivos móviles con capacidad de aumentar la realidad, el primero de ellos es un proyecto de la empresa Google, conocido como project Tango, el cual propone un disposito móvil con cámara 3D capaz de mapear el entorno y superponer contenido. El otro proyecto a destacar ha sido desarrollado por la empresa Microsoft y se llama HoloLens. Este es un casco de realidad aumentada o realidad mixta como ellos lo denominan. Este dispositivo móvil es capaz de mapear el entorno y visualizar contenido tridimensional en nuestro entorno como si de verdad estuviera ahí.</p>
+<p>Por último mencionar que existen otras tecnologías de realidad virtual basadas en posicionamiento GPS, de forma que utilizando las coordenadas proporcionadas por un sistema GPS habilitan en ciertos lugares la visualización de cierta información adicional utilizando la cámara del dispositivo móvil.</p>
+<p><img alt="Ejemplo de realidad aumentada" src="imagenes/realidad_aumentada/ra_ejemplo_00.jpg" /></p>
+<h3 id="librerias-de-realidad-aumentada">Librerías de realidad aumentada<a class="headerlink" href="#librerias-de-realidad-aumentada" title="Permanent link">&para;</a></h3>
+<p>Actualmente existen varias librerías de realidad aumentada que nos permiten desarrollar aplicaciones para smartphones, tablets e incluso gafas de realidad aumentada. A continuación vamos a revisar las características de algunas de estas librerías.</p>
+<h4 id="droidar">DroidAR<a class="headerlink" href="#droidar" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/bitstars/droidar">DroidAR</a> es una librería open-source para Android que nos ofrece funcionalidades de realidad aumentada mediante la detección de puntos de interés <span class="arithmatex"><span class="MathJax_Preview">basada en localización GPS</span><script type="math/tex">basada en localización GPS</script></span> así como la detección de marcadores. Mediante el uso de la librería <a href="https://github.com/libgdx/libgdx/"><strong>libGLX</strong></a> además permite cargar modelos 3D y animaciones para visualizar mediante marcadores o la localización del dispositivo. Destacar que la documentación de esta librería no es demasiado extensa y no aporta mucha información útil. En los últimos dos años no se ha actualizado mucho, de hecho basado en DroidAR ha aparecido la librería DroidAR 2 de código cerrado que ofrece nuevas y mejoradas funcionalidades respecto al proyecto original.</p>
+<h4 id="vuforia">Vuforia<a class="headerlink" href="#vuforia" title="Permanent link">&para;</a></h4>
+<p><a href="https://www.vuforia.com/">Vuforia</a> es otra librería de realidad aumentada desarrollada por la empresa Qualcomm. En 2015 Qualcomm vendió la plataforma a otra empresa estadounidense que ha continuado desarrollando la misma. Vuforia proporciona múltiples formas de ofrecer realidad aumentada a través de marcadores 2D/3D, múltiple detección de marcadores de forma simultánea, posicionamiento, etcétera. Vuforia ofrece soporte para las plataformas iOS y Android de forma nativa, a su vez ofrece un plugin para Unity de forma que podemos desarrollar nuestra aplicación de realidad aumentada en Unity y posteriormente desplegarla en aplicaciones de Escritorio, MACOSX, Windows 10, Android e iOS. Además ofrece soporte para otros dispositivos móviles, como las gafas de realidad aumentada de EPSON <span class="arithmatex"><span class="MathJax_Preview">Epson Moverio BT-200</span><script type="math/tex">Epson Moverio BT-200</script></span>, gafas de realidad virtual Samsung GearVR e incluso recientemente han dado soporte para el dispositivo de realidad aumentada Microsoft HoloLens. Vuforia ofrece licencias para desarrollar proyectos personales sin fines comerciales, de forma que podemos crear facilmente apps con funcionalidades de realidad aumentada. Si queremos comercializar nuestra app tendremos que adquirir una licencia.</p>
+<h4 id="wikitude-ar">Wikitude AR<a class="headerlink" href="#wikitude-ar" title="Permanent link">&para;</a></h4>
+<p><a href="http://www.wikitude.com/products/wikitude-sdk/">Wikitude AR</a> es una librería comercial <span class="arithmatex"><span class="MathJax_Preview">ofrece período de prueba</span><script type="math/tex">ofrece período de prueba</script></span> de realidad aumentada. Permite el reconocimiento de imagenes y seguimiento de las mismas, así como visualización de modelos 3D y animaciones. También ofrece detección basada en la geolocalización del dispositivo. Wikitude AR SDK esta disponible para Android, iOS, Unity, Google Glass, Epson Moverio, Vuzix M-100, plugin para la librería PhoneGap y también un componente de Xamarin.</p>
+<h3 id="desarrollando-una-aplicacion-de-realidad-aumentada-con-vuforia">Desarrollando una aplicación de Realidad aumentada con Vuforia<a class="headerlink" href="#desarrollando-una-aplicacion-de-realidad-aumentada-con-vuforia" title="Permanent link">&para;</a></h3>
+<p>En este curso vamos a centrarnos en la librería Vuforia, ya que además de ofrecer compatibilidad con múltiples plataformas, su integración con Unity es muy sencilla y nos permite facilmente crear aplicaciones de realidad aumentada. Además, dispone de licencias personales que podemos utilizar sin restricciones para el desarrollo de nuestras aplicaciones.</p>
+<p>Lo primero que tenemos que hacer para empezar el desarrollo de una aplicación de realidad aumenta con Vuforia es registrarnos en su <a href="https://developer.vuforia.com/">página web</a> <span class="arithmatex"><span class="MathJax_Preview">[https://developer.vuforia.com/](https://developer.vuforia.com/)</span><script type="math/tex">[https://developer.vuforia.com/](https://developer.vuforia.com/)</script></span>.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_registro_vuforia_00.png" /></p>
+<p>Una vez registrados recibiremos un correo electrónico para confirmar la cuenta que acabamos de crear. Al identificarnos en el portal de la plataforma veremos varias secciones. Primero debemos ir a la sección "Downloads" para descargar el SDK. En esta sección podemos ver una descripción de las distintas características que el SDK de Vuforia nos ofrece, así como las distintas version para múltiples plataformas. En nuestro caso vamos a descargar la versión para Unity. Al descargar el SDK para Unity nos encontramos un paquete que podemos importar en nuestro proyecto mediante la opción de Unity "import package" o bien simplemente hacer doble click sobre el fichero y se importara en el proyecto que tengamos abierto en ese momento. A continuación mostramos las características que ofrece el SDK de Vuforia.</p>
+<ul>
+<li><strong>Image Targets</strong>: Detección y seguimiento de marcadores 2D.</li>
+<li><strong>VuMark</strong>: VuMark es un marcador propio de Vuforia al estilo de códigos QR o similares. La ventaja es que el tracking es más robusto y estable en comparación a utilizar Image Targets.</li>
+<li><strong>Object Recognition</strong>: Utilización de marcadores 3D: cubos, esferas, cilindros, como objeto a detectar para superponer contenido.</li>
+<li><strong>Multi Targets</strong>: Detección de múltiples marcadores de forma simultáena permitiendo detectar y seguir varios modelos de forma independiente.</li>
+<li><strong>User Defined Targets</strong>: Permite crear marcadores 2D personalizados basados en imágenes que el usuario puede subir a la plataforma.</li>
+<li><strong>Smart Terrain <span class="arithmatex"><span class="MathJax_Preview">Unity only</span><script type="math/tex">Unity only</script></span></strong>: Permite crear fácilmente escenarios con múltiples marcadores para ofrecer experiencias de realidad aumentada muy vistosas. Esta enfocado a la creación de videojuegos y permite crear fácilmente distintos niveles dentro de nuestro juego o aplicación.</li>
+<li><strong>Cloud Recognition</strong>: Permite almacenar los marcadores en la nube de forma que no tienen que almacenarse en el dispositivo móvil.</li>
+<li><strong>Text Recognition</strong>: Utilización de texto como marcador.</li>
+<li><strong>Frame Markers</strong>: Utilización de marcadores 2D convencionales también conocidos como marcadores fiduciales. Cada marcador codifica un patrón binario que corresponde a un identificador único.</li>
+</ul>
+<p>Una vez descargado el SDK e importado en Unity, podemos añadir una cámara de Realidad Aumentada a la escena, de forma que cuando usemos este objeto nos va a permitir detectar y hacer el seguimiento de los marcadores.</p>
+<p>Creamos un nuevo proyecto, hacemos doble click sobre el SDK que hemos descargado previamente y a continuación aceptamos que se importe el SDK en el proyecto que acabamos de crear.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_nuevo_proyecto_unity.jpg" /></p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_importar_sdk_vuforia_unity.jpg" /></p>
+<p>Una vez importamos el SDK dispondremos de una carpeta con el nombre "Vuforia" dentro de los Assets de nuestro proyecto. Esta carpeta contiene una serie de objetos que podemos añadir a nuestra escena. Entre estos objetos encontramos la cámara de realidad virtual que mencionamos anteriormente. Lo primero que tenemos que hacer para habilitar la funcionalidad de realidad aumentada en nuestra aplicación es eliminar la cámara principal que se crea en la escena por defecto al crear un proyecto. Una vez eliminada, hacemos click sobre la carpeta "Vuforia" y nos digirimos a la subcarpeta "Prefabs". Esta carpeta contiene el objeto "ARCamera" que podemos arrastar en nuestra escena. Una vez disponemos de este objeto en nuestra escena  vamos a ver que componentes tiene, para ello hacemos click sobre el objeto en la vista que nos muestra de forma jerárquica los objetos en la escena.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_componentes_ar_camera.jpg" /></p>
+<p>Vamos a ver los distintos componentes que tiene asociados el objeto "ARCamera" y sobretodo vamos a ver las distintas opciones que nos ofrece el componente "Vuforia Behaviour". Podemos ver que por defecto, la mayoría de componentes se encuentran activados, permitiendo la inicialización del objeto, cargar una base de datos con marcadores, mostrar vídeo de fondo obtenido a través de la cámara del dispositivo o habilitar la característica "Smart terrain" de la librería Vuforia.</p>
+<p>Por ahora vamos a centrarnos en el componente "Vuforia Behaviour", podemos ver que en el primer campo o propiedad tiene un campo para introducir una licencia de aplicación. De hecho, si intentamos ejecutar la aplicación sin introducir esta licencia, obtendremos un mensaje de aviso alertándonos de la necesidad de introducir una licencia válida para poder utilizar la cámara de realidad aumentada en nuestra escena. Por ello, antes de continuar tendremos que ir a la plataforma online de Vuforia y obtener una clave para nuestra aplicación.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_license_manager.jpg" /></p>
+<p>En la pestaña developer de la plataforma online veremos que tenemos disponible una subsección llamada "License Manager", desde esta podemos crear una nueva licencia para nuestra aplicación, tan solo deberemos seguir los siguientes pasos:</p>
+<ul>
+<li>
+<p><strong>Elige un tipo de proyecto:</strong> Dependiendo del tipo de aplicación: Development, Consumer o Enterprise tendremos que pagar por nuestra licencia o no. En nuestro caso seleccionaremos el tipo "Development"</p>
+</li>
+<li>
+<p><strong>Definimos un nombre para nuestra app:</strong> como la plataforma nos permite crear múltiples apps es importante poner un nombre identificativo de forma que más tarde podamos relacionar las licencias con las apps que estamos desarrollando.</p>
+</li>
+<li>
+<p><strong>Seleccionamos el tipo de dispositivo:</strong> en este caso tan solo tendremos que diferenciar entre disposito móvil o "eyewear". Dentro de "eyewear" engloban dispositivos como las Microsoft Hololens, EPSON moverio, etcétera.</p>
+</li>
+<li>
+<p><strong>Obtenemos nuestra licencia</strong>: En el caso de que se trate de una licencia comercial tendremos que proveer con un medio de pago para costear la misma, en caso contrario veremos que nuestra licencia se acaba de crear. La licencia de desarrollar tiene algunas restricciones, por ejemplo el número máximo de veces por mes que un marcador puede ser detectado usando nuestra aplicación móvil. Para saltarnos esta restricción tendremos que obtener una licencia comercial.</p>
+</li>
+</ul>
+<p>Una vez creada, nos aparecerá en el gestor de licencias de la plataforma online y podemos hacer click sobre la misma para ver la cadena de texto que representa la licencia de nuestra aplicación. Esta cadena se debe de introducir en el campos que vimos anteriormente del componente "Vuforia Behaviour" en objeto "ARCamera".</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_license_vuforia.jpg" /></p>
+<p>Trás introducir la licencia veremos que podemos ejecutar nuestra aplicación en Unity y si nuestro ordenador dispone de una cámara compatible podremos ver video en directo en la escena Unity.</p>
+<p>Lo siguiente que tenemos que hacer es habilitar el uso de marcadores y definir el marcador que vamos a reconocer en nuestra aplicación para suponer contenido.</p>
+<p>Si es la primera vez que creamos una aplicación, tendremos que irnos a la plataforma online y crear un nuevo "Target" que va a ser reconocido en nuestra aplicación. Si por el contrario ya dispusieramos de algún marcador creado previamente para otro proyecto usando la librería Vuforia, podríamos copiarlo y reutilizarlo en este nuevo proyecto. En nuestro caso vamos a la pestaña "Develop" de la plataforma online y hacemos click sobre la sección "Target Manager". Una vez dentro el sistema nos ofrecela posibilidad de crear una nueva base de datos con marcadores para nuestra aplicación. Al pinchar en añadir nos preguntará donde va a residir el marcador: Device, Cloud o VuMark. Seleccionaremos Device ya que queremos almacenar los marcadores en el propio dispositivo. Una vez creada la base de datos podemos crear distintos marcadores que posteriormente usaremos en nuestra aplicación.</p>
+<p>Al añadir un marcador tendremos que seleccionar una serie de opciones, primero de todo el tipo de marcador, una imagen, cubo 3D,  cilindro incluso nos permite utilizar un objeto. En todos los casos  es importante además que el tipo de marcador tenga una textura o patrón que permita que los algoritmos de visión por computador para seguimiento de características visuales puedan detectar y hacer el seguimiento de forma correcta. A continuación seleccionaremos el fichero de la imagen a utilizar y el ancho en unidades unity que queremos que nuestro marcador tenga en la escena. Este parámetro deberá estar en la misma escala que el contenido que vamos a visualizar sobre el marcador. El alto se computará a partir del ancho introducido. Por último le daremos un nombre a este marcador ya que podremos reutilizarlo para otras aplicaciones.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_nuevo_marcador_vuforia.jpg" /></p>
+<p>Al crearlo, la plataforma online procesará la imagen que hemos subido y nos dará una valoración sobre la calidad de la imagen para ser utilizada como marcador. Como podemos imaginar, si la imagen utilizada no tiene suficientes características visuales <span class="arithmatex"><span class="MathJax_Preview">textura</span><script type="math/tex">textura</script></span> el sistema le dará una calificación baja y como consecuencia la detección y el seguimiento del marcador no serán muy estables. La tecnología Vuforia se basa en la utilización del algoritmo SURF, ampliamente conocido en la comunidad de visión por computador, para detectar una determinada textura en la escena. En nuestro caso, hemos subido una textura sugerida por la librería Vuforia, la podemos encontrar en su página web y ofrece buenas características visuales para un correcto funcionamiento. Más adelante, probaremos a subir nuestras propias imágenes y ver qué tal funcionan. Si vamos al listado de marcadores que hemos subido y hacemos click sobre el que acabamos de crear, podemos ver además de la valoración que nos ofrece la plataforma, las características visuales que ha detectado.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_caracteristicas_visuales_marcador.jpg" /></p>
+<p>En el siguiente enlace encontramos algunos ejemplos de imágenes que Vuforia recomienda: <a href="https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf">https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf</a></p>
+<p>El siguiente paso para utilizar este marcador en el proyecto Unity que creamos previamente es descargarlo desde la plataforma online e importarlo de igual forma que hicimos con el SDK de Vuforia. Deberemos seleccionar la opción de descarga para la plataforma Unity.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_descargar_bd_marcador.jpg" /></p>
+<p>Una vez importados ambos paquetes en Unity vamos a repasar la estructura de Assets que tenemos en nuestro proyecto relacionados con el SDK de Vuforia:</p>
+<ul>
+<li><strong>Editor:</strong> Contiene los scripts que necesitemos para interactuar de forma dinámica con los marcadores que tengamos en nuestra aplicación.</li>
+<li><strong>Plugins:</strong> Contiene los binarios Java y otros binarios nativos que integran el SDK de Vuforia con las aplicaciones de Unity para Android o iOS.</li>
+<li><strong>Vuforia:</strong> Contiene los scripts y prefabs requeridos para implementar funcionalidades de realidad aumentada en tu aplicación Unity.</li>
+<li><strong>Streaming Assets/QCAR</strong> * Contiene la base de datos y su configuración, de marcadores para nuestro dispositivo en formato XML y DAT <span class="arithmatex"><span class="MathJax_Preview">fichero importado de la plataforma online para gestionar marcadores</span><script type="math/tex">fichero importado de la plataforma online para gestionar marcadores</script></span>.</li>
+</ul>
+<p>Volviendo al proyecto Unity que hemos creado, como ya disponemos de una cámara de realidad aumentada en nuestra escena, tan solo nos quedaría incluir un objeto "ImageTarget" en nuestra escena y configurar algunos valores en los scripts de estos objetos. Por lo tanto, arrastramos un objeto "ImageTarget" a la escena. Este objeto lo encontramos dentro de la carpeta Vuforia/prefabs dentro del explorador del proyecto en Unity.</p>
+<p>Una vez añadido deberemos configurar algunos de los componentes de este objeto. El componente "Mesh Renderer" nos permite cambiar algunos efectos gráficos sobre los modelos que vamos a visualizar sobre el marcador. Por ejemplo, si los modelos que cuelguen de este objeto proyectan sombras o si podemos proyectar sombras sobre el modelo en sí.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_componentes_image_target.jpg" /></p>
+<p>Para que el marcador funcione en nuestra aplicación y sea detectado debemos seleccionarlo en el componente "Image Target Behaviour". Este script nos permite seleccionar el marcador que previamente creamos e importamos en nuestro proyecto, así como configurar algunas opciones del mismo. Por ahora, simplemente seleccionaremos nuestro marcador de la lista despegable "Database". Con esto ya tenemos nuestra aplicación lista para detectar el marcador definido. Para probarla, añadimos en la escena un modelo 3D, por ejemplo una esfera, y la posicionamos en la escena cerca del marcador que hemos puesto anteriormente.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_escena_unity_marcador_esfera.jpg" /></p>
+<p>Unity nos permite crear aplicaciones multiplataforma, por lo que podremos generar aplicaciónes para los siguientes sistemas: Windows, OSX, Android, iOS, tvOS, Tizen, webGL, Xbox One, PS3, PS4, etcetera. Si tenemos una cámara compatible en el ordenador donde estamos desarrollando la aplicación, podremos probar nuestra aplicación de realidad aumentada simplemente pulsando el botón de "Play" en la parte superior.</p>
+<p>A continuación vamos a ver como generar la aplicación para Android o iOS.</p>
+<h4 id="desplegando-aplicacion-unity-en-android">Desplegando aplicación Unity en Android<a class="headerlink" href="#desplegando-aplicacion-unity-en-android" title="Permanent link">&para;</a></h4>
+<p>Accedemos al diálogo: "File -&gt; Build Settings". Desde aquí  podemos especificar y configurar la plataforma para la cual queremos generar nuestra aplicación. En el caso de Android, además, primero tendremos que especificar el directorio donde se encuentra el SDK Android y el Java Development Kit <span class="arithmatex"><span class="MathJax_Preview">JDK</span><script type="math/tex">JDK</script></span>. En "Unity -&gt; Preferences -&gt; External tools" deberemos configurar estos directorios.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_unity_external_tools.jpg" /></p>
+<p>A la hora de desplegar la aplicación en Android, tenemos varias opciones, bien generamos directamente la aplicación en formato .apk o también podemos generar un proyecto para Android Studio y modificarlo posteriormente allí. De esta forma podremos ver código fuentes para la integración de Vuforia en la app Android y hacer modificaciones en la lógica de la aplicación. Para generar el proyecto para Android Studio tendríamos que marcar la casilla "Google Android Project" en "Build Settings".</p>
+<p>Además, si pulsamos sobre "Player Settings" podremos definir toda una serie de opciones para la generación de la aplicación en Android. Entre estas opciones encontramos, nombre de la aplicación, icono, opciones de rendering, optimización de codigo GPU, mínima versión de API requerida, lugar de instalación para la app, acceso a Internet, permisos de escritura, etcétera.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_player_settings_android.jpg" /></p>
+<p>Al pulsar el botón "Build" nos generará el fichero .apk compatible para Android con las opciones marcadas y si pulsamos "Build and Run" buscará un dispositivo Android conectado e instalará y ejecutará la aplicación en el dispositivo.</p>
+<h4 id="desplegando-aplicacion-unity-en-ios">Desplegando aplicación Unity en iOS<a class="headerlink" href="#desplegando-aplicacion-unity-en-ios" title="Permanent link">&para;</a></h4>
+<p>Para desplegar la aplicación en iOS, seleccionaremos esa opción en el diálogo "Build Settings". En este caso, en lugar de ejecutar directamente, nos creará un proyecto en para Xcode que utilizaremos para desplegar la aplicación en nuestro dispositivo iOS. Si tratamos de compilar el proyecto que nos acaba de generar Unity, obtendremos un error indicándonos que la aplicación no ha sido firmada y requiere especificar un "Equipo".</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_firmar_proyecto_unity_para_ios_xcode.jpg" /></p>
+<p>Por último, antes de compilar la aplicación y desplegarla en nuestro dispositivo iOS, tendremos que añadir una entrada en la configuración del proyecto con la descripción del uso de la cámara. Por políticas de seguridad con el acceso a la cámara,  los desarrolladores tienen que detallas el uso de la cámara en la aplicación. Cuando la aplicación intente acceder a la cámara el usuario, iOS nos lo informará con un diálogo y nos permira permiso para que la aplicación acceda a la cámara. Por ello en la sección "Info" de la configuración del proyecto, creamos la clave "Privacy - Camera Usage Description" y ponemos una descripción del uso de la cámara en nuestra app: "detección marcadores realidad aumentada".</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_project_info_keys_camera_usage_description.jpg" /></p>
+<p>Ahora podemos compilar y desplegar la aplicación en nuestro dispositivo iOS pulsando el botón "Play" de la parte superior.</p>
+<h3 id="ejercicio-realidad-aumentada">Ejercicio realidad aumentada<a class="headerlink" href="#ejercicio-realidad-aumentada" title="Permanent link">&para;</a></h3>
+<p>Para poner en práctica lo que hemos visto os proponemos el siguiente ejercicio: Vamos a crear una applicación de realidad aumentada para promocionar el máster en desarrollo de software para dispositivos móviles. Utiliza el tríptico del máster para visualizar una serie de modelos 3D sobre este. Además, para poner en práctica lo que hemos aprendido de Unity sobre interfaces 2D en las secciones anteriores, añadiremos una simple interfaz de usuario para poder salir de la aplicación. Añadiremos varios modelos 3D utilizando distintos formatos <span class="arithmatex"><span class="MathJax_Preview">.3ds, .obj, .off, ...</span><script type="math/tex">.3ds, .obj, .off, ...</script></span> Los modelos 3D se pueden descargar desde la plataforma Moodle <code>(assets_ejercicio_realidad_aumentada.zip)</code>. Utilizando la portada y la parte interior del tríptico crearemos dos marcadores. La detección de cada marcador visualizará un contenido distinto en nuestra aplicación. Por ejemplo, al detectar la portada del tríptico podemos invitar al usuario a abrirlo mostrando texto 3D sobre el marcador y entonces detectar la parte interior del trípico y mostrar un contenido distinto.</p>
+<p>Por último, habilitaremos la interacción con los modelos 3D cargados en la escena. Al pulsar sobre cada uno de los modelos, Android, iMac, logotipo curso, visualizaremos una imágen distinta sobre el monitor iMac, por ejemplo, al pulsar sobre Android mostraremos una imagen de Android, al pulsar sobre el monitor visualizaremos una imágen sobre iOS, etcétera. Podemos utilizar un diálogo o simplemente un plano 3D con una textura que se posicionará encima de la pantalla del iMac.</p>
+<p><img alt="" src="imagenes/realidad_aumentada/ra_ejemplo_01.jpg" /></p>
+<h3 id="realidad-mixta">Realidad mixta<a class="headerlink" href="#realidad-mixta" title="Permanent link">&para;</a></h3>
+<p>Realidad mixta es un término que se utiliza para la combinación de técnicas de realidad virtual y aumentada en tiempo real. Consiste en visualizar el mundo real usando técnicas de realidad virtual. Para ello, normalmente se visualiza el mundo real a través de la utilización de una cámara, o através de pantallas transparentes, cuyo flujo de vídeo se renderiza en entornos de realidad virtual añadiendo contenido virtual y renderizándolo todo usando un par de imágenes estereoscópicas. Utilizando marcadores como los vistos anteriormente, podemos facilmente, usando la cámara, añadir contenido virtual sobre el flujo de vídeo de la cámara y visualizarlo todo a la vez como si estuviera en el mundo real.</p>
+<p>También se ha acuñado el término de realidad mixta, a tecnologías como las desarrolladas por Microsoft, Meta, Google o Epson. Estas compañias han desarrollado unos cascos que incorporan pantallas transparentes muy cercanas a los ojos. De esta forma podemos seguir viendo el mundo real, pero a su vez nos permiten visualizar objetos virtuales que son proyectados sobre el mundo real. Ejemplos de productos actuales que implementan esta tecnología son Microsoft Hololens, Meta2 o las Epson Moverio BT-200.</p>
+<p>La tecnología Vuforia también es compatible con tecnologías de realidad virtual permitiéndonos crear aplicaciones aplicaciones de realidad mixta. De esta forma, la librería Vuforia permite generar un par de imágenes estereoscópicas que podemos visualizar sobre distintos visores de realidad virtual como el Google Cardboard. De esta forma nuestra aplicación puede alternar entre el mundo real y el mundo virtual.</p>
+<p>Utilizando el proyecto que hemos desarrollado anteriormente, podemos fácilmente configurarlo para que genere un par de imágenes estereoscópicas para el Google cardboard y visualizarlo en un entorno más ceracano a la realidad virtual. El flujo de vídeo de la cámara nos permitirá ver lo que hay a nuestro alrededor y detectar el marcador sobre el cual visualizaremos el contenido 3D que hemos posicionado anteriormente. Podemos observar que existe una pequeña latencia entre nuestros movimientos y el flujo de vídeo debido al procesamiento de la imagen antes de ser visualizado en la pantalla de nuestro móvil.</p>
+<p>Para configurar el proyecto anterior y que nos permita renderizar un par de imágenes estereoscópicas para el Google Cardboard u otros cascos de realidad virtual, tan solo tenemos que hacer click sobre la cámara de nuestra escena <code>ARCamera</code> y modificar las siguientes opciones en el script <code>DigitalEyeWearBehaviour</code>:</p>
+<ul>
+<li><strong>Eyewear Type</strong> = Video See-Through</li>
+<li><strong>Stereo Camera Config</strong> = Vuforia</li>
+<li><strong>Viewer Type = Generic Cardboard</strong> <span class="arithmatex"><span class="MathJax_Preview">Vuforia</span><script type="math/tex">Vuforia</script></span> or Cardboard v1 <span class="arithmatex"><span class="MathJax_Preview">Google</span><script type="math/tex">Google</script></span></li>
+</ul>
+<p>Si desplegamos de nuevo la aplicación en el dispositivo móvil y lo insertamos en el casco de realidad virtual, podremos visualizar la aplicación de realida aumentada que anteriormente desarrollamos de forma más immersiva.</p>
+<h2 id="nuevos-frameworks-de-realidad-aumentada-sin-marcadoressin-marcadores">Nuevos frameworks de realidad aumentada <span class="arithmatex"><span class="MathJax_Preview">sin marcadores</span><script type="math/tex">sin marcadores</script></span><a class="headerlink" href="#nuevos-frameworks-de-realidad-aumentada-sin-marcadoressin-marcadores" title="Permanent link">&para;</a></h2>
+<h3 id="arkit">ARKit<a class="headerlink" href="#arkit" title="Permanent link">&para;</a></h3>
+<p>ARKit es un nuevo framework que permite crear facilmente experiencias de realidad aumentada sin el uso de marcadores. El uso de esta tecnología proporciona un sistema de tracking muy estable capaz de mezclar objetos virtuales con el entorno que nos rodea. Este framework requiere el uso de un dispositivo Apple compatible, modelos de iPhone e iPad con procesador A9 o posterior: iPad Pro, iPad 2017, iPhone 6S, 7, 8 y X. Es necesario tener instalado iOS 11 y xcode 9 o superior.</p>
+<p>Aunque podemos desarrollar nuestra aplicación con soporte ARKit mediante el uso de SceneKit en Swift 4, en este curso vamos a ver que existen plugins para entornos de desarrollo de videojuegos y aplicaciones como Unity y Unreal Engine. En este curso nos vamos a centrar en el uso del plugin de ARKit para Unity. Para más información sobre como desarrollar para otras plataformas podéis consultar la siguiente lista de tutoriales: <a href="https://github.com/olucurious/Awesome-ARKit">https://github.com/olucurious/Awesome-ARKit</a></p>
+<h3 id="plugin-arkit-para-unity">Plugin ARKit para Unity<a class="headerlink" href="#plugin-arkit-para-unity" title="Permanent link">&para;</a></h3>
+<p>Este plugin desarrollado para Unity nos permite, mediante la utilización de scripts, acceder a la interfaz nativa de ARKit desde Unity. Los scripts son asociados a GameObjects de nuestra escena dotándola así de capacidad para aumentar el mundo real con objetos virtuales. El script se puede descargar descargar desde la asset store o desde su repositorio en <a href="https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/">bitbucket</a>.</p>
+<p>A continuación vamos a ver los scripts mínimos necesarios para visualizar un objeto virtual en la escena real.</p>
+<ul>
+<li>UnityARCameraManager: este script debe añadirse dentro un game object vacio o bien debajo de la cámara de la escena que queremos que sea controlada por ARKit. Este script además inicializa el objeto sesión de ARKit que provee toda la información sobre el tracking de la cámara en la escena: matriz de roto-translación.</li>
+<li>UnityARVideo: este script debe añadirse a la cámara. Se encarga de renderizar el vídeo de la cámara como background en nuestra aplicación.</li>
+</ul>
+<p>Con estos dos scripts en nuestra escena ya podemos colocar un objeto virtual en 3D en nuestra escena. Ahora bien, existen otros scripts que nos  proveen con funcionalidad adicional como interacción:</p>
+<ul>
+<li>UnityARAmbient: este script se añade sobre la luz de nuestra escena y nos permite cambiar la intensidad de la misma acorde a la luz que hay en el mundo real. De esta forma se consigue que en escenas con poca iluminación, los objetos virtuales se integren y se minimice la diferencia con los objetos reales. </li>
+<li>UnityARHitTestExample: este script se ejecuta cada vez que tocamos la pantalla. Se encarga de calcular la intersección entre la posición de la pantalla pulsada <span class="arithmatex"><span class="MathJax_Preview">rayo virtual</span><script type="math/tex">rayo virtual</script></span> y los planos y/o keypoints más cercanos detectados en la escena. De esta forma nos permite colocar objetos sobre las superficies de la escena real.</li>
+</ul>
+<p>Por último cabe destacar que el plugin incorpora scripts para ayudarnos a desarrollar aplicaciones de realidad aumentada, así como una serie de escenas de ejemplos que vamos a describir a continuación:</p>
+<ul>
+<li>UnityARKitScene: esta es la escena más básica que encontramos entre las escenas de ejemplo. Se puede utilizar como proyecto base para crear nuestras aplicaciones. Por defecto se puede exportar y probar en un dispositivo iOS compatible.</li>
+<li>UnityARBallz: muestra el uso de colliders y cuerpos rígidos en una app con realidad aumentada.</li>
+<li>UnityARShadows: muestra el uso de un material para renderizar sombras sobre objetos reales, especialmente sobre planos.</li>
+<li>UnityParticlePainter: esta escena de ejemplo nos permite dibujar particulas virtuales en nuestro entorno, aumentando el contenido del mundo real.</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1136 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="graficos-android.html">
+      
+      
+        <link rel="next" href="reproduccion-ios.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Gráficos en iOS - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#graficos-y-animaciones-en-ios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gráficos en iOS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Gráficos en iOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="graficos-ios.html" class="md-nav__link md-nav__link--active">
+        Gráficos en iOS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apis-para-graficos-y-animacion" class="md-nav__link">
+    APIs para gráficos y animación
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graficos-con-quartz-2d" class="md-nav__link">
+    Gráficos con Quartz 2D
+  </a>
+  
+    <nav class="md-nav" aria-label="Gráficos con Quartz 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contexto-grafico" class="md-nav__link">
+    Contexto gráfico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-de-coordenadas" class="md-nav__link">
+    Sistema de coordenadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-del-pincel" class="md-nav__link">
+    Atributos del pincel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primitivas-geometricas" class="md-nav__link">
+    Primitivas geométricas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes" class="md-nav__link">
+    Imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texto" class="md-nav__link">
+    Texto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradientes" class="md-nav__link">
+    Gradientes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capas" class="md-nav__link">
+    Capas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generacion-de-imagenes" class="md-nav__link">
+    Generación de imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generacion-de-pdfs" class="md-nav__link">
+    Generación de PDFs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animaciones-con-core-animation" class="md-nav__link">
+    Animaciones con Core Animation
+  </a>
+  
+    <nav class="md-nav" aria-label="Animaciones con Core Animation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-las-capas" class="md-nav__link">
+    Propiedades de las capas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animacion-de-la-capa" class="md-nav__link">
+    Animación de la capa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animacion-de-vistas" class="md-nav__link">
+    Animación de vistas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apis-para-graficos-y-animacion" class="md-nav__link">
+    APIs para gráficos y animación
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graficos-con-quartz-2d" class="md-nav__link">
+    Gráficos con Quartz 2D
+  </a>
+  
+    <nav class="md-nav" aria-label="Gráficos con Quartz 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contexto-grafico" class="md-nav__link">
+    Contexto gráfico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-de-coordenadas" class="md-nav__link">
+    Sistema de coordenadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-del-pincel" class="md-nav__link">
+    Atributos del pincel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primitivas-geometricas" class="md-nav__link">
+    Primitivas geométricas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes" class="md-nav__link">
+    Imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texto" class="md-nav__link">
+    Texto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradientes" class="md-nav__link">
+    Gradientes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capas" class="md-nav__link">
+    Capas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generacion-de-imagenes" class="md-nav__link">
+    Generación de imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generacion-de-pdfs" class="md-nav__link">
+    Generación de PDFs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animaciones-con-core-animation" class="md-nav__link">
+    Animaciones con Core Animation
+  </a>
+  
+    <nav class="md-nav" aria-label="Animaciones con Core Animation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propiedades-de-las-capas" class="md-nav__link">
+    Propiedades de las capas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animacion-de-la-capa" class="md-nav__link">
+    Animación de la capa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animacion-de-vistas" class="md-nav__link">
+    Animación de vistas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="graficos-y-animaciones-en-ios">Gráficos y animaciones en iOS<a class="headerlink" href="#graficos-y-animaciones-en-ios" title="Permanent link">&para;</a></h1>
+<p>Hasta este momento hemos visto cómo crear la interfaz de usuario de nuestra aplicación utilizando una serie de componentes predefinidos de la plataforma iOS, con la posibilidad de personalizarlos. Vamos a ver ahora cómo crear nuestros propios tipos de vistas y dibujar en ellas. Veremos también cómo animar estas vistas para así crear una interfaz más dinámica y atractiva para el usuario.</p>
+<p>En primer lugar repasaremos las diferentes APIs que encontramos en la plataforma para crear gráficos y animaciones, y las situaciones en las que conviene utilizar cada una de ellas. Tras esto, pasaremos a estudiar la forma de utilizar estas APIs para implementar funcionalidades que necesitaremos habitualmente en las aplicaciones móviles.</p>
+<h2 id="apis-para-graficos-y-animacion">APIs para gráficos y animación<a class="headerlink" href="#apis-para-graficos-y-animacion" title="Permanent link">&para;</a></h2>
+<p>En iOS encontramos dos formas principales de crear aplicaciones con gráficos y animación:</p>
+<ul>
+<li><strong>OpenGL ES</strong>: Se trata de una API multiplataforma para gráficos 2D y 3D. Es una versión reducida de la API OpenGL, diseñada para dispositivos limitados. Encontramos implementaciones de esta API en las diferentes plataformas móviles: iOS, Android, e incluso en algunos
+dispositivos Java ME.</li>
+<li>APIs nativas: Se trata de APIs propias de las plataforma iOS y MacOS para mostrar gráficos 2D y animaciones. Estas APIs son <strong>Quartz 2D</strong> y <strong>Core Animation (CA)</strong>. Muchas veces encontraremos referenciada la API Quartz 2D como Core Graphics (<strong>GC</strong>), ya que son prácticamente
+equivalentes. Realmente, Quartz 2D es una parte de Core Graphics. Core Graphics se compone de Quartz 2D, que es la API para dibujar gráficos 2D, y Quartz Compositor, que es el motor utilizado para componer en pantalla el contenido generado por las diferentes APIs gráficas.</li>
+</ul>
+<p>OpenGL ES resultará apropiada cuando tengamos aplicaciones con una fuerte carga gráfica, gráficos 3D, y/o la necesidad de conseguir elevadas tasas de fotogramas. Este es claramente el caso de los videojuegos.</p>
+<p>Sin embargo, si lo que queremos es tener una aplicación con una interfaz vistosa y dinámica, en la que podamos introducir tanto componentes nativos como componentes propios (como podría ser por ejemplo una gráfica), la opción más adecuada será utilizar Quartz 2D y Core Animation. En esta sesión vamos a centrarnos en esta segunda opción. En próximas asignaturas abordaremos la programación de videojuegos.</p>
+<h2 id="graficos-con-quartz-2d">Gráficos con Quartz 2D<a class="headerlink" href="#graficos-con-quartz-2d" title="Permanent link">&para;</a></h2>
+<p>Las funciones y estructuras de la librería Quartz 2D (Core Graphics) tienen todas el prefijo <code>CG</code>. Hay que resaltar que en esta API no encontramos objetos Objective-C, sino que los datos que manejamos son registros de C (<code>struct</code>) y los manipularemos con una serie de funciones y macros de la librería.</p>
+<p>En algunas ocasiones podremos también utilizar los objetos de UIKit para dibujar contenido, lo cual resultará notablemente más sencillo que utilizar los elementos de Core Graphics a bajo nivel. En muchos casos encontramos objetos de Core Graphics relacionados con objetos de UIKit (<code>CGImage</code> y <code>UIImage</code>, o <code>CGColor</code> y <code>UIColor</code>).</p>
+<h3 id="contexto-grafico">Contexto gráfico<a class="headerlink" href="#contexto-grafico" title="Permanent link">&para;</a></h3>
+<p>Al igual que ocurría en el caso de Java y Android, Core Graphics nos ofrece una API con la que dibujar en un contexto gráfico. Este contexto podrá ser una región de la pantalla, pero también podría ser una imagen en segundo plano, o un PDF por ejemplo. Esto nos permitirá reutilizar nuestro código de dibujado para generar gráficos en diferentes contextos.</p>
+<p>El tipo de contexto gráfico que se utiliza más habitualmente es el contexto referente a una vista <code>UIView</code>, que nos permite dibujar en su área rectangular en pantalla. Esto lo haremos en el método <code>drawRect:</code> de la vista. Para ello deberemos crear una subclase de <code>UIView</code> y redefinir dicho método:</p>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">drawRect:</span><span class="p">(</span><span class="n">CGRect</span><span class="p">)</span><span class="nv">rect</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">CGContextRef</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UIGraphicsGetCurrentContext</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Aquí ya podemos dibujar en el contexto</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Este método será invocado por el sistema cuando necesite pintar el contenido de la vista. Cuando eso ocurra, el contexto gráfico actual estará establecido al contexto para dibujar en la vista. Podremos obtener una referencia al contexto actualmente activo con la función de UIKit <code>UIGraphicsGetCurrentContext</code>. Podemos observar que el contexto gráfico es de tipo <code>CGContextRef</code>, y que no se trata de un objeto, sino de una estructura, como todos los elementos de Core Graphics.</p>
+<p>Si llamamos manualmente al método anterior con otro contexto activo, dibujará el contenido en dicho contexto. Más adelante veremos cómo establecer otros contextos gráficos de forma manual.</p>
+<p>Una vez tenemos el contexto, podemos establecer en él una serie de atributos para especificar la forma en la que se va a dibujar. Estos atributos son por ejemplo el área de recorte, el color del relleno o del trazo, el grosor y tipo de la línea, antialiasing, el tipo de fuente, o la transformación a aplicar.</p>
+<p>Con estos atributos establecidos, podremos dibujar diferentes elementos en el contexto, como primitivas geométricas, texto, e imágenes. Esta forma de trabajar es la misma que se utiliza en Java y Android para dibujar el contenido de las vistas.</p>
+<p>Si queremos que se actualice en contenido de nuestra vista, por ejemplo en el caso de que hayamos cambiado algunas propiedades de los gráficos a mostrar, en algunos casos deberemos llamar al método <code>setNeedsDisplay</code> del objeto <code>UIView</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nb">self</span><span class="w"> </span><span class="n">setNeedsDisplay</span><span class="p">];</span>
+</code></pre></div>
+<p>Esto hará que se invalide el contenido actual de la vista, y se tenga que volver a llamar otra vez a <code>drawRect:</code> para repintarla.</p>
+<h3 id="sistema-de-coordenadas">Sistema de coordenadas<a class="headerlink" href="#sistema-de-coordenadas" title="Permanent link">&para;</a></h3>
+<p>El sistema de coordenadas de Core Graphics puede resultar en ocasiones algo confuso, debido a que el eje <em>y</em> aparece invertido respecto a UIKit.</p>
+<p><img alt="Sistemas de coordenadas" src="imagenes/cg_coordenadas.jpg" title="Sistemas de coordenadas" /></p>
+<p>Si bien el sistema de coordenadas de UIKit con el que dibujamos las vistas tiene su origen en la esquina superior izquierda, siendo las <em>y</em> positivas hacia abajo, en Core Graphics el origen está en la esquina inferior izquierda y las <em>y</em> son positivas hacia arriba.</p>
+<p>Además, el sistema de coordenadas está basado en puntos, no en píxeles. Es decir, dibujamos en un sistema de coordenadas lógico, que es independiente del sistema de coordenadas físico (en pixels) del dispositivo. De esta forma podremos dibujar de forma independiente a la resolución real de la pantalla. Es decir, por ejemplo podremos utilizar el mismo código y las mismas coordenadas para dibujar en la pantalla de un iPhone 3G, en un iPhone 4 con pantalla retina, y en un iPhone 6 plus, a pesar de que el segundo tiene el doble de resolución, y el tercero el triple. El contenido dibujado se verá con las mismas dimensiones, con la única diferencia de que en las pantallas con mayor resolución aparecerá con mayor nitidez.</p>
+<p>Para convertir las dimensiones en puntos a dimensiones en pixels, veremos que muchos componentes tienen un factor de escala. Podemos consultar el factor de escala de la pantalla en la propiedad <code>[UIScreen mainScreen].scale</code>. La resolución en pixels será igual a la dimensión en puntos multiplicada por el factor de escala. Por ejemplo, en los dispositivos básicos el factor de escala es <code>1.0</code>, por lo que la resolución lógica y física coinciden. Sin embargo, en dispositivos con pantalla retina la escala es <code>2.0</code>,
+por lo que su resolución en pixels es exactamente el doble que las dimensiones en puntos (640 x 960 en el caso del iPhone). Para los iphone 6 plus, la escala es <code>3.0</code>.</p>
+<p>El mayor inconveniente del sistema de coordenadas es que el eje <em>y</em> se encuentre invertido. Podemos cambiar esto aplicando una transformación al contexto. Podemos establecer como atributo una matriz de transformación (<em>Current Transform Matrix</em>, CTM), que se aplicará a todo el contenido que dibujemos. Podemos aprovechar esta matriz de transformación para cambiar el origen de coordenadas e invertir el eje <em>y</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGContextTranslateCTM</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">rect</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+<span class="n">CGContextScaleCTM</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">);</span>
+</code></pre></div>
+<p>En el ejemplo anterior primero aplicamos al contexto una translación para mover el origen de coordenadas a la esquina superior izquierda, y tras esto aplicamos un escalado <code>-1.0</code> al eje <em>y</em> para invertirlo. De esta forma podemos trabajar con el mismo sistema de coordenadas que en UIKit.</p>
+<h3 id="atributos-del-pincel">Atributos del pincel<a class="headerlink" href="#atributos-del-pincel" title="Permanent link">&para;</a></h3>
+<p>En el punto anterior hemos visto como podemos aplicar al contexto atributos de transformación, modificando la matriz de transformación actual (CTM) mediante una serie de funciones. Vamos a ver a continuación otras funciones que podemos aplicar sobre el contexto para establecer otros tipos de atributos para el dibujado.</p>
+<p>En primer lugar, vamos a ver cómo establecer el color con el que dibujaremos. Los colores en Core Graphics se definen mediante la clase <code>CGColor</code>, aunque podemos ayudarnos de <code>UIColor</code> para crearlos de forma más sencilla. Esta última clase tiene una propiedad <code>CGColor</code> con la que podremos obtener el color en el formato Core Graphics.</p>
+<div class="highlight"><pre><span></span><code><span class="bp">UIColor</span><span class="w"> </span><span class="o">*</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIColor</span><span class="w"> </span><span class="n">redColor</span><span class="p">]</span>
+
+<span class="n">CGContextSetStrokeColorWithColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">CGColor</span><span class="p">);</span>
+<span class="n">CGContextSetFillColorWithColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">CGColor</span><span class="p">);</span>
+</code></pre></div>
+<p>Podemos observar que tenemos funciones para establecer el color de relleno y el color del trazo. Según si dibujamos sólo el contorno de una figura, o de si dibujamos su relleno, se aplicará un color u otro.</p>
+<p>En el caso de que vayamos a dibujar el contorno de una figura, o simplemente una polilínea, podemos establecer una serie de atributos del trazo. Por ejemplo, podemos establecer el grosor de la línea con:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGContextSetLineWidth</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">);</span>
+</code></pre></div>
+<p>Encontramos también funciones para establecer líneas punteadas, o para establecer la forma de dibujar los extremos o los puntos de unión de las líneas.</p>
+<h3 id="primitivas-geometricas">Primitivas geométricas<a class="headerlink" href="#primitivas-geometricas" title="Permanent link">&para;</a></h3>
+<p>Una de las primitivas geométricas más sencillas que podemos dibujar es el rectángulo. En primer lugar debemos definir la posición y dimensiones del rectángulo mediante un objeto de tipo <code>CGRect</code> (encontramos la macro <code>CGRectMake</code> con la que podemos inicializarlo).</p>
+<p>Tras crear el rectángulo, podemos dibujar su relleno (<em>fill</em>) o su contorno (<em>stroke</em>), o bien dibujar el contorno sobre el relleno:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGRect</span><span class="w"> </span><span class="n">rectangulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGRectMake</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">);</span>
+
+<span class="n">CGContextStrokeRect</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">rectangulo</span><span class="p">);</span>
+<span class="n">CGContextFillRect</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">rectangulo</span><span class="p">);</span>
+</code></pre></div>
+<p>De forma similar, podemos dibujar una elipse proporcionando el rectángulo que la contiene. Un elemento más complejo, pero que nos proporciona mayor libertad es la trayectoria (<em>path</em>). Para dibujar una trayectoria primero debemos añadir al contexto todos los elementos que la forman, y una vez añadidos los dibujaremos en pantalla en una única operación. La trayectoria puede estar formada por diferentes elementos, como líneas, rectángulo y arcos. Los distintos elementos pueden no estar conectados entre sí. Por ejemplo, podemos crear y dibujar una trayectoria de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGContextMoveToPoint</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="n">CGContextAddLineToPoint</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="n">CGContextAddLineToPoint</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">);</span>
+
+<span class="n">CGContextStrokePath</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</code></pre></div>
+<p>El contexto recuerda el último punto en el que se quedó la trayectoria, y añade los elementos a partir de ese punto. Podemos mover el punto actual con <code>CGContextMoveToPoint</code>, lo cual suele ser necesario siempre al comenzar a dibujar la trayectoria. Tras esto, podemos ir añadiendo elementos con una serie de métodos <code>CGContextAdd-</code>. En el ejemplo anterior hemos añadido dos segmentos de línea, aunque podríamos añadir otros elementos como rectángulos o arcos. Tras añadir todos los elementos necesarios, podemos dibujar la trayectoria definida con <code>CGContextStrokePath</code>.</p>
+<p>Al finalizar la trayectoria también podemos indicar que se cierre, para así conectar el punto final con el inicial. Podemos rellenar la figura generada:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGContextMoveToPoint</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="n">CGContextAddLineToPoint</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="n">CGContextAddLineToPoint</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="n">CGContextClosePath</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+
+<span class="n">CGContextFillPath</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="imagenes">Imágenes<a class="headerlink" href="#imagenes" title="Permanent link">&para;</a></h3>
+<p>Podemos dibujar imágenes con Core Graphics mediante la función <code>CGContextDrawImage</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGRect</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">320</span><span class="p">,</span><span class="w"> </span><span class="mi">480</span><span class="p">);</span>
+<span class="n">CGImageRef</span><span class="w"> </span><span class="n">imagen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageNamed</span><span class="o">:</span><span class="w"> </span><span class="s">@&quot;imagen.png&quot;</span><span class="p">].</span><span class="n">CGImage</span><span class="p">;</span>
+
+<span class="n">CGContextDrawImage</span><span class="w"> </span><span class="p">(</span><span class="n">contexto</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="n">imagen</span><span class="p">);</span>
+</code></pre></div>
+<p>Debemos pasar como parámetro el rectángulo dentro del cual se debe dibujar la imagen, y la imagen como dato de tipo <code>CGImageRef</code>. Podemos obtener esta representación mediante la propiedad <code>CGImage</code> de la clase <code>UIImage</code>. Encontramos también diferentes funciones en Core Graphics para crear las imágenes directamente a partir de diferentes fuentes, en lugar de tener que pasar por <code>UIImage</code>.</p>
+<p>Sin embargo, será más sencillo utilizar la clase <code>UIImage</code> directamente. Esta clase tiene un método que nos permite dibujar la imagen en el contexto actual de forma más sencilla:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGRect</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">320</span><span class="p">,</span><span class="w"> </span><span class="mi">480</span><span class="p">);</span>
+<span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="n">imagen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageNamed</span><span class="o">:</span><span class="w"> </span><span class="s">@&quot;imagen.png&quot;</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">imagen</span><span class="w"> </span><span class="n">drawInRect</span><span class="o">:</span><span class="n">area</span><span class="p">];</span>
+</code></pre></div>
+<h3 id="texto">Texto<a class="headerlink" href="#texto" title="Permanent link">&para;</a></h3>
+<p>Podemos dibujar texto directamente con Core Graphics. Se puede establecer una fuente con <code>CGContextSelectFont</code> y el modo en el que se dibujará el texto con <code>CGContextSetTextDrawingMode</code>: trazo, relleno, relleno y trazo, o invisible (más adelante veremos la utilidad de dibujar el texto como invisible).</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGContextSelectFont</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Helvetica-Bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">kCGEncodingMacRoman</span><span class="p">);</span>
+<span class="n">CGContextSetTextDrawingMode</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">kCGTextFill</span><span class="p">);</span>
+</code></pre></div>
+<p>Cuando dibujemos el texto dentro del contexto gráfico de una vista, encontraremos el problema de que el texto sale invertido, por la diferencia que existe entre los sistemas de coordenadas que hemos comentado anteriormente. Por ello, en este caso deberemos aplicar una transformación al sistema de coordenadas con el que se dibuja el texto. Esto lo haremos con el método <code>CGContextSetTextMatrix</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">CGAffineTransform</span><span class="w"> </span><span class="n">transform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGAffineTransformMakeScale</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">);</span>
+<span class="n">CGContextSetTextMatrix</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">transform</span><span class="p">);</span>
+</code></pre></div>
+<p>Una vez hemos terminado de configurar la forma en la que se dibujará el texto, podemos dibujar una cadena en una posición del contexto con <code>CGContextShowTextAtPoint</code>, pasando la cadena como una cadena C (no como <code>NSString</code>) con cualquier tipo de codificación, por ejemplo MacOSRoman:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">NSString</span><span class="w"> </span><span class="o">*</span><span class="n">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@&quot;Texto de prueba&quot;</span><span class="p">;</span>
+
+<span class="n">CGContextShowTextAtPoint</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="n">cadena</span><span class="w"> </span><span class="n">cStringUsingEncoding</span><span class="o">:</span><span class="w"> </span><span class="n">NSMacOSRomanStringEncoding</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">cadena</span><span class="w"> </span><span class="n">length</span><span class="p">]);</span>
+</code></pre></div>
+<p>En algunas ocasiones nos puede interesar medir el texto, para así poder ubicar el resto de elementos en concordancia con las dimensiones del texto. Una vez dibujada la cadena, podemos obtener la posición <em>x</em> donde ha finalizado el texto con:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGPoint</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGContextGetTextPosition</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</code></pre></div>
+<p>Si queremos obtener las dimensiones del texto sin tener que mostrarlo, podemos dibujarlo con el modo <code>kCGTextInvisible</code>, y tras hacer esto consultar la posición en la que se ha quedado tras dibujarlo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGContextSetTextDrawingMode</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">kCGTextInvisible</span><span class="p">);</span>
+<span class="n">CGContextShowTextAtPoint</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="n">cadena</span><span class="w"> </span><span class="n">cStringUsingEncoding</span><span class="o">:</span><span class="w"> </span><span class="n">NSMacOSRomanStringEncoding</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">cadena</span><span class="w"> </span><span class="n">length</span><span class="p">]);</span>
+<span class="n">CGPoint</span><span class="w"> </span><span class="n">ancho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGContextGetTextPosition</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</code></pre></div>
+<p>Esta es la forma con la que podemos dibujar texto con Core Graphics. Sin embargo, resulta bastante más sencillo utilizar las facilidades de la clase <code>NSString</code>, aunque sea algo menos eficiente que el método anterior. Con esta clase tenemos un mayor control sobre el área en la que se dibuja el texto y la forma de alinearlo. Además, con el método anterior tendremos ciertos problemas de codificación si necesitamos determinados caracteres especiales, ya que estamos limitados a utilizar la codificación MacOS Roman. Por ejemplo, con el método anterior el símbolo del euro no se muestra correctamente.</p>
+<p>Vamos a ver ahora una alternativa más sencilla para dibujar texto que evita los problemas con la codificación. Esta alternativa consiste en utilizar el método <code>drawInRect:withFont:</code> de la clase <code>NSString</code> (concretamente de su categoría <code>UIStringDrawing</code>), o cualquiera de sus variantes. Este método dibujará el texto en el contexto gráfico activo.</p>
+<div class="highlight"><pre><span></span><code><span class="bp">NSString</span><span class="w"> </span><span class="o">*</span><span class="n">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@&quot;Texto de prueba&quot;</span><span class="p">;</span>
+<span class="bp">UIFont</span><span class="w"> </span><span class="o">*</span><span class="n">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIFont</span><span class="w"> </span><span class="n">boldSystemFontOfSize</span><span class="o">:</span><span class="w"> </span><span class="mi">12</span><span class="p">];</span>
+<span class="n">CGRect</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGRectMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+
+<span class="p">[</span><span class="n">cadena</span><span class="w"> </span><span class="n">drawInRect</span><span class="o">:</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="n">withFont</span><span class="o">:</span><span class="n">font</span>
+<span class="w">                    </span><span class="nl">lineBreakMode</span><span class="p">:</span><span class="n">UILineBreakModeClip</span>
+<span class="w">                    </span><span class="nl">alignment</span><span class="p">:</span><span class="n">UITextAlignmentRight</span><span class="p">];</span>
+</code></pre></div>
+<p>El método anterior, aunque cómodo de utilizar, ha sido desaprobado en las últimas versiones de iOS y en su lugar se recomienda utilizar una variante más genérica:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">NSDictionary</span><span class="w"> </span><span class="o">*</span><span class="n">dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">NSDictionary</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">initWithObjectsAndKeys</span><span class="o">:</span><span class="w"> </span>
+<span class="w">        </span><span class="n">font</span><span class="p">,</span><span class="w"> </span><span class="n">NSFontAttributeName</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[</span><span class="bp">UIColor</span><span class="w"> </span><span class="n">whiteColor</span><span class="p">],</span><span class="w"> </span><span class="n">NSForegroundColorAttributeName</span><span class="p">,</span>
+<span class="w">        </span><span class="nb">nil</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">texto</span><span class="w"> </span><span class="n">drawInRect</span><span class="o">:</span><span class="w"> </span><span class="n">area</span>
+<span class="w">    </span><span class="nl">withAttributes</span><span class="p">:</span><span class="n">dictionary</span><span class="p">];</span>
+</code></pre></div>
+<p>La propia clase <code>NSString</code> también nos proporciona información sobre las métricas del texto, de una forma mucho más sencilla que el método visto anteriormente con Core Graphics, mediante el método <code>sizeWithFont:</code> y sus variantes.</p>
+<p>Si necesitamos tener un mayor control sobre la forma de dibujar texto, y evitar los problemas de codificación de Core Graphics, podemos utilizar Core Text.</p>
+<h3 id="gradientes">Gradientes<a class="headerlink" href="#gradientes" title="Permanent link">&para;</a></h3>
+<p>Un elemento muy utilizado en las aplicaciones es el gradiente. Por ejemplo, muchas aplicaciones decoran el fondo de las celdas de las tablas haciendo que tengan un degradado. Para dibujar un gradiente con Core Graphics primero deberemos definirlo mediante el tipo <code>CGGradientRef</code>. Para crear este tipo deberemos proporcionar los colores que forman el gradiente. El rango de posiciones (<em>locations</em>) del gradiente va de <code>0</code> a <code>1</code>, y podremos especificar los colores que debe tener en los extremos y en los puntos intermedios que consideremos necesarios. El resto del rango se generará por interpolación de los colores especificados. Por ejemplo, si en la posición <code>0</code> ponemos color negro, y en <code>1</code> ponemos el blanco, tendremos un degradado de negro a blanco conforme avanzamos de <code>0</code> a <code>1</code>, pasando por todos los grises intermedios.</p>
+<p>Además, al crear el gradiente debemos especificar el espacio de colores que vamos a utilizar para establecer los colores del gradiente. El espacio de color puede ser RGB, CMYK o gris. En cualquiera de estos casos, para cada color deberemos especificar sus componentes ([R, G, B], [C, M, Y, K] o [gris]) como valores en el rango <code>[0.0, 1.0]</code>. Además tendrá un canal alpha adicional para indicar el nivel de opacidad (<code>0.0</code> es transparente, y <code>1.0</code> totalmente opaco). Por ejemplo, si establecemos el espacio de color como RGB con <code>CGColorSpaceCreateDeviceRGB</code>, para cada color deberemos establecer sus bandas <code>[R, G, B, A]</code> como vemos en el siguiente ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">CGFloat</span><span class="w"> </span><span class="n">locations</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">};</span>
+<span class="n">CGFloat</span><span class="w"> </span><span class="n">components</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">   </span><span class="c1">// Color inicial (RGBA)</span>
+<span class="w">                          </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// Color final   (RGBA)</span>
+
+<span class="n">CGColorSpaceRef</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGColorSpaceCreateDeviceRGB</span><span class="p">();</span>
+<span class="n">CGGradientRef</span><span class="w"> </span><span class="n">gradient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGGradientCreateWithColorComponents</span><span class="p">(</span><span class="n">space</span><span class="p">,</span><span class="w"> </span><span class="n">components</span><span class="p">,</span><span class="w"> </span><span class="n">locations</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<p>En este caso hemos especificado sólo dos posiciones para el gradiente, la inicial (<code>0.0</code>) y la final (<code>1.0</code>). El color inicial es un gris oscuro opaco, y el final es un gris claro también opaco, en el espacio RGB. Por último, se crea el gradiente con <code>CGGradientCreateWithColorComponents</code>, que toma como parámetros el espacio de color utilizado, la lista de colores en el espacio especificado en el anterior parámetro, la posición a la que corresponde cada color, y el número de posiciones especificadas (2 en este ejemplo: <code>0.0</code> y <code>1.0</code>).</p>
+<p>Tras definir el gradiente, podemos dibujarlo en pantalla con <code>CGContextDrawLinearGradient</code> o con <code>CGContextDrawRadialGradient</code>, según queramos dibujar el gradiente de forma lineal o radial. Por ejemplo, en el caso del gradiente lineal debemos especificar el punto inicial y final del gradiente en coordenadas del contexto. En el punto inicial se mostrará el color del gradiente en su posición <code>0.0</code>, y el lienzo del contexto se irá llenando con el color del degradado hasta llegar al punto final, que coindidirá con el color del degradado en su posición <code>1.0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGPoint</span><span class="w"> </span><span class="n">startPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGPointMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">CGPoint</span><span class="w"> </span><span class="n">endPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGPointMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">480.0</span><span class="p">);</span>
+
+<span class="n">CGContextDrawLinearGradient</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">gradient</span><span class="p">,</span><span class="w"> </span><span class="n">startPoint</span><span class="p">,</span><span class="w"> </span><span class="n">endPoint</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
+<p>En este ejemplo aplicamos el degradado para que llene toda la pantalla de forma vertical, desde la posición <em>y = 0.0</em> hasta <em>y = 480.0</em>. Al ser la <em>x = 0.0</em> en ambos casos, el gradiente se moverá únicamente en la vertical, pero si hubiésemos cambiando también la <em>x</em> habríamos tenido un gradiente oblicuo.</p>
+<h3 id="capas">Capas<a class="headerlink" href="#capas" title="Permanent link">&para;</a></h3>
+<p>Cuando queremos dibujar un mismo elemento de forma repetida, podemos utilizar una capa para así reutilizarlo. La ventaja de las capas es que dibujaremos dicha composición una única vez, y también se almacenará una única vez en la memoria de vídeo, pudiendo replicarla tantas veces como queramos en el contexto.</p>
+<p>Las capas son elementos de tipo <code>CGLayerRef</code>. La capa debe crearse a partir del contexto actual, pero realmente lo que dibujemos en ella no quedará reflejado inmediatamente en dicho contexto, sino que la capa incorpora un contexto propio. Tras crear la capa, deberemos obtener dicho contexto de capa para dibujar en ella.</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGLayerRef</span><span class="w"> </span><span class="n">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGLayerCreateWithContext</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">),</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="n">CGContextRef</span><span class="w"> </span><span class="n">layerContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGLayerGetContext</span><span class="w"> </span><span class="p">(</span><span class="n">layer</span><span class="p">);</span>
+</code></pre></div>
+<p>A partir de este momento, para dibujar en la capa dibujaremos en <code>layerContext</code>. Podemos dibujar en él de la misma forma que en el contexto gráfico de la pantalla. Tras dibujar el contenido de la capa, podremos mostrarla en nuestro contexto en pantalla con:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CGContextDrawLayerAtPoint</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">CGPointZero</span><span class="p">,</span><span class="w"> </span><span class="n">layer</span><span class="p">);</span>
+</code></pre></div>
+<p>Donde el segundo parámetro indica las coordenadas de la pantalla en la que se dibujará la capa. Podemos repetir esta operación múltiples veces con diferentes coordenadas, para así dibujar nuestra capa replicada en diferentes posiciones.</p>
+<h3 id="generacion-de-imagenes">Generación de imágenes<a class="headerlink" href="#generacion-de-imagenes" title="Permanent link">&para;</a></h3>
+<p>Anteriormente hemos visto que la API de Core Graphics nos permite dibujar en un contexto gráfico, pero dicho contexto no siempre tiene que ser una región de la pantalla. Podemos crear distintos contextos en los que dibujar, y dibujaremos en ellos utilizando siempre la misma API. Por ejemplo, vamos a ver cómo dibujar en una imagen. Podemos activar un contexto para dibujar en una imagen de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="n">UIGraphicsBeginImageContextWithOptions</span><span class="p">(</span><span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span><span class="w"> </span><span class="nb">NO</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+</code></pre></div>
+<p>En el primer parámetro especificamos las dimensiones de la imagen en puntos como una estructura de tipo <code>CGSize</code>, el segundo indica si la imagen es opaca (pondremos <code>NO</code> si queremos soportar transparencia), y el tercer y último parámetro sirve para indicar el factor de escala. Las dimensiones en pixels de la imagen se obtendrán multiplicando las dimensiones especificadas en puntos por el factor de escala. Esto nos permitirá soportar de forma sencilla pantallas con diferentes densidades de pixels, al trabajar con una unidad independiente de la densidad (puntos). Podemos obtener la escala de la pantalla del dispositivo con <code>[UIScreen mainScreen].scale</code>, pero si como escala especificamos <code>0.0</code>, se utilizará automáticamente la escala de la pantalla del dispositivo como escala de la imagen.</p>
+<p>Tras inicializar el contexto gráfico, podremos dibujar en él, y una vez hayamos terminado podremos obtener la imagen resultante con <code>UIGraphicsGetImageFromCurrentImageContext()</code> y cerraremos el contexto gráfico con <code>UIGraphicsEndImageContext()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">UIGraphicsBeginImageContextWithOptions</span><span class="p">(</span><span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span><span class="w"> </span><span class="nb">NO</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+
+<span class="c1">// Dibujar en el contexto</span>
+<span class="n">CGContextRef</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UIGraphicsGetCurrentContext</span><span class="p">();</span>
+<span class="p">...</span>
+
+<span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="n">imagen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UIGraphicsGetImageFromCurrentImageContext</span><span class="p">();</span>
+<span class="n">UIGraphicsEndImageContext</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="generacion-de-pdfs">Generación de PDFs<a class="headerlink" href="#generacion-de-pdfs" title="Permanent link">&para;</a></h3>
+<p>El formato en el que Quartz 2D genera los gráficos es independiente del dispositivo y de la resolución. Esto hace que estos mismos gráficos puedan ser guardados por ejemplo en un documento PDF, ya que usan formatos similares. Para crear un PDF con Quartz 2D simplemente deberemos crear un contexto que utilice como lienzo un documento de este tipo. Podemos escribir en un PDF en memoria, o bien directamente en disco. Para inicializar un contexto PDF utilizaremos la siguiente función:</p>
+<div class="highlight"><pre><span></span><code><span class="n">UIGraphicsBeginPDFContextToFile</span><span class="p">(</span><span class="s">@&quot;fichero.pdf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">CGRectZero</span><span class="p">,</span><span class="w"> </span><span class="nb">nil</span><span class="p">);</span>
+</code></pre></div>
+<p>Como primer parámetro especificamos el nombre del fichero en el que guardaremos el PDF, y como segundo parámetro las dimensiones de la página. Si este parámetro es un rectángulo de dimensión <code>0 x 0</code> (<code>CGRectZero</code>), como en el ejemplo anterior, tomará el valor por defecto <code>612 x 792</code>. El tercer parámetro es un diccionario en el que podríamos especificar distintas propiedades del PDF a crear.</p>
+<p>Una vez dentro del contexto del PDF, para cada página que queramos incluir en el documento deberemos llamar a la función <code>UIGraphicsBeginPDFPage</code>, y tras esto podremos obtener la referencia al contexto actual y dibujar en él:</p>
+<div class="highlight"><pre><span></span><code><span class="n">UIGraphicsBeginPDFPage</span><span class="p">();</span>
+
+<span class="c1">// Dibujar en el contexto</span>
+<span class="n">CGContextRef</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UIGraphicsGetCurrentContext</span><span class="p">();</span>
+<span class="p">...</span>
+</code></pre></div>
+<p>Repetiremos esto tantas veces como páginas queramos crear en el documento. También tenemos un método alternativo para crear las páginas, <code>UIGraphicsBeginPDFPageWithInfo</code>, que nos permite especificar sus dimensiones y otras propiedades.</p>
+<p>Una vez hayamos terminado de componer las diferentes páginas del documento, podremos cerrar el contexto con <code>UIGraphicsEndPDFContext()</code>.</p>
+<h2 id="animaciones-con-core-animation">Animaciones con Core Animation<a class="headerlink" href="#animaciones-con-core-animation" title="Permanent link">&para;</a></h2>
+<p>Vamos a pasar a estudiar la forma en la que podemos incluir animaciones en la interfaz de nuestras aplicaciones.</p>
+<p>Nunca deberemos crear animaciones llamando al método <code>setNeedsDisplay</code> de la vista para actualizar cada fotograma, ya que esto resulta altamente ineficiente. Si queremos animar los elementos de nuestra interfaz podemos utilizar el framework <em>Core Animation</em>. Con él podemos crear de forma sencilla y eficiente animaciones vistosas para los elementos de la interfaz de las aplicaciones. Si necesitamos un mayor control sobre la animación, como es el caso de los juegos, en los que tenemos que animar el contenido que nosotros pintamos con una elevada tasa de refresco, entonces deberemos utilizar OpenGL.</p>
+<p>Nos centraremos ahora en el caso de Core Animation. El elemento principal de este framework es la clase <code>CALayer</code>. No debemos confundir esta clase (<em>Core Animation Layer</em>) con <code>CGLayer</code> (<em>Core Graphics Layer</em>). La capa <code>CGLayer</code> nos permitía repetir un mismo elemento en nuestra composición, pero una vez dibujado lo que obtenemos es simplemente una composición 2D para mostrar en pantalla, es decir, no podemos manipular de forma independiente los distintos elementos que forman dicha composición.</p>
+<p>Sin embargo, <code>CALayer</code> de Core Animation es una capa que podremos transformar de forma dinámica independientemente del resto de capas de la pantalla. El contenido de una capa <code>CALayer</code> puede ser una composición creada mediante Core Graphics.</p>
+<p>Realmente todas las vistas (<code>UIView</code>) se construyen sobre capas <code>CALayer</code>. Podemos obtener la capa asociada a una vista con su propiedad <code>layer</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">CALayer</span><span class="w"> </span><span class="o">*</span><span class="n">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">layer</span><span class="p">;</span>
+</code></pre></div>
+<p>Estas capas, además de ser animadas, nos permiten crear efectos visuales de forma muy sencilla mediante sus propiedades.</p>
+<p>Las capas no se pueden mostrar directamente en la ventana, sino que siempre deben ir dentro de una vista (<code>UIView</code>), aunque dentro de la capa de una vista podemos incluir subcapas.</p>
+<h3 id="propiedades-de-las-capas">Propiedades de las capas<a class="headerlink" href="#propiedades-de-las-capas" title="Permanent link">&para;</a></h3>
+<p>Las capas tienen propiedades similares a las propiedades de las vistas. Por ejemplo podemos acceder a sus dimensiones con <code>bounds</code> o a la región de pantalla que ocupan con <code>frame</code>. También se le puede aplicar una transformación con su propiedad <code>transform</code>. En el caso de las vistas, su posición se especificaba mediante la propiedad <code>center</code>, que hacía referencia a las coordenadas en las que se ubica el punto central de la vista. Sin embargo, en las capas tenemos dos propiedades para especificar la posición: <code>position</code> y <code>anchorPoint</code>. La primera de ellas, <code>position</code>, nos da las coordenadas del <em>anchor point</em> de la capa, que por defecto es el punto central, pero que no tiene por qué serlo.</p>
+<p>El <code>anchorPoint</code> se especifica en coordenadas relativas al ancho y alto de la capa, pudiendo moverse entre <em>(0, 0)</em> y <em>(1, 1)</em>. El punto central corresponde al <em>anchor point (0.5, 0.5)</em>, y este es el valor por defecto.</p>
+<p>Hay una propiedad adicional para la posición, <code>positionZ</code>, que nos da el coordenada <em>z</em> de la capa. Es decir, cuando tengamos varias capas solapadas, dicha propiedad nos dirá el orden en el que se dibujarán las capas, y por lo tanto qué capas quedarán por encima de otras. Cuanto mayor sea la coordenada <em>z</em>, más cerca estará la capa del usuario, y tapará a las capas con valores de <em>z</em> inferiores.</p>
+<p>Es especialmente interesante en este caso la propiedad <code>transform</code>, ya que nos permite incluso aplicar transformaciones 3D a las capas. En el caso de las vistas, la propiedad <code>transform</code> tomaba un dato de tipo <code>CGAffineTransform</code>, con el que se podía especificar una transformación afín 2D (traslación, rotación, escalado o desencaje), mediante una matriz de transformación 3x3. En el caso de las capas, la transformación es de tipo <code>CATransform3D</code>, que se especifica mediante una matriz de transformación 4x4 que nos permite realizar transformaciones en 3D. Tendremos una serie de funciones para crear distintas transformaciones de forma sencilla, como <code>CATransform3DMakeTranslation</code>,
+<code>CATransform3DMakeRotation</code>, y <code>CATransform3DMakeScale</code>. También podemos aplicar transformaciones sobre una transformación ya creada, pudiendo así combinarlas y crear transformaciones complejas, con <code>CATransform3DTranslate</code>, <code>CATransform3DRotate</code>, y <code>CATransform3DScale</code>.</p>
+<p>Además de las propiedades anteriores, la capa ofrece una gran cantidad de propiedades adicionales que nos van a permitir decorarla y tener un gran control sobre la forma en la que aparece en pantalla. A continuación destacamos algunas de estas propiedades:</p>
+<table>
+    <tr><th>Propiedad</th><th>Descripción</th><th></th></tr>
+    <tr><td>`backgroundColor`</td><td colspan="2">Color de fondo de la capa.</td></tr>
+    <tr><td>`cornerRadius`</td><td colspan="2">Con esta propiedad podemos hacer que las esquinas aparezcan redondeadas.</td></tr>
+    <tr><td>`shadowOffset`, `shadowColor`, `shadowRadius`, `shadowOpacity`</td><td colspan="2">Permiten añadir una sombra a la capa, y controlar las propiedades de dicha sombra</td></tr>
+    <tr><td>`borderWidth`, `borderColor`</td><td colspan="2">Establecen el color y el grosor del borde de la capa.</td></tr>
+    <tr><td>`doubleSided`</td><td colspan="2">Las capas pueden animarse para que den la vuelta. Esta propiedad nos indica si al darle la vuelta la capa debe mostrarse también por la cara de atrás.</td></tr>
+    <tr><td>`contents`, `contentsGravity`</td><td colspan="2">Nos permite especificar el contenido de la capa como una imagen de tipo `CGImageRef`. Especificando la gravedad podemos indicar
+    si queremos que la imagen se escale al tamaño de la capa, o que se mantenga su tamaño inicial y se alinee con alguno de los bordes.</td></tr>
+</table>
+
+<p>Como hemos comentado anteriormente, las capas se organizan de forma jerárquica, al igual que ocurría con las vistas. Podemos añadir una subcapa con el método <code>addLayer:</code></p>
+<div class="highlight"><pre><span></span><code><span class="bp">CALayer</span><span class="w"> </span><span class="o">*</span><span class="n">nuevaCapa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CALayer</span><span class="w"> </span><span class="n">layer</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">layer</span><span class="w"> </span><span class="n">addSublayer</span><span class="o">:</span><span class="w"> </span><span class="n">nuevaCapa</span><span class="p">];</span>
+</code></pre></div>
+<p>En la sección anterior vimos cómo dibujar en una vista utilizando Core Graphics. Si queremos dibujar directamente
+en una capa podemos hacerlo de forma similar, pero en este caso necesitamos un delegado que implemente el método <code>drawLayer:inContext:</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">drawLayer:</span><span class="p">(</span><span class="bp">CALayer</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">layer</span><span class="w"> </span><span class="nf">inContext:</span><span class="p">(</span><span class="n">CGContextRef</span><span class="p">)</span><span class="nv">context</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Codigo Core Graphics</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Deberemos establecer el delegado en la capa mediante su propiedad <code>delegate</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">self</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">delegate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">self</span><span class="p">;</span>
+</code></pre></div>
+<p>Si queremos que se repinte el contenido de la capa, al igual que ocurría en las vistas deberemos llamar a su método <code>setNeedsDisplay</code>.</p>
+<h3 id="animacion-de-la-capa">Animación de la capa<a class="headerlink" href="#animacion-de-la-capa" title="Permanent link">&para;</a></h3>
+<p>La API Core Animation se centra en facilitarnos animar de forma sencilla los elementos de la interfaz. Vamos a ver cómo realizar estas animaciones. La forma más sencilla de realizar una animación es simplemente modificar los valores de las propiedades de la capa. Al hacer esto, la propiedad cambiará gradualmente hasta el valor indicado. Por ejemplo, si modificamos el valor de la propiedad <code>position</code>, veremos como la capa se mueve a la nueva posición. Esto es lo que se conoce como animación implícita.</p>
+<div class="highlight"><pre><span></span><code><span class="n">layer</span><span class="p">.</span><span class="n">position</span><span class="o">=</span><span class="n">CGPointMake</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span><span class="mf">100.0</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Las animaciones implícitas no funcionarán si la capa pertenece a un <code>UIView</code>. Las vistas bloquean las animaciones implícitas, sólo podrán animarse mediante los métodos de animación de vistas que veremos más adelante, o mediante animaciones explícitas de Core Animation como vamos a ver a continuación.</p>
+</blockquote>
+<p>En este caso la animación tendrá una duración establecida por defecto. Si queremos tener control sobre el tiempo en el que terminará de completarse la animación, tendremos que definirlo mediante una clase que se encargue de gestionarla. De esta forma tendremos animaciones explícitas.</p>
+<p>Para gestionar las animaciones explícitas tenemos la clase <code>CABasicAnimation</code>. Con ella podemos establecer las propiedades que queremos modificar, y el valor final que deben alcanzar, y la duración de las animaciones. Si necesitamos un mayor control sobre la animación, podemos definir una animación por fotogramas clave mediante <code>CAKeyframeAnimation</code>, que nos permitirá establecer el
+valor de las propiedades en determinados instantes intermedios de la animación, y el resto de instantes se
+calcularán por interpolación. También tenemos <code>CATransition</code> que nos permitirá implementar animaciones de transición de una capa a otra (fundido, desplazamiento, etc).</p>
+<p>Vamos a ver cómo definir una animación básica. En primer lugar debemos instanciar la clase <code>CABasicAnimation</code> proporcionando la propiedad que queremos modificar en la animación como una cadena KVC:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">CABasicAnimation</span><span class="w"> </span><span class="o">*</span><span class="n">theAnimation</span><span class="o">=</span>
+<span class="w">    </span><span class="p">[</span><span class="bp">CABasicAnimation</span><span class="w"> </span><span class="n">animationWithKeyPath</span><span class="o">:</span><span class="s">@&quot;position.x&quot;</span><span class="p">];</span>
+</code></pre></div>
+<p>Una vez hecho esto, deberemos especificar el valor inicial y final que tendrá dicha propiedad:</p>
+<div class="highlight"><pre><span></span><code><span class="n">theAnimation</span><span class="p">.</span><span class="n">fromValue</span><span class="o">=</span><span class="p">[</span><span class="bp">NSNumber</span><span class="w"> </span><span class="n">numberWithFloat</span><span class="o">:</span><span class="mf">100.0</span><span class="p">];</span>
+<span class="n">theAnimation</span><span class="p">.</span><span class="n">toValue</span><span class="o">=</span><span class="p">[</span><span class="bp">NSNumber</span><span class="w"> </span><span class="n">numberWithFloat</span><span class="o">:</span><span class="mf">300.0</span><span class="p">];</span>
+</code></pre></div>
+<p>También será necesario indicar el tiempo que durará la animación, con el atributo <code>duration</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">theAnimation</span><span class="p">.</span><span class="n">duration</span><span class="o">=</span><span class="mf">5.0</span><span class="p">;</span>
+</code></pre></div>
+<p>Además de esta información, también podemos indicar que al finalizar la animación se repita la misma animación en sentido inverso, o que la animación se repita varias veces:</p>
+<div class="highlight"><pre><span></span><code><span class="n">theAnimation</span><span class="p">.</span><span class="n">repeatCount</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">theAnimation</span><span class="p">.</span><span class="n">autoreverses</span><span class="o">=</span><span class="nb">YES</span><span class="p">;</span>
+</code></pre></div>
+<p>Una vez configurada la animación, podemos ponerla en marcha añadiéndola sobre la vista:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">layer</span><span class="w"> </span><span class="n">addAnimation</span><span class="o">:</span><span class="n">theAnimation</span><span class="w"> </span><span class="n">forKey</span><span class="o">:</span><span class="s">@&quot;moverCapa&quot;</span><span class="p">];</span>
+</code></pre></div>
+<p>Podemos observar que al añadir la animación le asignamos un identificador propio (<code>"moverCapa"</code>) en el ejemplo anterior. De esta forma podremos referenciar posteriormente dicha animación. Por ejemplo, si eliminamos la animación <code>"moverCapa"</code> de la capa anterior, la capa dejará de moverse de izquierda a derecha. Si no la eliminamos, se animará hasta que complete el número de repeticiones que hemos indicado (si como número de repeticiones especificamos <code>HUGE_VALF</code> se repetirá indefinidamente).</p>
+<p>Esta tecnología nos permite realizar animaciones fluidas de forma muy sencilla. En ella se basan las animaciones
+que hemos visto hasta ahora para hacer transiciones entre pantallas. Podemos nosotros utilizar también estas animaciones de transición de forma personalizada con <code>CATransition</code>. Podemos crear una transición y especificar el tipo y subtipo de transición entre los que tenemos predefinidos:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">CATransition</span><span class="w"> </span><span class="o">*</span><span class="n">transition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CATransition</span><span class="w"> </span><span class="n">animation</span><span class="p">];</span>
+<span class="n">transition</span><span class="p">.</span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+
+<span class="n">transition</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kCATransitionMoveIn</span><span class="p">;</span>
+<span class="n">transition</span><span class="p">.</span><span class="n">subtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kCATransitionFromLeft</span><span class="p">;</span>
+</code></pre></div>
+<p>Podemos añadir la transición a nuestra capa de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">layer</span><span class="w"> </span><span class="n">addAnimation</span><span class="o">:</span><span class="n">transition</span><span class="w"> </span><span class="n">forKey</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div>
+<p>Con esto, cada vez que mostremos u ocultemos una subcapa en <code>self.view.layer</code>, dicha subcapa aparecerá o desaparecerá con la animación de transición indicada.</p>
+<p>Aunque Core Animation nos permite controlar estas animaciones en las capas de forma sencilla, también podemos programar muchas de estas animaciones directamente sobre la vista (<code>UIView</code>), sin necesidad de ir a programar a más bajo nivel. Vamos a ver a continuación las animaciones que podemos definir sobre las vistas.</p>
+<h3 id="animacion-de-vistas">Animación de vistas<a class="headerlink" href="#animacion-de-vistas" title="Permanent link">&para;</a></h3>
+<p>Las vistas implementan también numerosas facilidades para implementar animaciones sencillas y transiciones. La forma más sencilla de implementar una animación sobre nuestra vista es utilizar el método <code>animateWithDuration:animations:</code> de <code>UIView</code> (es un método de clase):</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="bp">UIView</span><span class="w"> </span><span class="n">animateWithDuration</span><span class="o">:</span><span class="mf">0.5</span>
+<span class="w">                 </span><span class="nl">animations</span><span class="p">:</span><span class="o">^</span><span class="p">{</span>
+<span class="w">                            </span><span class="n">vista</span><span class="p">.</span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGRectMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span>
+<span class="w">                             </span><span class="p">}];</span>
+</code></pre></div>
+<p>Podemos observar que además de la duración de la animación, tenemos que especificar un bloque de código
+en el que indicamos los valores que deben tener las propiedades de las vistas al terminar la animación. Hay que remarcar que en el mismo bloque de código podemos especificar distintas propiedades de distintas vistas,
+y todas ellas serán animadas simultáneamente.</p>
+<p>También podemos implementar transiciones entre vistas mediante una animación, con el método <code>transitionFromView: toView: duration: options: completion:</code>, que también es de clase.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="bp">UIView</span><span class="w"> </span><span class="n">transitionFromView</span><span class="o">:</span><span class="w"> </span><span class="n">vistaOrigen</span>
+<span class="w">                    </span><span class="nl">toView</span><span class="p">:</span><span class="w"> </span><span class="n">vistaDestino</span>
+<span class="w">                  </span><span class="nl">duration</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="w">                   </span><span class="nl">options</span><span class="p">:</span><span class="w"> </span><span class="n">UIViewAnimationOptionTransitionFlipFromLeft</span>
+<span class="w">                </span><span class="nl">completion</span><span class="p">:</span><span class="w"> </span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div>
+<p>Llamar al método anterior causa que <code>vistaOrigen</code> sea eliminada de su supervista, y que en su lugar
+<code>vistaDestino</code> sea añadida a ella, todo ello mediante la animación especificada en el parámetro <code>options</code>.</p>
+<h1 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h1>
+<p>Antes de empezar a crear los proyectos, debes descargarte las plantillas desde el repositorio <code>mastermoviles-multimedia-ios</code> de <em>bitbucket</em>. En este repositorio se encuentran todas las plantillas que utilizaremos en los ejercicios iOS de este módulo.</p>
+<!---
+Para ello:
+
+* Entraremos en nuestra cuenta de `bitbucket.org`, seleccionaremos el repositorio git
+`expertomoviles/multimedia-expertomoviles` (del que tendremos únicamente permisos de lectura), y haremos
+un _Fork_ de dicho repositorio en nuestra cuenta, para así tener una copia propia del repositorio
+con permisos de administración.
+
+* Para evitar que bitbucket nos dé un error por sobrepasar el número de usuarios permitidos, debemos ir
+al apartado _Access management_ de las preferencias del repositorio que acabamos de crear y eliminar
+los permisos de lectura para el grupo _Estudiantes_ (tendremos estos permisos concedidos si al hacer
+el _Fork_ hemos especificado que se hereden los permisos del proyecto original). Los únicos
+permisos que debe tener nuestro repositorio deben ser para el propietario (_owner_) y para el
+usuario _Experto Moviles_.
+
+* Una vez tenemos nuestra copia del repositorio con las plantillas correctamente configuradas en bitbucket,
+haremos un `clone` en nuestra máquina local:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://<span class="o">[</span>usr<span class="o">]</span>:bitbucket.org/<span class="o">[</span>usr<span class="o">]</span>/multimedia-expertomoviles
+</code></pre></div>
+
+* De esta forma se crea en nuestro ordenador el directorio `multimedia-expertomoviles` y se descargan en él
+las plantillas para los ejercicios del módulo y un fichero `.gitignore`. Además, ya está completamente
+configurado y conectado con nuestro repositorio remoto, por lo que lo único que deberemos hacer será subir
+los cambios conforme realicemos los ejercicios, utilizando los siguientes comandos:
+
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;[Mensaje del commit]&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div>
+--->
+
+<h2 id="generacion-de-graficas">Generación de gráficas<a class="headerlink" href="#generacion-de-graficas" title="Permanent link">&para;</a></h2>
+<p>Vamos a crear una gráfica en iOS para mostrar la evolución de la cuota de mercado de diferentes plataformas móviles. Para ello utilizamos una sencilla librería: <strong>S7GraphView</strong>, que consiste en una vista que mediante CoreGraphics genera la gráfica. Vamos a modificar dicha vista para mejorar el aspecto de la gráfica. Podemos ver la gráfica con su funcionamiento básico si abrimos la aplicación <code>Grafica</code> de las plantillas. Sobre esta aplicación se pide lo siguiente:</p>
+<p><em>a)</em> Vamos a dibujar la leyenda de la gráfica, para así saber a qué plataforma corresponde cada color. Para ello trabajaremos sobre el método <code>drawRect:</code> de <code>S7GraphView</code>, que es quien muestra el contenido de la gráfica. Empezaremos modificando el final del método, donde mostraremos los elementos de la leyenda superpuestos sobre el contenido que ya se ha dibujado de la gráfica, en la esquina superior derecha. Debes buscar el comentario <code>TODO</code> referente al apartado <em>(a)</em>. Veremos que tenemos un bucle que itera por cada una de las líneas de la gráfica. Queremos mostrar para cada una de ellas un rectángulo con el color de la línea, y junto a él el texto indicando a qué plataforma corresponde dicha línea (iOS, Android y Windows Phone). Comenzaremos incluyendo en ese punto el código para dibujar un rectángulo con el color y dimensiones indicadas en los comentarios. El rectángulo deberá tener como color de relleno el color de la línea a la que hace referencia, y como borde color blanco.</p>
+<p><em>b)</em> En segundo lugar, vamos a dibujar el texto junto a cada rectángulo de la leyenda. Esto lo haremos en el lugar donde encontramos el comentario <code>TODO</code> referente al apartado</p>
+<p><em>c)</em>. El texto tendrá color de relleno blanco, y se dibujará en la posición indicada en los comentarios.</p>
+<p><em>d)</em> Para terminar de dibujar la leyenda, vamos a crear un marco que la englobe. Tras el bucle <code>for</code> sabremos cuál es la posición <em>y</em> final de la leyenda, y el texto que ha sido más largo (dentro del bucle se están comprobando las métricas del texto para tener esta información). Sabiendo esto, sabremos el tamaño que debe tener el rectángulo para que se adapte al número de líneas que tenemos, y a la leyenda de todas ellas. En el código encontramos un rectángulo llamado <code>recuadro</code> que nos da esa información. Vamos a dibujar un rectángulo blanco sin relleno con esas dimensiones.</p>
+<p><em>e)</em> Una vez dibujada la leyenda, vamos a terminar de decorar la gráfica dibujando un gradiente de fondo, en lugar de un color sólido. Esto deberemos hacerlo al principio de la función <code>drawRect:</code>, ya que el fondo debe dibujarse antes que el resto de elementos para que quede por debajo. Buscaremos el lugar donde tenemos un comentario de tipo <code>TODO</code> referente al apartado <em>(e)</em>, y dibujaremos ahí un gradiente desde gris oscuro hasta gris intermedio que varíe en la vertical, desde <em>y=0</em> hasta <em>y=ancho</em>.</p>
+<p><img alt="Aspecto de la gráfica resultante" src="imagenes/ej_grafica.jpg" title="Aspecto de la gráfica resultante" /></p>
+<h2 id="animaciones">Animaciones<a class="headerlink" href="#animaciones" title="Permanent link">&para;</a></h2>
+<p>En este ejercicio vamos a ver cómo hacer animaciones con CoreAnimation y directamente con vistas.</p>
+<p>Trabajaremos con el proyecto <code>Animaciones</code>. Se pide:</p>
+<p><em>a)</em> En la pantalla principal de la aplicación podemos ver una capa con la carátula de la película "El Resplandor". Esta capa se inicializa en <code>viewDidLoad</code>. Configurar esa capa para decorarla tal como indica en los comentarios que encontramos en dicha función.</p>
+<p><em>b)</em> Vemos que hay cuatro botones, uno en cada esquina de la pantalla, con el texto <em>Ven aquí</em>. Al pulsar cualquiera de estos botones se ejecutará el método <code>botonVenAquiPulsado:</code>.
+Vamos a hacer que al pulsar cualquiera de estos botones, la capa se mueva mediante una animación a la posición central del botón pulsado. Incluye el código necesario en el método anterior.</p>
+<p><em>c)</em> La aplicación tiene también un botón <em>Carátula</em> que nos lleva a una vista modal que muestra en grande la caráctula de la película. Esta pantalla se implementa en el controlador
+<code>UACaratulaViewController</code>. En este controlador se definen dos vistas de tipo imagen: <code>vistaFrontal</code> y <code>vistaReverso</code>, con la imagen del anverso y el reverso de la carátula de la película. Sin embargo, en un primer momento sólo se muestra la imagen frontal. Vamos a hacer que al pulsar el botón <em>Girar</em> la carátula gire mediante una animación para cambiar entre anverso y reverso. Deberemos implementar esta transición con las facilidades de la clase <code>UIView</code> en el método <code>botonGirarPulsado:</code>.</p>
+<blockquote>
+<p>Detalle de implementación: Podemos observar que en ese método distinguimos la vista que se está mostrando actualmente según si su propiedad <code>superview</code> es <code>nil</code>
+o no. Cuando una vista se muestra en pantalla siempre tiene una supervista. Si no tiene supervista quiere decir que no se está mostrando actualmente. Así podemos hacer esta distinción de forma sencilla.</p>
+</blockquote>
+<p><em>d)</em> Para terminar, vamos a implementar las funcionalidades de los botones <em>Zoom In</em> y <em>Zoom Out</em>. Con el primero de ellos veremos la portada ocupando toda la pantalla, mientras que con el segundo la reduciremos a la mitad de su tamaño. Esto deberemos hacerlo con las facilidades que nos proporciona la clase <code>UIView</code> para hacer animaciones, en los métodos <code>botonZoomInPulsado</code> y <code>botonZoomOutPulsado</code>. En el primero de ellos haremos con el tamaño de las vistas <code>vistaFrontal</code> y <code>vistaReverso</code> (propiedad <code>bounds</code>) sea <em>(0,0,320,416)</em>. En el segundo de ellos modificaremos estas propiedades a la mitad de tamaño: <em>(0,0,160, 208)</em>. Ten en cuenta que podemos modificar el tamaño de ambas vistas simultáneamente.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

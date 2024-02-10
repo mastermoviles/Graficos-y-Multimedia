@@ -1,0 +1,1234 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="mirroring.html">
+      
+      
+        <link rel="next" href="habla-android.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Aplicaciones Adobe Air - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aplicaciones-adobe-air" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Aplicaciones Adobe Air
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Aplicaciones Adobe Air
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="adobe-air.html" class="md-nav__link md-nav__link--active">
+        Aplicaciones Adobe Air
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-flex-y-air-sdk" class="md-nav__link">
+    Instalación de Flex y AIR SDK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-adobe-air-desde-linea-de-comando" class="md-nav__link">
+    Aplicaciones Adobe AIR desde línea de comando
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicaciones Adobe AIR desde línea de comando">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-proyecto-en-linea-de-comando" class="md-nav__link">
+    Creación de un proyecto en línea de comando
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construccion-de-un-proyecto-en-linea-de-comando" class="md-nav__link">
+    Construcción de un proyecto en línea de comando
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicaciones-adobe-air-con-intellij" class="md-nav__link">
+    Aplicaciones Adobe AIR con IntelliJ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-multimedia-con-adobe-air" class="md-nav__link">
+    Aplicaciones multimedia con Adobe AIR
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicaciones multimedia con Adobe AIR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-video" class="md-nav__link">
+    Reproducción de vídeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproductor-desde-flash-media-server" class="md-nav__link">
+    Reproductor desde Flash Media Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-desde-la-camara" class="md-nav__link">
+    Captura desde la cámara
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emision-via-streaming-rtmp" class="md-nav__link">
+    Emisión vía streaming RTMP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-de-la-fuente-de-video" class="md-nav__link">
+    Autenticación de la fuente de vídeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-la-aplicacion-android" class="md-nav__link">
+    Configuración de la aplicación Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion-de-adobe-air" class="md-nav__link">
+    Documentación de Adobe AIR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-flex-y-air-sdk" class="md-nav__link">
+    Instalación de Flex y AIR SDK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-adobe-air-desde-linea-de-comando" class="md-nav__link">
+    Aplicaciones Adobe AIR desde línea de comando
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicaciones Adobe AIR desde línea de comando">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-proyecto-en-linea-de-comando" class="md-nav__link">
+    Creación de un proyecto en línea de comando
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construccion-de-un-proyecto-en-linea-de-comando" class="md-nav__link">
+    Construcción de un proyecto en línea de comando
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicaciones-adobe-air-con-intellij" class="md-nav__link">
+    Aplicaciones Adobe AIR con IntelliJ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-multimedia-con-adobe-air" class="md-nav__link">
+    Aplicaciones multimedia con Adobe AIR
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicaciones multimedia con Adobe AIR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-video" class="md-nav__link">
+    Reproducción de vídeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproductor-desde-flash-media-server" class="md-nav__link">
+    Reproductor desde Flash Media Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura-desde-la-camara" class="md-nav__link">
+    Captura desde la cámara
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emision-via-streaming-rtmp" class="md-nav__link">
+    Emisión vía streaming RTMP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-de-la-fuente-de-video" class="md-nav__link">
+    Autenticación de la fuente de vídeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-la-aplicacion-android" class="md-nav__link">
+    Configuración de la aplicación Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion-de-adobe-air" class="md-nav__link">
+    Documentación de Adobe AIR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="aplicaciones-adobe-air">Aplicaciones Adobe Air<a class="headerlink" href="#aplicaciones-adobe-air" title="Permanent link">&para;</a></h1>
+<p>Adobe Air es una tecnología multiplataforma que nos permite llevar las aplicaciones Flash y ActionScript a distintos dispositivos. Tenemos la opción de crear estas aplicaciones con la herramienta Flash, o bien utilizar el compilador abierto Flex. Vamos a centrarnos en el desarrollo de aplicaciones Adobe AIR con Flex SDK.</p>
+<h2 id="instalacion-de-flex-y-air-sdk">Instalación de Flex y AIR SDK<a class="headerlink" href="#instalacion-de-flex-y-air-sdk" title="Permanent link">&para;</a></h2>
+<p>Vamos a ver los pasos que deberemos seguir para instalar los SDK de Flex y Adobe AIR:</p>
+<ul>
+<li>En primer lugar deberemos descargar Apache Flex SDK:</li>
+</ul>
+<p>http://flex.apache.org</p>
+<ul>
+<li>
+<p>Ejecutaremos el instalador, y éste se encargará de descargar todos los elementos necesarios, incluyendo Adobe AIR y Flex SDK. </p>
+</li>
+<li>
+<p>Introduciremos el directorio <code>$FLEX_SDK_HOME/bin</code> en el <code>PATH</code> para así tener el compilador accesible. Esto podemos hacerlo editando el fichero <code>.bash_profile</code> de nuestra carpeta personal (<code>$HOME</code>) e introduciendo al comienzo la siguiente línea:
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/ruta/a/flex_sdk/bin/
+</code></pre></div></p>
+</li>
+</ul>
+<!--
+* Tras esto descargaremos Adobe Air SDK:
+
+http://www.adobe.com/devnet/air/air-sdk-download.html
+> Importante: Es necesario descargar la versión original de Air SDK sin el nuevo compilador para poder utilizarla con Flex (la podemos encontrar en la parte inferior de la página).
+
+* Una vez hayamos descargado ambos SDKs, los descomprimiremos y deberemos mezclarlos en un mismo directorio. Supongamos que tenemos Adobe AIR en un directorio `AdobeAIRSDK` y Flex en `flex_sdk`. Copiaremos todos los contenidos de AIR SDK al directorio de Flex SDK ejecutando el siguiente comando desde un _Terminal_ en MacOS:
+<div class="highlight"><pre><span></span><code>ditto<span class="w"> </span>AdobeAIRSDK<span class="w"> </span>flex_sdk
+</code></pre></div>
+Tras esto tendremos todo lo necesario en `flex_sdk`, y podremos borrar el otro directorio (`AdobeAIRSDK`).
+
+* Introduciremos el directorio `flex_sdk/bin` en el `PATH` para así tener el compilador accesible. Esto podemos hacerlo editando el fichero `.bash_profile` de nuestra carpeta personal (`$HOME`) e introduciendo al comienzo la siguiente línea:
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/ruta/a/flex_sdk/bin/
+</code></pre></div>
+-->
+
+<p>Con esto ya podremos utilizar las herramientas de desarrollo de Flex y Adobe AIR desde línea de comando.</p>
+<h2 id="aplicaciones-adobe-air-desde-linea-de-comando">Aplicaciones Adobe AIR desde línea de comando<a class="headerlink" href="#aplicaciones-adobe-air-desde-linea-de-comando" title="Permanent link">&para;</a></h2>
+<p>Vamos a ver en primer lugar la forma de crear una aplicación Adobe AIR en línea de comando, y posteriormente estudiaremos la forma de hacerlo desde un entorno integrado como IntelliJ.</p>
+<h3 id="creacion-de-un-proyecto-en-linea-de-comando">Creación de un proyecto en línea de comando<a class="headerlink" href="#creacion-de-un-proyecto-en-linea-de-comando" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>En primer lugar crearemos un fichero XML descriptor de la aplicación como el siguiente, al que llamaremos <code>HolaMundo-app.xml</code>:
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;application</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://ns.adobe.com/air/application/2.7&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>es.ua.eps.HolaMundo<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;versionNumber&gt;</span>1.0<span class="nt">&lt;/versionNumber&gt;</span>
+<span class="w">    </span><span class="nt">&lt;filename&gt;</span>HolaMundo<span class="nt">&lt;/filename&gt;</span>
+<span class="w">    </span><span class="nt">&lt;initialWindow&gt;</span>
+<span class="w">        </span><span class="nt">&lt;content&gt;</span>HolaMundo.swf<span class="nt">&lt;/content&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/initialWindow&gt;</span>
+<span class="w">    </span><span class="nt">&lt;supportedProfiles&gt;</span>mobileDevice<span class="nt">&lt;/supportedProfiles&gt;</span>
+<span class="nt">&lt;/application&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Tras definir el descriptor, introduciremos el código <em>ActionScript</em> de la clase principal de la aplicación. Por ejemplo, podríamos crear un fichero <code>HolaMundo.as</code> como el siguiente:
+<div class="highlight"><pre><span></span><code><span class="kd">package</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">import</span><span class="w"> </span><span class="nx">flash</span><span class="p">.</span><span class="nx">display</span><span class="p">.</span><span class="nb">Sprite</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">import</span><span class="w"> </span><span class="nx">flash</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nb">TextField</span><span class="o">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">HolaMundo</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="nb">Sprite</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">HolaMundo</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">var</span><span class="w"> </span><span class="nx">textField</span><span class="o">:</span><span class="nb">TextField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nb">TextField</span><span class="p">();</span>
+<span class="w">            </span><span class="nx">textField</span><span class="p">.</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hola mundo!&quot;</span><span class="o">;</span>
+<span class="w">            </span><span class="nx">stage</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">textField</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="construccion-de-un-proyecto-en-linea-de-comando">Construcción de un proyecto en línea de comando<a class="headerlink" href="#construccion-de-un-proyecto-en-linea-de-comando" title="Permanent link">&para;</a></h3>
+<p>Una vez creado un proyecto, deberemos construirlo utilizando las herramientas en línea de comando de Flex SDK:</p>
+<ul>
+<li>
+<p>En primer lugar compilaremos el código de nuestra aplicación. Los fuentes podrán ser clases <em>ActionScript</em> (<code>.as</code>) o fichero MXML (<code>.mxml</code>). En cualquiera de los dos casos deberemos compilarlos con <code>amxmlc</code>:
+<div class="highlight"><pre><span></span><code>amxmlc<span class="w"> </span>HolaMundo.as
+</code></pre></div>
+Esto generará un fichero SWF (en el ejemplo anterior <code>HolaMundo.swf</code>).</p>
+</li>
+<li>
+<p>Una vez compilado podemos lanzar la aplicación con la herramienta <code>adl</code>, especificando el descriptor XML:
+<div class="highlight"><pre><span></span><code>adl<span class="w"> </span>HolaMundo-app.xml
+</code></pre></div>
+En el fichero XML se indica que la ventana inicial está en un fichero <code>HolaMundo.swf</code>, que es el fichero que hemos generado como resultado de la compilación en el paso anterior, y será el que se ejecute.</p>
+</li>
+</ul>
+<p>Por último, deberemos crear un APK o IPA para poder instalar la aplicación en dispositivos Android o iOS.</p>
+<h4 id="creacion-de-un-apk-para-android">Creación de un APK para Android<a class="headerlink" href="#creacion-de-un-apk-para-android" title="Permanent link">&para;</a></h4>
+<p>Para crear el APK en primer lugar deberemos crear un certificado con el que firmar la aplicación:
+<div class="highlight"><pre><span></span><code>adt<span class="w"> </span>-certificate<span class="w"> </span>-validityPeriod<span class="w"> </span><span class="m">25</span><span class="w"> </span>-cn<span class="w"> </span>SelfSigned<span class="w"> </span><span class="m">1024</span>-RSA<span class="w"> </span>cert.pfx<span class="w"> </span>mipassword
+</code></pre></div></p>
+<p>Esto deberemos hacerlo una única vez. Una vez tengamos un certificado, podremos generar el APK firmado con el siguiente comando:
+<div class="highlight"><pre><span></span><code>adt<span class="w"> </span>-package<span class="w"> </span>-target<span class="w"> </span>apk<span class="w"> </span>-storetype<span class="w"> </span>pkcs12<span class="w"> </span>-keystore<span class="w"> </span>cert.p12<span class="w"> </span>HolaMundo.apk<span class="w"> </span>HolaMundo-app.xml<span class="w"> </span>HolaMundo.swf
+</code></pre></div></p>
+<p>Podremos copiar este fichero APK a dispositivos Android para instalar la aplicación en ellos.</p>
+<h4 id="creacion-de-un-ipa-para-ios">Creación de un IPA para iOS<a class="headerlink" href="#creacion-de-un-ipa-para-ios" title="Permanent link">&para;</a></h4>
+<p>En el caso de iOS tendremos que generar un IPA firmado con nuestro certificado de desarrollador. Para ello deberemos exportar el certificado (y la clave privada) desde <em>Acceso a llaveros</em> a un fichero <code>.p12</code>, protegiéndolo con una contraseña. Al crear el IPA deberemos proporcionar este fichero <code>.p12</code>, su contraseña, y el perfil de aprovisionamiento <code>.mobileprovision</code>:</p>
+<div class="highlight"><pre><span></span><code>adt<span class="w"> </span>-package<span class="w"> </span>-target<span class="w"> </span>ipa-debug
+<span class="w">    </span>-keystore<span class="w"> </span>cert.p12<span class="w"> </span>-storetype<span class="w"> </span>pkcs12<span class="w"> </span>-storepass<span class="w"> </span>mipassword
+<span class="w">    </span>-provisioning-profile<span class="w"> </span>ios.mobileprovision
+<span class="w">    </span>HolaMundo.ipa<span class="w"> </span>HolaMundo-app.xml<span class="w"> </span>HolaMundo.swf<span class="w"> </span>iconos<span class="w"> </span>Default.png
+</code></pre></div>
+<p>Una vez generado el fichero IPA podremos probarlo en un dispositivo móvil copiándolo a iTunes y sincronizando con el dispositivo.</p>
+<h3 id="aplicaciones-adobe-air-con-intellij">Aplicaciones Adobe AIR con IntelliJ<a class="headerlink" href="#aplicaciones-adobe-air-con-intellij" title="Permanent link">&para;</a></h3>
+<p>Podemos crear aplicaciones Adobe AIR desde el entorno IntelliJ.</p>
+<h4 id="creacion-de-un-proyecto">Creación de un proyecto<a class="headerlink" href="#creacion-de-un-proyecto" title="Permanent link">&para;</a></h4>
+<p>Para crea un proyecto AIR en primer lugar seleccionaremos la opción <em>Archivo &gt; New Project...</em> y el tipo de proyecto <em>Flash</em>. Dentro de este tipo configuraremos el proyecto de la siguiente forma:</p>
+<p><img alt="Creación de un proyecto Adobe AIR con IntelliJ" src="imagenes/air_intellij_create.png" /></p>
+<ul>
+<li>Como <em>Target platform</em> indicaremos <em>Mobile</em></li>
+<li>Como <em>Output type</em> indicaremos <em>Application</em></li>
+<li>Marcamos las plataformas para las que queremos generar la aplicación (Android e iOS).</li>
+<li>Si marcamos la casilla <em>Create sample app</em> nos creará un fichero <code>.mxml</code> como plantilla inicial de la aplicación.</li>
+<li>Debemos indicar el SDK de Flex y Adobe AIR a utilizar. Si no tenemos ninguno configurado todavía deberemos pulsar sobre el botón <code>...</code> junto a este campo para configurar uno. Este proceso de configuración del SDK se explica en el siguiente apartado.</li>
+</ul>
+<h4 id="configuracion-del-sdk">Configuración del SDK<a class="headerlink" href="#configuracion-del-sdk" title="Permanent link">&para;</a></h4>
+<p>Si no tenemos configurado todavía un SDK, pulsaremos sobre el botón <code>...</code> junto al campo de selección de SDK para configurar uno nuevo. Esto tendremos que hacerlo sólo la primera vez que vayamos a crear un proyecto Adobe AIR.</p>
+<p>En la pantalla <em>Configure SDK</em> añadiremos un SDK del tipo <em>Flex/AIR SDK</em>:</p>
+<p><img alt="Creación de un proyecto Adobe AIR con IntelliJ" src="imagenes/air_intellij_add_sdk.png" /></p>
+<p>Seleccionaremos en el disco el directorio donde tenemos combinados Flex SDK y AIR SDK.</p>
+<p>Es recomendable también que en la pestaña <em>Documentation Paths</em> del SDK que acabamos de añadir introduzcamos la URL en la que podemos encontrar la referencia de la API de <em>ActionScript</em>:</p>
+<p><img alt="Configuración del SDK de Flex/AIR" src="imagenes/air_intellij_sdk.png" /></p>
+<blockquote>
+<p>Referencia API <em>ActionScript 3</em>:
+http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/</p>
+</blockquote>
+<h4 id="ejecucion-del-proyecto">Ejecución del proyecto<a class="headerlink" href="#ejecucion-del-proyecto" title="Permanent link">&para;</a></h4>
+<p>Una vez creado el proyecto, podemos ejecutarlo en el escritorio mediante la opción <em>Run &gt; Run 'Nombre del proyecto'</em> o pulsando el botón de reproducción en la barra superior derecha:</p>
+<p><img alt="Perfil de ejecución en IntelliJ" src="imagenes/air_intellij_run_button.png" /></p>
+<p>Podemos también configurar el perfil de ejecución del proyecto para indicar si queremos ejecutar en emuladores, dispositivos reales, Android o iOS. Esto lo haremos con la opción <em>Run &gt; Edit Configurations...</em>. Nos aparecerá una pantalla como la siguiente:</p>
+<p><img alt="Perfil de ejecución en IntelliJ" src="imagenes/air_intellij_run.png" /></p>
+<h4 id="creacion-de-artefactos">Creación de artefactos<a class="headerlink" href="#creacion-de-artefactos" title="Permanent link">&para;</a></h4>
+<p>Podemos añadir al proyecto tanto ficheros <em>ActionScript</em> como ficheros MXML, pulsando sobre él con el botón derecho y seleccionando la opción <em>New &gt; ActionScript Class</em> o <em>New &gt; MXML Component</em>:</p>
+<p><img alt="Estructura del proyecto Adobe AIR en IntelliJ" src="imagenes/air_intellij_new_as.png" /></p>
+<p>Si añadimos una clase ActionScript podríamos introducir el código del <em>Hola Mundo</em> que realizamos en un apartado anterior.</p>
+<p>Podemos hacer que la clase que hemos creado sea la clase principal de la aplicación entrando en <em>File &gt; Project Structure... &gt; Modules</em> y modificando el campo <em>Main class</em> de nuestro módulo:</p>
+<p><img alt="Estructura del proyecto Adobe AIR en IntelliJ" src="imagenes/air_intellij_structure.png" /></p>
+<h2 id="aplicaciones-multimedia-con-adobe-air">Aplicaciones multimedia con Adobe AIR<a class="headerlink" href="#aplicaciones-multimedia-con-adobe-air" title="Permanent link">&para;</a></h2>
+<h3 id="reproduccion-de-video">Reproducción de vídeo<a class="headerlink" href="#reproduccion-de-video" title="Permanent link">&para;</a></h3>
+<p>Podemos reproducir vídeo con un objeto de tipo <code>Video</code>. En primer lugar, podemos instanciar un objeto de este tipo y añadirlo a la pantalla con <code>addChild</code>. En este ejemplo se muestra este componente abarcando todo el espacio de la escena (<em>stage</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="nx">video_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">Video</span><span class="p">(</span><span class="nx">stage</span><span class="p">.</span><span class="nx">width</span><span class="o">,</span><span class="w"> </span><span class="nx">stage</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="nx">video_playback</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="nx">video_playback</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="nx">addChild</span><span class="p">(</span><span class="nx">video_playback</span><span class="p">);</span>
+</code></pre></div>
+<p>Una vez creado el visor de vídeo, creamos una conexión para acceder al vídeo remoto. En caso de querer acceder a video HTTP por descarga progresiva o vídeo local estableceremos la conexión pasando <code>null</code> como parámetro a <code>connect</code>. Sólo pasaremos una dirección cuando vayamos a conectar con un <em>Flash Media Server</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">nc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nb">NetConnection</span><span class="p">();</span>
+<span class="nx">nc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</code></pre></div>
+<p>Tras crear la conexión, crearemos a partir de ella un <code>NetStream</code></p>
+<div class="highlight"><pre><span></span><code><span class="nx">ns_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">NetStream</span><span class="p">(</span><span class="nx">nc</span><span class="p">);</span>
+<span class="nx">ns_playback</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">AsyncErrorEvent</span><span class="p">.</span><span class="nx">ASYNC_ERROR</span><span class="o">,</span><span class="w"> </span><span class="nx">asyncErrorHandler</span><span class="p">);</span>
+</code></pre></div>
+<p>Tenemos que proporcionar obligatoriamente un método para tratar los objetos de error, aunque los ignoremos, ya que de no hacerlo así obtendremos un error:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">asyncErrorHandler</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">AsyncErrorEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Por último, vinculamos el <code>NetStream</code> con el reproductor de vídeo y comenzamos la reproducción proporcionando la URL del vídeo a reproducir:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">video_playback</span><span class="p">.</span><span class="nx">attachNetStream</span><span class="p">(</span><span class="nx">ns_playback</span><span class="p">);</span>
+<span class="nx">ns_playback</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s2">&quot;http://jtech.ua.es/dadm/video.mp4&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>A continuación vemos el ejemplo completo del reproductor de vídeo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Reproductor</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="nb">Sprite</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">nc</span><span class="o">:</span><span class="nb">NetConnection</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">ns_playback</span><span class="o">:</span><span class="nb">NetStream</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">video_playback</span><span class="o">:</span><span class="nb">Video</span><span class="o">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Reproductor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Mantiene la pantalla siempre encendida</span>
+<span class="w">        </span><span class="nx">NativeApplication</span><span class="p">.</span><span class="nx">nativeApplication</span><span class="p">.</span><span class="nx">systemIdleMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">SystemIdleMode</span><span class="p">.</span><span class="nx">KEEP_AWAKE</span><span class="o">;</span>
+
+<span class="w">        </span><span class="nx">playbackNetStream</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">playbackNetStream</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Crea reproductor de video</span>
+<span class="w">        </span><span class="nx">video_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">Video</span><span class="p">(</span><span class="nx">stage</span><span class="p">.</span><span class="nx">width</span><span class="o">,</span><span class="nx">stage</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="w">        </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="w">        </span><span class="nx">addChild</span><span class="p">(</span><span class="nx">video_playback</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Crea flujo de video</span>
+<span class="w">        </span><span class="nx">nc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nb">NetConnection</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">nc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="w">        </span><span class="nx">ns_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">NetStream</span><span class="p">(</span><span class="nx">nc</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">ns_playback</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">AsyncErrorEvent</span><span class="p">.</span><span class="nx">ASYNC_ERROR</span><span class="o">,</span><span class="w"> </span><span class="nx">asyncErrorHandler</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Muestra el flujo en el reproductor</span>
+<span class="w">        </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">attachNetStream</span><span class="p">(</span><span class="nx">ns_playback</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">ns_playback</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s2">&quot;http://jtech.ua.es/dadm/video.mp4&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">asyncErrorHandler</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">AsyncErrorEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="reproductor-desde-flash-media-server">Reproductor desde <em>Flash Media Server</em><a class="headerlink" href="#reproductor-desde-flash-media-server" title="Permanent link">&para;</a></h3>
+<p>La reproductor de vídeo proveniente de un <em>Flash Media Server</em> difiere del caso anterior en que previamente debemos establecer la conexión con este servidor.</p>
+<p>En primer lugar realizaremos la conexión y definiremos un método de <em>callback</em> para que nos avise cuando la conexión esté establecida:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">nc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nb">NetConnection</span><span class="p">();</span>
+<span class="nx">nc</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">NetStatusEvent</span><span class="p">.</span><span class="nx">NET_STATUS</span><span class="o">,</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">);</span>
+
+<span class="nx">nc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">connectionURL</span><span class="p">);</span>
+</code></pre></div>
+<p>Implementaremos el <em>callback</em> <code>netStatusHandler</code> de forma que cuando se haya establecido la conexión comience la reproducción del vídeo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">NetStatusEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;NetConnection.Connect.Success&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">            </span><span class="c1">// Se ha establecido la conexión</span>
+<span class="w">            </span><span class="nx">playbackVideo</span><span class="p">();</span>
+<span class="w">            </span><span class="k">break</span><span class="o">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La reproducción del vídeo se hará de forma similar al caso anterior:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">playbackVideo</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">video_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">Video</span><span class="p">(</span><span class="nx">cam</span><span class="p">.</span><span class="nx">width</span><span class="o">,</span><span class="nx">cam</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="nx">cam</span><span class="p">.</span><span class="nx">width</span><span class="o">+</span><span class="mi">20</span><span class="o">;</span>
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="mi">10</span><span class="o">;</span>
+<span class="w">    </span><span class="nx">addChild</span><span class="p">(</span><span class="nx">video_playback</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">ns_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">NetStream</span><span class="p">(</span><span class="nx">nc</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">ns_playback</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">NetStatusEvent</span><span class="p">.</span><span class="nx">NET_STATUS</span><span class="o">,</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">attachNetStream</span><span class="p">(</span><span class="nx">ns_playback</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">ns_playback</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s2">&quot;mp4:sample.mp4&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En este caso, en el método <code>play</code> indicaremos el nombre del vídeo a reproducir dentro del <em>Flash Media Server</em></p>
+<h3 id="captura-desde-la-camara">Captura desde la cámara<a class="headerlink" href="#captura-desde-la-camara" title="Permanent link">&para;</a></h3>
+<p>Podemos de forma sencilla reproducir en pantalla vídeo capturado con la cámara. En primer lugar crearemos un objeto <code>Camera</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">cam</span><span class="o">=</span><span class="nb">Camera</span><span class="p">.</span><span class="nx">getCamera</span><span class="p">();</span>
+</code></pre></div>
+<p>Este método obtiene la cámara por defecto del dispositivo. Con <code>Camera.names</code> podríamos ver los nombres de todas las cámaras disponibles, y con <code>Camera.getCamera(nombre)</code> podríamos obtener cualquiera de ellas.</p>
+<p>También podemos configurar la calidad del vídeo capturado por la cámara:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">cam</span><span class="p">.</span><span class="nx">setMode</span><span class="p">(</span><span class="mi">320</span><span class="o">,</span><span class="mi">240</span><span class="o">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="nx">cam</span><span class="p">.</span><span class="nx">setQuality</span><span class="p">(</span><span class="mi">200000</span><span class="o">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">cam</span><span class="p">.</span><span class="nx">setKeyFrameInterval</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+</code></pre></div>
+<p>De la misma forma, también podríamos especificar la captura del micrófono, en este caso mediante un objeto <code>Microphone</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">mic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Microphone</span><span class="p">.</span><span class="nx">getMicrophone</span><span class="p">();</span>
+
+<span class="nx">mic</span><span class="p">.</span><span class="nx">rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="o">;</span>
+<span class="nx">mic</span><span class="p">.</span><span class="nx">setSilenceLevel</span><span class="p">(</span><span class="mi">0</span><span class="o">,-</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+<p>Una vez hecho esto, podemos vincular con <code>attachCamera</code> la cámara al visor de vídeo, y con esto comenzará a mostrarse en pantalla:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">video_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">Video</span><span class="p">(</span><span class="nx">stage</span><span class="p">.</span><span class="nx">width</span><span class="o">,</span><span class="nx">stage</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="nx">video_playback</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="nx">video_playback</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+
+<span class="nx">addChild</span><span class="p">(</span><span class="nx">video_playback</span><span class="p">);</span>
+
+<span class="nx">video_playback</span><span class="p">.</span><span class="nx">attachCamera</span><span class="p">(</span><span class="nx">cam</span><span class="p">);</span>
+</code></pre></div>
+<p>Podemos ver el ejemplo completo a continuación:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">cameraPlayback</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">cam</span><span class="o">=</span><span class="nb">Camera</span><span class="p">.</span><span class="nx">getCamera</span><span class="p">();</span>
+
+<span class="w">    </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setMode</span><span class="p">(</span><span class="mi">320</span><span class="o">,</span><span class="mi">240</span><span class="o">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setQuality</span><span class="p">(</span><span class="mi">200000</span><span class="o">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setKeyFrameInterval</span><span class="p">(</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">video_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">Video</span><span class="p">(</span><span class="nx">stage</span><span class="p">.</span><span class="nx">width</span><span class="o">,</span><span class="nx">stage</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+
+<span class="w">    </span><span class="nx">addChild</span><span class="p">(</span><span class="nx">video_playback</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">attachCamera</span><span class="p">(</span><span class="nx">cam</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="emision-via-streaming-rtmp">Emisión vía <em>streaming</em> RTMP<a class="headerlink" href="#emision-via-streaming-rtmp" title="Permanent link">&para;</a></h3>
+<p>Una vez visto como mostrar vídeo de una URL, de un servidor <em>Flash Media Server</em>, y de la cámara, vamos a ver cómo podemos capturar vídeo de la cámara y enviarlo a un servidor RTMP.</p>
+<p>Lo primero que deberemos hacer es establecer la conexión con el servidor RTMP:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">nc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nb">NetConnection</span><span class="p">();</span>
+<span class="nx">nc</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">NetStatusEvent</span><span class="p">.</span><span class="nx">NET_STATUS</span><span class="o">,</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">);</span>
+<span class="nx">nc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s2">&quot;rtmp://www.eps.ua.es:1935/live&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Definimos el siguiente <em>callback</em> con el que estaremos pendientes del momento en el que se establece la conexión con el servidor, para empezar a publicar, y del momento en el que comienza la publicación, para comenzar a mostrar un <em>preview</em> en nuestra aplicación:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">NetStatusEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;NetConnection.Connect.Success&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">            </span><span class="c1">// Se ha establecido la conexión</span>
+<span class="w">            </span><span class="nx">publishVideo</span><span class="p">();</span>
+<span class="w">            </span><span class="k">break</span><span class="o">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;NetStream.Publish.Start&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">            </span><span class="c1">// Ha comenzado la emisión</span>
+<span class="w">            </span><span class="nx">playbackVideo</span><span class="p">();</span>
+<span class="w">            </span><span class="k">break</span><span class="o">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cuando se haya establecido la conexión podremos comenzar la publicación de vídeo. Esto lo haremos con el método <code>publish</code> de la clase <code>NetStream</code>. Antes podremos configurar la calidad del vídeo que vamos a retransmitir:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">publishVideo</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">ns_publish</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">NetStream</span><span class="p">(</span><span class="nx">nc</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nx">h264Settings</span><span class="o">:</span><span class="nx">H264VideoStreamSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nx">H264VideoStreamSettings</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">h264Settings</span><span class="p">.</span><span class="nx">setProfileLevel</span><span class="p">(</span><span class="w"> </span><span class="nx">H264Profile</span><span class="p">.</span><span class="nx">BASELINE</span><span class="o">,</span><span class="w"> </span><span class="nx">H264Level</span><span class="p">.</span><span class="nx">LEVEL_3_1</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">videoStreamSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">h264Settings</span><span class="o">;</span>
+
+<span class="w">    </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">NetStatusEvent</span><span class="p">.</span><span class="nx">NET_STATUS</span><span class="o">,</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">cam</span><span class="o">=</span><span class="nb">Camera</span><span class="p">.</span><span class="nx">getCamera</span><span class="p">();</span>
+
+<span class="w">    </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setMode</span><span class="p">(</span><span class="mi">320</span><span class="o">,</span><span class="mi">240</span><span class="o">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setQuality</span><span class="p">(</span><span class="mi">200000</span><span class="o">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setKeyFrameInterval</span><span class="p">(</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">mic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Microphone</span><span class="p">.</span><span class="nx">getMicrophone</span><span class="p">();</span>
+
+<span class="w">    </span><span class="nx">mic</span><span class="p">.</span><span class="nx">rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="o">;</span>
+<span class="w">    </span><span class="nx">mic</span><span class="p">.</span><span class="nx">setSilenceLevel</span><span class="p">(</span><span class="mi">0</span><span class="o">,-</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">attachCamera</span><span class="p">(</span><span class="nx">cam</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">attachAudio</span><span class="p">(</span><span class="nx">mic</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;miCanal.stream&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Una vez detectemos que la publicación ha comenzado, podríamos reproducir el vídeo publicado en el servidor:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">playbackVideo</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nx">video_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">Video</span><span class="p">(</span><span class="nx">stage</span><span class="p">.</span><span class="nx">width</span><span class="o">,</span><span class="nx">stage</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="w">    </span><span class="nx">addChild</span><span class="p">(</span><span class="nx">video_playback</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">ns_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">NetStream</span><span class="p">(</span><span class="nx">nc</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">ns_playback</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">NetStatusEvent</span><span class="p">.</span><span class="nx">NET_STATUS</span><span class="o">,</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">attachNetStream</span><span class="p">(</span><span class="nx">ns_playback</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">ns_playback</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s2">&quot;miCanal.stream&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A continuación se muestra el ejemplo completo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">MiStream</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="nb">Sprite</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">connectionURL</span><span class="o">:</span><span class="nb">String</span><span class="o">=</span><span class="s2">&quot;rtmp://www.eps.ua.es/live&quot;</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">videoURL</span><span class="o">:</span><span class="nb">String</span><span class="o">=</span><span class="s2">&quot;miCanal.stream&quot;</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">nc</span><span class="o">:</span><span class="nb">NetConnection</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">ns_publish</span><span class="o">:</span><span class="nb">NetStream</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">ns_playback</span><span class="o">:</span><span class="nb">NetStream</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">video_playback</span><span class="o">:</span><span class="nb">Video</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">cam</span><span class="o">:</span><span class="nb">Camera</span><span class="o">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="nx">mic</span><span class="o">:</span><span class="nb">Microphone</span><span class="o">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">MiStream</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Mantiene la pantalla siempre encendida</span>
+<span class="w">        </span><span class="nx">NativeApplication</span><span class="p">.</span><span class="nx">nativeApplication</span><span class="p">.</span><span class="nx">systemIdleMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">SystemIdleMode</span><span class="p">.</span><span class="nx">KEEP_AWAKE</span><span class="o">;</span>
+
+<span class="w">        </span><span class="c1">// Establece conexion con la URL</span>
+
+<span class="w">        </span><span class="nx">nc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nb">NetConnection</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">nc</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">NetStatusEvent</span><span class="p">.</span><span class="nx">NET_STATUS</span><span class="o">,</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">nc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">connectionURL</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">NetStatusEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;NetConnection.Connect.Success&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">                </span><span class="c1">// Se ha establecido la conexión</span>
+<span class="w">                </span><span class="nx">publishVideo</span><span class="p">();</span>
+<span class="w">                </span><span class="k">break</span><span class="o">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;NetStream.Publish.Start&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">                </span><span class="c1">// Ha comenzado la emisión</span>
+<span class="w">                </span><span class="nx">playbackVideo</span><span class="p">();</span>
+<span class="w">                </span><span class="k">break</span><span class="o">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">publishVideo</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">ns_publish</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">NetStream</span><span class="p">(</span><span class="nx">nc</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="nx">h264Settings</span><span class="o">:</span><span class="nx">H264VideoStreamSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nx">H264VideoStreamSettings</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">h264Settings</span><span class="p">.</span><span class="nx">setProfileLevel</span><span class="p">(</span><span class="w"> </span><span class="nx">H264Profile</span><span class="p">.</span><span class="nx">BASELINE</span><span class="o">,</span><span class="w"> </span><span class="nx">H264Level</span><span class="p">.</span><span class="nx">LEVEL_3_1</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">videoStreamSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">h264Settings</span><span class="o">;</span>
+
+<span class="w">        </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">NetStatusEvent</span><span class="p">.</span><span class="nx">NET_STATUS</span><span class="o">,</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">);</span>
+
+<span class="w">        </span><span class="nx">cam</span><span class="o">=</span><span class="nb">Camera</span><span class="p">.</span><span class="nx">getCamera</span><span class="p">();</span>
+
+<span class="w">        </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setMode</span><span class="p">(</span><span class="mi">320</span><span class="o">,</span><span class="mi">240</span><span class="o">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setQuality</span><span class="p">(</span><span class="mi">200000</span><span class="o">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">cam</span><span class="p">.</span><span class="nx">setKeyFrameInterval</span><span class="p">(</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">        </span><span class="nx">mic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Microphone</span><span class="p">.</span><span class="nx">getMicrophone</span><span class="p">();</span>
+
+<span class="w">        </span><span class="nx">mic</span><span class="p">.</span><span class="nx">rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="o">;</span>
+<span class="w">        </span><span class="nx">mic</span><span class="p">.</span><span class="nx">setSilenceLevel</span><span class="p">(</span><span class="mi">0</span><span class="o">,-</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">        </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">attachCamera</span><span class="p">(</span><span class="nx">cam</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">attachAudio</span><span class="p">(</span><span class="nx">mic</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">ns_publish</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">videoURL</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">playbackVideo</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">video_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">Video</span><span class="p">(</span><span class="nx">stage</span><span class="p">.</span><span class="nx">width</span><span class="o">,</span><span class="nx">stage</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="w">        </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="w">        </span><span class="nx">addChild</span><span class="p">(</span><span class="nx">video_playback</span><span class="p">);</span>
+
+<span class="w">        </span><span class="nx">ns_playback</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="nb">NetStream</span><span class="p">(</span><span class="nx">nc</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">ns_playback</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">NetStatusEvent</span><span class="p">.</span><span class="nx">NET_STATUS</span><span class="o">,</span><span class="w"> </span><span class="nx">netStatusHandler</span><span class="p">);</span>
+
+<span class="w">        </span><span class="nx">video_playback</span><span class="p">.</span><span class="nx">attachNetStream</span><span class="p">(</span><span class="nx">ns_playback</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">ns_playback</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="nx">videoURL</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="autenticacion-de-la-fuente-de-video">Autenticación de la fuente de vídeo<a class="headerlink" href="#autenticacion-de-la-fuente-de-video" title="Permanent link">&para;</a></h3>
+<p>Si requerimos usuario y <em>password</em> para poder publicar vídeo RTMP en Wowza desde nuestra aplicación Adobe AIR, estas credenciales se pueden proporcionar como parámetros del método <code>NetConnection.connect</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">nc</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">connectionURL</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;publisher&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;mastermoviles&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Sin embargo, en Wowza no podremos utilizar la configuración de autenticación estándar en RTMP, sino que necesitaremos añadir un módulo adicional. De hecho, deberemos dejar abierto el acceso a la aplicación vía RTMP desde la interfaz de Wowza para poder utilizar dicho módulo. Para ello:</p>
+<ul>
+<li>Entramos en el administrador de Wowza, en la página de nuestra aplicación, por ejemplo <code>live</code>.</li>
+<li>Entramos en la sección <em>Source Security</em> y editamos la configuración.</li>
+<li>En <em>RTMP Sources</em> indicamos <em>Open (no authentication required)</em>.</li>
+</ul>
+<p>Incorporaremos ahora la autenticación RTMP mediante el módulo adicional <code>moduleOnConnectAuthenticate</code>. Dicho módulo se encuentra dentro de una colección de módulos adicionales que se proporcionan para Wowza en la siguiente página:</p>
+<p>http://www.wowza.com/forums/content.php?113-Module-Collection</p>
+<p>Para instalar y configurar el módulo de autenticación deberemos:</p>
+<ul>
+<li>Descargar e instalar la colección de módulos anterior. Deberemos copiar el fichero <code>wms-plugin-collection.jar</code> en el directorio <code>${WOWZA_HOME}/lib</code>, siendo <code>${WOWZA_HOME}</code> el directorio de instalación de Wowza.</li>
+<li>Añadimos la configuración del módulo al fichero <code>Application.xml</code> de la aplicación a configurar. Por ejemplo, si queremos configurar la aplicación <code>live</code>, buscaremos dicho fichero en <code>${WOWZA_HOME}/conf/live</code>. En el fichero <code>Application.xml</code>, introduciremos la siguiente configuración dentro de la etiqueta <code>&lt;Modules&gt; ... &lt;/Modules&gt;</code>:
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Module&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Name&gt;</span>moduleOnConnectAuthenticate<span class="nt">&lt;/Name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Description&gt;</span>Authenticates<span class="w"> </span>Flash<span class="w"> </span>connections.<span class="nt">&lt;/Description&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Class&gt;</span>com.wowza.wms.plugin.collection.module.ModuleOnConnectAuthenticate<span class="nt">&lt;/Class&gt;</span>
+<span class="nt">&lt;/Module&gt;</span>
+</code></pre></div></li>
+<li>Por defecto buscará la lista de usuarios en el fichero <code>${WOWZA_HOME}/conf/connect.password</code>. Podemos copiar el fichero <code>publish.password</code> que se encuentra en el mismo directorio para utilizar los mismos usuarios para publicación que hemos configurado en Wowza.</li>
+</ul>
+<p>Después de hacer esto reiniciaremos el servidor y tendremos habilitada la autentificación de fuentes RTMP con compatibilidad para el método <code>NetConnection.connect</code>.</p>
+<h3 id="configuracion-de-la-aplicacion-android">Configuración de la aplicación Android<a class="headerlink" href="#configuracion-de-la-aplicacion-android" title="Permanent link">&para;</a></h3>
+<p>En el descriptor XML de la aplicación podemos especificar todos los permisos que necesitaríamos para esta aplicación en la plataforma Android. Podríamos tener algo como lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;application</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://ns.adobe.com/air/application/13.0&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>es.ua.eps.MiStream<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;versionNumber&gt;</span>0.0.1<span class="nt">&lt;/versionNumber&gt;</span>
+<span class="w">    </span><span class="nt">&lt;filename&gt;</span>MiStream<span class="nt">&lt;/filename&gt;</span>
+<span class="w">    </span><span class="nt">&lt;initialWindow&gt;</span>
+<span class="w">        </span><span class="nt">&lt;content&gt;</span>MiStream.swf<span class="nt">&lt;/content&gt;</span>
+<span class="w">        </span><span class="nt">&lt;fullScreen&gt;</span>true<span class="nt">&lt;/fullScreen&gt;</span>
+<span class="w">        </span><span class="nt">&lt;aspectRatio&gt;</span>any<span class="nt">&lt;/aspectRatio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/initialWindow&gt;</span>
+<span class="w">    </span><span class="nt">&lt;supportedProfiles&gt;</span>mobileDevice<span class="nt">&lt;/supportedProfiles&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;android&gt;</span>
+<span class="w">    </span><span class="nt">&lt;manifestAdditions&gt;</span>
+<span class="w">        </span><span class="cp">&lt;![CDATA[</span>
+<span class="cp">            &lt;manifest&gt;</span>
+<span class="cp">                &lt;uses-feature android:name=&quot;android.hardware.camera&quot;/&gt;</span>
+<span class="cp">                &lt;uses-feature android:name=&quot;android.hardware.microphone&quot;/&gt;</span>
+<span class="cp">                &lt;uses-feature android:name=&quot;android.hardware.camera.autofocus&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.ACCESS_CHECKIN_PROPERTIES&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.CAMERA&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.CHANGE_WIFI_MULTICAST_STATE&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.DISABLE_KEYGUARD&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.MODIFY_AUDIO_SETTINGS&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.RECORD_AUDIO&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.VIBRATE&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;</span>
+<span class="cp">                &lt;uses-permission android:name=&quot;com.google.android.glass.permission.DEVELOPMENT&quot;/&gt;</span>
+
+<span class="cp">                &lt;application&gt;</span>
+<span class="cp">                    &lt;activity&gt;</span>
+<span class="cp">                        &lt;intent-filter&gt;</span>
+<span class="cp">                            &lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;</span>
+<span class="cp">                            &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot;/&gt;</span>
+<span class="cp">                        &lt;/intent-filter&gt;</span>
+<span class="cp">                        &lt;intent-filter&gt;</span>
+<span class="cp">                            &lt;action android:name=&quot;android.intent.action.VIEW&quot;/&gt;</span>
+<span class="cp">                            &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot;/&gt;</span>
+<span class="cp">                            &lt;category android:name=&quot;android.intent.category.DEFAULT&quot;/&gt;</span>
+<span class="cp">                            &lt;data android:scheme=&quot;ggstream&quot;/&gt;</span>
+<span class="cp">                        &lt;/intent-filter&gt;</span>
+<span class="cp">                    &lt;/activity&gt;</span>
+<span class="cp">                &lt;/application&gt;</span>
+
+<span class="cp">            &lt;/manifest&gt;</span>
+<span class="cp">        ]]&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/manifestAdditions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/android&gt;</span>
+<span class="nt">&lt;/application&gt;</span>
+</code></pre></div>
+<h3 id="documentacion-de-adobe-air">Documentación de Adobe AIR<a class="headerlink" href="#documentacion-de-adobe-air" title="Permanent link">&para;</a></h3>
+<p>Para más información sobre Adobe AIR, guías y tutoriales, se puede acceder a la documentación oficial de la plataforma:</p>
+<p>http://www.adobe.com/devnet/air/documentation.html</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

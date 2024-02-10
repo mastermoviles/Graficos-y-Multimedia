@@ -1,0 +1,870 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Guía de laboratorio - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guia-de-laboratorio" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guía de laboratorio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inicio-del-sistema-desde-un-disco-externo-en-mac" class="md-nav__link">
+    Inicio del sistema desde un disco externo en Mac
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-basica-de-macos" class="md-nav__link">
+    Guía básica de MacOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Guía básica de MacOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barra-de-menu" class="md-nav__link">
+    Barra de menú
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-del-raton" class="md-nav__link">
+    Uso del ratón
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-a-ficheros" class="md-nav__link">
+    Acceso a ficheros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compresion-de-ficheros" class="md-nav__link">
+    Compresión de ficheros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abrir-aplicaciones-con-spotlight" class="md-nav__link">
+    Abrir aplicaciones con spotlight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicaciones-en-el-dock" class="md-nav__link">
+    Aplicaciones en el Dock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicaciones-a-pantalla-completa" class="md-nav__link">
+    Aplicaciones a pantalla completa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montar-discos-externos" class="md-nav__link">
+    Montar discos externos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuentas-de-usuario" class="md-nav__link">
+    Cuentas de usuario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-aplicaciones" class="md-nav__link">
+    Instalación de aplicaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-cortar-y-pegar" class="md-nav__link">
+    Copiar, cortar y pegar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorios-git" class="md-nav__link">
+    Repositorios git
+  </a>
+  
+    <nav class="md-nav" aria-label="Repositorios git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-repositorio-remoto-en-bitbucket" class="md-nav__link">
+    Creación de un repositorio remoto en bitbucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-del-repositorio-git-local" class="md-nav__link">
+    Creación del repositorio git local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrar-cambios-en-el-repositorio" class="md-nav__link">
+    Registrar cambios en el repositorio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compartir-el-repositorio-con-grupos" class="md-nav__link">
+    Compartir el repositorio con grupos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-una-cuenta-bitbucket" class="md-nav__link">
+    Creación de una cuenta bitbucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-repositorio-git" class="md-nav__link">
+    Creación de un repositorio Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descarga-de-un-repositorio-existente" class="md-nav__link">
+    Descarga de un repositorio existente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion-del-repositorio-local" class="md-nav__link">
+    Actualización del repositorio local
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="guia-de-laboratorio">Guía de laboratorio<a class="headerlink" href="#guia-de-laboratorio" title="Permanent link">&para;</a></h1>
+<h2 id="inicio-del-sistema-desde-un-disco-externo-en-mac">Inicio del sistema desde un disco externo en Mac<a class="headerlink" href="#inicio-del-sistema-desde-un-disco-externo-en-mac" title="Permanent link">&para;</a></h2>
+<p>Con el máster se proporciona un disco externo con el sistema MacOS Mavericks y con todo el software que utilizaremos durante el curso preinstalado en dicho sistema operativo.</p>
+<p>Se trata de discos de arranque externos, que <strong>sólo podrán ser utilizados desde ordenadores Mac</strong>. Para iniciar el sistema desde estos discos deberemos seguir los siguientes pasos:</p>
+<ol>
+<li>Conectar el disco externo a un puerto USB</li>
+<li>Encender el ordenador y mantener pulsada la tecla <code>alt</code></li>
+<li>Cuando aparezca la pantalla de selección de disco de arranque, seleccionar el disco <em>Master Móviles</em></li>
+</ol>
+<p>Es importante destacar que los discos están preparados para funcionar en los ordenadores iMac del laboratorio. Puede que no funcionen en todos los ordenadores Mac.</p>
+<p>Estos discos permitirán mantener el software actualizado y configurado, sin necesidad de depender de la instalación local del laboratorio ni de tener que introducir la configuración personal al comienzo de cada clase.</p>
+<h2 id="guia-basica-de-macos">Guía básica de MacOS<a class="headerlink" href="#guia-basica-de-macos" title="Permanent link">&para;</a></h2>
+<p>Dado que durante todo el máster trabajaremos sobre el sistema MacOS, vamos a repasar los fundamentos básicos del uso de este sistema operativo.</p>
+<h3 id="barra-de-menu">Barra de menú<a class="headerlink" href="#barra-de-menu" title="Permanent link">&para;</a></h3>
+<p>En MacOS la barra de menú siempre está fija en la parte superior de la pantalla, a diferencia de <em>Windows</em> que incorpora dicha barra en cada ventana.</p>
+<p>El primer elemento de la barra es el icono de la <em>"manzana"</em>, pulsando sobre el cual desplegaremos un menú con opciones importantes como las siguientes:</p>
+<ul>
+<li><em>Preferencias del Sistema ...</em></li>
+<li><em>Forzar salida ...</em></li>
+<li><em>Reiniciar ...</em></li>
+<li><em>Apagar equipo ...</em></li>
+</ul>
+<p><img alt="&quot;Barra de menus&quot;" src="imagenes/macos-manzana.png" /></p>
+<p>Con <em>Preferencias del Sistema ...</em> abriremos el panel que nos da acceso a todos los elementos de configuración del sistema.</p>
+<p><img alt="&quot;Preferencias del sistema&quot;" src="imagenes/macos_preferencias.png" /></p>
+<p>Si en algún momento alguna aplicación queda bloqueada, podemos <em>matarla</em> con <em>Forzar salida ...</em>.</p>
+<h3 id="uso-del-raton">Uso del ratón<a class="headerlink" href="#uso-del-raton" title="Permanent link">&para;</a></h3>
+<p>En MacOS es habitual tener un único botón del ratón, teniéndose que pulsar la combinación <code>ctrl+click</code> para obtener el efecto del <em>click</em> secundario.</p>
+<p>Si estamos acostumbrados al funcionamiento del ratón en <em>Windows</em> o <em>Linux</em> podemos configurar el sistema de forma similar. Para hacer esto entraremos en <em>Preferencias del sistema ...</em>, y dentro de este panel en <em>Ratón</em>. Aquí podremos especificar que pulsando sobre el lado derecho del ratón se produzca el efecto de <em>click secundario</em>.</p>
+<h3 id="acceso-a-ficheros">Acceso a ficheros<a class="headerlink" href="#acceso-a-ficheros" title="Permanent link">&para;</a></h3>
+<p>Podemos navegar por el sistema de ficheros mediante la aplicación <em>Finder</em>.</p>
+<p><img alt="&quot;Ventana del Finder&quot;" src="imagenes/macos_finder.png" /></p>
+<p>Dentro de esta aplicación tenemos un panel a la izquierda con la ubicaciones favoritas. Podemos modificar este lista entrando en el menú <em>Finder &gt; Preferencias ...</em>.</p>
+<p>Hay que remarcar que la barra de menús cambia según la aplicación que tenga el foco en un momento dado. La opción <em>Finder</em> aparecerá junto a la <em>"manzana"</em> cuando la aplicación <em>Finder</em> esté en primer plano.</p>
+<p>Mientras navegamos por los ficheros podemos ver una vista previa rápida pulsando la tecla <code>espacio</code>.</p>
+<h3 id="compresion-de-ficheros">Compresión de ficheros<a class="headerlink" href="#compresion-de-ficheros" title="Permanent link">&para;</a></h3>
+<p>Para <strong>comprimir</strong> ficheros simplemente seleccionaremos los ficheros en el escritorio o en el <em>Finder</em>, haremos <em>click secundario</em>, y seleccionaremos la opción <em>Comprimir</em>. Esto comprimirá los ficheros seleccionados en <code>zip</code> con el compresor integrado en el sistema.</p>
+<p>Podremos <strong>descomprimir</strong> ficheros <code>zip</code> simplemente haciendo doble <em>click</em> sobre ellos.</p>
+<p>Para descomprimir otros tipos de ficheros (+7z+, +rar+, etc) se incluye la herramienta gratuita <em>Stuffit Expander</em>.</p>
+<h3 id="abrir-aplicaciones-con-spotlight">Abrir aplicaciones con <em>spotlight</em><a class="headerlink" href="#abrir-aplicaciones-con-spotlight" title="Permanent link">&para;</a></h3>
+<p>La forma más sencilla de abrir aplicaciones en MacOS es mediante el <em>Spotlight</em> (el icono de la lupa de la esquina superior derecha de la pantalla).</p>
+<p><img alt="&quot;Busqueda de aplicaciones con Spotlight&quot;" src="imagenes/macos_spotlight.png" /></p>
+<p>Deberemos pulsar sobre este icono y empezar a escribir el nombre de la aplicación. La aplicación buscada aparecerá de forma rápida en la lista y podremos abrirla.</p>
+<h3 id="aplicaciones-en-el-dock">Aplicaciones en el <em>Dock</em><a class="headerlink" href="#aplicaciones-en-el-dock" title="Permanent link">&para;</a></h3>
+<p>El <em>Dock</em> es la barra que vemos en la parte inferior de la pantalla. Tenemos ahí los iconos de algunas de las aplicaciones instaladas, y de todas las aplicaciones abiertas actualmente.</p>
+<p><img alt="&quot;Dock de MacOS&quot;" src="imagenes/macos_dock.png" /></p>
+<p>Será recomendable dejar en el <em>Dock</em> de forma fija los iconos de las aplicaciones que más utilicemos. Para hacer esto abriremos la aplicación, y una vez aparece su icono en el <em>Dock</em>, mantendremos el botón de ratón pulsado sobré él y seleccionaremos <em>Opciones &gt; Mantener en el Dock</em>. Con esto, aunque cerremos la aplicación, su icono seguirá ahí, permitiéndonos abrirla de forma rápida.</p>
+<p><img alt="&quot;Mantener aplicación en el Dock&quot;" src="imagenes/macos_mantenerdock.png" /></p>
+<h3 id="aplicaciones-a-pantalla-completa">Aplicaciones a pantalla completa<a class="headerlink" href="#aplicaciones-a-pantalla-completa" title="Permanent link">&para;</a></h3>
+<p>Casi todas las aplicaciones pueden ponerse a pantalla completa mediante el icono que tienen en la esquina superior derecha. Cuando tengamos varias aplicaciones a pantalla completa podemos cambiar de una a otra mediante la combinación de teclas <code>ctrl + cursor izq./der.</code>.</p>
+<p>Cuando una aplicación está a pantalla completa podemos cerrar la ventana pulsando la combinación <code>ctrl + W</code>. Esto es equivalente a cerrar la ventaa con el botón rojo de su esquina superior izquierda cuando estamos en modo ventana.</p>
+<p>Es importante destacar que en MacOS las aplicaciones no se cierran al cerrar la ventana. Para cerrarlas tendremos que entrar en el menú con el nombre de la aplicación (el que aparece junto a la <em>"manzana"</em>) y pulsar sobre <em>Salir</em>.</p>
+<p>Veremos las aplicaciones que están abiertas marcadas con una luz en la parte inferior del <em>Dock</em>.</p>
+<h3 id="montar-discos-externos">Montar discos externos<a class="headerlink" href="#montar-discos-externos" title="Permanent link">&para;</a></h3>
+<p>Al conectar un disco externo el sistema normalmente lo reconocerá automáticamente y podremos verlo en el escritorio y en el panel izquierdo del <em>Finder</em>.</p>
+<p>Podremos utilizar discos con formato <em>MacOS</em> y con formato <em>FAT32</em>. También podremos conectar discos <em>NTFS</em>, pero éstos serán de sólo lectura. Existen aplicaciones y formas de configurar el sistema para tener también la posibilidad de escribir en este tipo de sistemas de ficheros.</p>
+<p>Para desmontar un disco podemos pulsar sobre el icono de expulsión en el <em>Finder</em>, o bien arrastrar el icono del disco a la papelera. Cuando hagamos esto veremos que la papelera cambia de aspecto y pasa a ser un icono de expulsión.</p>
+<h3 id="cuentas-de-usuario">Cuentas de usuario<a class="headerlink" href="#cuentas-de-usuario" title="Permanent link">&para;</a></h3>
+<p>Podemos configurar nuestras cuentas de usuario en <em>Preferencias del Sistema ... &gt; Cuentas de Internet</em>.</p>
+<p>Por ejemplo podríamos configurar aquí nuestra cuenta de Google. Una vez configurada la cuenta, podremos ver nuestro correo de Gmail en la aplicación <em>Mail</em>, nuestros calendarios de Google Calendar en la aplicación <em>Calendario</em>, nuestros contactos de Google en la aplicación <em>Contactos</em>, etc.</p>
+<h3 id="instalacion-de-aplicaciones">Instalación de aplicaciones<a class="headerlink" href="#instalacion-de-aplicaciones" title="Permanent link">&para;</a></h3>
+<p>Podemos instalar aplicaciones desde la <em>Mac App Store</em>. Necesitaremos configurar una cuenta de Apple para poder hacer esto.</p>
+<p>También podemos instalar aplicaciones descargadas desde la web. Normalmente las aplicaciones de Mac vienen empaquetadas en ficheros <code>.dmg</code> que consisten en una imagen de disco que podemos montar en el sistema.</p>
+<p>La <em>instalación</em> suele consistir únicamente en arrastrar un fichero al directorio <code>/Applications</code>.</p>
+<p>De la misma forma, para <em>desinstalar</em> estas aplicaciones simplemente tendríamos que arrastrar dicho fichero a la papelera.</p>
+<p>Otras aplicaciones que requieren una instalación más compleja proporcionan un instalador.</p>
+<h3 id="copiar-cortar-y-pegar">Copiar, cortar y pegar<a class="headerlink" href="#copiar-cortar-y-pegar" title="Permanent link">&para;</a></h3>
+<p>En MacOS podemos cortar, copiar y pegar como en otros Sistemas Operativos, pero es importante tener en cuenta que en lugar de usar la tecla <code>ctrl</code> se utiliza <code>cmd</code>. Es decir, copiaremos con ´cmd + C´, cortaremos con <code>cmd + X</code>, y pegaremos con <code>cmd + V</code>.</p>
+<p>Esto será así para prácticamente todos los atajos de teclado. Aquellos que en Windows y Linux utilizan en la combinación la tecla <code>ctrl</code> en MacOS normalmente utilizan <code>cmd</code>.</p>
+<h2 id="repositorios-git">Repositorios git<a class="headerlink" href="#repositorios-git" title="Permanent link">&para;</a></h2>
+<p>El sistema de contron de versiones <strong>git</strong> realiza una gestión distribuida del código de nuestros proyectos. Tendremos un <strong>repositorio remoto</strong> donde se almacenarán las versiones de los artefactos de nuestros proyecto, y este repositorio remoto estará replicado en un <strong>repositorio local</strong> en nuestra máquina. De esta forma podremos realizar <em>commits</em> con frecuencia en nuestra máquina sin que estos cambios afecten a otros usuarios del repositorio remoto. Cuando tras realizar una serie de cambios hayamos llegado a un estado estable de nuestro proyecto, podremos hacer <em>push</em> para subir todos los <em>commits</em> pendientes al repositorio remoto.</p>
+<p>Para la creación de los repositorios remotos utilizaremos <strong>bitbucket</strong>. Vamos a ver en primer lugar cómo crear este repositorio remoto, y posteriormente veremos cómo crear una replica local.</p>
+<h3 id="creacion-de-un-repositorio-remoto-en-bitbucket">Creación de un repositorio remoto en bitbucket<a class="headerlink" href="#creacion-de-un-repositorio-remoto-en-bitbucket" title="Permanent link">&para;</a></h3>
+<p>Vamos a ver c&oacute;mo crear un repositorio privado en bitbucket (<code>bitbucket.org</code>) que vincularemos con nuestro repositorio local.</p>
+<ol>
+<li>
+<p>En primer lugar, deberemos crearnos una cuenta en bitbucket, si no disponemos ya de una: https://bitbucket.org</p>
+</li>
+<li>
+<p>Creamos desde nuestra cuenta de bitbucket un repositorio (<em>Repositories &gt; Create repository</em>).</p>
+</li>
+<li>
+<p>Deberemos darle un nombre al repositorio. Ser&aacute; de tipo Git y como lenguaje especificaremos <em>Objective-C</em> o <em>Android</em> según la plataforma para la que vayamos a desarrollar.
+<img alt="" src="imagenes/bitbucket-create.png" /></p>
+</li>
+<li>
+<p>Una vez hecho esto, veremos el repositorio ya creado, en cuya ficha podremos encontrar la ruta que nos dar&aacute;   acceso a &eacute;l.
+<img alt="" src="imagenes/bitbucket-clone.png" /></p>
+</li>
+</ol>
+<p>Será útil copiar la dirección anterior para vincular con ella nuestro repositorio local al remoto. Veremos como hacer esto en el siguiente apartado.</p>
+<h3 id="creacion-del-repositorio-git-local">Creación del repositorio git local<a class="headerlink" href="#creacion-del-repositorio-git-local" title="Permanent link">&para;</a></h3>
+<p>Vamos a ver dos alternativas para crear una replica local del repositorio remoto:</p>
+<ul>
+<li>Clonar el repositorio remoto, lo cual inicializa un repositorio local en el que ya está configurado el vínculo con el remoto.</li>
+<li>Crear un repositorio local independiente, y vincularlo posteriormente con un repositorio remoto.</li>
+</ul>
+<p>Si utilizamos un IDE como Eclipse o Xcode estos pasos los realiza automáticamente el entorno.</p>
+<h4 id="creacion-a-partir-del-repositorio-remoto">Creación a partir del repositorio remoto<a class="headerlink" href="#creacion-a-partir-del-repositorio-remoto" title="Permanent link">&para;</a></h4>
+<p>La forma más sencilla de crear un repositorio Git local es hacerlo directamente a partir del repositorio remoto. Si ya tenemos un repositorio remoto (vacío o con contenido) podemos clonarlo en nuestra máquina local con:</p>
+<div class="highlight"><pre><span></span><code>git clone https://[usr]:bitbucket.org/[usr]/miproyecto-mastermoviles
+</code></pre></div>
+<p>Este comando podemos copiarlo directamente desde bitbucket, tal como hemos visto en el último paso del apartado anterior (opción <em>Clone</em> de la interfaz del repositorio).</p>
+<p>De esta forma se crea en nuestro ordenador el directorio <code>miproyecto-mastermoviles</code> y se descarga en él el contenido del proyecto, en caso de no estar vacío el repositorio remoto. Además, quedará configurado como repositorio Git local y conectado de forma automática con el repositorio git remoto del que lo hemos clonado.</p>
+<h4 id="creacion-de-un-repositorio-local-y-vinculacion-con-el-remoto">Creación de un repositorio local y vinculación con el remoto<a class="headerlink" href="#creacion-de-un-repositorio-local-y-vinculacion-con-el-remoto" title="Permanent link">&para;</a></h4>
+<p>Esta forma es algo más compleja que la anterior, pero será útil si tenemos ya creado un repositorio Git local de antemano, o si queremos vincularlo con varios repositorios remotos.</p>
+<p>Para la creación de un repositorio Git local seguiremos los siguientes pasos.</p>
+<ol>
+<li>
+<p>Crear un directorio local para el repositorio del m&oacute;dulo.</p>
+</li>
+<li>
+<p>Inicializar el directorio anterior como un repositorio Git. Para ello, ejecuta en dicho directorio el comando.
+<div class="highlight"><pre><span></span><code>$ git init
+</code></pre></div></p>
+</li>
+<li>
+<p>En bitbucket veremos la URL que identifica el repositorio, que será del tipo:
+https://[usr]@bitbucket.org/[usr]/miproyecto-mastermoviles.git</p>
+</li>
+<li>
+<p>Configurar el repositorio remoto. El repositorio remoto por defecto suele tomar como nombre <code>origin</code>. Desde el directorio ra&iacute;z del proyecto ejecutamos:
+<div class="highlight"><pre><span></span><code>$ git remote add origin https://[usr]@bitbucket.org/[usr]/miproyecto-mastermoviles.git
+</code></pre></div></p>
+</li>
+</ol>
+<p>Con esto habremos inicializado nuestro directorio como repositorio local Git y lo habremos conectado con el repositorio remoto de bitbucket.</p>
+<h3 id="registrar-cambios-en-el-repositorio">Registrar cambios en el repositorio<a class="headerlink" href="#registrar-cambios-en-el-repositorio" title="Permanent link">&para;</a></h3>
+<p>Independientemente de cuál de los métodos anteriores hayamos utilizado para inicializar nuestro repositorio Git local conectado con el repositorio remoto de bitbucket, vamos a ver ahora cómo trabajar con este repositorio.</p>
+<p>En primer lugar será recomendable añadir un fichero <code>.gitignore</code> al directorio del proyecto, que dependerá del tipo de proyecto y que se encargará de excluir del control de versiones todos aquellos artefactos que sean generados automáticamente (por ejemplo las clases compiladas o el paquete de la aplicación). Podemos encontrar diferentes modelos de <code>.gitignore</code> en:
+https://github.com/github/gitignore</p>
+<p>Tras añadir el <code>.gitignore</code> correcto para nuestro tipo de proyecto podremos añadir nuevos artefactos y registrarlos en el sistema de control de versiones. Cada vez que queramos registrar cambios en el repositorio local deberemos:</p>
+<ol>
+<li>
+<p>Si hemos añadido nuevos artefactos al proyecto, deberemos añadirlos al sistema de control de versiones con:
+<div class="highlight"><pre><span></span><code>git add .
+</code></pre></div></p>
+</li>
+<li>
+<p>Hacer el primer <em>commit</em> desde el terminal o desde el IDE.
+<div class="highlight"><pre><span></span><code>git commit -m &quot;Versión inicial&quot;
+</code></pre></div></p>
+</li>
+<li>
+<p>Ahora podemos hacer <em>commit</em> cada vez que se haga alg&uacute;n otro cambio para registrarlo en el repositorio local:
+<div class="highlight"><pre><span></span><code>$ git add .
+$ git commit -a -m &quot;Mensaje del commit&quot;
+$ git push origin master
+</code></pre></div></p>
+</li>
+<li>
+<p>Cada vez que el proyecto alcance un estado estable podremos hacer <em>push</em> para subir los cambios a bitbucket, indicando el nombre del repositorio remoto (<code>origin</code>) y la rama a la que se subirá (<code>master</code> por defecto)
+<div class="highlight"><pre><span></span><code>$ git push origin master
+</code></pre></div></p>
+</li>
+</ol>
+<p>Con esto se subirán a bitbucket todos los <em>commits</em> que estuviesen pendientes de enviar el repositorio remoto.</p>
+<h3 id="compartir-el-repositorio-con-grupos">Compartir el repositorio con grupos<a class="headerlink" href="#compartir-el-repositorio-con-grupos" title="Permanent link">&para;</a></h3>
+<p>Todos los alumnos y profesores del máster pertenecen al equipo <em>Master Moviles</em> de bitbucket. Podremos crear y acceder a repositorios pertenecientes a nuestra cuenta personal o al equipo. Utilizaremos el equipo para las siguientes tareas:</p>
+<ul>
+<li>Los profesores publicaremos ejemplos y plantillas en el equipo <em>Master Moviles</em>, de forma que todos los alumnos podáis acceder a ellos y replicarlos en vuestras máquinas.</li>
+<li>Los alumnos podéis compartir los proyectos que realicéis en vuestras cuentas con el equipo <em>Master Moviles</em>, para que así los profesores tengamos acceso a ellos y podamos corregirlos. Esta será la forma de realizar las entregas.</li>
+</ul>
+<p>Vamos ahora a ver cómo hacer estas tareas.</p>
+<h4 id="compartir-un-repositorio-con-usuarios-de-bitbucket">Compartir un repositorio con usuarios de bitbucket<a class="headerlink" href="#compartir-un-repositorio-con-usuarios-de-bitbucket" title="Permanent link">&para;</a></h4>
+<p>Podemos compartir un repositorio bitbucket con un usuario o grupo dentro del equipo, de forma que dicho usuario o  todos los usuarios que pertenezcan al grupo puedan tener acceso al repositorio. Esto lo hacemos desde <em>Settings</em> &gt; <em>Access management</em>:</p>
+<p><img alt="" src="imagenes/bitbucket-access.png" /></p>
+<p>Los proyectos que realicéis en cada asignatura deberéis compartirlos con el/los profesor/es de la asignatura, dando permisos de lectura. Los profesores os aparecerán en la lista de usuarios como <em>TEAMMATES</em>.</p>
+<h4 id="decarga-de-ejemplos-y-plantillas">Decarga de ejemplos y plantillas<a class="headerlink" href="#decarga-de-ejemplos-y-plantillas" title="Permanent link">&para;</a></h4>
+<p>Los ejemplos y plantillas se dejan como repositorios de sólo lectura en el grupo <em>Master Moviles</em>. Para que cada uno pueda tener una copia propia de lectura/escritura deberá hacer un <em>Fork</em> en su cuenta personal de bitbucket.</p>
+<p>Para ello se deberá entrar en el repositorio compartido de bitbucket y usar la opción <em>Fork</em>:</p>
+<p><img alt="" src="imagenes/bitbucket-fork.png" /></p>
+<h2 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h2>
+<h3 id="creacion-de-una-cuenta-bitbucket">Creación de una cuenta bitbucket<a class="headerlink" href="#creacion-de-una-cuenta-bitbucket" title="Permanent link">&para;</a></h3>
+<p>Crea un cuenta personal de bitbucket para utilizar en el máster (si no dispones ya de una). Utiliza como nombre de usuario el <strong>nombre de usuario de Campus Virtual</strong> o uno similar, para poder identificar correctamente los ejercicios que entregues.</p>
+<h3 id="creacion-de-un-repositorio-git">Creación de un repositorio Git<a class="headerlink" href="#creacion-de-un-repositorio-git" title="Permanent link">&para;</a></h3>
+<p>Vamos a crear un primer repositorio de prueba en bitbucket.</p>
+<p><em>a)</em> Crea un repositorio en tu cuenta personal con el nombre <code>presentacion-mastermoviles</code>.</p>
+<p><em>b)</em> Obten desde la web de bitbucket el comando necesario para clonar el repositorio en tu máquina local.</p>
+<p><em>c)</em> Copia y pega el comando anterior en el terminal (aplicación <em>Terminal</em> de MacOS) para clonar el repositorio en tu carpeta <code>$HOME</code>.</p>
+<p><em>d)</em> Crea un fichero de texto en el directorio del proyecto al que llamaremos <code>README.md</code> con el siguiente texto.</p>
+<div class="highlight"><pre><span></span><code># Primera version del proyecto
+</code></pre></div>
+<p><em>e)</em> Añade el fichero anterior al sistema de control de versiones y haz el primer <em>commit</em> con mensaje <em>Initial commit</em>.</p>
+<p><em>f)</em> Añade una segunda linea al fichero anterior, para que quede como se muestra a continuación:</p>
+<div class="highlight"><pre><span></span><code># Primera version del proyecto
+# Actualizado a la segunda version
+</code></pre></div>
+<p><em>g)</em> Haz otro <em>commit</em> con el mensaje <em>Texto modificado</em> y posteriormente haz un <em>push</em> al servidor.</p>
+<p><em>h)</em> Comprueba en bitbucket que el proyecto se ha subido. Explora desde la web los ficheros de fuentes y los diferentes <em>commits</em> que se han realizado, viendo para cada uno la versión correspondiente del fichero de fuentes.</p>
+<h3 id="descarga-de-un-repositorio-existente">Descarga de un repositorio existente<a class="headerlink" href="#descarga-de-un-repositorio-existente" title="Permanent link">&para;</a></h3>
+<p>En el equipo <em>Master Moviles</em> de bitbucket se ha dejado un proyecto llamado <code>presentacion-team-mastermoviles</code> que podéis copiar a vuestras cuentas y descargar. Dado que sólo tenemos permisos de lectura para dicho proyecto haremos lo siguiente:</p>
+<p><em>a)</em> Hacemos un <em>fork</em> del proyecto a nuestra cuenta personal. De esta forma seramos propietarios de la copia y por lo tanto tendremos permiso de escritura.</p>
+<p><em>b)</em> Hacemos un <em>clone</em> del proyecto en nuestra máquina aprovechando el comando que nos proporciona bitbucket.</p>
+<p><em>c)</em> Nos habrá descargado un fichero. Vamos a modificar este fichero, hacer <em>commit</em>, y tras eso hacer <em>push</em> para subirlo al servidor.</p>
+<p><em>d)</em> Comparte este proyecto y el realizado en el ejercicio anterior con el usuario <code>malozano</code> de bitbucket con permiso de lectura para que pueda ver tu solución.</p>
+<h3 id="actualizacion-del-repositorio-local">Actualización del repositorio local<a class="headerlink" href="#actualizacion-del-repositorio-local" title="Permanent link">&para;</a></h3>
+<p>En caso de que estemos trabajando con un mismo repositorio remoto desde diferentes máquinas (bien por estar trabajando diferentes personas, o bien por estar la misma persona desde distintas máquinas) cuando enviemos cambios al repositorio remoto desde una, deberemos ser capaces de actualizar estos cambios en el resto.</p>
+<p>Para actualizar en la máquina local los cambios que se hayan subido el repositorio remoto deberemos hacer un <em>pull</em>:</p>
+<div class="highlight"><pre><span></span><code>$ git pull origin master
+</code></pre></div>
+<p>Esto será especialmente útil si se trabaja en el proyecto o en los ejercicios desde los ordenadores del laboratorio y desde el ordenador personal. Cuando hayamos hecho cambios, antes de cerrar la sesión haremos <em>commit</em> y <em>push</em>, y cuando vayamos a empezar a trabajar en otra máquina haremos un <em>pull</em>. De esta forma nos aseguramos de trabajar siempre con la versión actualizada de nuestros proyectos.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

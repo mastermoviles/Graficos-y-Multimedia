@@ -1,0 +1,1305 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="graficos-ios.html">
+      
+      
+        <link rel="next" href="captura-ios.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Reproducción de medios en iOS - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reproduccion-de-medios-en-ios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reproducción de medios en iOS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reproducción de medios en iOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="reproduccion-ios.html" class="md-nav__link md-nav__link--active">
+        Reproducción de medios en iOS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apis-multimedia-en-ios" class="md-nav__link">
+    APIs multimedia en iOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-audio" class="md-nav__link">
+    Reproducción de audio
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción de audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-sonidos-del-sistema" class="md-nav__link">
+    Reproducción de sonidos del sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-musica" class="md-nav__link">
+    Reproducción de música
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sesiones-de-audio" class="md-nav__link">
+    Sesiones de audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-audio-en-segundo-plano" class="md-nav__link">
+    Reproducción de audio en segundo plano
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-del-audio" class="md-nav__link">
+    Metadatos del audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-remoto" class="md-nav__link">
+    Control remoto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desconexion-de-los-auriculares" class="md-nav__link">
+    Desconexión de los auriculares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-video" class="md-nav__link">
+    Reproducción de video
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción de video">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproductor-multimedia" class="md-nav__link">
+    Reproductor multimedia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizacion-del-reproductor" class="md-nav__link">
+    Personalización del reproductor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-con-avplayer" class="md-nav__link">
+    Reproducción con AVPlayer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-video_1" class="md-nav__link">
+    Reproducción de vídeo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-ios.html" class="md-nav__link">
+        Captura y procesamiento de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apis-multimedia-en-ios" class="md-nav__link">
+    APIs multimedia en iOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-audio" class="md-nav__link">
+    Reproducción de audio
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción de audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-sonidos-del-sistema" class="md-nav__link">
+    Reproducción de sonidos del sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-musica" class="md-nav__link">
+    Reproducción de música
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sesiones-de-audio" class="md-nav__link">
+    Sesiones de audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-audio-en-segundo-plano" class="md-nav__link">
+    Reproducción de audio en segundo plano
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatos-del-audio" class="md-nav__link">
+    Metadatos del audio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-remoto" class="md-nav__link">
+    Control remoto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desconexion-de-los-auriculares" class="md-nav__link">
+    Desconexión de los auriculares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-video" class="md-nav__link">
+    Reproducción de video
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción de video">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproductor-multimedia" class="md-nav__link">
+    Reproductor multimedia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizacion-del-reproductor" class="md-nav__link">
+    Personalización del reproductor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-con-avplayer" class="md-nav__link">
+    Reproducción con AVPlayer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-de-video_1" class="md-nav__link">
+    Reproducción de vídeo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="reproduccion-de-medios-en-ios">Reproducción de medios en iOS<a class="headerlink" href="#reproduccion-de-medios-en-ios" title="Permanent link">&para;</a></h1>
+<p>En esta sesión veremos las diferentes APIs de las que disponemos en iOS para
+introducir y manipular contenidos multimedia en nuestras aplicaciones. En primer
+lugar repasaremos las APIs disponibles y sus principales características. Tras
+esto, pasaremos a ver cómo reproducir audio y video en las aplicaciones, y por
+último estudiaremos cómo capturar audio, video y fotografías, y cómo procesar
+estos medios.</p>
+<h2 id="apis-multimedia-en-ios">APIs multimedia en iOS<a class="headerlink" href="#apis-multimedia-en-ios" title="Permanent link">&para;</a></h2>
+<p>En el SDK de iOS encontramos un gran número de <em>frameworks</em> que nos
+permiten reproducir y manipular contenido multimedia. Según las necesidades de
+nuestra aplicación, deberemos seleccionar uno u otro. A continuación mostramos
+los más destacados y sus características:</p>
+<ul>
+<li><strong>Media Player <span class="arithmatex"><span class="MathJax_Preview">MP</span><script type="math/tex">MP</script></span></strong>: Nos da acceso a la librería multimedia del iPod. Con esta librería podemos
+  reproducir medios de forma sencilla incrustando el reproductor de medios del dispositivo en nuestra
+  aplicación, y personalizándolo para que se adapte a nuestra interfaz y quede integrado correctamente.</li>
+<li><strong>AV Foundation <span class="arithmatex"><span class="MathJax_Preview">AV</span><script type="math/tex">AV</script></span></strong>: Esta librería nos permite controlar la reproducción y captura de audio y vídeo
+  a bajo nivel. Con ella por ejemplo podremos tener acceso a los fotogramas capturados por la cámara en tiempo
+  real, permitiendo implementar aplicaciones basadas en visión artificial.</li>
+<li><strong>Audio Toolbox <span class="arithmatex"><span class="MathJax_Preview">AU</span><script type="math/tex">AU</script></span></strong>: Se trata de una librería de manipulación de audio, que nos permite capturar,
+  reproducir, y convertir el formato del audio.</li>
+<li><strong>OpenAL framework <span class="arithmatex"><span class="MathJax_Preview">AL</span><script type="math/tex">AL</script></span></strong>: Nos da un gran control sobre la reproducción de audio. Por ejemplo,
+  nos permite reproducir audio posicional, es decir, nos dará control
+  sobre la posición en la que se encuentra la fuente de audio, para que así cada sonido se oiga con más fuerza
+  por el altavoz que corresponda. Esto es especialmente interesante para videojuegos, para implementar de esta forma
+  sonido en estéreo.</li>
+<li><strong>Assets Library <span class="arithmatex"><span class="MathJax_Preview">AL</span><script type="math/tex">AL</script></span></strong>: Nos da acceso a nuestra librería multimedia de fotos y vídeos.</li>
+<li><strong>Core Image <span class="arithmatex"><span class="MathJax_Preview">CI</span><script type="math/tex">CI</script></span></strong>: Es una API incorporada a partir de iOS 5. Permite procesar imágenes de forma
+  eficiente, aprovechando al máximo la arquitectura <em>hardware</em> del dispositivo, y evitando que tengamos
+  que ir a programar a bajo nivel para implementar estas funcionalidades de forma óptima. Con estas funciones podremos
+  crear filtros para fotografía, o implementar procedimientos de visión artificial como por ejemplo el reconocimiento
+  de caras.</li>
+</ul>
+<p>Vamos a centrarnos en esta sesión en el uso del reproductor de medios, para integrar vídeo en nuestras
+aplicaciones de forma personalizada, y en la API para procesamiento de imágenes.</p>
+<h2 id="reproduccion-de-audio">Reproducción de audio<a class="headerlink" href="#reproduccion-de-audio" title="Permanent link">&para;</a></h2>
+<p>En primer lugar vamos a ver algunas formas de reproducir audio en dispositivos iOS. Debemos distinguir dos tipos de sonidos:</p>
+<ul>
+<li><strong>Sonidos del sistema</strong>. Se reproducen mediante el servicio de sonidos del sistema <span class="arithmatex"><span class="MathJax_Preview">_System Sound Services_</span><script type="math/tex">_System Sound Services_</script></span>. Se debe utilizar únicamente para sonidos como <em>clicks</em>, alertas o notificaciones.</li>
+<li><strong>Sonidos de la aplicación</strong>. Se reproduce mediante APIs como <code>AVAudioPlayer</code> <span class="arithmatex"><span class="MathJax_Preview">perteneciente a _AV Foundation_</span><script type="math/tex">perteneciente a _AV Foundation_</script></span>. Se utilizará para música de fondo o sonidos.</li>
+</ul>
+<h3 id="reproduccion-de-sonidos-del-sistema">Reproducción de sonidos del sistema<a class="headerlink" href="#reproduccion-de-sonidos-del-sistema" title="Permanent link">&para;</a></h3>
+<p>El servicio de sonidos del sistema <span class="arithmatex"><span class="MathJax_Preview">_System Sound Services_</span><script type="math/tex">_System Sound Services_</script></span> nos permite reproducir sonidos sencillos. Este servicio está destinado a utilizarse para sonidos de la interfaz, como por ejemplo la pulsación de un botón o una alarma. Los sonidos que permite reproducir este servicio no pueden pasar de los 30 segundos de duración, y el formato sólo puede ser Linear PCM o IMA4, dentro de ficheros <code>.caf</code>, <code>.aif</code>, o <code>.wav</code>. También nos permite activar la vibración del dispositivo. No tenemos apenas ningún control sobre los sonidos reproducidos por este
+servicio, ni siquiera podemos alterar su volumen, sonarán con el volumen que haya seleccionado el usuario en el dispositivo.</p>
+<p>Los sonidos del sistema se representan con el tipo <code>SystemSoundID</code>. Se trata de una API C, por lo que
+encontraremos una serie de funciones con las que crear y reproducir sonidos. Podemos crear un objeto de este
+tipo a partir de la URL del fichero de audio, mediante la función <code>AudioServicesCreateSystemSoundID</code>.</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">sonido</span> <span class="p">=</span> <span class="n">SystemSoundID</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nv">urlSonido</span> <span class="p">=</span> <span class="n">Bundle</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">url</span><span class="p">(</span><span class="n">forResource</span><span class="p">:</span> <span class="s">&quot;alarma&quot;</span><span class="p">,</span> <span class="n">withExtension</span><span class="p">:</span> <span class="s">&quot;caf&quot;</span><span class="p">)</span>
+<span class="n">AudioServicesCreateSystemSoundID</span><span class="p">((</span><span class="n">urlSonido</span> <span class="k">as</span><span class="p">!</span> <span class="n">CFURL</span><span class="p">),</span> <span class="n">sonido</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="n">SystemSoundID</span><span class="w"> </span><span class="n">sonido</span><span class="p">;</span>
+<span class="bp">NSURL</span><span class="w"> </span><span class="o">*</span><span class="n">urlSonido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">NSBundle</span><span class="w"> </span><span class="n">mainBundle</span><span class="p">]</span><span class="w"> </span><span class="n">URLForResource</span><span class="o">:</span><span class="s">@&quot;alarma&quot;</span><span class="w">  </span><span class="n">withExtension</span><span class="o">:</span><span class="s">@&quot;caf&quot;</span><span class="p">];</span>
+<span class="n">AudioServicesCreateSystemSoundID</span><span class="p">((</span><span class="n">CFURLRef</span><span class="p">)</span><span class="n">urlSonido</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sonido</span><span class="p">);</span>
+</code></pre></div></p>
+<blockquote>
+<p>En este caso la URL se debe indicar mediante el tipo <code>CFURLRef</code>. Este es un tipo de datos de Core Foundation. Se trata de una estructura de datos <span class="arithmatex"><span class="MathJax_Preview">no un objeto Objective-C</span><script type="math/tex">no un objeto Objective-C</script></span>, que está vinculada a la clase <code>NSURL</code>. Podemos encontrar diferentes tipos de Core Foundation <span class="arithmatex"><span class="MathJax_Preview">con prefijo <code>CF</code></span><script type="math/tex">con prefijo <code>CF</code></script></span> vinculados a objetos de Cocoa Touch. Estos objetos pueden convertirse directamente a su tipo Core Foundation correspondiente simplemente mediante un <em>cast</em>.</p>
+</blockquote>
+<p>Tras hacer esto, el sonido queda registrado como sonido del sistema y se le asigna un identificador, que podemos almacenar en una
+variable de tipo <code>SystemSoundID</code>.</p>
+<p>Podemos reproducir el sonido que hemos creado con la función <code>AudioServicesPlaySystemSound</code>. Esto reproduce el sonido inmediatamente, sin ningún retardo, simplemente proporcionando el identificador del sonido a reproducir, ya que dicho
+sonido se encuentra cargado ya como sonido del sistema.</p>
+<div class="highlight"><pre><span></span><code><span class="n">AudioServicesPlaySystemSound</span><span class="p">(</span><span class="n">sonido</span><span class="p">);</span>
+</code></pre></div>
+<p>En caso de que queramos que junto a la reproducción del audio también se active la vibración del dispositivo, llamaremos
+a la función <code>AudioServicesPlayAlertSound</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AudioServicesPlayAlertSound</span><span class="p">(</span><span class="n">sonido</span><span class="p">);</span>
+</code></pre></div>
+<p>En este caso también debemos proporcionar el sonido a reproducir, pero además de reproducirlo también se activará la vibración. Si únicamente queremos activar la vibración, entonces podemos proporcionar como parámetro la constante <code>kSystemSoundID_Vibrate</code>.</p>
+<h3 id="reproduccion-de-musica">Reproducción de música<a class="headerlink" href="#reproduccion-de-musica" title="Permanent link">&para;</a></h3>
+<p>Si necesitamos que nuestra aplicación reproduzca música de cualquier duración, y no necesitamos tener un gran control sobre la forma en la que se reproduce el sonido <span class="arithmatex"><span class="MathJax_Preview">por ejemplo posicionamiento _stereo_</span><script type="math/tex">por ejemplo posicionamiento _stereo_</script></span>, entonces podemos utilizar el reproductor de audio <code>AVAudioPlayer</code>. Con esto podremos reproducir ficheros de cualquier duración, lo cual nos será de utilidad para reproducir música de fondo en nuestra aplicación. Soporta todos los formatos vistos anteriormente, y su uso resulta muy sencillo:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code> <span class="kd">var</span> <span class="nv">error</span><span class="p">:</span> <span class="n">Error</span><span class="p">?</span> <span class="p">=</span> <span class="kc">nil</span>
+ <span class="kd">var</span> <span class="nv">urlMusica</span> <span class="p">=</span> <span class="n">Bundle</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">url</span><span class="p">(</span><span class="n">forResource</span><span class="p">:</span> <span class="s">&quot;musica&quot;</span><span class="p">,</span> <span class="n">withExtension</span><span class="p">:</span> <span class="s">&quot;mp3&quot;</span><span class="p">)</span>
+ <span class="kd">let</span> <span class="nv">player</span> <span class="p">=</span> <span class="k">try</span><span class="p">!</span> <span class="n">AVAudioPlayer</span><span class="p">(</span><span class="n">contentsOf</span><span class="p">:</span> <span class="n">urlMusica</span><span class="p">!)</span>
+ <span class="n">player</span><span class="p">.</span><span class="n">prepareToPlay</span><span class="p">()</span>
+ <span class="n">player</span><span class="p">.</span><span class="n">play</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">NSError</span><span class="w"> </span><span class="o">*</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nil</span><span class="p">;</span>
+<span class="bp">NSURL</span><span class="w"> </span><span class="o">*</span><span class="n">urlMusica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">NSBundle</span><span class="w"> </span><span class="n">mainBundle</span><span class="p">]</span><span class="w"> </span><span class="n">URLForResource</span><span class="o">:</span><span class="s">@&quot;musica&quot;</span>
+<span class="w">                                           </span><span class="nl">withExtension</span><span class="p">:</span><span class="s">@&quot;mp3&quot;</span><span class="p">];</span>
+
+<span class="n">AVAudioPlayer</span><span class="w"> </span><span class="o">*</span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="n">AVAudioPlayer</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span>
+<span class="w">    </span><span class="nl">initWithContentsOfURL</span><span class="p">:</span><span class="n">urlMusica</span><span class="w"> </span><span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">player</span><span class="w"> </span><span class="n">prepareToPlay</span><span class="p">];</span>
+<span class="p">[</span><span class="n">player</span><span class="w"> </span><span class="n">play</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Una desventaja de este reproductor es que la reproducción puede tardar en comenzar, ya que la inicialización del <em>buffer</em>
+es una operación lenta. Por ello tenemos el método <code>prepareToPlay</code> que nos permite hacer que se inicialicen todos los
+recursos necesarios para que pueda comenzar la reproducción. Una vez hayamos hecho esto, al llamar a <code>play</code> la reproducción
+comenzará de forma instantánea.</p>
+<p>Con esta API, en el reproductor <span class="arithmatex"><span class="MathJax_Preview">objeto <code>AVAudioPlayer</code></span><script type="math/tex">objeto <code>AVAudioPlayer</code></script></span> tenemos una serie de propiedades con las que podemos hacer que
+la música se reproduzca de forma cíclica <span class="arithmatex"><span class="MathJax_Preview"><code>numberOfLoops</code></span><script type="math/tex"><code>numberOfLoops</code></script></span>, o controlar su volumen <span class="arithmatex"><span class="MathJax_Preview"><code>volume</code></span><script type="math/tex"><code>volume</code></script></span>. También podemos definir un delegado
+sobre el reproductor <span class="arithmatex"><span class="MathJax_Preview"><code>delegate</code></span><script type="math/tex"><code>delegate</code></script></span> de tipo <code>AVAudioPlayerDelegate</code>, para así poder controlar los eventos que ocurran en él, como
+por ejemplo la finalización de la reproducción del audio. Podemos también saber en cualquier momento si se está reproduciendo audio
+actualmente <span class="arithmatex"><span class="MathJax_Preview"><code>playing</code></span><script type="math/tex"><code>playing</code></script></span>, y podemos pausar, reanudar, o deterner la reproducción con los métodos <code>pause</code>,
+<code>play</code> y <code>stop</code>.</p>
+<p>Esta librería es adecuada para reproductores multimedia, en los que simplemente nos interese reproducir música y
+poder controlar el estado de la reproducción. Si necesitamos tener un mayor control sobre el audio, como por ejemplo
+reproducir varios efectos de sonido simultáneamente, con distintos niveles de volumen y posicionados de diferente forma, deberemos
+utilizar una API como OpenAL. Esto será especialmente adecuado para videojuegos, en los que necesitamos disponer de este
+control sobre el audio. Muchos motores para videojuegos incorporan librerías para gestión del audio basadas en OpenAL.</p>
+<p>Si queremos reproducir música de la librería del iPod, podemos utilizar el objeto <code>MPMusicPlayerController</code>. La diferencia
+entre <code>AVAudioPlayer</code> y <code>MPMusicPlayerController</code> radica en que el primero se encarga de reproducir audio
+propio de nuestra aplicación, mientras que el segundo se encarga de reproducir medios de la librería del iPod, y nos permite hacerlo
+tanto dentro de nuestra aplicación, como controlando el estado de reproducción de la aplicación del iPod.</p>
+<h3 id="sesiones-de-audio">Sesiones de audio<a class="headerlink" href="#sesiones-de-audio" title="Permanent link">&para;</a></h3>
+<p>La sesión de audio nos permite especificar el uso que nuestra aplicación quiere hacer del audio. Tendremos un objto <code>AVAudioSession</code> por cada aplicación, que podrá ser obtenido como un <em>singleton</em>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">audioSession</span> <span class="p">=</span> <span class="bp">AVAudioSession</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">AVAudioSession</span><span class="w"> </span><span class="o">*</span><span class="n">audioSession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVAudioSession</span><span class="w"> </span><span class="n">sharedInstance</span><span class="p">];</span>
+</code></pre></div></p>
+<p>En la sesión podemos controlar diferentes aspectos:</p>
+<ul>
+<li><strong>¿Puede mezclarse el sonido con otras aplicaciones?</strong></li>
+<li><strong>¿El sonido se interrumpe cuando se silencia el teléfono o se bloquea la pantalla?</strong></li>
+</ul>
+<p>Según el uso que vayamos a hacer del audio, podemos especificar diferentes categorías de sesiones, de las cuales destacamos las siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Mezcla</th>
+<th>Silencio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AVAudioSessionCategorySoloAmbient</code> <span class="arithmatex"><span class="MathJax_Preview">categoría **por defecto**</span><script type="math/tex">categoría **por defecto**</script></span></td>
+<td>No</td>
+<td>Si</td>
+</tr>
+<tr>
+<td><code>AVAudioSessionCategoryAmbient</code></td>
+<td>Si</td>
+<td>Si</td>
+</tr>
+<tr>
+<td><code>AVAudioSessionCategoryPlayback</code></td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Según la categoría que asignemos a la sesión el sonido se podrá mezclar con otras aplicaciones o se silenciará cuando se bloquee la pantalla o se silencie el dispositivo.</p>
+<p>Podemos establecer y activar una determinada categoría de forma global para nuestra aplicación con:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">audioSession</span> <span class="p">=</span> <span class="bp">AVAudioSession</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nv">error</span><span class="p">:</span> <span class="n">Error</span><span class="p">?</span> <span class="p">=</span> <span class="kc">nil</span>
+
+<span class="k">do</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="n">audioSession</span><span class="p">.</span><span class="n">setCategory</span><span class="p">(</span><span class="n">AVAudioSessionCategoryPlayback</span><span class="p">)</span>
+    <span class="k">try</span> <span class="n">audioSession</span><span class="p">.</span><span class="n">setActive</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">AVAudioSession</span><span class="w"> </span><span class="o">*</span><span class="n">audioSession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVAudioSession</span><span class="w"> </span><span class="n">sharedInstance</span><span class="p">];</span>
+
+<span class="bp">NSError</span><span class="w"> </span><span class="o">*</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nil</span><span class="p">;</span>
+<span class="kt">BOOL</span><span class="w"> </span><span class="n">success</span><span class="p">;</span>
+
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">audioSession</span><span class="w"> </span><span class="n">setCategory</span><span class="o">:</span><span class="n">AVAudioSessionCategoryPlayback</span><span class="w"> </span><span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+<span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">audioSession</span><span class="w"> </span><span class="n">setActive</span><span class="o">:</span><span class="nb">YES</span><span class="w"> </span><span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Normalmente bastará con establecer la categoría una única vez al iniciar la aplicación.</p>
+<p>El <em>singleton</em> <code>AVAudioSession</code> también nos proporciona información sobre si otra aplicación está reproduciendo audio actualmente mediante la propiedad <code>otherAudioPlaying</code>.</p>
+<blockquote>
+<p>A partir de iOS 8 se recomienda utilizar la propiedad <code>secondaryAudioShouldBeSilencedHint</code> que nos indica si otra actividad está reproduciendo audio no mezclable.</p>
+</blockquote>
+<p>Mediante la propiedad anterior podemos tomar la decisión de reproducir música de fondo sólo en el caso de que otra aplicación no lo esté haciendo:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">audioSession</span><span class="p">.</span><span class="n">isOtherAudioPlaying</span> <span class="p">{</span>
+ <span class="c1">// El sonido de esta aplicación se mezcla con el de fondo</span>
+ <span class="k">do</span> <span class="p">{</span>
+   <span class="k">try</span> <span class="kc">self</span><span class="p">.</span><span class="n">audioSession</span><span class="p">.</span><span class="n">setCategory</span><span class="p">(</span><span class="n">AVAudioSessionCategoryAmbient</span><span class="p">)</span>
+ <span class="p">}</span>
+ <span class="k">catch</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">{</span>
+ <span class="p">}</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+ <span class="k">do</span> <span class="p">{</span>
+   <span class="k">try</span> <span class="kc">self</span><span class="p">.</span><span class="n">audioSession</span><span class="p">.</span><span class="n">setCategory</span><span class="p">(</span><span class="n">AVAudioSessionCategorySoloAmbient</span><span class="p">)</span>
+ <span class="p">}</span> <span class="k">catch</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">{</span>
+ <span class="p">}</span>
+ <span class="kc">self</span><span class="p">.</span><span class="n">reproduceMusica</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">([</span><span class="nb">self</span><span class="p">.</span><span class="n">audioSession</span><span class="w"> </span><span class="n">isOtherAudioPlaying</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// El sonido de esta aplicación se mezcla con el de fondo</span>
+<span class="w">    </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">audioSession</span><span class="w"> </span><span class="n">setCategory</span><span class="o">:</span><span class="n">AVAudioSessionCategoryAmbient</span><span class="w"> </span><span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">audioSession</span><span class="w"> </span><span class="n">setCategory</span><span class="o">:</span><span class="n">AVAudioSessionCategorySoloAmbient</span><span class="w"> </span><span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+<span class="w">    </span><span class="p">[</span><span class="nb">self</span><span class="w"> </span><span class="n">reproduceMusica</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Algunos escenarios típicos son los siguientes:</p>
+<ul>
+<li><strong>Aplicación donde el audio resulta imprescindible</strong>, como por ejemplo un reproductor multimedia. En este caso la categoría adecuada será <code>AVAudioSessionCategoryPlayback</code>. No se mezclará con otras aplicaciones y podrá seguir reproduciéndose con la pantalla apagada.</li>
+<li><strong>Aplicación con audio secundario opcional</strong>. En algunas aplicaciones puede interesarnos dar la opción de que el usuario pueda ponerse su música preferida de fondo. Por ejemplo en un videojuego podemos tener una banda sonora de fondo y efectos de sonido. Si el usuario ya está reproduciendo música en el móvil podemos tomar la decisión de mezclar dicha música con los efectos del juego, mientras que si no hay ninguna música reproduciéndose se puede utilizar la banda sonora por defecto del juego. Podemos utilizar <code>AVAudioSessionCategorySoloAmbient</code> en caso de que no haya música reproduciéndose <span class="arithmatex"><span class="MathJax_Preview">lo comprobaremos con la propiedad <code>isOtherAudioPlaying</code></span><script type="math/tex">lo comprobaremos con la propiedad <code>isOtherAudioPlaying</code></script></span>, o <code>AVAudioSessionCategoryAmbient</code> en caso contrario.</li>
+<li><strong>Aplicación en la que resulte adecuado combinar el audio</strong>. Aquí podemos encontrar como ejemplo alguna aplicación para crear música, en la que pueda ser interesante poner una música de fondo mientras tocamos un instrumento para acompañarla. En este caso siempre utilizaremos <code>AVAudioSessionCategoryAmbient</code>.</li>
+</ul>
+<h3 id="reproduccion-de-audio-en-segundo-plano">Reproducción de audio en segundo plano<a class="headerlink" href="#reproduccion-de-audio-en-segundo-plano" title="Permanent link">&para;</a></h3>
+<p>Aunque en iOS la multitarea está restringida a un limitado conjunto de funcionalidades, una de las funcionalidades que se permiten ejecutar en segundo plano es la reproducción de música. Para poder reproducir música aunque tengamos silenciado el móvil o la pantalla esté bloqueada deberemos reproducirla dentro de una sesión con categoría <code>AVAudioSessionCategoryPlayback</code>.</p>
+<p>Además de esto, para poder continuar la reproducción con la aplicación cerrada deberemos declarar en <code>Info.plist</code> que uno de los modos el los que nuestra aplicación puede funcionar en segundo plano <span class="arithmatex"><span class="MathJax_Preview">_background_</span><script type="math/tex">_background_</script></span> es la reproducción de música, añadiendo el <em>item</em> <code>audio</code> a la propiedad <code>UIBackgroundModes</code>.</p>
+<p><img alt="Reproducción de audio en segundo plano" src="imagenes/ios-audio-background.png" /></p>
+<p>Esto lo podemos hacer también desde la pestaña <em>Capabilities</em> del nuestro <em>target</em>, activando los <em>Background Modes</em>, y dentro de estos el de <em>Audio, AirPlay and Picture in Picture</em>:</p>
+<p><img alt="Activar background mode de audio" src="imagenes/backgroud-audio.png" /></p>
+<p>Esta reproducción en segundo plano también nos servirá para emitir la reproducción vía <em>AirPlay</em>.</p>
+<h3 id="metadatos-del-audio">Metadatos del audio<a class="headerlink" href="#metadatos-del-audio" title="Permanent link">&para;</a></h3>
+<p>Podemos establecer metadatos del medio que actualmente se esté reproduciendo con:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">info</span> <span class="p">=</span> <span class="p">[</span><span class="n">MPMediaItemPropertyTitle</span><span class="p">:</span> <span class="s">&quot;By the Throat&quot;</span><span class="p">,</span>
+ <span class="n">MPMediaItemPropertyArtist</span><span class="p">:</span> <span class="s">&quot;CHVRCHES&quot;</span><span class="p">,</span>
+ <span class="n">MPMediaItemPropertyAlbumTitle</span><span class="p">:</span> <span class="s">&quot;The Bones of What You Believe&quot;</span><span class="p">]</span>
+<span class="bp">MPNowPlayingInfoCenter</span><span class="p">.</span><span class="k">default</span><span class="p">().</span><span class="n">nowPlayingInfo</span> <span class="p">=</span> <span class="n">info</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">NSDictionary</span><span class="w"> </span><span class="o">*</span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="l">@{</span>
+<span class="w">  </span><span class="nl">MPMediaItemPropertyTitle</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">@&quot;By the Throat&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">MPMediaItemPropertyArtist</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">@&quot;CHVRCHES&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">MPMediaItemPropertyAlbumTitle</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">@&quot;The Bones of What You Believe&quot;</span>
+<span class="l">}</span><span class="p">;</span>
+<span class="p">[[</span><span class="bp">MPNowPlayingInfoCenter</span><span class="w"> </span><span class="n">defaultCenter</span><span class="p">]</span><span class="w"> </span><span class="n">setNowPlayingInfo</span><span class="o">:</span><span class="w"> </span><span class="n">info</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Estos metadatos aparecerán también en la pantalla de bloqueo del teléfono mientras se reproduce el audio en segundo plano.</p>
+<h3 id="control-remoto">Control remoto<a class="headerlink" href="#control-remoto" title="Permanent link">&para;</a></h3>
+<p>Podemos permitir que la reproducción de nuestra aplicación se controle de forma remota. Posibles controles remotos son:</p>
+<ul>
+<li>Controles del audio en la pantalla de bloqueo del teléfono. Aparecerán siempre que estemos reproduciendo audio en segundo plano y hayamos introducido metadatos con <code>MPNowPlayingInfoCenter</code>.</li>
+<li>Botones presentes en el cable de los auriculares. Nos permiten pausar\/reanudar la reproducción, y cambiar de pista.</li>
+</ul>
+<p>Para utilizar estos controles remotos la aplicación debe ser capaz de recibir eventos de control:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">UIApplication</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">beginReceivingRemoteControlEvents</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[[</span><span class="bp">UIApplication</span><span class="w"> </span><span class="n">sharedApplication</span><span class="p">]</span><span class="w"> </span><span class="n">beginReceivingRemoteControlEvents</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Estos eventos externos vienen de los auriculares, o de la pantalla de bloqueo, y permiten controlar la reproducción de audio de la aplicación.</p>
+<p>Además, para controlar estos eventos, el controlador que reproduzca el audio debe pasar a ser el <em>first responder</em>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">becomeFirstResponder</span><span class="p">()</span>
+</code></pre></div>
+<strong>Objetive-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nb">self</span><span class="w"> </span><span class="n">becomeFirstResponder</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Será el <em>first responder</em> el que recibirá el evento externo:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code> <span class="kr">override</span> <span class="kd">func</span> <span class="nf">remoteControlReceived</span><span class="p">(</span><span class="n">with</span> <span class="n">event</span><span class="p">:</span> <span class="bp">UIEvent</span><span class="p">?)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="n">event</span><span class="p">?.</span><span class="n">type</span> <span class="p">==</span> <span class="p">.</span><span class="n">remoteControl</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="n">event</span><span class="p">?.</span><span class="n">subtype</span> <span class="p">==</span> <span class="p">.</span><span class="n">remoteControlTogglePlayPause</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">isPlaying</span><span class="p">()</span> <span class="p">{</span>
+         <span class="kc">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">pause</span><span class="p">()</span>
+       <span class="p">}</span>
+       <span class="k">else</span> <span class="p">{</span>
+         <span class="kc">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">play</span><span class="p">()</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+     <span class="k">else</span> <span class="k">if</span> <span class="n">event</span><span class="p">?.</span><span class="n">subtype</span> <span class="p">==</span> <span class="p">.</span><span class="n">remoteControlPause</span> <span class="p">{</span>
+       <span class="kc">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">pause</span><span class="p">()</span>
+     <span class="p">}</span>
+     <span class="k">else</span> <span class="k">if</span> <span class="n">event</span><span class="p">?.</span><span class="n">subtype</span> <span class="p">==</span> <span class="p">.</span><span class="n">remoteControlPlay</span> <span class="p">{</span>
+       <span class="kc">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">play</span><span class="p">()</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">remoteControlReceivedWithEvent:</span><span class="p">(</span><span class="bp">UIEvent</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">event</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">UIEventTypeRemoteControl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">subtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">UIEventSubtypeRemoteControlTogglePlayPause</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">([</span><span class="nb">self</span><span class="p">.</span><span class="n">player</span><span class="w"> </span><span class="n">isPlaying</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">player</span><span class="w"> </span><span class="n">pause</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="p">{</span>
+<span class="w">                </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">player</span><span class="w"> </span><span class="n">play</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">subtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">UIEventSubtypeRemoteControlPause</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">player</span><span class="w"> </span><span class="n">pause</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">subtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">UIEventSubtypeRemoteControlPlay</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">player</span><span class="w"> </span><span class="n">play</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="desconexion-de-los-auriculares">Desconexión de los auriculares<a class="headerlink" href="#desconexion-de-los-auriculares" title="Permanent link">&para;</a></h3>
+<p>Es recomendable que los reproductores multimedia respondan ante un cambio de dispositivo de reproducción <span class="arithmatex"><span class="MathJax_Preview">auriculares, altavoces externos</span><script type="math/tex">auriculares, altavoces externos</script></span>. Por ejemplo, si desconectamos los auriculares durante la reproducción de música sería recomendable pausarla automáticamente. En otras aplicaciones, como los videojuegos, esto no es importante.</p>
+<p>Podemos estar al tanto es estos cambios de <em>hardware</em> de reproducción <span class="arithmatex"><span class="MathJax_Preview">_route change_</span><script type="math/tex">_route change_</script></span> mediante la notificación <code>AVAudioSessionRouteChangeNotification</code>.</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">nc</span> <span class="p">=</span> <span class="n">NotificationCenter</span><span class="p">.</span><span class="k">default</span>
+<span class="n">nc</span><span class="p">.</span><span class="n">addObserver</span><span class="p">(</span><span class="kc">self</span><span class="p">,</span> <span class="n">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">routeChanged</span><span class="p">),</span> <span class="n">name</span><span class="p">:</span> <span class="bp">NSNotification</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">AVAudioSessionRouteChange</span><span class="p">,</span> <span class="n">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">NSNotificationCenter</span><span class="w"> </span><span class="o">*</span><span class="n">nc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">NSNotificationCenter</span><span class="w"> </span><span class="n">defaultCenter</span><span class="p">];</span>
+<span class="p">[</span><span class="n">nc</span><span class="w"> </span><span class="n">addObserver</span><span class="o">:</span><span class="nb">self</span><span class="w"> </span><span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">routeChanged</span><span class="o">:</span><span class="p">)</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="n">AVAudioSessionRouteChangeNotification</span><span class="w"> </span><span class="n">object</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Podemos responder a esta notificación deteniendo la reproducción:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">routeChanged</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">Any</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">isPlaying</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kc">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">pause</span><span class="p">()</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">routeChanged:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">sender</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">([</span><span class="nb">self</span><span class="p">.</span><span class="n">player</span><span class="w"> </span><span class="n">isPlaying</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">player</span><span class="w"> </span><span class="n">pause</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="reproduccion-de-video">Reproducción de video<a class="headerlink" href="#reproduccion-de-video" title="Permanent link">&para;</a></h2>
+<p>Vamos a ver ahora cómo reproducir video en dispositivos iOS. Para reproducir video podemos utilizar una interfaz sencilla proporcionada por el <em>framework Media Player</em>, o bien reproducirlo a bajo nivel utilizando las clases <code>AVPlayer</code> y <code>AVPlayerLayer</code> del <em>framework AV Foundation</em>. Vamos a centrarnos en principio en la reproducción de video mediante la interfaz sencilla, y más adelante veremos cómo realizar la captura mediante la API a bajo nivel.</p>
+<h3 id="reproductor-multimedia">Reproductor multimedia<a class="headerlink" href="#reproductor-multimedia" title="Permanent link">&para;</a></h3>
+<p>La reproducción de video puede realizarse de forma sencilla con la clase <code>MPMoviePlayerViewController</code>. Debemos
+inicializar el reproductor a partir de una URL <span class="arithmatex"><span class="MathJax_Preview"><code>NSURL</code></span><script type="math/tex"><code>NSURL</code></script></span>. Recordemos que la URL puede referenciar tanto
+un recurso local como remoto, por ejemplo podemos acceder a un video incluido entre los recursos de la aplicación
+de la siguiente forma:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">movieUrl</span> <span class="p">=</span> <span class="n">Bundle</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">url</span><span class="p">(</span><span class="n">forResource</span><span class="p">:</span> <span class="s">&quot;video&quot;</span><span class="p">,</span> <span class="n">withExtension</span><span class="p">:</span> <span class="s">&quot;m4v&quot;</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">NSURL</span><span class="w"> </span><span class="o">*</span><span class="n">movieUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">NSBundle</span><span class="w"> </span><span class="n">mainBundle</span><span class="p">]</span><span class="w"> </span><span class="n">URLForResource</span><span class="o">:</span><span class="s">@&quot;video&quot;</span><span class="w"> </span><span class="n">withExtension</span><span class="o">:</span><span class="s">@&quot;m4v&quot;</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Para reproducir el vídeo utilizando el reproductor nativo del dispositivo simplemente deberemos inicializar su
+controlador y mostrarlo de forma modal. Podemos fijarnos en que tenemos un método específico para mostrar el controlador
+de reproducción de video de forma modal:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code> <span class="kd">let</span> <span class="nv">controller</span> <span class="p">=</span> <span class="bp">MPMoviePlayerViewController</span><span class="p">(</span><span class="n">contentURL</span><span class="p">:</span> <span class="n">movieUrl</span><span class="p">)</span>
+ <span class="kc">self</span><span class="p">.</span><span class="n">presentMoviePlayerViewControllerAnimated</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+ <span class="n">controller</span><span class="p">?.</span><span class="n">release</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">MPMoviePlayerViewController</span><span class="w"> </span><span class="o">*</span><span class="n">controller</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="p">[[</span><span class="bp">MPMoviePlayerViewController</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">initWithContentURL</span><span class="o">:</span><span class="n">movieUrl</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">self</span><span class="w"> </span><span class="n">presentMoviePlayerViewControllerAnimated</span><span class="o">:</span><span class="w"> </span><span class="n">controller</span><span class="p">];</span>
+<span class="p">[</span><span class="n">controller</span><span class="w"> </span><span class="k">release</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Con esto iniciaremos la reproducción de video en su propio controlador, que incorpora un botón para cerrarlo y
+controles de retroceso, avance y pausa. Cuando el vídeo finalice el controlador se cerrará automáticamente.
+También podríamos cerrarlo desde el código con <code>dismissMoviePlayerViewController</code>. Estos métodos
+específicos para mostrar y cerrar el controlador de reproducción se añaden cuando importamos los ficheros
+de cabecera del <em>framework Media Player</em>, ya que se incorporan a <code>UIViewController</code>
+mediante categorías de dicha librería.</p>
+<p><img alt="Reproductor de video fullscreen" src="imagenes/video_control_fullscreen.jpg" /></p>
+<p>Esta forma de reproducir vídeo es muy sencilla y puede ser suficiente para determinadas aplicaciones, pero
+en muchos casos necesitamos tener un mayor control sobre el reproductor. Vamos a ver a continuación cómo podemos
+ajustar la forma en la que se reproduce el vídeo.</p>
+<h3 id="personalizacion-del-reproductor">Personalización del reproductor<a class="headerlink" href="#personalizacion-del-reproductor" title="Permanent link">&para;</a></h3>
+<p>Para poder tener control sobre el reproductor de vídeo, en lugar de utilizar simplemente
+<code>MPMoviePlayerViewController</code>, utilizaremos la clase <code>MPMoviePlayerController</code>. Debemos
+remarcar que esta clase ya no es un <code>UIViewController</code>, sino que simplemente es una clase
+que nos ayudará a controlar la reproducción del vídeo, pero deberemos utilizar nuestro propio controlador de
+la vista <span class="arithmatex"><span class="MathJax_Preview"><code>UIViewController</code></span><script type="math/tex"><code>UIViewController</code></script></span>.</p>
+<p>En primer lugar, creamos un objeto <code>MPMoviePlayerController</code> a partir del a URL con el
+vídeo a reproducir:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span> <span class="p">=</span> <span class="bp">MPMoviePlayerController</span><span class="p">(</span><span class="n">contentURL</span><span class="p">:</span> <span class="n">movieUrl</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">MPMoviePlayerController</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">initWithContentURL</span><span class="o">:</span><span class="n">movieUrl</span><span class="p">];</span>
+</code></pre></div></p>
+<p><img alt="Reproductor de video embedded" src="imagenes/video_control_embed.jpg" /></p>
+<p>Ahora deberemos mostrar el controlador en algún sitio. Para ello deberemos añadir la vista de reproducción de
+video <span class="arithmatex"><span class="MathJax_Preview">propiedad <code>view</code> del controlador de vídeo del controlador de vídeo</span><script type="math/tex">propiedad <code>view</code> del controlador de vídeo del controlador de vídeo</script></span> a la jerarquía de vistas en pantalla. También deberemos
+darle un tamaño a dicha vista. Por ejemplo, si queremos que ocupe todo el espacio de nuestra vista actual podemos
+utilizar como tamaño de la vista de vídeo el mismo tamaño <span class="arithmatex"><span class="MathJax_Preview">propiedad <code>bounds</code></span><script type="math/tex">propiedad <code>bounds</code></script></span> de la vista actual, y
+añadir el vídeo como subvista suya:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">bounds</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">bounds</span><span class="p">;</span>
+<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="w"> </span><span class="n">addSubview</span><span class="o">:</span><span class="w"> </span><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">view</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Si queremos que la vista del reproductor de vídeo cambie de tamaño al cambiar la orientación de la pantalla,
+deberemos hacer que esta vista se redimensione de forma flexible en ancho y alto:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code> <span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">autoresizingMask</span> <span class="p">=</span> <span class="p">[.</span><span class="n">flexibleHeight</span><span class="p">,</span> <span class="p">.</span><span class="n">flexibleWidth</span><span class="p">]</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">autoresizingMask</span><span class="w"> </span><span class="o">=</span>
+<span class="w"> </span><span class="n">UIViewAutoresizingFlexibleHeight</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">UIViewAutoresizingFlexibleWidth</span><span class="p">;</span>
+</code></pre></div></p>
+<p><img alt="Reproductor de video en vertical" src="imagenes/video_player_background_black.jpg" /></p>
+<p>Por último, comenzamos la reproducción del vídeo con <code>play</code>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">play</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="w"> </span><span class="n">play</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Con esto tendremos el reproductor de vídeo ocupando el espacio de nuestra vista y comenzará la reproducción.
+Lo que ocurre es que cuando el vídeo finalice, el reproductor seguirá estando en pantalla. Es posible que nos
+interese que desaparezca automáticamente cuando finalice la reproducción. Para hacer esto deberemos utilizar el
+sistema de notificaciones de Cocoa. Concretamente, para este caso necesitaremos la notificación
+<code>MPMoviePlayerPlaybackDidFinishNotification</code>, aunque en la documentación de la clase
+<code>MPMoviePlayerController</code> podemos encontrar la lista de todos los eventos del reproductor que podemos
+tratar mediante notificaciones. En nuestro caso vamos a ver cómo programar la notificación para ser avisados de
+la finalización del vídeo:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="n">NotificationCenter</span><span class="p">.</span><span class="k">default</span><span class="p">.</span><span class="n">addObserver</span><span class="p">(</span><span class="kc">self</span><span class="p">,</span> <span class="n">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">videoPlaybackDidFinish</span><span class="p">),</span> <span class="n">name</span><span class="p">:</span> <span class="n">MPMoviePlayerPlaybackDidFinishNotification</span><span class="p">,</span> <span class="n">object</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[[</span><span class="bp">NSNotificationCenter</span><span class="w"> </span><span class="n">defaultCenter</span><span class="p">]</span><span class="w"> </span><span class="n">addObserver</span><span class="o">:</span><span class="w"> </span><span class="nb">self</span>
+<span class="w">         </span><span class="nl">selector</span><span class="p">:</span><span class="w"> </span><span class="k">@selector</span><span class="p">(</span><span class="n">videoPlaybackDidFinish</span><span class="o">:</span><span class="p">)</span>
+<span class="w">             </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">MPMoviePlayerPlaybackDidFinishNotification</span>
+<span class="w">           </span><span class="nl">object</span><span class="p">:</span><span class="w"> </span><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">];</span>
+</code></pre></div></p>
+<p>En este caso, cuando recibamos la notificación se avisará al método que hayamos especificado. Por ejemplo, si
+queremos que el reproductor desaparezca de pantalla, podemos hacer que en este método se elimine como subvista,
+se nos retire como observadores de la notificación, y se libere de memoria el reproductor:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">videoPlaybackDidFinish</span><span class="p">(</span><span class="kc">_</span> <span class="n">notification</span><span class="p">:</span> <span class="n">Notification</span><span class="p">)</span>
+  <span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">removeFromSuperview</span><span class="p">()</span>
+  <span class="n">NotificationCenter</span><span class="p">.</span><span class="k">default</span><span class="p">.</span><span class="n">removeObserver</span><span class="p">(</span><span class="kc">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span>   <span class="n">MPMoviePlayerPlaybackDidFinishNotification</span><span class="p">,</span> <span class="n">object</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">)</span>
+  <span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span> <span class="p">=</span> <span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">videoPlaybackDidFinish:</span><span class="w"> </span><span class="p">(</span><span class="bp">NSNotification</span><span class="o">*</span><span class="p">)</span> <span class="nv">notification</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">view</span><span class="w"> </span><span class="n">removeFromSuperview</span><span class="p">];</span>
+
+<span class="w">    </span><span class="p">[[</span><span class="bp">NSNotificationCenter</span><span class="w"> </span><span class="n">defaultCenter</span><span class="p">]</span><span class="w"> </span><span class="n">removeObserver</span><span class="o">:</span><span class="w"> </span><span class="nb">self</span>
+<span class="w">           </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">MPMoviePlayerPlaybackDidFinishNotification</span>
+<span class="w">         </span><span class="nl">object</span><span class="p">:</span><span class="w"> </span><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">];</span>
+
+<span class="w">    </span><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nil</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>El reproductor mostrado anteriormente muestra sobre el vídeo una serie de controles predefinidos para
+retroceder, avanzar, pausar, o pasar a pantalla completa, lo cual muestra el vídeo en la pantalla
+predefinida del sistema que hemos visto en el punto anterior. Vamos a ver ahora cómo personalizar este
+aspecto. Para cambiar los controles mostrados sobre el vídeo podemos utilizar la propiedad
+<code>controlStyle</code> del controlador de vídeo, y establecer cualquier de los tipos definidos en la
+enumeración <code>MPMovieControlStyle</code>. Si queremos que el reproductor de vídeo quede totalmente
+integrado en nuestra aplicación, podemos especificar que no se muestre ningún control del sistema:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">controlStyle</span> <span class="p">=</span> <span class="p">.</span><span class="kr">none</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">controlStyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPMovieControlStyleNone</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Cuando el tamaño del vídeo reproducido no se ajuste totalmente a la relación de aspecto de la pantalla,
+veremos que algunas zonas quedan en negro. Podemos observar esto por ejemplo en la imagen en la que
+reproducimos vídeo desde la orientación vertical del dispositivo. Para evitar que la pantalla quede vacía
+podemos incluir una imagen de fondo, que se verá en todas aquellas zonas que no abarque el vídeo.
+Para ello podemos utilizar la vista de fondo del video <span class="arithmatex"><span class="MathJax_Preview"><code>backgroundView</code></span><script type="math/tex"><code>backgroundView</code></script></span>. Cualquier subvista que
+añadamos a dicha vista, se mostrará como fondo del vídeo. Por ejemplo podemos motrar una imagen con:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">backgroundView</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span> <span class="bp">UIImageView</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="s">&quot;fondo.png&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">))</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">moviePlayer</span><span class="p">.</span><span class="n">backgroundView</span><span class="w"> </span><span class="n">addSubview</span><span class="o">:</span><span class="w"> </span><span class="p">[[[</span><span class="bp">UIImageView</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span>
+<span class="w">                       </span><span class="nl">initWithImage</span><span class="p">:[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageNamed</span><span class="o">:</span><span class="s">@&quot;fondo.png&quot;</span><span class="p">]];</span>
+</code></pre></div></p>
+<p><img alt="Reproductor de video con imagen de fondo" src="imagenes/video_player_background_image.jpg" /></p>
+<h3 id="reproduccion-con-avplayer">Reproducción con <code>AVPlayer</code><a class="headerlink" href="#reproduccion-con-avplayer" title="Permanent link">&para;</a></h3>
+<p>A partir de iOS 4.0 tenemos la posibilidad de reproducir video con <code>AVPlayer</code> y
+<code>AVPlayerLayer</code>. El primer objeto es el reproductor de vídeo, mientras que el segundo
+es una capa <span class="arithmatex"><span class="MathJax_Preview">es un subtipo de <code>CALayer</code></span><script type="math/tex">es un subtipo de <code>CALayer</code></script></span> que podemos utilizar para mostrar la reproducción.
+Este tipo de reproductor nos da un mayor control sobre la forma en la que se muestra el vídeo,
+desacoplando la gestión del origen del vídeo y la visualización de dicho vídeo en pantalla.</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">videoURL</span> <span class="p">=</span> <span class="bp">NSURL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4&quot;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">player</span> <span class="p">=</span> <span class="bp">AVPlayer</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">videoURL</span><span class="p">!</span> <span class="k">as</span> <span class="n">URL</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">playerLayer</span> <span class="p">=</span> <span class="bp">AVPlayerLayer</span><span class="p">(</span><span class="n">player</span><span class="p">:</span> <span class="n">player</span><span class="p">)</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">addSublayer</span><span class="p">(</span><span class="n">playerLayer</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">AVPlayer</span><span class="w"> </span><span class="o">*</span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVPlayer</span><span class="w"> </span><span class="n">playerWithUrl</span><span class="o">:</span><span class="w"> </span><span class="n">videoUrl</span><span class="p">];</span>
+
+<span class="bp">AVPlayerLayer</span><span class="w"> </span><span class="o">*</span><span class="n">playerLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVPlayerLayer</span><span class="w"> </span><span class="n">playerLayerWithPlayer</span><span class="o">:</span><span class="n">player</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">layer</span><span class="w"> </span><span class="n">addSublayer</span><span class="o">:</span><span class="n">playerLayer</span><span class="p">];</span>
+</code></pre></div></p>
+<p>A partir de iOS 8 aparece además la clase <code>AVPlayerViewController</code>, que nos proporciona un controllador que permite reproducir vídeo de forma sencilla mediante un objeto <code>AVPlayer</code> a pantalla completa o en PiP <span class="arithmatex"><span class="MathJax_Preview">_Picture in Picture_</span><script type="math/tex">_Picture in Picture_</script></span>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">controller</span> <span class="p">=</span> <span class="bp">AVPlayerViewController</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nv">player</span> <span class="p">=</span> <span class="bp">AVPlayer</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">videoURL</span><span class="p">!</span> <span class="k">as</span> <span class="n">URL</span><span class="p">)</span>
+<span class="n">controller</span><span class="p">.</span><span class="n">player</span> <span class="p">=</span> <span class="n">player</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">present</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="p">{</span> <span class="kc">_</span> <span class="k">in</span> <span class="p">})</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">AVPlayerViewController</span><span class="w"> </span><span class="o">*</span><span class="n">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">AVPlayerViewController</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+<span class="bp">AVPlayer</span><span class="w"> </span><span class="o">*</span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVPlayer</span><span class="w"> </span><span class="n">playerWithURL</span><span class="o">:</span><span class="n">videoUrl</span><span class="p">];</span>
+<span class="n">controller</span><span class="p">.</span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">;</span>
+
+<span class="p">[</span><span class="nb">self</span><span class="w"> </span><span class="n">presentViewController</span><span class="o">:</span><span class="n">controller</span><span class="w"> </span><span class="n">animated</span><span class="o">:</span><span class="nb">YES</span><span class="w"> </span><span class="n">completion</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div></p>
+<p>A partir de iOS 9 esta es la forma recomendada de reproducir vídeo, quedando desaprobado el uso de <code>MPMoviePlayerViewController</code>. Utilizaremos éste último únicamente si necesitamos tener compatibilidad con versiones de iOS previas a la 8.</p>
+<blockquote>
+<p>A diferencia de las clases anteriores <code>AVPlayer</code>, <code>AVPlayerLayer</code> y <code>AVAudioPlayer</code>, todas ellas pertenecientes a <em>AVFoundation</em>, la nueva clase <code>AVPlayerViewController</code> pertenece al _framework <code>AVKit</code>, por lo que deberemos incluir dicho framework en nuestras aplicaciones para poder utilizar dicho controlador.</p>
+</blockquote>
+<p>La nueva clase <code>AVPlayerViewController</code> nos permitirá también poner una vista superpuesta sobre el vídeo, o controlar la zona de la pantalla en la que se mostrará el vídeo, al igual que en el caso del componente ahora desaprobado.</p>
+<p>Para tener control sobre el estado del vídeo en reproducción podemos utilizar KVO sobre propiedades del objeto <code>AVPlayer</code>, o podemos suscribirlos a la notificación <code>AVPlayerItemDidPlayToEndTimeNotification</code> del <em>item</em> que se esté reproduciendo actualmente para estar al tanto de su finalización:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code> <span class="n">NotificationCenter</span><span class="p">.</span><span class="k">default</span><span class="p">.</span><span class="n">addObserver</span><span class="p">(</span><span class="kc">self</span><span class="p">,</span> <span class="n">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">reproduccionFinalizada</span><span class="p">),</span> <span class="n">name</span><span class="p">:</span> <span class="bp">NSNotification</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">AVPlayerItemDidPlayToEndTime</span><span class="p">,</span> <span class="n">object</span><span class="p">:</span> <span class="n">player</span><span class="p">.</span><span class="n">currentItem</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[[</span><span class="bp">NSNotificationCenter</span><span class="w"> </span><span class="n">defaultCenter</span><span class="p">]</span>
+<span class="w">        </span><span class="nl">addObserver</span><span class="p">:</span><span class="nb">self</span>
+<span class="w">        </span><span class="nl">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">reproduccionFinalizada</span><span class="o">:</span><span class="p">)</span>
+<span class="w">        </span><span class="nl">name</span><span class="p">:</span><span class="n">AVPlayerItemDidPlayToEndTimeNotification</span>
+<span class="w">        </span><span class="nl">object</span><span class="p">:[</span><span class="n">player</span><span class="w"> </span><span class="n">currentItem</span><span class="p">]];</span>
+</code></pre></div></p>
+<p>Para utilizar PiP <span class="arithmatex"><span class="MathJax_Preview">disponible únicamente en iPad a partir de iOS 9</span><script type="math/tex">disponible únicamente en iPad a partir de iOS 9</script></span> deberemos activar el modo <em>Audio, AirPlay and Picture in Picture</em> como <em>Background Modes</em>, en la pestaña <em>Capabilities</em> de nuestro <em>target</em>, y además configurar la sesión de audio de forma apropiada, como hemos visto anteriormente.</p>
+<h2 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h2>
+<h3 id="reproduccion-de-video_1">Reproducción de vídeo<a class="headerlink" href="#reproduccion-de-video_1" title="Permanent link">&para;</a></h3>
+<p>Vamos en primer lugar a ver cómo crear un reproductor de vídeo en iOS. Tenemos una plantilla en el
+proyecto <code>VideoPlayer</code>. Vemos que tiene un botón <em>Reproducir vídeo</em>, y un fichero <code>video.m4v</code>. La reproducción de vídeo deberá comenzar en el método <code>playVideo:</code>, que es el que se ejecuta al pulsar el botón anterior. Se pide:</p>
+<p><em>a)</em> Reproducir el vídeo con la pantalla de reproducción predefinida <span class="arithmatex"><span class="MathJax_Preview"><code>MPMoviePlayerViewController</code></span><script type="math/tex"><code>MPMoviePlayerViewController</code></script></span>.</p>
+<p><em>b)</em> Comentar el código implementado en el punto anterior. Ahora vamos a crear un reproductor propio
+mediante <code>MPMoviePlayerController</code>. Crearemos un reproductor de este tipo, haremos que su tamaño sea
+el mismo tamaño de la vista principal, añadiremos el reproductor a dicha vista como subvista, y comenzaremos la reproducción.
+<em>c)</em> Con el reproductor anterior tenemos el problema de que al finalizar el vídeo el reproductor
+se queda en pantalla y no hay forma de salir de él. Vamos a escuchar la notificación de reproducción finalizada para que cuando esto ocurra el reproductor sea eliminado de pantalla. Cuando recibamos esta notificación llamaremos al método <code>videoPlaybackDidFinish:</code>, que ya se encuentra implementado.</p>
+<p><em>d)</em> Si giramos el dispositivo veremos que el vídeo no se adapta de forma correcta a la pantalla.
+Ajustar su propiedad <code>autoresizingMask</code> para que sea flexible tanto de ancho como de alto.
+Comprobar ahora que al girar la pantalla el vídeo se adapta correctamente.</p>
+<p><em>e)</em> Al reproducir el vídeo en vertical gran parte de la pantalla queda en negro. Vamos a decorar
+el fondo para darle un mejor aspecto. Crearemos una vista que muestre la imagen <code>fondo.png</code>, y
+la mostraremos como subvista de la vista de fondo del vídeo.</p>
+<p><em>f)</em> Por último, para que el reproductor quede totalmente integrado en nuestra aplicación, eliminaremos los controles de reproducción que incorpora por defecto. De esta forma el usuario no podrá saltar el vídeo, ni volver atrás en él.</p>
+<p><em>g)</em> Modifica el código anterior para utilizar <code>AVPlayerViewController</code> y <code>AVPlayer</code>. Ten en cuenta que deberás incluir los <em>frameworks</em> <code>AVFoundation</code> y <code>AVKit</code>, y sus <em>imports</em> correspondientes.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

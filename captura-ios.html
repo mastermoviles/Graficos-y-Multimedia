@@ -1,0 +1,1554 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="reproduccion-ios.html">
+      
+      
+        <link rel="next" href="procesamiento-de-imagen-en-ios-opencv.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>Captura y procesamiento de medios en iOS - Gráficos y Multimedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Indigo" data-md-color-accent="Indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#captura-y-procesamiento-de-medios-en-ios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-header__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gráficos y Multimedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Captura y procesamiento de medios en iOS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Gráficos y Multimedia" class="md-nav__button md-logo" aria-label="Gráficos y Multimedia" data-md-component="logo">
+      
+  <img src="imagenes/logo.png" alt="logo">
+
+    </a>
+    Gráficos y Multimedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formatos.html" class="md-nav__link">
+        Formatos de audio y vídeo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        Difusión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unity.html" class="md-nav__link">
+        El motor Unity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-android.html" class="md-nav__link">
+        Gráficos de alto rendimiento en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graficos-ios.html" class="md-nav__link">
+        Gráficos en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-ios.html" class="md-nav__link">
+        Reproducción de medios en iOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Captura y procesamiento de medios en iOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="captura-ios.html" class="md-nav__link md-nav__link--active">
+        Captura y procesamiento de medios en iOS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fotografias-y-galeria-multimedia" class="md-nav__link">
+    Fotografías y galería multimedia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#captura-avanzada-de-video" class="md-nav__link">
+    Captura avanzada de vídeo
+  </a>
+  
+    <nav class="md-nav" aria-label="Captura avanzada de vídeo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrada-de-la-sesion" class="md-nav__link">
+    Entrada de la sesión
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida-de-la-sesion" class="md-nav__link">
+    Salida de la sesión
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sesion-de-captura" class="md-nav__link">
+    Sesión de captura
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-captura-y-procesamiento-de-fotogramas" class="md-nav__link">
+    Ejemplo de captura y procesamiento de fotogramas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesamiento-de-imagenes-en-ios" class="md-nav__link">
+    Procesamiento de imágenes en iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Procesamiento de imágenes en iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#representacion-de-imagenes-en-core-image" class="md-nav__link">
+    Representación de imágenes en Core Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtros-de-core-image" class="md-nav__link">
+    Filtros de Core Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexto-de-core-image" class="md-nav__link">
+    Contexto de Core Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procesamiento-asincrono" class="md-nav__link">
+    Procesamiento asíncrono
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-de-caras" class="md-nav__link">
+    Detección de caras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procesamiento-de-imagen" class="md-nav__link">
+    Procesamiento de imagen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-de-imagen-en-ios-opencv.html" class="md-nav__link">
+        Procesamiento de imágenes en iOS - OpenCV
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reproduccion-android.html" class="md-nav__link">
+        Reproducción de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="captura-android.html" class="md-nav__link">
+        Captura de medios en Android
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="procesamiento-android.html" class="md-nav__link">
+        Emisión de medios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mirroring.html" class="md-nav__link">
+        Reproducción en dispositivos externos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adobe-air.html" class="md-nav__link">
+        Aplicaciones Adobe Air
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="habla-android.html" class="md-nav__link">
+        Síntesis y reconocimiento del habla
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fotografias-y-galeria-multimedia" class="md-nav__link">
+    Fotografías y galería multimedia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#captura-avanzada-de-video" class="md-nav__link">
+    Captura avanzada de vídeo
+  </a>
+  
+    <nav class="md-nav" aria-label="Captura avanzada de vídeo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrada-de-la-sesion" class="md-nav__link">
+    Entrada de la sesión
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida-de-la-sesion" class="md-nav__link">
+    Salida de la sesión
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sesion-de-captura" class="md-nav__link">
+    Sesión de captura
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-captura-y-procesamiento-de-fotogramas" class="md-nav__link">
+    Ejemplo de captura y procesamiento de fotogramas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesamiento-de-imagenes-en-ios" class="md-nav__link">
+    Procesamiento de imágenes en iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Procesamiento de imágenes en iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#representacion-de-imagenes-en-core-image" class="md-nav__link">
+    Representación de imágenes en Core Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtros-de-core-image" class="md-nav__link">
+    Filtros de Core Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexto-de-core-image" class="md-nav__link">
+    Contexto de Core Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procesamiento-asincrono" class="md-nav__link">
+    Procesamiento asíncrono
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-de-caras" class="md-nav__link">
+    Detección de caras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procesamiento-de-imagen" class="md-nav__link">
+    Procesamiento de imagen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="captura-y-procesamiento-de-medios-en-ios">Captura y procesamiento de medios en iOS<a class="headerlink" href="#captura-y-procesamiento-de-medios-en-ios" title="Permanent link">&para;</a></h1>
+<p>Vamos a estudiar las formas en las que podemos capturar medios desde dispositivos iOS (fotografías y audio/vídeo), y posteriormente procesarlos.</p>
+<h2 id="fotografias-y-galeria-multimedia">Fotografías y galería multimedia<a class="headerlink" href="#fotografias-y-galeria-multimedia" title="Permanent link">&para;</a></h2>
+<p>La forma más sencilla de realizar una captura con la cámara del dispositivo es tomar una fotografía.
+Para ello contamos con un controlador predefinido que simplificará esta tarea, ya que sólo deberemos ocuparnos
+de instanciarlo, mostrarlo y obtener el resultado:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">picker</span> <span class="p">=</span> <span class="bp">UIImagePickerController</span><span class="p">()</span>
+<span class="n">picker</span><span class="p">.</span><span class="n">sourceType</span> <span class="p">=</span> <span class="p">.</span><span class="n">camera</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">present</span><span class="p">(</span><span class="n">picker</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">UIImagePickerController</span><span class="w"> </span><span class="o">*</span><span class="n">picker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">UIImagePickerController</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+<span class="n">picker</span><span class="p">.</span><span class="n">sourceType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UIImagePickerControllerSourceTypeCamera</span><span class="p">;</span>
+<span class="p">[</span><span class="nb">self</span><span class="w"> </span><span class="n">presentModalViewController</span><span class="o">:</span><span class="n">picker</span><span class="w"> </span><span class="n">animated</span><span class="o">:</span><span class="nb">YES</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Podemos observar que podemos cambiar la fuente de la que obtener la fotografía. En el ejemplo anterior
+hemos especificado la cámara del dispositivo, sin embargo, también podremos hacer que seleccione la imagen de
+la colección de fotos del usuario (<code>UIImagePickerControllerSourceTypePhotoLibrary</code>), o del carrete
+de la cámara (<code>UIImagePickerControllerSourceTypeSavedPhotosAlbum</code>):</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="n">picker</span><span class="p">.</span><span class="n">sourceType</span> <span class="p">=</span> <span class="p">.</span><span class="n">savedPhotosAlbum</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="n">picker</span><span class="p">.</span><span class="n">sourceType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UIImagePickerControllerSourceTypeSavedPhotosAlbum</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Si lo que queremos es almacenar una fotografía en el carrete de fotos del dispositivo podemos utilizar
+la función <code>UIImageWriteToSavedPhotosAlbum</code>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">image</span> <span class="p">:</span> <span class="bp">UIImage</span> <span class="p">=</span> <span class="p">...;</span>
+<span class="n">UIImageWriteToSavedPhotosAlbum</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="kc">self</span><span class="p">,</span> <span class="n">selector</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">guardada</span><span class="p">),</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
+
+<span class="n">UIImageWriteToSavedPhotosAlbum</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="nb">self</span><span class="p">,</span><span class="w"> </span><span class="k">@selector</span><span class="p">(</span><span class="n">guardada</span><span class="o">:</span><span class="p">),</span><span class="w"> </span><span class="nb">nil</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Como primer parámetro debemos proporcionar la imagen a guardar. Después podemos proporcionar de forma opcional un <em>callback</em>
+mediante <em>target</em> y <em>selector</em> para que se nos notifique cuando la imagen haya sido guardada. Por último, podemos especificar
+también de forma opcional cualquier información sobre el contexto que queramos que se le pase al <em>callback</em>
+anterior, en caso de haberlo especificado.</p>
+<p>Por ejemplo, si queremos tomar una fotografía y guardarla en el carrete del dispositivo, podemos crear un delegado
+de <code>UIImagePickerController</code>, de forma que cuando la fotografía haya sido tomada llame a la función anterior para
+almacenarla. Para ello debemos crear un objeto que adopte el delegado <code>UIImagePickerControllerDelegate</code> y
+establecer dicho objeto en el propiedad <code>delegate</code> del controlador. Deberemos definir el siguiente método
+del delegado:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">picker</span><span class="p">:</span> <span class="bp">UIImagePickerController</span><span class="p">,</span>   <span class="n">didFinishPickingMediaWithInfo</span> <span class="n">info</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span> <span class="p">:</span> <span class="nb">AnyObject</span><span class="p">])</span> <span class="p">{</span>
+ <span class="kd">let</span> <span class="nv">pickedImage</span> <span class="p">=</span> <span class="n">info</span><span class="p">[</span><span class="n">UIImagePickerControllerOriginalImage</span><span class="p">]</span>
+ <span class="n">UIImageWriteToSavedPhotosAlbum</span><span class="p">(</span><span class="n">pickedImage</span> <span class="k">as</span><span class="p">!</span> <span class="bp">UIImage</span><span class="p">,</span> <span class="kc">self</span><span class="p">,</span> <span class="k">#selector</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">guardada</span><span class="p">),</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">imagePickerController:</span><span class="p">(</span><span class="bp">UIImagePickerController</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">picker</span>
+<span class="nl">didFinishPickingMediaWithInfo</span><span class="p">:(</span><span class="bp">NSDictionary</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">info</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="n">imagen</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="p">[</span><span class="n">info</span><span class="w"> </span><span class="n">valueForKey</span><span class="o">:</span><span class="w"> </span><span class="n">UIImagePickerControllerOriginalImage</span><span class="p">];</span>
+<span class="w">    </span><span class="n">UIImageWriteToSavedPhotosAlbum</span><span class="p">(</span><span class="n">imagen</span><span class="p">,</span><span class="w"> </span><span class="nb">self</span><span class="p">,</span><span class="w"> </span><span class="k">@selector</span><span class="p">(</span><span class="n">guardada</span><span class="o">:</span><span class="p">),</span>
+<span class="w">                                   </span><span class="nb">nil</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Este controlador nos permitirá capturar tanto imágenes como vídeo. Por defecto el controlador se mostrará con la interfaz de captura
+de cámara nativa del dispositivo. Sin embargo, podemos personalizar esta interfaz con los métodos <code>showsCameraControls</code>,
+<code>cameraOverlayView</code>, y <code>cameraViewTransform</code>. Si estamos utilizando una vista personalizada, podremos
+controlar la toma de fotografías y la captura de vídeo con los métodos <code>takePicture</code>, <code>startVideoCapture</code> y
+<code>stopVideoCapture</code>.</p>
+<p>Si queremos tener un mayor control sobre la forma en la que se almacenan los diferentes tipos de recursos multimedia en el dispositivo
+deberemos utilizar el <em>framework</em> Assets. Con esta librería podemos por ejemplo guardar metadatos con las fotografías, como
+puede ser la localización donde fue tomada.</p>
+<h2 id="captura-avanzada-de-video">Captura avanzada de vídeo<a class="headerlink" href="#captura-avanzada-de-video" title="Permanent link">&para;</a></h2>
+<p>A partir de iOS 4.0 en el <em>framework</em> AVFoundation se incorpora la posibilidad de acceder
+a la fuente de captura de vídeo a bajo nivel. Para ello tenemos un objeto <code>AVCaptureSession</code>
+que representa la sesión de captura, y se encarga de coordinar la entrada y la salida de audio y vídeo,
+y los objetos <code>AVCaptureInput</code> y  <code>AVCaptureOutput</code> que nos permiten establecer
+la fuente y el destino de estos medios. De esta
+forma podemos hacer por ejemplo que la fuente de vídeo sea un dispositivo de captura (por ejemplo la cámara), y que la salida se nos proporcione como datos
+crudos de cada fotograma obtenido, para así poder procesarlo y mostrarlo nosotros como creamos
+conveniente.</p>
+<h3 id="entrada-de-la-sesion">Entrada de la sesión<a class="headerlink" href="#entrada-de-la-sesion" title="Permanent link">&para;</a></h3>
+<p>Especificaremos la entrada mediante un objeto de tipo <code>AVCaptureInput</code> (o subclases suyas). Si queremos que la fuente de vídeo se obtenga de un dispositivo de captura, utilizaremos como entrada un objeto de la subclase <code>AVCaptureDeviceInput</code>, que inicializaremos proporcionando un objeto <code>AVCaptureDevice</code> que definirá el dispositivo del cual queremos capturar:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">captureDevice</span> <span class="p">=</span> <span class="bp">AVCaptureDevice</span><span class="p">.</span><span class="n">defaultDevice</span><span class="p">(</span><span class="n">withMediaType</span><span class="p">:</span> <span class="n">AVMediaTypeVideo</span><span class="p">)</span><span class="o">!</span>
+<span class="kd">var</span> <span class="nv">captureInput</span> <span class="p">=</span> <span class="k">try</span><span class="p">!</span> <span class="bp">AVCaptureDeviceInput</span><span class="p">(</span><span class="n">device</span><span class="p">:</span> <span class="n">captureDevice</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">AVCaptureDevice</span><span class="w"> </span><span class="o">*</span><span class="n">captureDevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVCaptureDevice</span><span class="w"> </span><span class="n">defaultDeviceWithMediaType</span><span class="o">:</span><span class="n">AVMediaTypeVideo</span><span class="p">];</span>
+<span class="bp">AVCaptureDeviceInput</span><span class="w"> </span><span class="o">*</span><span class="n">captureInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVCaptureDeviceInput</span><span class="w"> </span><span class="n">deviceInputWithDevice</span><span class="o">:</span><span class="n">captureDevice</span><span class="w"> </span><span class="n">error</span><span class="o">:</span><span class="w"> </span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div></p>
+<p>En este ejemplo estamos obteniendo el dispositivo de captura por defecto que nos proporcione vídeo (la cámara), pero podríamos solicitar otros tipos de dispositivos de entrada.</p>
+<p>Podríamos también recorrer la lista de todos los dispositivos disponibles y comprobar sus características (por ejemplo si tiene <em>flash</em> o <em>autofocus</em>, o si es la cámara frontal o trasera). </p>
+<h3 id="salida-de-la-sesion">Salida de la sesión<a class="headerlink" href="#salida-de-la-sesion" title="Permanent link">&para;</a></h3>
+<p>La salida se especificará mediante subclases de <code>AVCaptureOutput</code>. Según el destino de la captura tenemos:<br />
+* <code>AVCaptureMovieFileOutput</code>: Nos permite grabar el vídeo capturado en un fichero.
+* <code>AVCaptureVideoDataOutput</code>: Nos permite procesar los fotogramas de vídeo capturados en tiempo real (nos da acceso al <em>framebuffer</em>).
+* <code>AVCaptureAudioDataOutput</code>: Nos permite procesar audio capturado en tiempo real.
+* <code>AVCaptureStillImageOutput</code>: Nos permite tomar fotografías a partir de la fuente de entrada.</p>
+<h4 id="captura-de-fotogramas">Captura de fotogramas<a class="headerlink" href="#captura-de-fotogramas" title="Permanent link">&para;</a></h4>
+<p>Por ejemplo, para establecer la salida de tipo <code>AVCaptureStillImageOutput</code> podemos hacer lo siguiente:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">captureOutput</span> <span class="p">=</span> <span class="bp">AVCaptureStillImageOutput</span><span class="p">()</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="n">captureOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">AVCaptureStillImageOutput</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Con este tipo de salida de captura, en todo momento podremos tomar un fotograma a partir de la entrada con:</p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">AVCaptureConnection</span><span class="w"> </span><span class="o">*</span><span class="n">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="nb">self</span><span class="p">.</span><span class="n">captureOutput</span><span class="w"> </span><span class="n">connections</span><span class="p">]</span><span class="w"> </span><span class="n">objectAtIndex</span><span class="o">:</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">captureOutput</span><span class="w"> </span><span class="n">captureStillImageAsynchronouslyFromConnection</span><span class="o">:</span><span class="n">connection</span><span class="w"> </span><span class="n">completionHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">CMSampleBufferRef</span><span class="w"> </span><span class="n">imageDataSampleBuffer</span><span class="p">,</span><span class="w"> </span><span class="bp">NSError</span><span class="w"> </span><span class="o">*</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">     </span><span class="bp">NSData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVCaptureStillImageOutput</span><span class="w"> </span><span class="n">jpegStillImageNSDataRepresentation</span><span class="o">:</span><span class="n">imageDataSampleBuffer</span><span class="p">];</span>
+<span class="w">     </span><span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageWithData</span><span class="o">:</span><span class="n">data</span><span class="p">];</span>
+<span class="w">     </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">ivPreview</span><span class="w"> </span><span class="n">performSelectorOnMainThread</span><span class="o">:</span><span class="w"> </span><span class="k">@selector</span><span class="p">(</span><span class="n">setImage</span><span class="o">:</span><span class="p">)</span>
+<span class="w">                                      </span><span class="nl">withObject</span><span class="p">:</span><span class="w"> </span><span class="n">image</span>
+<span class="w">                                   </span><span class="nl">waitUntilDone</span><span class="p">:</span><span class="w"> </span><span class="nb">YES</span><span class="p">];</span>
+
+<span class="p">}];</span>
+</code></pre></div></p>
+<p>La clase <code>AVCaptureStillImageOutput</code> ha sido desaprobada en iOS 10.0 y por lo tanto no soporta nuevas características, como la obtención de datos en crudo o imágenes en vivo. En iOS 10.0 y posteriores se recomienda utilizar <code>AVCapturePhotoOutput</code> en su lugar.</p>
+<h4 id="procesamiento-en-tiempo-real">Procesamiento en tiempo real<a class="headerlink" href="#procesamiento-en-tiempo-real" title="Permanent link">&para;</a></h4>
+<p>Para capturar en memoria y poder procesar fotogramas podemos utiliza el tipo de salida <code>AVCaptureVideoDataOutput</code>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">captureOutput</span> <span class="p">=</span> <span class="bp">AVCaptureVideoDataOutput</span><span class="p">()</span>
+<span class="n">captureOutput</span><span class="p">.</span><span class="n">alwaysDiscardsLateVideoFrames</span> <span class="p">=</span> <span class="kc">true</span>
+
+<span class="kd">var</span> <span class="nv">queue</span> <span class="p">=</span> <span class="n">DispatchQueue</span><span class="p">(</span><span class="n">label</span><span class="p">:</span> <span class="s">&quot;cameraQueue&quot;</span><span class="p">)</span>
+<span class="n">captureOutput</span><span class="p">.</span><span class="n">setSampleBufferDelegate</span><span class="p">(</span><span class="kc">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">:</span> <span class="n">queue</span><span class="p">)</span>
+
+<span class="n">captureOutput</span><span class="p">.</span><span class="n">videoSettings</span> <span class="p">=</span> <span class="p">[</span><span class="n">kCVPixelBufferPixelFormatTypeKey</span> <span class="k">as</span> <span class="n">AnyHashable</span> <span class="p">:</span> <span class="nb">Int</span><span class="p">(</span><span class="n">kCVPixelFormatType_32BGRA</span><span class="p">)]</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">AVCaptureVideoDataOutput</span><span class="w"> </span><span class="o">*</span><span class="n">captureOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">AVCaptureVideoDataOutput</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+<span class="w">    </span><span class="n">captureOutput</span><span class="p">.</span><span class="n">alwaysDiscardsLateVideoFrames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">YES</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//captureOutput.minFrameDuration = CMTimeMakeWithSeconds(1, 1);</span>
+
+<span class="n">dispatch_queue_t</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dispatch_queue_create</span><span class="p">(</span><span class="s">&quot;cameraQueue&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="w">    </span><span class="p">[</span><span class="n">captureOutput</span><span class="w"> </span><span class="n">setSampleBufferDelegate</span><span class="o">:</span><span class="w"> </span><span class="nb">self</span><span class="w"> </span><span class="n">queue</span><span class="o">:</span><span class="w"> </span><span class="n">queue</span><span class="p">];</span>
+
+<span class="bp">NSDictionary</span><span class="w"> </span><span class="o">*</span><span class="n">videoSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="l">@{</span><span class="w"> </span><span class="p">(</span><span class="bp">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">kCVPixelBufferPixelFormatTypeKey</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="l">@(</span><span class="n">kCVPixelFormatType_32BGRA</span><span class="l">)</span><span class="w"> </span><span class="l">}</span><span class="p">;</span><span class="w">    </span>
+<span class="w">    </span><span class="p">[</span><span class="n">captureOutput</span><span class="w"> </span><span class="n">setVideoSettings</span><span class="o">:</span><span class="w"> </span><span class="n">videoSettings</span><span class="p">];</span>
+</code></pre></div></p>
+<p>En este caso tenemos que proporcionar un delegado de tipo <code>AVCaptureVideoDataOutputSampleBufferDelegate</code>, que tendrá que definir un método como el siguiente que será invocado cada vez que se capture un fotograma:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">captureOutput</span><span class="p">(</span><span class="kc">_</span> <span class="n">captureOutput</span><span class="p">:</span> <span class="bp">AVCaptureOutput</span><span class="p">,</span> <span class="n">didOutputSampleBuffer</span> <span class="n">sampleBuffer</span><span class="p">:</span> <span class="n">CMSampleBuffer</span><span class="p">,</span> <span class="n">from</span> <span class="n">connection</span><span class="p">:</span> <span class="bp">AVCaptureConnection</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Procesar datos de sampleBuffer}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">captureOutput:</span><span class="p">(</span><span class="bp">AVCaptureOutput</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">captureOutput</span>
+<span class="nl">didOutputSampleBuffer</span><span class="p">:(</span><span class="n">CMSampleBufferRef</span><span class="p">)</span><span class="nv">sampleBuffer</span>
+<span class="w">       </span><span class="nl">fromConnection</span><span class="p">:(</span><span class="bp">AVCaptureConnection</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">connection</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Procesar datos de sampleBuffer</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Podemos utilizar este método para procesar el vídeo.</p>
+<h3 id="sesion-de-captura">Sesión de captura<a class="headerlink" href="#sesion-de-captura" title="Permanent link">&para;</a></h3>
+<p>La sessión de captura coordina la entrada y la salida. Podemos establecer diferentes <em>presets</em> para la sesión, según la calidad con la que queramos capturar el medio. En el siguiente ejemplo utilizamos un <em>preset</em> para capturar vídeo en 720p, y tras ello añadimos la entrada y la salida de la sesión:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code> <span class="kd">var</span> <span class="nv">captureSession</span> <span class="p">=</span> <span class="bp">AVCaptureSession</span><span class="p">()</span>
+
+ <span class="c1">// Establece preset</span>
+ <span class="k">if</span> <span class="n">captureSession</span><span class="p">.</span><span class="n">canSetSessionPreset</span><span class="p">(</span><span class="n">AVCaptureSessionPreset1280x720</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">captureSession</span><span class="p">.</span><span class="n">sessionPreset</span> <span class="p">=</span> <span class="n">AVCaptureSessionPreset1280x720</span>
+ <span class="p">}</span>
+ <span class="k">else</span> <span class="p">{</span>
+   <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Preset no compatible&quot;</span><span class="p">)</span>
+ <span class="p">}</span>
+
+ <span class="c1">// Establece entrada</span>
+ <span class="k">if</span> <span class="n">captureSession</span><span class="p">.</span><span class="n">canAddInput</span><span class="p">(</span><span class="n">captureInput</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">captureSession</span><span class="p">.</span><span class="n">addInput</span><span class="p">(</span><span class="n">captureInput</span><span class="p">)</span>
+ <span class="p">}</span>
+ <span class="k">else</span> <span class="p">{</span>
+   <span class="bp">print</span><span class="p">(</span><span class="s">&quot;No se puede añadir entrada&quot;</span><span class="p">)</span>
+ <span class="p">}</span>
+
+ <span class="c1">// Establece salida</span>
+ <span class="k">if</span> <span class="n">captureSession</span><span class="p">.</span><span class="n">canAddOutput</span><span class="p">(</span><span class="n">captureOutput</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">captureSession</span><span class="p">.</span><span class="n">addOutput</span><span class="p">(</span><span class="n">captureOutput</span><span class="p">)</span>
+ <span class="p">}</span>
+ <span class="k">else</span> <span class="p">{</span>
+   <span class="bp">print</span><span class="p">(</span><span class="s">&quot;No se puede añadir salida&quot;</span><span class="p">)</span>
+ <span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">AVCaptureSession</span><span class="w"> </span><span class="o">*</span><span class="n">captureSession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">AVCaptureSession</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+
+<span class="c1">// Establece preset</span>
+<span class="k">if</span><span class="p">([</span><span class="n">captureSession</span><span class="w"> </span><span class="n">canSetSessionPreset</span><span class="o">:</span><span class="n">AVCaptureSessionPreset1280x720</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">captureSession</span><span class="p">.</span><span class="n">sessionPreset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AVCaptureSessionPreset1280x720</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Preset no compatible&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Establece entrada</span>
+<span class="k">if</span><span class="p">([</span><span class="n">captureSession</span><span class="w"> </span><span class="n">canAddInput</span><span class="o">:</span><span class="n">captureInput</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="n">captureSession</span><span class="w"> </span><span class="n">addInput</span><span class="o">:</span><span class="w"> </span><span class="n">captureInput</span><span class="p">];</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;No se puede añadir entrada&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Establece salida</span>
+<span class="k">if</span><span class="p">([</span><span class="n">captureSession</span><span class="w"> </span><span class="n">canAddOutput</span><span class="o">:</span><span class="n">captureOutput</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="n">captureSession</span><span class="w"> </span><span class="n">addOutput</span><span class="o">:</span><span class="w"> </span><span class="n">captureOutput</span><span class="p">];</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;No se puede añadir salida&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Después de configurar la sesión, deberemos iniciar la captura con <code>startRunning</code>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="n">captureSession</span><span class="p">.</span><span class="n">startRunning</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">captureSession</span><span class="w"> </span><span class="n">startRunning</span><span class="p">];</span>
+</code></pre></div></p>
+<h3 id="ejemplo-de-captura-y-procesamiento-de-fotogramas">Ejemplo de captura y procesamiento de fotogramas<a class="headerlink" href="#ejemplo-de-captura-y-procesamiento-de-fotogramas" title="Permanent link">&para;</a></h3>
+<p>En el siguiente ejemplo creamos una sesión de captura que tiene como entrada el dispositivo de captura
+de vídeo, y como salida los fotogramas del vídeo sin compresión como datos crudos.
+Tras configurar la entrada, la salida, y la sesión de captura, ponemos dicha sesión en funcionamiento
+con <code>startRunning</code>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code> <span class="c1">// Entrada del dispositivo de captura de video </span>
+ <span class="kd">var</span> <span class="nv">captureDevice</span> <span class="p">=</span> <span class="bp">AVCaptureDevice</span><span class="p">.</span><span class="n">defaultDevice</span><span class="p">(</span><span class="n">withMediaType</span><span class="p">:</span> <span class="n">AVMediaTypeVideo</span><span class="p">)</span><span class="o">!</span>
+ <span class="kd">var</span> <span class="nv">captureInput</span> <span class="p">=</span> <span class="k">try</span><span class="p">!</span> <span class="bp">AVCaptureDeviceInput</span><span class="p">(</span><span class="n">device</span><span class="p">:</span> <span class="n">captureDevice</span><span class="p">)</span>
+
+ <span class="c1">// Salida como fotogramas &quot;crudos&quot; (sin comprimir)</span>
+ <span class="kd">var</span> <span class="nv">captureOutput</span> <span class="p">=</span> <span class="bp">AVCaptureVideoDataOutput</span><span class="p">()</span>
+ <span class="n">captureOutput</span><span class="p">.</span><span class="n">alwaysDiscardsLateVideoFrames</span> <span class="p">=</span> <span class="kc">true</span>
+
+ <span class="kd">var</span> <span class="nv">queue</span> <span class="p">=</span> <span class="n">DispatchQueue</span><span class="p">(</span><span class="n">label</span><span class="p">:</span> <span class="s">&quot;cameraQueue&quot;</span><span class="p">)</span>
+ <span class="n">captureOutput</span><span class="p">.</span><span class="n">setSampleBufferDelegate</span><span class="p">(</span><span class="kc">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">:</span> <span class="n">queue</span><span class="p">)</span>
+ <span class="n">captureOutput</span><span class="p">.</span><span class="n">videoSettings</span> <span class="p">=</span> <span class="p">[</span><span class="n">kCVPixelBufferPixelFormatTypeKey</span> <span class="k">as</span> <span class="n">AnyHashable</span> <span class="p">:</span> <span class="nb">Int</span><span class="p">(</span><span class="n">kCVPixelFormatType_32BGRA</span><span class="p">)]</span>
+
+ <span class="c1">// Creación de la sesión de captura</span>
+ <span class="kc">self</span><span class="p">.</span><span class="n">captureSession</span> <span class="p">=</span> <span class="bp">AVCaptureSession</span><span class="p">()</span>
+ <span class="kc">self</span><span class="p">.</span><span class="n">captureSession</span><span class="p">?.</span><span class="n">sessionPreset</span> <span class="p">=</span> <span class="n">AVCaptureSessionPreset1280x720</span>
+ <span class="kc">self</span><span class="p">.</span><span class="n">captureSession</span><span class="p">?.</span><span class="n">addInput</span><span class="p">(</span><span class="n">captureInput</span><span class="p">)</span>
+ <span class="kc">self</span><span class="p">.</span><span class="n">captureSession</span><span class="p">?.</span><span class="n">addOutput</span><span class="p">(</span><span class="n">captureOutput</span><span class="p">)</span>
+ <span class="kc">self</span><span class="p">.</span><span class="n">captureSession</span><span class="p">?.</span><span class="n">startRunning</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="c1">// Entrada del dispositivo de captura de video</span>
+<span class="w">    </span><span class="bp">AVCaptureDevice</span><span class="w"> </span><span class="o">*</span><span class="n">captureDevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVCaptureDevice</span><span class="w"> </span><span class="n">defaultDeviceWithMediaType</span><span class="o">:</span><span class="n">AVMediaTypeVideo</span><span class="p">];</span>
+<span class="w">    </span><span class="bp">AVCaptureDeviceInput</span><span class="w"> </span><span class="o">*</span><span class="n">captureInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">AVCaptureDeviceInput</span><span class="w"> </span><span class="n">deviceInputWithDevice</span><span class="o">:</span><span class="n">captureDevice</span><span class="w"> </span>
+<span class="w">                                                                               </span><span class="nl">error</span><span class="p">:</span><span class="w"> </span><span class="nb">nil</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">// Salida como fotogramas &quot;crudos&quot; (sin comprimir)</span>
+<span class="w">    </span><span class="bp">AVCaptureVideoDataOutput</span><span class="w"> </span><span class="o">*</span><span class="n">captureOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">AVCaptureVideoDataOutput</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+<span class="w">    </span><span class="n">captureOutput</span><span class="p">.</span><span class="n">alwaysDiscardsLateVideoFrames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">YES</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">dispatch_queue_t</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dispatch_queue_create</span><span class="p">(</span><span class="s">&quot;cameraQueue&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="w">    </span><span class="p">[</span><span class="n">captureOutput</span><span class="w"> </span><span class="n">setSampleBufferDelegate</span><span class="o">:</span><span class="w"> </span><span class="nb">self</span><span class="w"> </span><span class="n">queue</span><span class="o">:</span><span class="w"> </span><span class="n">queue</span><span class="p">];</span>
+
+<span class="w">    </span><span class="bp">NSDictionary</span><span class="w"> </span><span class="o">*</span><span class="n">videoSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="l">@{</span><span class="w"> </span><span class="p">(</span><span class="bp">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">kCVPixelBufferPixelFormatTypeKey</span><span class="w"> </span><span class="o">:</span><span class="w"> </span>
+<span class="w">                                                        </span><span class="l">@(</span><span class="n">kCVPixelFormatType_32BGRA</span><span class="l">)</span><span class="w"> </span><span class="l">}</span><span class="p">;</span><span class="w">    </span>
+<span class="w">    </span><span class="p">[</span><span class="n">captureOutput</span><span class="w"> </span><span class="n">setVideoSettings</span><span class="o">:</span><span class="w"> </span><span class="n">videoSettings</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">// Creación de la sesión de captura</span>
+<span class="w">    </span><span class="nb">self</span><span class="p">.</span><span class="n">captureSession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">AVCaptureSession</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">init</span><span class="p">];</span>
+<span class="w">    </span><span class="nb">self</span><span class="p">.</span><span class="n">captureSession</span><span class="p">.</span><span class="n">sessionPreset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AVCaptureSessionPreset1280x720</span><span class="p">;</span>
+<span class="w">    </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">captureSession</span><span class="w"> </span><span class="n">addInput</span><span class="o">:</span><span class="w"> </span><span class="n">captureInput</span><span class="p">];</span>
+<span class="w">    </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">captureSession</span><span class="w"> </span><span class="n">addOutput</span><span class="o">:</span><span class="w"> </span><span class="n">captureOutput</span><span class="p">];</span>
+
+<span class="w">    </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">captureSession</span><span class="w"> </span><span class="n">startRunning</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Una vez haya comenzado la sesión de captura, se comenzarán a producir fotogramas del vídeo
+capturado. Para consumir estos fotogramas deberemos implementar el método delegado
+<code>captureOutput:didOutputSampleBuffer:fromConnection:</code></p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">captureOutput</span><span class="p">(</span><span class="kc">_</span> <span class="n">captureOutput</span><span class="p">:</span> <span class="bp">AVCaptureOutput</span><span class="p">!,</span> <span class="n">didOutputSampleBuffer</span> <span class="n">sampleBuffer</span><span class="p">:</span> <span class="n">CMSampleBuffer</span><span class="p">!,</span> <span class="n">from</span> <span class="n">connection</span><span class="p">:</span> <span class="bp">AVCaptureConnection</span><span class="p">!)</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nv">image</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">imageFromSampleBuffer</span><span class="p">(</span><span class="n">sampleBuffer</span><span class="p">)</span>
+   <span class="kc">self</span><span class="p">.</span><span class="n">ivPreview</span><span class="p">.</span><span class="n">performSelector</span><span class="p">(</span><span class="n">onMainThread</span><span class="p">:</span>   <span class="k">#selector</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">setImage</span><span class="p">),</span> <span class="n">withObject</span><span class="p">:</span> <span class="n">image</span><span class="p">,</span> <span class="n">waitUntilDone</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">captureOutput:</span><span class="p">(</span><span class="bp">AVCaptureOutput</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">captureOutput</span>
+<span class="nl">didOutputSampleBuffer</span><span class="p">:(</span><span class="n">CMSampleBufferRef</span><span class="p">)</span><span class="nv">sampleBuffer</span>
+<span class="w">       </span><span class="nl">fromConnection</span><span class="p">:(</span><span class="bp">AVCaptureConnection</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">connection</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nb">self</span><span class="w"> </span><span class="n">imageFromSampleBuffer</span><span class="o">:</span><span class="n">sampleBuffer</span><span class="p">];</span>
+
+<span class="w">    </span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">ivPreview</span><span class="w"> </span><span class="n">performSelectorOnMainThread</span><span class="o">:</span><span class="w"> </span><span class="k">@selector</span><span class="p">(</span><span class="n">setImage</span><span class="o">:</span><span class="p">)</span>
+<span class="w">                                     </span><span class="nl">withObject</span><span class="p">:</span><span class="w"> </span><span class="n">image</span>
+<span class="w">                                  </span><span class="nl">waitUntilDone</span><span class="p">:</span><span class="w"> </span><span class="nb">YES</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Vemos que el primer paso consiste en transformar el <em>buffer</em> del fotograma actual en un objeto <code>UIImage</code> que podamos mostrar. Para ello podemos definir un método como el siguiente:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">imageFromSampleBuffer</span><span class="p">(</span><span class="n">sampleBuffer</span><span class="p">:</span> <span class="n">CMSampleBuffer</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UIImage</span> <span class="p">{</span>
+
+ <span class="c1">// Get a CMSampleBuffer&#39;s Core Video image buffer for the media data</span>
+ <span class="kd">var</span> <span class="nv">imageBuffer</span> <span class="p">=</span> <span class="n">CMSampleBufferGetImageBuffer</span><span class="p">(</span><span class="n">sampleBuffer</span><span class="p">)</span>
+
+ <span class="c1">// Lock the base address of the pixel buffer</span>
+ <span class="n">CVPixelBufferLockBaseAddress</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">!,</span> <span class="n">CVPixelBufferLockFlags</span><span class="p">(</span><span class="n">rawValue</span><span class="p">:</span> <span class="mi">0</span><span class="p">))</span>
+
+ <span class="c1">// Get the number of bytes per row for the pixel buffer</span>
+ <span class="kd">var</span> <span class="nv">baseAddress</span> <span class="p">=</span> <span class="n">CVPixelBufferGetBaseAddress</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">!)</span>
+
+ <span class="c1">// Get the number of bytes per row for the pixel buffer</span>
+ <span class="kd">var</span> <span class="nv">bytesPerRow</span> <span class="p">=</span> <span class="n">CVPixelBufferGetBytesPerRow</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">!)</span>
+
+ <span class="c1">// Get the pixel buffer width and height</span>
+ <span class="kd">var</span> <span class="nv">width</span> <span class="p">=</span> <span class="n">CVPixelBufferGetWidth</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">!)</span>
+ <span class="kd">var</span> <span class="nv">height</span> <span class="p">=</span> <span class="n">CVPixelBufferGetHeight</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">!)</span>
+
+ <span class="c1">// Create a device-dependent RGB color space</span>
+ <span class="kd">var</span> <span class="nv">colorSpace</span> <span class="p">=</span> <span class="n">CGColorSpaceCreateDeviceRGB</span><span class="p">()</span>
+
+ <span class="c1">// Create a bitmap graphics context with the sample buffer data</span>
+ <span class="kd">let</span> <span class="nv">bitmapInfo</span> <span class="p">=</span> <span class="n">CGBitmapInfo</span><span class="p">(</span><span class="n">rawValue</span><span class="p">:</span> <span class="n">CGImageAlphaInfo</span><span class="p">.</span><span class="n">noneSkipFirst</span><span class="p">.</span><span class="n">rawValue</span> <span class="o">|</span> <span class="n">CGBitmapInfo</span><span class="p">.</span><span class="n">byteOrder32Little</span><span class="p">.</span><span class="n">rawValue</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nv">output</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">procesaImagen</span><span class="p">(</span><span class="nb">UInt8</span><span class="p">(</span><span class="n">baseAddress</span><span class="p">))</span>
+
+ <span class="kd">var</span> <span class="nv">context</span> <span class="p">=</span> <span class="n">CGContext</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">output</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">height</span><span class="p">,</span> <span class="n">bitsPerComponent</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="n">bytesPerRow</span><span class="p">:</span> <span class="n">bytesPerRow</span><span class="p">,</span> <span class="n">space</span><span class="p">:</span> <span class="n">colorSpace</span><span class="p">,</span> <span class="n">bitmapInfo</span><span class="p">:</span> <span class="n">bitmapInfo</span><span class="p">.</span><span class="n">rawValue</span><span class="p">)</span>
+
+ <span class="c1">// Create a Quartz image from the pixel data in the bitmap graphics context</span>
+ <span class="kd">var</span> <span class="nv">quartzImage</span> <span class="p">=</span> <span class="n">context</span><span class="p">!.</span><span class="n">makeImage</span><span class="p">();</span>
+
+ <span class="c1">// Unlock the pixel buffer</span>
+ <span class="n">CVPixelBufferUnlockBaseAddress</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">!,</span><span class="n">CVPixelBufferLockFlags</span><span class="p">(</span><span class="n">rawValue</span><span class="p">:</span> <span class="mi">0</span><span class="p">));</span>
+
+ <span class="c1">// Create an image object from the Quartz image</span>
+ <span class="kd">let</span> <span class="nv">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">cgImage</span><span class="p">:</span> <span class="n">quartzImage</span><span class="p">!)</span>
+     <span class="k">return</span> <span class="n">image</span>
+ <span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="p">)</span> <span class="nf">imageFromSampleBuffer:</span><span class="p">(</span><span class="n">CMSampleBufferRef</span><span class="p">)</span> <span class="nv">sampleBuffer</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Obtiene y bloquea el framebuffer del actual fotograma</span>
+<span class="w">    </span><span class="n">CVImageBufferRef</span><span class="w"> </span><span class="n">imageBuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CMSampleBufferGetImageBuffer</span><span class="p">(</span><span class="n">sampleBuffer</span><span class="p">);</span>
+<span class="w">    </span><span class="n">CVPixelBufferLockBaseAddress</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Obtiene el puntero al inicio del framebuffer</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">baseAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CVPixelBufferGetBaseAddress</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Obtiene las dimensiones de la imagen y bytes por fila del framebuffer</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">bytesPerRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CVPixelBufferGetBytesPerRow</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CVPixelBufferGetWidth</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CVPixelBufferGetHeight</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Procesa la imagen</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nb">self</span><span class="w"> </span><span class="n">procesaImagen</span><span class="o">:</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">baseAddress</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">// Crea espacio de color RGB dependiente del dispositivo</span>
+<span class="w">    </span><span class="n">CGColorSpaceRef</span><span class="w"> </span><span class="n">colorSpace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGColorSpaceCreateDeviceRGB</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Crea un contexto gráfico para dibujar en un bitmap y vuelca en él el contenido del fotograma</span>
+<span class="w">    </span><span class="n">CGContextRef</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGBitmapContextCreate</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="n">bytesPerRow</span><span class="p">,</span><span class="w"> </span><span class="n">colorSpace</span><span class="p">,</span><span class="w"> </span><span class="n">kCGBitmapByteOrder32Little</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">kCGImageAlphaPremultipliedFirst</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Crea una imagen a partir del contenido del contexto gráfico</span>
+<span class="w">    </span><span class="n">CGImageRef</span><span class="w"> </span><span class="n">quartzImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CGBitmapContextCreateImage</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Desbloquea el framebuffer</span>
+<span class="w">    </span><span class="n">CVPixelBufferUnlockBaseAddress</span><span class="p">(</span><span class="n">imageBuffer</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Libera el contexto gráfico</span>
+<span class="w">    </span><span class="n">CGContextRelease</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="w">    </span><span class="n">CGColorSpaceRelease</span><span class="p">(</span><span class="n">colorSpace</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Crea una imagen UIImage a partir de la CGImage</span>
+<span class="w">    </span><span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageWithCGImage</span><span class="o">:</span><span class="n">quartzImage</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">// Libera la CGImage</span>
+<span class="w">    </span><span class="n">CGImageRelease</span><span class="p">(</span><span class="n">quartzImage</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>En el método anterior observamos que podemos procesar y modificar el <em>buffer</em> del fotograma antes de obtener una <code>UIImage</code> a partir de él. Por ejemplo, podríamos convertir la imagen a escala de grises con:</p>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nf">procesaImagen:</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WIDTH</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HEIGHT</span><span class="p">;</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">result</span><span class="p">[</span><span class="n">WIDTH</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HEIGHT</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">size</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="o">++</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">gray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">g</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+
+<span class="w">        </span><span class="o">*</span><span class="n">output</span><span class="o">++</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gray</span><span class="p">;</span>
+<span class="w">        </span><span class="o">*</span><span class="n">output</span><span class="o">++</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gray</span><span class="p">;</span>
+<span class="w">        </span><span class="o">*</span><span class="n">output</span><span class="o">++</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gray</span><span class="p">;</span>
+<span class="w">        </span><span class="o">*</span><span class="n">output</span><span class="o">++</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="procesamiento-de-imagenes-en-ios">Procesamiento de imágenes en iOS<a class="headerlink" href="#procesamiento-de-imagenes-en-ios" title="Permanent link">&para;</a></h2>
+<p>El procesamiento de imágenes es una operación altamente costosa, por lo que supone un auténtico reto llevarla
+a un dispositivo móvil de forma eficiente, especialmente si queremos ser capaces de procesar vídeo en tiempo real.
+Una de las aplicaciones del procesamiento de imágenes es el tratamiento de fotografías mediante una serie de
+filtros. También podemos encontrar numerosas aplicaciones relacionadas con el campo de la visión por computador,
+como la detección de movimiento, el seguimiento de objetos, o el reconocimiento de caras.</p>
+<p>Estas operaciones suponen una gran carga de procesamiento, por lo que si queremos realizarlas de forma eficiente
+deberemos realizar un fuerte trabajo de optimización. Implementar directamente los algoritmos de procesamiento
+de imágenes sobre la CPU supone una excesiva carga para la aplicación y resulta poco eficiente. Sin embargo,
+podemos llevar este procesamiento a unidades más adecuadas para esta tarea, y así descargar la carga de trabajo
+de la CPU. Encontramos dos opciones:</p>
+<ul>
+<li>Utilizar la unidad NEON de los procesadores con juego de instrucciones ARMv7. Se trata de una unidad SIMD
+(<em>Single Instruction Multiple Data</em>), con la cual podemos vectorizar las operaciones de procesamiento de imagen y ejecutarlas de una
+forma mucho más eficiente, ya que en cada operación del procesador en lugar de operar sobre un único dato,
+lo haremos sobre un vector de ellos. El mayor inconveniente de esta opción es el trabajo que llevará
+vectorizar los algoritmos de procesamiento a aplicar. Como ventaja tenemos que el juego de instrucciones que
+podemos utilizar funcionará en cualquier dispositivo ARMv7, y la práctica totalidad de dispositivos que hay
+actualmente en el mercado disponen de este juego de instrucciones. De esta forma, el código que escribamos
+será compatible con cualquier dispositivo, independientemente del sistema operativo que incorporen.</li>
+</ul>
+<p>http://www.arm.com/products/processors/technologies/neon.php</p>
+<ul>
+<li>Utilizar la GPU (<em>Graphics Processing Unit</em>). Podemos programar <em>shaders</em>, es decir, programas
+que se ejecutan sobre la unidad de procesamiento gráfica, que esta especializada en operaciones de manipulación
+de gráficos con altos niveles de paralelismo. El lenguaje en el que se programan los shaders dentro de OpenGL
+es GLSL. Con esta tecnología podemos desarrollar filtros que se ejecuten de forma optimizada por la GPU
+descargando así totalmente a la CPU del procesamiento. Para utilizar esta opción deberemos estar familiarizados
+con los gráficos por computador y con el lenguaje GLSL.</li>
+</ul>
+<p>Con cualquiera de las opciones anteriores tendremos que invertir un gran esfuerzo en la implementación
+óptima de las funciones de procesado. Sin embargo, a partir de iOS 5 se incorpora un nuevo <em>framework</em>
+conocido como Core Image que nos permite realizar este procesamiento de forma óptima sin tener que entrar
+a programar a bajo nivel. Este <em>framework</em> ya existía anteriormente en MacOS, pero con la versión 5
+de iOS ha sido trasladado a la plataforma móvil. Por el momento, la versión de iOS de Core Image es una versión
+reducida, en la que encontramos una menor cantidad de filtros disponibles y además, al
+contrario de lo que ocurre en MacOS, no podemos crear de momento nuestros propios filtros. Aun así, contamos
+con un buen número de filtros (alrededor de 50) que podemos configurar y combinar para así aplicar distintos
+efectos a las imágenes, y que nos permiten realizar tareas complejas de visión artificial como el reconocimiento
+de caras. Vamos a continuación a ver cómo trabajar con esta librería.</p>
+<h3 id="representacion-de-imagenes-en-core-image">Representación de imágenes en Core Image<a class="headerlink" href="#representacion-de-imagenes-en-core-image" title="Permanent link">&para;</a></h3>
+<p>En el <em>framework</em> Core Image las imágenes se representan mediante la clase <code>CIImage</code>. Este
+tipo de imágenes difiere de las representaciones que hemos visto anteriormente (<code>UIImage</code> y <code>CGImageRef</code>)
+en que <code>CIImage</code> no contiene una representación final de la imagen, sino que lo que contiene es una
+imagen inicial y una serie de filtros que se deben aplicar para obtener la imagen final a representar. La
+imagen final se calculará en el momento en el que la imagen <code>CIImage</code> final sea renderizada.</p>
+<p>Podemos crear una imagen de este tipo a partir de imágenes de Core Graphics:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">cgImage</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="s">&quot;imagen.png&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">.</span><span class="n">cgImage</span><span class="p">!</span>
+<span class="kd">var</span> <span class="nv">ciImage</span> <span class="p">=</span> <span class="bp">CIImage</span><span class="p">(</span><span class="n">cgImage</span><span class="p">:</span> <span class="n">cgImage</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="n">CGImageRef</span><span class="w"> </span><span class="n">cgImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageNamed</span><span class="o">:</span><span class="w"> </span><span class="s">@&quot;imagen.png&quot;</span><span class="p">].</span><span class="n">CGImage</span><span class="p">;</span>
+<span class="bp">CIImage</span><span class="w"> </span><span class="o">*</span><span class="n">ciImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CIImage</span><span class="w"> </span><span class="n">imageWithCGImage</span><span class="o">:</span><span class="w"> </span><span class="n">cgImage</span><span class="p">];</span>
+</code></pre></div></p>
+<p>También podemos encontrar inicializadores de <code>CIImage</code> que crean la imagen a partir de los contenidos
+de una URL o directamente a partir de los datos crudos (<code>NSData</code>) correspondientes a los distintos formatos
+de imagen soportados (JPEG, GIF, PNG, etc).</p>
+<p>Podemos también hacer la transformación inversa, y crear un objeto <code>UIImage</code> a partir de una imagen
+de tipo <code>CIImage</code>. Esto lo haremos con el inicializador <code>initWithCIImage:</code>, y podremos obtener
+la representación de la imagen como <code>CIImage</code> mediante la propiedad <code>CIImage</code> de <code>UIImage</code>.
+Dicha imagen podrá ser dibujada en el contexto gráfico como se ha visto en sesiones anteriores:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">uiImage</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">ciImage</span><span class="p">:</span> <span class="n">ciImage</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nv">ciImage</span> <span class="p">=</span> <span class="n">uiImage</span><span class="p">.</span><span class="n">ciImage</span><span class="p">!</span>
+<span class="p">...</span>
+<span class="n">uiImage</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">at</span><span class="p">:</span> <span class="n">CGPoint</span><span class="p">.</span><span class="n">zero</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">UIImage</span><span class="w"> </span><span class="o">*</span><span class="n">uiImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageWithCIImage</span><span class="o">:</span><span class="w"> </span><span class="n">ciImage</span><span class="p">];</span>
+<span class="p">...</span>
+
+<span class="bp">CIImage</span><span class="w"> </span><span class="o">*</span><span class="n">ciImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uiImage</span><span class="p">.</span><span class="bp">CIImage</span><span class="p">;</span>
+<span class="p">...</span>
+
+<span class="p">[</span><span class="n">uiImage</span><span class="w"> </span><span class="n">drawAtPoint</span><span class="o">:</span><span class="w"> </span><span class="n">CGPointZero</span><span class="p">];</span>
+</code></pre></div></p>
+<blockquote>
+<p>Cuando queramos crear una imagen para mostrar en la interfaz (<code>UIImage</code>) a partir de una imagen de Core
+Image (<code>CIImage</code>), deberemos llevar cuidado porque la imagen puede no mostrarse correctamente en
+determinados ámbitos. Por ejemplo, no se verá correctamente si la mostramos en un <code>UIImageView</code>, pero
+si que funcionará si la dibujamos directamente en el contexto gráfico con sus métodos <code>drawAtPoint:</code>
+o <code>drawInRect:</code>. La razón de este comportamiento se debe a que la representación interna de la imagen variará según la forma en la que se
+cree. Si una imagen <code>UIImage</code> se crea a partir de una imagen de tipo <code>CGImageRef</code>, su propiedad
+<code>CGImage</code> apuntará a la imagen a partir de la cual se creó, pero su propiedad <code>CIImage</code> será
+<code>nil</code>. Sin embargo, si creamos una imagen a partir de una <code>CIImage</code> ocurrirá al contrario, su
+propiedad <code>CGImage</code> será <code>NULL</code> mientras que su propiedad <code>CIImage</code> apuntará
+a la imagen inicial. Esto causará que aquellos componentes cuyo funcionamiento se base en utilizar la propiedad
+<code>CGImage</code> dejen de funcionar.</p>
+</blockquote>
+<p>La clase <code>CIImage</code> tiene además una propiedad <code>extent</code> que nos proporciona las dimensiones de la
+imagen como un dato de tipo <code>CGRect</code>. Más adelante veremos que resulta de utilidad para renderizar la imagen.</p>
+<h3 id="filtros-de-core-image">Filtros de Core Image<a class="headerlink" href="#filtros-de-core-image" title="Permanent link">&para;</a></h3>
+<p>Los filtros que podemos aplicar sobre la imagen se representan con la clase <code>CIFilter</code>. Podemos
+crear diferentes filtros a partir de su nombre:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">filter</span> <span class="p">=</span> <span class="bp">CIFilter</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;CISepiaTone&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">CIFilter</span><span class="w"> </span><span class="o">*</span><span class="n">filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CIFilter</span><span class="w"> </span><span class="n">filterWithName</span><span class="o">:</span><span class="w"> </span><span class="s">@&quot;CISepiaTone&quot;</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Otros filtros que podemos encontrar son:</p>
+<ul>
+<li><code>CIAffineTransform</code></li>
+<li><code>CIColorControls</code></li>
+<li><code>CIColorMatrix</code></li>
+<li><code>CIConstantColorGenerator</code></li>
+<li><code>CICrop</code></li>
+<li><code>CIExposureAdjust</code></li>
+<li><code>CIGammaAdjust</code></li>
+<li><code>CIHighlightShadowAdjust</code></li>
+<li><code>CIHueAdjust</code></li>
+<li><code>CISourceOverCompositing</code></li>
+<li><code>CIStraightenFilter</code></li>
+<li><code>CITemperatureAndTint</code></li>
+<li><code>CIToneCurve</code></li>
+<li><code>CIVibrance</code></li>
+<li><code>CIWhitePointAdjust</code></li>
+</ul>
+<p>Todos los filtros pueden recibir una serie de parámetros de entrada, que variarán según el filtro. Un parámetro
+común que podemos encontrar en casi todos ellos es la imagen de entrada a la que se aplicará el filtro. Además,
+podremos tener otros parámetros que nos permitan ajustar el funcionamiento del filtro. Por ejemplo, en el caso
+del filtro para convertir la imagen a tono sepia tendremos un parámetro que nos permitirá controlar la intensidad
+de la imagen sepia:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">filter</span> <span class="p">=</span> <span class="bp">CIFilter</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;CISepiaTone&quot;</span><span class="p">)</span>
+<span class="bp">filter</span><span class="p">?.</span><span class="n">setValue</span><span class="p">(</span><span class="n">ciImage</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="n">kCIInputImageKey</span><span class="p">)</span>
+<span class="bp">filter</span><span class="p">?.</span><span class="n">setValue</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="n">kCIInputIntensityKey</span><span class="p">)</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">CIFilter</span><span class="w"> </span><span class="o">*</span><span class="n">filter</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="p">[</span><span class="bp">CIFilter</span><span class="w"> </span><span class="n">filterWithName</span><span class="o">:</span><span class="s">@&quot;CISepiaTone&quot;</span>
+<span class="w">               </span><span class="nl">keysAndValues</span><span class="p">:</span>
+<span class="w">                   </span><span class="n">kCIInputImageKey</span><span class="p">,</span><span class="w"> </span><span class="n">ciImage</span><span class="p">,</span>
+<span class="w">                   </span><span class="s">@&quot;inputIntensity&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="bp">NSNumber</span><span class="w"> </span><span class="n">numberWithFloat</span><span class="o">:</span><span class="mf">0.8</span><span class="p">],</span>
+<span class="w">                   </span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Podemos ver que para la propiedad correspondiente a la imagen de entrada tenemos la constante
+<code>kCIInputImageKey</code>, aunque también podríamos especificarla como la cadena <code>@"inputImage"</code>.
+Las propiedades de los filtros también pueden establecerse independientemente utilizando KVC:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">filter</span><span class="p">?.</span><span class="n">setValue</span><span class="p">(</span><span class="n">ciImage</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="n">kCIInputImageKey</span><span class="p">)</span>
+<span class="bp">filter</span><span class="p">?.</span><span class="n">setValue</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="n">kCIInputIntensityKey</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">filter</span><span class="w"> </span><span class="n">setValue</span><span class="o">:</span><span class="w"> </span><span class="n">ciImage</span><span class="w"> </span><span class="n">forKey</span><span class="o">:</span><span class="w"> </span><span class="s">@&quot;inputImage&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">filter</span><span class="w"> </span><span class="n">setValue</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="bp">NSNumber</span><span class="w"> </span><span class="n">numberWithFloat</span><span class="o">:</span><span class="mf">0.8</span><span class="p">]</span>
+<span class="w">          </span><span class="nl">forKey</span><span class="p">:</span><span class="w"> </span><span class="s">@&quot;inputIntensity&quot;</span><span class="p">];</span>
+</code></pre></div></p>
+<p>En la documentación de Apple no aparece la lista de filtros disponibles para iOS (si que tenemos la lista completa
+para MacOS, pero varios de esos filtros no están disponibles en iOS). Podemos obtener la lista de los filtros disponibles
+en nuestra plataforma desde la aplicación con los métodos <code>filterNamesInCategories:</code> y
+<code>filterNamesInCategory:</code>. Por ejemplo, podemos obtener la lista de todos los filtros con:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">filters</span> <span class="p">=</span> <span class="bp">CIFilter</span><span class="p">.</span><span class="n">filterNames</span><span class="p">(</span><span class="n">inCategories</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">NSArray</span><span class="w"> </span><span class="o">*</span><span class="n">filters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CIFilter</span><span class="w"> </span><span class="n">filterNamesInCategories</span><span class="o">:</span><span class="w"> </span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Cada objeto de la lista será de tipo <code>CIFilter</code>, y podremos obtener de él sus atributos y las
+características de cada uno de ellos mediante la propiedad <code>attributes</code>. Esta propiedad nos
+devolverá un diccionario con todos los parámetros de entrada y salida del filtro, y las características de cada
+uno de ellos. Por ejemplo, de cada parámetro nos dirá el tipo de dato que se debe indicar, y sus limitaciones
+(por ejemplo, si es numérico sus valores mínimo y máximo). Como alternativa, también podemos obtener el
+nombre del filtro con su propiedad <code>name</code> y las listas de sus parámetros de entrada y salida con
+<code>inputKeys</code> y <code>outputKeys</code> respectivamente.</p>
+<p>La propiedad más importante de los filtros es <code>outputImage</code>. Esta propiedad nos da la imagen
+producida por el filtro en forma de objeto <code>CIImage</code>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">outputImage</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">ciImage</span><span class="p">:</span> <span class="p">(</span><span class="bp">filter</span><span class="p">?.</span><span class="n">outputImage</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">CIImage</span><span class="w"> </span><span class="o">*</span><span class="n">filteredImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filter</span><span class="p">.</span><span class="n">outputImage</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Al obtener la imagen resultante el filtro no realiza el procesamiento. Simplemente anota en la imagen las
+operaciones que se deben hacer en ella. Es decir, la imagen que obtenemos como imagen resultante, realmente
+contiene la imagen original y un conjunto de filtros a aplicar. Podemos encadenar varios filtros en una
+imagen:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="bp">filter</span><span class="p">:</span> <span class="bp">CIFilter</span> <span class="k">in</span> <span class="n">filters</span> <span class="p">{</span>
+   <span class="bp">filter</span><span class="p">[</span><span class="n">kCIInputImageKey</span><span class="p">]</span> <span class="p">=</span> <span class="n">filteredImage</span>
+   <span class="n">filteredImage</span> <span class="p">=</span> <span class="bp">filter</span><span class="p">.</span><span class="n">outputImage</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="bp">CIFilter</span><span class="w"> </span><span class="o">*</span><span class="n">filter</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">filters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="n">filter</span><span class="w"> </span><span class="n">setValue</span><span class="o">:</span><span class="w"> </span><span class="n">filteredImage</span><span class="w"> </span><span class="n">forKey</span><span class="o">:</span><span class="w"> </span><span class="n">kCIInputImageKey</span><span class="p">];</span>
+<span class="w">    </span><span class="n">filteredImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filter</span><span class="p">.</span><span class="n">outputImage</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Con el código anterior vamos encadenando una serie de filtros en la imagen <code>CIImage</code> resultante,
+pero el procesamiento todavía no se habrá realizado. Los filtros realmente se aplicarán cuando rendericemos la
+imagen, bien en pantalla, o bien en forma de imagen <code>CGImageRef</code>.</p>
+<p>Por ejemplo, podemos renderizar la imagen directamente en el contexto gráfico actual. Ese será el momento
+en el que se aplicarán realmente los filtros a la imagen, para mostrar la imagen resultante en pantalla:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">draw</span><span class="p">(</span><span class="kc">_</span> <span class="n">rect</span><span class="p">:</span> <span class="n">CGRect</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="bp">UIImage</span><span class="p">(</span><span class="n">ciImage</span><span class="p">:</span> <span class="n">filteredImage</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">at</span><span class="p">:</span> <span class="n">CGPoint</span><span class="p">.</span><span class="n">zero</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">drawRect:</span><span class="p">(</span><span class="n">CGRect</span><span class="p">)</span><span class="nv">rect</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">[[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageWithCIImage</span><span class="o">:</span><span class="w"> </span><span class="n">filteredImage</span><span class="p">]</span><span class="w"> </span><span class="n">drawAtPoint</span><span class="o">:</span><span class="n">CGPointZero</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>A continuación veremos cómo controlar la forma en la que se realiza el renderizado de la imagen mediante
+el contexto de Core Image.</p>
+<h3 id="contexto-de-core-image">Contexto de Core Image<a class="headerlink" href="#contexto-de-core-image" title="Permanent link">&para;</a></h3>
+<p>El componente central del <em>framework</em> Core Image es la clase <code>CIContext</code> que representa
+el contexto de procesamiento de imágenes, que será el motor que se encargará de aplicar diferentes filtros
+a las imágenes. Este contexto puede se de dos tipos:</p>
+<ul>
+<li><strong>CPU</strong>: El procesamiento se realiza utilizando la CPU. La imagen resultante se obtiene como
+imagen de tipo Core Graphics (<code>CGImageRef</code>).</li>
+<li><strong>GPU</strong>: El procesamiento se realiza utilizando la GPU, y la imagen se renderiza utilizando
+OpenGL ES 2.0.</li>
+</ul>
+<p>El contexto basado en CPU es más sencillo de utilizar, pero su rendimiento es mucho peor. Con el contexto
+basado en GPU se descarga totalmente a la CPU del procesamiento de la imagen, por lo que será mucho más
+eficiente. Sin embargo, para utilizar la GPU nuestra aplicación siempre debe estar en primer plano. Si queremos
+procesar imágenes en segundo plano deberemos utilizar el contexto basado en CPU.</p>
+<h4 id="procesamiento-en-contexto-de-cpu">Procesamiento en contexto de CPU<a class="headerlink" href="#procesamiento-en-contexto-de-cpu" title="Permanent link">&para;</a></h4>
+<p>Para crear un contexto basado en CPU utilizaremos el método <code>contextWithOption:</code></p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">context</span> <span class="p">=</span> <span class="bp">CIContext</span><span class="p">(</span><span class="n">options</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">CIContext</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CIContext</span><span class="w"> </span><span class="n">contextWithOptions</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Con este tipo de contexto la imagen se renderizará como <code>CGImageRef</code> mediante el método
+<code>createCGImage:fromRect:</code>. Hay que especificar la región de la imagen que queremos renderizar.
+Si queremos renderizar la imagen entera podemos utilizar el atributo <code>extent</code> de <code>CIImage</code>,
+que nos devuelve sus dimensiones:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">cgiimg</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">createCGImage</span><span class="p">((</span><span class="bp">filter</span><span class="p">?.</span><span class="n">outputImage</span><span class="p">)</span><span class="o">!</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="p">(</span><span class="bp">filter</span><span class="p">?.</span><span class="n">outputImage</span><span class="p">?.</span><span class="n">extent</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="n">CGImageRef</span><span class="w"> </span><span class="n">cgImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">context</span><span class="w"> </span><span class="n">createCGImage</span><span class="o">:</span><span class="n">filteredImage</span>
+<span class="w">                                   </span><span class="nl">fromRect</span><span class="p">:</span><span class="n">filteredImage</span><span class="p">.</span><span class="n">extent</span><span class="p">];</span>
+</code></pre></div></p>
+<h4 id="procesamiento-en-contexto-de-gpu">Procesamiento en contexto de GPU<a class="headerlink" href="#procesamiento-en-contexto-de-gpu" title="Permanent link">&para;</a></h4>
+<p>En el caso del contexto basado en GPU, en primer lugar deberemos crear el contexto OpenGL en nuestra aplicación.
+Esto se hará de forma automática en el caso en el que utilicemos la plantilla de Xcode de aplicación basada en
+OpenGL, aunque podemos también crearlo de forma sencilla en cualquier aplicación con el siguiente código:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">api</span><span class="p">:</span> <span class="n">EAGLRenderingAPI</span> <span class="p">=</span> <span class="n">EAGLRenderingAPI</span><span class="p">.</span><span class="n">openGLES2</span> 
+<span class="kd">var</span> <span class="nv">glContext</span> <span class="p">=</span> <span class="bp">EAGLContext</span><span class="p">(</span><span class="n">api</span><span class="p">:</span> <span class="n">api</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">EAGLContext</span><span class="w"> </span><span class="o">*</span><span class="n">glContext</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="p">[[</span><span class="bp">EAGLContext</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">initWithAPI</span><span class="o">:</span><span class="n">kEAGLRenderingAPIOpenGLES2</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Una vez contamos con el contexto de OpenGL, podemos crear el contexto de Core Image basado en GPU con el método <code>contextWithEAGLContext:</code></p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">context</span> <span class="p">=</span> <span class="bp">CIContext</span><span class="p">(</span><span class="n">glContext</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">CIContext</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CIContext</span><span class="w"> </span><span class="n">contextWithEAGLContext</span><span class="o">:</span><span class="w"> </span><span class="n">glContext</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Para realizar el procesamiento en tiempo real, si no necesitamos una alta fidelidad de color, se recomienda desactivar el uso del <em>color space</em>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">options</span> <span class="p">=</span> <span class="p">[</span><span class="n">kCIContextWorkingColorSpace</span><span class="p">:</span> <span class="bp">NSNull</span><span class="p">()]</span>
+<span class="kd">var</span> <span class="nv">context</span> <span class="p">=</span> <span class="bp">CIContext</span><span class="p">(</span><span class="n">glContext</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="n">options</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">NSDictionary</span><span class="w"> </span><span class="o">*</span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="l">@{</span><span class="w"> </span><span class="n">kCIContextWorkingColorSpace</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="bp">NSNull</span><span class="w"> </span><span class="n">null</span><span class="p">]</span><span class="w"> </span><span class="l">}</span><span class="p">;</span>
+<span class="bp">CIContext</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CIContext</span><span class="w"> </span><span class="n">contextWithEAGLContext</span><span class="o">:</span><span class="n">glContext</span><span class="w"> </span><span class="n">options</span><span class="o">:</span><span class="n">options</span><span class="p">];</span>
+</code></pre></div></p>
+<p>En este caso, para renderizar la imagen deberemos utilizar el método <code>drawImage:atPoint:fromRect:</code>
+o <code>drawImage:inRect:fromRect:</code> del objeto <code>CIContext</code>. Con estos métodos la imagen se renderizará en una capa de OpenGL.
+Para hacer esto podemos utilizar una vista de tipo <code>GLKView</code>. Podemos crear esta vista de la siguiente
+forma:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">rect</span> <span class="p">:</span> <span class="n">CGRect</span> <span class="p">=</span> <span class="n">CGRect</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">480</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nv">glkView</span> <span class="p">=</span> <span class="bp">GLKView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">rect</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">glContext</span><span class="p">!)</span>
+<span class="n">glkView</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">GLKView</span><span class="w"> </span><span class="o">*</span><span class="n">glkView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="bp">GLKView</span><span class="w"> </span><span class="n">alloc</span><span class="p">]</span><span class="w"> </span><span class="n">initWithFrame</span><span class="o">:</span><span class="w"> </span><span class="n">CGRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">320</span><span class="p">,</span><span class="mi">480</span><span class="p">)</span>
+<span class="w">                                          </span><span class="nl">context</span><span class="p">:</span><span class="w"> </span><span class="n">glContext</span><span class="p">];</span>
+<span class="n">glkView</span><span class="p">.</span><span class="n">delegate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">self</span><span class="p">;</span>
+</code></pre></div></p>
+<p>El delegado de la vista OpenGL deberá definir un método <code>glkView:drawInRect:</code> en el que deberemos
+definir la forma de renderizar la vista OpenGL. Aquí podemos hacer que se renderice la imagen filtrada:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">glkView</span><span class="p">(</span><span class="kc">_</span> <span class="n">view</span><span class="p">:</span> <span class="bp">GLKView</span><span class="p">!,</span> <span class="n">drawIn</span> <span class="n">rect</span><span class="p">:</span> <span class="n">CGRect</span><span class="p">)</span> <span class="p">{</span>
+ <span class="p">...</span>
+ <span class="n">context</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">filteredImage</span><span class="p">,</span> <span class="n">atPoint</span><span class="p">:</span> <span class="n">CGPoint</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span><span class="n">fromRect</span><span class="p">:</span> <span class="n">filteredImage</span><span class="p">.</span><span class="n">extent</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">glkView:</span><span class="p">(</span><span class="bp">GLKView</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="nv">view</span><span class="w"> </span><span class="nf">drawInRect:</span><span class="p">(</span><span class="n">CGRect</span><span class="p">)</span><span class="nv">rect</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="p">...</span>
+
+<span class="w">   </span><span class="p">[</span><span class="n">context</span><span class="w"> </span><span class="n">drawImage</span><span class="o">:</span><span class="w"> </span><span class="n">filteredImage</span>
+<span class="w">           </span><span class="nl">atPoint</span><span class="p">:</span><span class="w"> </span><span class="n">CGPointZero</span>
+<span class="w">          </span><span class="nl">fromRect</span><span class="p">:</span><span class="w"> </span><span class="n">filteredImage</span><span class="p">.</span><span class="n">extent</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Para hacer que la vista OpenGL actualice su contenido deberemos llamar a su método <code>display</code>:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="n">glkView</span><span class="p">.</span><span class="n">display</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">glkView</span><span class="w"> </span><span class="n">display</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Esto se hará normalmente cuando hayamos definido nuevos filtros para la imagen, y queramos que se actualice el resultado en pantalla.</p>
+<blockquote>
+<p>La inicialización del contexto es una operación costosa que se debe hacer una única vez.
+Una vez inicializado, notaremos que el procesamiento de las imágenes es mucho más fluido.</p>
+</blockquote>
+<h3 id="procesamiento-asincrono">Procesamiento asíncrono<a class="headerlink" href="#procesamiento-asincrono" title="Permanent link">&para;</a></h3>
+<p>El procesamiento de la imagen puede ser una operación lenta, a pesar de estar optimizada. Por lo tanto, al realizar
+esta operación desde algún evento (por ejemplo al pulsar un botón, o al modificar en la interfaz algún factor de ajuste
+del filtro a aplicar) deberíamos realizar la operación en segundo plano. Podemos utilizar para ello la clase
+<code>NSThread</code>, o bien las facilidades para ejecutar código en segundo plano que se incluyeron a partir de
+iOS 4.0, basadas en bloques.</p>
+<div class="highlight"><pre><span></span><code><span class="n">dispatch_async</span><span class="p">(</span>
+<span class="w">    </span><span class="n">dispatch_get_global_queue</span><span class="p">(</span><span class="n">DISPATCH_QUEUE_PRIORITY_BACKGROUND</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">    </span><span class="o">^</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="c1">// Codigo en segundo plano (renderizar la imagen</span>
+<span class="w">         </span><span class="n">CGImageRef</span><span class="w"> </span><span class="n">cgImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">context</span><span class="w"> </span><span class="n">createCGImage</span><span class="o">:</span><span class="n">filteredImage</span>
+<span class="w">                                       </span><span class="nl">fromRect</span><span class="p">:</span><span class="n">filteredImage</span><span class="p">.</span><span class="n">extent</span><span class="p">];</span>
+<span class="w">         </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Con esto podemos ejecutar un bloque de código en segundo plano. El problema que encontramos es que dicho bloque de código
+no se encuentra en el hilo de la interfaz, por lo que no podrá acceder a ella. Para solucionar este problema deberemos
+mostrar la imagen obtenida en la interfaz dentro de un bloque que se ejecute en el hilo de la UI:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dispatch_async</span><span class="p">(</span>
+<span class="w">    </span><span class="n">dispatch_get_global_queue</span><span class="p">(</span><span class="n">DISPATCH_QUEUE_PRIORITY_BACKGROUND</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">    </span><span class="o">^</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">        </span><span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span><span class="w"> </span><span class="o">^</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nb">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">UIImage</span><span class="w"> </span><span class="n">imageWithCGImage</span><span class="o">:</span><span class="w"> </span><span class="n">cgImage</span><span class="p">];</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Con esto podemos ejecutar un bloque de código de forma asíncrona dentro del hilo principal de la UI, y de esta forma podremos
+mostrar la imagen obtenida en segundo plano en la interfaz.</p>
+<h3 id="deteccion-de-caras">Detección de caras<a class="headerlink" href="#deteccion-de-caras" title="Permanent link">&para;</a></h3>
+<p>A parte de los filtros vistos anteriormente, Core Image también incluye detectores de características en imágenes,  como por ejemplo detectores de caras, de texto, o de códigos QR. La API está diseñada para poder ser ampliada en el futuro.</p>
+<p>Los detectores los crearemos mediante la clase <code>CIDetector</code>. Deberemos proporcionar el tipo de detector a utilizar, por ejemplo <code>CIDetectorTypeFace</code> para el detector de caras. Podemos además especificar una serie de parámetros, como
+el nivel de precisión que queremos obtener:</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">options</span> <span class="p">=</span> <span class="p">[</span><span class="n">CIDetectorAccuracy</span><span class="p">:</span> <span class="n">CIDetectorAccuracyHigh</span><span class="p">]</span>
+<span class="kd">let</span> <span class="nv">faceDetector</span> <span class="p">=</span> <span class="bp">CIDetector</span><span class="p">(</span><span class="n">ofType</span><span class="p">:</span> <span class="n">CIDetectorTypeFace</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="n">options</span><span class="p">)</span><span class="o">!</span>
+</code></pre></div></p>
+<p><strong>Objective-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">CIDetector</span><span class="o">*</span><span class="w"> </span><span class="n">detector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="bp">CIDetector</span><span class="w"> </span><span class="n">detectorOfType</span><span class="o">:</span><span class="n">CIDetectorTypeFace</span>
+<span class="w">     </span><span class="nl">context</span><span class="p">:</span><span class="nb">nil</span>
+<span class="w">     </span><span class="nl">options</span><span class="p">:[</span><span class="bp">NSDictionary</span><span class="w"> </span><span class="n">dictionaryWithObject</span><span class="o">:</span><span class="n">CIDetectorAccuracyHigh</span>
+<span class="w">                                         </span><span class="nl">forKey</span><span class="p">:</span><span class="n">CIDetectorAccuracy</span><span class="p">]];</span>
+</code></pre></div></p>
+<p>Una vez creado el detector, podemos ejecutarlo para que procese la imagen (de tipo <code>CIImage</code>) en busca de las características deseadas
+(en este caso estas características son las caras):</p>
+<p><strong>Swift</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">features</span> <span class="p">=</span> <span class="n">faceDetector</span><span class="p">.</span><span class="n">features</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="n">ciImage</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Objetive-C</strong>
+<div class="highlight"><pre><span></span><code><span class="bp">NSArray</span><span class="o">*</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">detector</span><span class="w"> </span><span class="n">featuresInImage</span><span class="o">:</span><span class="n">ciImage</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Las características obtenidas se encapsulan en objetos de tipo <code>CIFeature</code>. Una propiedad básica de las
+características es la región que ocupan en la imagen. Esto se representa mediante su propiedad <code>bounds</code>, de
+tipo <code>CGRect</code>, que nos indicará el área de la imagen en la que se encuentra la cara. Pero además, en el
+caso concreto del reconocimiento de caras, las características obtenidas son un subtipo específico de <code>CIFeature</code>
+(<code>CIFaceFeature</code>), que además de la región ocupada por la cara nos proporcionará la región ocupada por
+componentes de la cara (boca y ojos).</p>
+<p>Es decir, este detector nos devolverá un <em>array</em> con tantos objetos <code>CIFaceFeature</code> como caras
+encontradas en la imagen, y de cada cara sabremos el área que ocupa y la posición de los ojos y la boca, en caso de que los haya encontrado.</p>
+<h2 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h2>
+<h3 id="procesamiento-de-imagen">Procesamiento de imagen<a class="headerlink" href="#procesamiento-de-imagen" title="Permanent link">&para;</a></h3>
+<p>En este ejercicio procesaremos una imagen con CoreImage tanto utilizando la CPU como la GPU. En el proyecto <code>ProcesamientoImagen</code> tenemos toda la infraestructura necesaria ya creada. En <code>viewDidLoad</code>
+se inicializa la imagen <code>CIImage</code> original, y los contextos CPU y GPU. Tenemos dos <em>sliders</em>
+que nos permitirán aplicar filtros con diferentes niveles de intensidad. En la parte superior de la pantalla tenemos una imagen (<code>UIImageView</code>) con un <em>slider</em> para aplicar el filtro utilizando la CPU,
+y en la mitad inferior tenemos una vista OpenGL (<code>GLKView</code>) y un <em>slider</em> para aplicar el
+filtro en ella utilizando la GPU. Se pide:</p>
+<ul>
+<li>
+<p>Implementar el filtrado utilizando CPU, en el método <code>sliderCpuCambia:</code> que se ejecutará cada vez que el <em>slider</em> superior cambie de valor. Utilizaremos el filtro de color sepia (<code>CISepiaTone</code>), al que proporcionaremos como intensidad el valor del <em>slider</em>.</p>
+</li>
+<li>
+<p>Implementar el filtrado utilizando GPU, en el método <code>sliderCpuCambia:</code> que se ejecutará cada vez que el <em>slider</em> inferior cambie de valor. Utilizaremos el mismo filtro que en el caso anterior, pero en este caso guardaremos la imagen resultante en la propiedad <code>imagenFiltrada</code> y haremos que se redibuje la vista OpenGL para que muestre dicha imagen. Mueve los dos <em>sliders</em>. ¿Cuál de ellos se mueve con mayor fluidez?</p>
+</li>
+<li>
+<p>Vamos a encadenar un segundo filtro, tanto para el contexto CPU como GPU. El filtro será
+<code>CIHueAdjust</code>, que se aplicará justo después del filtro sepia. Consulta la documentación de
+filtros de Apple para saber qué parámetros son necesarios. Se utilizará el mismo <em>slider</em> que
+ya tenemos para darle valor a este parámetro, es decir, el mismo <em>slider</em> dará valor simultáneamente
+a los parámetros de los dos filtros.</p>
+</li>
+<li>
+<p>Por último, vamos a permitir guardar la foto procesada mediante CPU en el álbum de fotos
+del dispositivo. Para ello deberemos introducir en el método <code>agregarFoto:</code> el código que se encargue de realizar esta tarea, tomando la foto de <code>self.imageView.image</code>. Este método se ejecutará al pulsar sobre el botón que hay junto a la imagen superior.</p>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
